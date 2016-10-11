@@ -2,8 +2,11 @@
 using System.Collections;
 
 public class TowerBehavior : MonoBehaviour {
-    
-    public float range = 10f;
+
+    // Stats
+    public float range = 15f;
+    public float damage = 5f;
+    public float health = 100f;
 
     private float idleTime = 0f;
     private float idleTimeout = 2f;

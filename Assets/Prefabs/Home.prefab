@@ -13,8 +13,8 @@ GameObject:
   - 23: {fileID: 2386554}
   - 114: {fileID: 11488100}
   m_Layer: 0
-  m_Name: Tower
-  m_TagString: tower
+  m_Name: Home
+  m_TagString: home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,6 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 10
+  damage: 5
+  health: 100
 --- !u!136 &13660474
 CapsuleCollider:
   m_ObjectHideFlags: 1

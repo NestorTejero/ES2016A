@@ -4,7 +4,10 @@ using System.Collections;
 
 public class EnemyBehavior : MonoBehaviour{
 
+    // Stats
     public float moveSpeed = 5f;
+    public float damage = 2.5f;
+    public float health = 10f;
 
     GameObject home;
 
