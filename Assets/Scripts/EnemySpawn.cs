@@ -19,9 +19,13 @@ public class EnemySpawn : MonoBehaviour
 
     void Spawn()
     {
-        
-        // Get spawn zone position and create enemies
-        Enemy.transform.position = this.transform.position;      
+        // Get the height of the object that is going to be spawned
+        float height = Enemy.GetComponent<Renderer>().bounds.size.y;
+
+        // Get spawn zone position and create enemies. Position on the y axis must be enough so that
+        // the object lies over the terrain and not under it.
+        Enemy.transform.position = new Vector3(transform.position.x, Mathf.Max(transform.position.y, 
+            height/2 ), transform.position.z);
         Instantiate(Enemy);
         totalUnits -= 1;
 

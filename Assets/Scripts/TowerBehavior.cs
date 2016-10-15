@@ -12,8 +12,11 @@ public class TowerBehavior : MonoBehaviour {
     private float idleTimeout = 2f;
     private GameObject target = null;
 
-	// Use this for initialization
-	void Start () {
+    // Projectile
+    public Transform projectile;
+
+    // Use this for initialization
+    void Start () {
 	   
 	}
 	
@@ -49,8 +52,19 @@ public class TowerBehavior : MonoBehaviour {
             return;
         }
 
-        // TODO shoot code here
-
-
+        LaunchProjectile();
 	}
+
+    private void LaunchProjectile()
+    {
+        if (target != null)
+        {
+            ProjectileBehaviour pb = (ProjectileBehaviour)projectile.GetComponent("ProjectileBehaviour");
+            if (pb != null)
+            {
+                pb.target = target.transform;
+                Instantiate(projectile, transform.position, Quaternion.identity);
+            }
+        }
+    }
 }
