@@ -7,6 +7,7 @@ public class TowerBehavior : MonoBehaviour {
     public float range = 15f;
     public float damage = 5f;
     public float health = 100f;
+    public float firerate = 1f;    // fire rate in seconds
 
     private float idleTime = 0f;
     private float idleTimeout = 2f;
@@ -17,12 +18,12 @@ public class TowerBehavior : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	   
+        InvokeRepeating("LaunchProjectile", firerate, firerate);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        // The sole purpose of this function is to get a target. Shooting is managed outside.
 	    if(target == null){
 
             // Idle out if we just searched
@@ -51,18 +52,19 @@ public class TowerBehavior : MonoBehaviour {
 
             return;
         }
-
-        LaunchProjectile();
 	}
 
     private void LaunchProjectile()
     {
+        // Shoot ony if there is a target.
         if (target != null)
         {
             ProjectileBehaviour pb = (ProjectileBehaviour)projectile.GetComponent("ProjectileBehaviour");
             if (pb != null)
             {
+                pb.damage = damage;   // tower damage transferred to the projectile
                 pb.target = target.transform;
+                pb.parentTagName = gameObject.tag;      
                 Instantiate(projectile, transform.position, Quaternion.identity);
             }
         }
