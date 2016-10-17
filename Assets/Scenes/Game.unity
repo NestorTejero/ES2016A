@@ -380,7 +380,7 @@ MonoBehaviour:
       y: 500
       width: 950
       height: 100
-  TexturaContenedorInferior: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0,
+  TexturaContenedorInferior: {fileID: 2800000, guid: b25eaad2c0671a74cad8c1aff6875166,
     type: 3}
   InterfazAvatar:
     Position:
@@ -390,8 +390,8 @@ MonoBehaviour:
         y: 510
         width: 85
         height: 85
-    Background: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    Avatar: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+    Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+    Avatar: {fileID: 2800000, guid: bc34a959cfa29a942b6c331e5c5be55b, type: 3}
     Offset: {x: 5, y: 5}
     AvatarSize: {x: 75, y: 75}
   InterfazTorres:
@@ -402,14 +402,32 @@ MonoBehaviour:
         y: 515
         width: 420
         height: 70
-    Background: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+    Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
     Torres:
-    - Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    - Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    - Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    - Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    - Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    - Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+    - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      Image: {fileID: 2800000, guid: fd1624772cd80814585bc6ee5bc1efe3, type: 3}
+      ImageLocked: {fileID: 2800000, guid: be0d6f861fd3b0a4eb606d8dfc500f61, type: 3}
+      Locked: 0
+    - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      Image: {fileID: 2800000, guid: f753194bd1ccf6b42b3b6bf12770a5c8, type: 3}
+      ImageLocked: {fileID: 2800000, guid: 15f77cab5c18aac47b81bfdd23884d8e, type: 3}
+      Locked: 0
+    - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      Image: {fileID: 2800000, guid: 059b3a157de94ff47b155d21f72c2804, type: 3}
+      ImageLocked: {fileID: 2800000, guid: eacf756bcd7ec6446b6f9f534fe78fd9, type: 3}
+      Locked: 0
+    - Background: {fileID: 0}
+      Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+      ImageLocked: {fileID: 0}
+      Locked: 0
+    - Background: {fileID: 0}
+      Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+      ImageLocked: {fileID: 0}
+      Locked: 0
+    - Background: {fileID: 0}
+      Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+      ImageLocked: {fileID: 0}
+      Locked: 0
     Offset: {x: 70, y: 0}
     Padding: {x: 5, y: 5}
     ButtonSize: {x: 60, y: 60}
