@@ -18,11 +18,17 @@ public class UserInterface : MonoBehaviour {
 	public ScaledRect ContenedorInferior = new ScaledRect();
 	public Texture TexturaContenedorInferior = null;
 
+	[Header("Elementos inferiores")]
+	public InterfaceAvatar InterfazAvatar = new InterfaceAvatar();
+	public InterfaceTowers InterfazTorres = new InterfaceTowers();
+
 	UserInterface() {
 		this.ContenedorSuperior.setWindowSize (WindowSize);
 		this.ContenedorInferior.setWindowSize (WindowSize);
 		this.InterfazVida.setWindowSize (WindowSize);
 		this.InterfazDinero.setWindowSize (WindowSize);
+		this.InterfazAvatar.setWindowSize (WindowSize);
+		this.InterfazTorres.setWindowSize (WindowSize);
 	}
 
 	void OnGUI() {
@@ -32,5 +38,7 @@ public class UserInterface : MonoBehaviour {
 
 		InterfazVida.draw ();
 		InterfazDinero.draw ();
+		InterfazAvatar.draw ();
+		InterfazTorres.draw ();
 	}
 }
