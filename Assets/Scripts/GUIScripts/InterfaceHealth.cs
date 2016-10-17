@@ -10,7 +10,6 @@ public class InterfaceHealth {
 	public ScaledRect Position 		= new ScaledRect ();
 	public Texture 	Background 		= null;
 	[Header("Propiedades corazones")]
-	public int 		Count 			= 3;
 	public Vector2 	HeartDimension 	= new Vector2 ();
 	public Vector2 	HeartOffset 	= new Vector2 ();
 	public Vector2	HeartPadding 	= new Vector2 ();
@@ -20,11 +19,13 @@ public class InterfaceHealth {
 	public InterfaceHealth () {}
 
 	public void draw() {
-		GUI.DrawTexture (this.Position.getRect(), this.Background);
-		for (int n = 0; n < this.Count; n++) {
+		if(this.Background != null)
+			GUI.DrawTexture (this.Position.getRect(), this.Background);
+
+		for (int n = 0; n < LogicConnector.getInstance().getHealth(); n++) {
 			ScaledRect ItemPosition = new ScaledRect (this.Position);
 			ItemPosition.rect.x += this.HeartPadding.x + this.HeartOffset.x * n;
-			ItemPosition.rect.y += this.HeartPadding.y + this.HeartOffset.y + n;
+			ItemPosition.rect.y += this.HeartPadding.y + this.HeartOffset.y * n;
 			ItemPosition.rect.width = this.HeartDimension.x;
 			ItemPosition.rect.height = this.HeartDimension.y;
 			GUI.DrawTexture (ItemPosition.getRect(), this.HeartImage);

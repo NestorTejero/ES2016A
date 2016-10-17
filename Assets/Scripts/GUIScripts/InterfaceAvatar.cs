@@ -15,7 +15,9 @@ public class InterfaceAvatar {
 	public InterfaceAvatar () {}
 
 	public void draw() {
-		GUI.DrawTexture (this.Position.getRect (), this.Background);
+		if(this.Background != null)
+			GUI.DrawTexture (this.Position.getRect (), this.Background);
+
 		ScaledRect PositionAvatar = new ScaledRect (this.Position);
 		PositionAvatar.rect.x += Offset.x;
 		PositionAvatar.rect.y += Offset.y;

@@ -3,8 +3,9 @@ using System;
 using System.Collections;
 
 public class UserInterface : MonoBehaviour {
-	[Header("Dimensiones base")]
+	[Header("General")]
 	public Rect WindowSize = new Rect (0, 0, 950, 600);
+	public LogicConnector LogicConnector = LogicConnector.getInstance();
 
 	[Header("Background superior")]
 	public ScaledRect ContenedorSuperior = new ScaledRect();

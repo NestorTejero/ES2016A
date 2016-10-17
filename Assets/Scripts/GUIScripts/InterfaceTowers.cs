@@ -17,7 +17,8 @@ public class InterfaceTowers {
 	}
 
 	public void draw() {
-		GUI.DrawTexture (this.Position.getRect (), this.Background);
+		if(this.Background != null)
+			GUI.DrawTexture (this.Position.getRect (), this.Background);
 
 		ScaledRect PosicionTorre = new ScaledRect (this.Position);
 		PosicionTorre.rect.x += this.Padding.x;

@@ -18,12 +18,13 @@ public class InterfaceMoney {
 	}
 
 	public void draw() {
-		GUI.DrawTexture (this.Position.getRect(), this.Background);
+		if(this.Background != null)
+			GUI.DrawTexture (this.Position.getRect(), this.Background);
 
 		ScaledRect positionText = new ScaledRect (this.Position);
 		positionText.rect.x += this.DineroPadding.x;
 		positionText.rect.y += this.DineroPadding.y;
-		GUI.Label (positionText.getRect(), this.Count.ToString(), this.TextStyle);
+		GUI.Label (positionText.getRect(), LogicConnector.getInstance().getCredit().ToString(), this.TextStyle);
 	}
 
 	public void setWindowSize(Rect WindowSize) {

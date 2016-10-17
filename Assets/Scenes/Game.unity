@@ -272,6 +272,11 @@ MonoBehaviour:
     y: 0
     width: 950
     height: 600
+  LogicConnector:
+    testMode: 0
+    testHealth: 3
+    testCredit: 1208
+    testTowerCost: e8030000d0070000b80b0000
   ContenedorSuperior:
     rect:
       serializedVersion: 2
@@ -290,7 +295,6 @@ MonoBehaviour:
         width: 90
         height: 30
     Background: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    Count: 3
     HeartDimension: {x: 20, y: 20}
     HeartOffset: {x: 30, y: 0}
     HeartPadding: {x: 5, y: 5}
@@ -405,29 +409,29 @@ MonoBehaviour:
     Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
     Torres:
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+      BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
       Image: {fileID: 2800000, guid: fd1624772cd80814585bc6ee5bc1efe3, type: 3}
       ImageLocked: {fileID: 2800000, guid: be0d6f861fd3b0a4eb606d8dfc500f61, type: 3}
       Locked: 0
+      ShowCost: 1
+      type: 0
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+      BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
       Image: {fileID: 2800000, guid: f753194bd1ccf6b42b3b6bf12770a5c8, type: 3}
       ImageLocked: {fileID: 2800000, guid: 15f77cab5c18aac47b81bfdd23884d8e, type: 3}
       Locked: 0
+      ShowCost: 1
+      type: 1
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+      BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
       Image: {fileID: 2800000, guid: 059b3a157de94ff47b155d21f72c2804, type: 3}
       ImageLocked: {fileID: 2800000, guid: eacf756bcd7ec6446b6f9f534fe78fd9, type: 3}
       Locked: 0
-    - Background: {fileID: 0}
-      Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-      ImageLocked: {fileID: 0}
-      Locked: 0
-    - Background: {fileID: 0}
-      Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-      ImageLocked: {fileID: 0}
-      Locked: 0
-    - Background: {fileID: 0}
-      Image: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-      ImageLocked: {fileID: 0}
-      Locked: 0
+      ShowCost: 1
+      type: 2
     Offset: {x: 70, y: 0}
     Padding: {x: 5, y: 5}
     ButtonSize: {x: 60, y: 60}
