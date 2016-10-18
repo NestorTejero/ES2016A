@@ -13,7 +13,7 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 6
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -37,12 +37,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 6
   m_GIWorkflowMode: 1
+  m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -53,22 +53,17 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 4
+    serializedVersion: 3
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
     m_TextureHeight: 1024
-    m_AO: 0
     m_AOMaxDistance: 1
-    m_CompAOExponent: 0
-    m_CompAOExponentDirect: 0
     m_Padding: 2
+    m_CompAOExponent: 0
     m_LightmapParameters: {fileID: 0}
-    m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
-    m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
   m_LightingDataAsset: {fileID: 0}
@@ -113,7 +108,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 255908596}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -135,10 +130,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!4 &255908598
 Transform:
   m_ObjectHideFlags: 0
@@ -151,7 +146,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &582268009
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +232,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753859875
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,40 +278,40 @@ MonoBehaviour:
         x: 0
         y: 0
         width: 950
-        height: 50
-    Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+        height: 60
+    Background: {fileID: 2800000, guid: 1ba0f36513b86d34faaa47cae3d98bf7, type: 3}
   InterfazVida:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
           x: 10
-          y: 10
-          width: 100
-          height: 30
-      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
-    Imagen: {fileID: 2800000, guid: 0024ca8a3ffd77f4cace62584ec0bca0, type: 3}
-    Offset: {x: 35, y: 0}
-    Padding: {x: 2.5, y: 2.5}
-    Dimensiones: {x: 25, y: 25}
+          y: 1.5
+          width: 154
+          height: 57
+      Background: {fileID: 2800000, guid: 92460ce69ba1e9148a15f3ef6ec01f41, type: 3}
+    Imagen: {fileID: 2800000, guid: 930ee64ce3beae145943a59de5df2125, type: 3}
+    Offset: {x: 50, y: 0}
+    Padding: {x: 2.5, y: 5}
+    Dimensiones: {x: 45, y: 45}
   InterfazDinero:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 840
-          y: 10
-          width: 100
-          height: 30
-      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+          x: 787
+          y: 1.5
+          width: 154
+          height: 57
+      Background: {fileID: 2800000, guid: e989d9a56d9e9174b830f3f46810dfd0, type: 3}
     Label:
-      FontSize: 24
-      TextColor: {r: 0, g: 0, b: 0, a: 1}
+      FontSize: 30
+      TextColor: {r: 0.9956389, g: 1, b: 0.6838235, a: 1}
       Position:
         rect:
           serializedVersion: 2
-          x: 840
-          y: 10
+          x: 830
+          y: 15
           width: 100
           height: 30
       Text: 
@@ -327,19 +320,19 @@ MonoBehaviour:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 425
-          y: 10
-          width: 100
-          height: 30
-      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+          x: 395
+          y: 1.5
+          width: 154
+          height: 57
+      Background: {fileID: 2800000, guid: 638cf48e156032645974a37ca92bca5c, type: 3}
     Label:
-      FontSize: 24
-      TextColor: {r: 0, g: 0, b: 0, a: 1}
+      FontSize: 40
+      TextColor: {r: 0.9960785, g: 1, b: 0.68235296, a: 1}
       Position:
         rect:
           serializedVersion: 2
           x: 425
-          y: 10
+          y: 15
           width: 100
           height: 30
       Text: 
@@ -420,4 +413,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
