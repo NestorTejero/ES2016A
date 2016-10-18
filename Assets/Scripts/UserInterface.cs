@@ -7,39 +7,29 @@ public class UserInterface : MonoBehaviour {
 	public Rect WindowSize = new Rect (0, 0, 950, 600);
 	public LogicConnector LogicConnector = LogicConnector.getInstance();
 
-	[Header("Background superior")]
-	public ScaledRect ContenedorSuperior = new ScaledRect();
-	public Texture TexturaContenedorSuperior = null;
-
-	[Header("Elementos superiores")]
+	[Header("HUD Superior")]
+	public InterfaceContainer ContenedorSuperior = new InterfaceContainer();
 	public InterfaceHealth InterfazVida = new InterfaceHealth ();
 	public InterfaceMoney InterfazDinero = new InterfaceMoney ();
+	public InterfaceTime InterfazTiempo = new InterfaceTime ();
 
-	[Header("Background inferior")]
-	public ScaledRect ContenedorInferior = new ScaledRect();
-	public Texture TexturaContenedorInferior = null;
-
-	[Header("Elementos inferiores")]
+	[Header("HUD Inferior")]
+	public InterfaceContainer ContenedorInferior = new InterfaceContainer();
 	public InterfaceAvatar InterfazAvatar = new InterfaceAvatar();
 	public InterfaceTowers InterfazTorres = new InterfaceTowers();
 
 	UserInterface() {
-		this.ContenedorSuperior.setWindowSize (WindowSize);
-		this.ContenedorInferior.setWindowSize (WindowSize);
-		this.InterfazVida.setWindowSize (WindowSize);
-		this.InterfazDinero.setWindowSize (WindowSize);
-		this.InterfazAvatar.setWindowSize (WindowSize);
-		this.InterfazTorres.setWindowSize (WindowSize);
+		ScaledRect.WindowSize = this.WindowSize;
 	}
 
 	void OnGUI() {
 		// Dibujamos los contenerdores superior y inferior.
-		GUI.DrawTexture (ContenedorSuperior.getRect(), this.TexturaContenedorSuperior);
-		GUI.DrawTexture (ContenedorInferior.getRect(), this.TexturaContenedorInferior);
-
-		InterfazVida.draw ();
-		InterfazDinero.draw ();
-		InterfazAvatar.draw ();
+		ContenedorSuperior.Draw ();
+		ContenedorInferior.Draw ();
+		InterfazVida.Draw ();
+		InterfazDinero.Draw ();
+		InterfazAvatar.Draw ();
 		InterfazTorres.draw ();
+		InterfazTiempo.Draw ();
 	}
 }

@@ -8,6 +8,7 @@ public class LogicConnector {
 	public int testHealth = 3;
 	public int testCredit = 1200;
 	public int[] testTowerCost = {1000, 2000, 3000};
+	public float testTime = 60.0f;
 
 	protected static LogicConnector _instance = null;
 	protected LogicConnector () {}
@@ -25,6 +26,10 @@ public class LogicConnector {
 
 	public int getCredit() {
 		return (_instance.testMode) ? _instance.testCredit : _instance.testCredit;
+	}
+
+	public float getTime() {
+		return (_instance.testMode) ? _instance.testTime : _instance.testTime;
 	}
 
 	public void placeTower(int type) {

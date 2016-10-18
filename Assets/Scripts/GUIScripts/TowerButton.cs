@@ -36,15 +36,13 @@ public class TowerButton {
 		}
 
 		if (this.ShowCost) {
-			ScaledRect LabelPosition = new ScaledRect (Position);
-			LabelPosition.rect.x += 5;
-			LabelPosition.rect.y += (float)(LabelPosition.rect.height - 24);
-
-			GUIStyle LabelStyle = new GUIStyle ();
-			LabelStyle.fontSize = 24;
-			LabelStyle.normal.textColor = new Color (0, 0, 0);
-
-			GUI.Label (LabelPosition.getRect (), TowerCost.ToString (), LabelStyle);
+			InterfaceLabel Label = new InterfaceLabel ();
+			Label.Position = new ScaledRect (Position);
+			Label.Position.rect.y += (int)(2 * (Position.rect.height / 3.0));
+			Label.Position.rect.height = (int)(Position.rect.height / 3.0);
+			Label.FontSize = 24;
+			Label.SetText (TowerCost.ToString ());
+			Label.Draw ();
 		}
 
 	}

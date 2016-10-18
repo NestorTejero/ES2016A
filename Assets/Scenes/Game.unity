@@ -277,136 +277,109 @@ MonoBehaviour:
     testHealth: 3
     testCredit: 1208
     testTowerCost: e8030000d0070000b80b0000
+    testTime: 60
   ContenedorSuperior:
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 950
-      height: 50
-  TexturaContenedorSuperior: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0,
-    type: 3}
+    Dimensions:
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 950
+        height: 50
+    Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
   InterfazVida:
-    Position:
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 10
-        width: 90
-        height: 30
-    Background: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    HeartDimension: {x: 20, y: 20}
-    HeartOffset: {x: 30, y: 0}
-    HeartPadding: {x: 5, y: 5}
-    HeartImage: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
+    Contenedor:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 10
+          y: 10
+          width: 100
+          height: 30
+      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+    Imagen: {fileID: 2800000, guid: 0024ca8a3ffd77f4cace62584ec0bca0, type: 3}
+    Offset: {x: 35, y: 0}
+    Padding: {x: 2.5, y: 2.5}
+    Dimensiones: {x: 25, y: 25}
   InterfazDinero:
-    Position:
-      rect:
-        serializedVersion: 2
-        x: 850
-        y: 10
-        width: 90
-        height: 30
-    Background: {fileID: 2800000, guid: 66345ae8ebbbb5a4dbc304c88d4f8db0, type: 3}
-    Count: 1200
-    DineroPadding: {x: 0, y: 0}
-    TextStyle:
-      m_Name: 
-      m_Normal:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 1, g: 1, b: 1, a: 1}
-      m_Hover:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_Active:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_Focused:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_OnNormal:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_OnHover:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_OnActive:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_OnFocused:
-        m_Background: {fileID: 0}
-        m_ScaledBackgrounds: []
-        m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-      m_Border:
-        m_Left: 0
-        m_Right: 0
-        m_Top: 0
-        m_Bottom: 0
-      m_Margin:
-        m_Left: 0
-        m_Right: 0
-        m_Top: 0
-        m_Bottom: 0
-      m_Padding:
-        m_Left: 0
-        m_Right: 0
-        m_Top: 0
-        m_Bottom: 0
-      m_Overflow:
-        m_Left: 0
-        m_Right: 0
-        m_Top: 0
-        m_Bottom: 0
-      m_Font: {fileID: 0}
-      m_FontSize: 24
-      m_FontStyle: 0
-      m_Alignment: 0
-      m_WordWrap: 0
-      m_RichText: 1
-      m_TextClipping: 0
-      m_ImagePosition: 0
-      m_ContentOffset: {x: 20, y: 0}
-      m_FixedWidth: 0
-      m_FixedHeight: 0
-      m_StretchWidth: 1
-      m_StretchHeight: 0
+    Contenedor:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 840
+          y: 10
+          width: 100
+          height: 30
+      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+    Label:
+      FontSize: 24
+      TextColor: {r: 0, g: 0, b: 0, a: 1}
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 840
+          y: 10
+          width: 100
+          height: 30
+      Text: 
+  InterfazTiempo:
+    Contenedor:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 425
+          y: 10
+          width: 100
+          height: 30
+      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+    Label:
+      FontSize: 24
+      TextColor: {r: 0, g: 0, b: 0, a: 1}
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 425
+          y: 10
+          width: 100
+          height: 30
+      Text: 
   ContenedorInferior:
-    rect:
-      serializedVersion: 2
-      x: 0
-      y: 500
-      width: 950
-      height: 100
-  TexturaContenedorInferior: {fileID: 2800000, guid: b25eaad2c0671a74cad8c1aff6875166,
-    type: 3}
+    Dimensions:
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 950
+        height: 100
+    Background: {fileID: 2800000, guid: b25eaad2c0671a74cad8c1aff6875166, type: 3}
   InterfazAvatar:
-    Position:
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 510
-        width: 85
-        height: 85
-    Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+    Contenedor:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 10
+          y: 510
+          width: 85
+          height: 85
+      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
     Avatar: {fileID: 2800000, guid: bc34a959cfa29a942b6c331e5c5be55b, type: 3}
-    Offset: {x: 5, y: 5}
-    AvatarSize: {x: 75, y: 75}
-  InterfazTorres:
-    Position:
+    DimensionesAvatar:
       rect:
         serializedVersion: 2
-        x: 520
-        y: 515
-        width: 420
-        height: 70
-    Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+        x: 5
+        y: 5
+        width: 75
+        height: 75
+  InterfazTorres:
+    Contenedor:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 520
+          y: 515
+          width: 420
+          height: 70
+      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
     Torres:
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
@@ -434,7 +407,7 @@ MonoBehaviour:
       type: 2
     Offset: {x: 70, y: 0}
     Padding: {x: 5, y: 5}
-    ButtonSize: {x: 60, y: 60}
+    Dimensiones: {x: 60, y: 60}
 --- !u!4 &1753859877
 Transform:
   m_ObjectHideFlags: 0

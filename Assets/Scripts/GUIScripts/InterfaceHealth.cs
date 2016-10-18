@@ -4,37 +4,27 @@ using System.Collections;
 
 [Serializable]
 public class InterfaceHealth {
-	private Rect WindowSize;
+	public InterfaceContainer Contenedor = new InterfaceContainer ();
 
-	[Header("Propiedades contenedor")]
-	public ScaledRect Position 		= new ScaledRect ();
-	public Texture 	Background 		= null;
 	[Header("Propiedades corazones")]
-	public Vector2 	HeartDimension 	= new Vector2 ();
-	public Vector2 	HeartOffset 	= new Vector2 ();
-	public Vector2	HeartPadding 	= new Vector2 ();
-	public Texture 	HeartImage 		= null;
-
+	public Texture Imagen = null;
+	public Vector2 Offset = new Vector2 ();
+	public Vector2 Padding = new Vector2 ();
+	public Vector2 Dimensiones = new Vector2 ();
 
 	public InterfaceHealth () {}
 
-	public void draw() {
-		if(this.Background != null)
-			GUI.DrawTexture (this.Position.getRect(), this.Background);
+	public void Draw() {
+		this.Contenedor.Draw ();
 
 		for (int n = 0; n < LogicConnector.getInstance().getHealth(); n++) {
-			ScaledRect ItemPosition = new ScaledRect (this.Position);
-			ItemPosition.rect.x += this.HeartPadding.x + this.HeartOffset.x * n;
-			ItemPosition.rect.y += this.HeartPadding.y + this.HeartOffset.y * n;
-			ItemPosition.rect.width = this.HeartDimension.x;
-			ItemPosition.rect.height = this.HeartDimension.y;
-			GUI.DrawTexture (ItemPosition.getRect(), this.HeartImage);
+			ScaledRect ItemPosition = new ScaledRect (this.Contenedor.Dimensions);
+			ItemPosition.rect.x += this.Padding.x + this.Offset.x * n;
+			ItemPosition.rect.y += this.Padding.y + this.Offset.y * n;
+			ItemPosition.rect.width = this.Dimensiones.x;
+			ItemPosition.rect.height = this.Dimensiones.y;
+			GUI.DrawTexture (ItemPosition.getRect(), this.Imagen);
 		}
-	}
-
-	public void setWindowSize(Rect WindowSize) {
-		this.WindowSize = WindowSize;
-		this.Position.setWindowSize (WindowSize);
 	}
 }
 
