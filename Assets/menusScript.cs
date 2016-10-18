@@ -31,8 +31,8 @@ public class menusScript : MonoBehaviour {
     }
 
     public void startLevel() {
-        Application.LoadLevel(1);
-        //SceneManager.LoadScene(1);
+        //Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 
     public void exitGame() {
