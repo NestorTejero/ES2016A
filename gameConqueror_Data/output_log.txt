@@ -14,7 +14,7 @@ Platform assembly: C:\Users\enrique\Documents\UnityGrupC\ES2016A\gameConqueror_D
 Loading C:\Users\enrique\Documents\UnityGrupC\ES2016A\gameConqueror_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\enrique\Documents\UnityGrupC\ES2016A\gameConqueror_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\enrique\Documents\UnityGrupC\ES2016A\gameConqueror_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.120 seconds
+- Completed reload, in  0.124 seconds
 Platform assembly: C:\Users\enrique\Documents\UnityGrupC\ES2016A\gameConqueror_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\enrique\Documents\UnityGrupC\ES2016A\gameConqueror_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
@@ -22,6 +22,4 @@ desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.756051 ms
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 280c -> priority: 1 
+UnloadTime: 0.817623 ms
