@@ -4,7 +4,7 @@ using System.Collections;
 public class TowerBehavior : MonoBehaviour {
 
     // Stats
-    public float range = 15f;
+    public float range = 200f;
     public float damage = 5f;
     public float health = 100f;
     public float firerate = 1f;     // fire rate in seconds

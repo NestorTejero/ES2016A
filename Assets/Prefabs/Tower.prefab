@@ -92,11 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
+  range: 200
   damage: 5
   health: 100
   firerate: 1
-  projectile: {fileID: 0}
+  spread: 0
+  projectileSpeed: 100
+  projectile: {fileID: 498000, guid: 5f1ce9b380951474d994203ffada65d0, type: 2}
 --- !u!136 &13660610
 CapsuleCollider:
   m_ObjectHideFlags: 1

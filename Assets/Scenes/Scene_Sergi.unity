@@ -628,6 +628,7 @@ GameObject:
   - 81: {fileID: 982832025}
   - 114: {fileID: 982832031}
   - 114: {fileID: 982832030}
+  - 114: {fileID: 982832032}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -727,6 +728,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towers:
   - {fileID: 136386, guid: 3379218c11fdbf7498b730fbb24e79e1, type: 2}
+--- !u!114 &982832032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982832024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b16a3f6d2303c4a9400f49d6eaa15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 250
+  scrollSpeed: 250
 --- !u!1 &1012944498
 GameObject:
   m_ObjectHideFlags: 0

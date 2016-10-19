@@ -23,16 +23,12 @@ public class ProjectileBehaviour : MonoBehaviour {
         }
     }
 
-    //First called function. Main assignations
-    void Awake()
-    {
-        //Initializing the enemy position
-        startPosition = transform.position;
-    }
-
     // Use this for initialization
     void Start ()
     {
+        //Initializing the enemy position
+        startPosition = transform.position;
+
         if (target == null)
         {
             // Check if we have a target.
@@ -49,6 +45,10 @@ public class ProjectileBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (ReachExceeded())
+        {
+            SelfDestroy();
+        }
         // The projectile keeps moving even if its target has been already destroyed.
         TransformProjectile();
     }
