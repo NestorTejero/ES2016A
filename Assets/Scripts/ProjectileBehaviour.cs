@@ -51,12 +51,14 @@ public class ProjectileBehaviour : MonoBehaviour {
         TransformProjectile();
     }
 
+    // Returns true if the distance traversed by the projectile is equal or exceeds its reach.
     private bool ReachExceeded()
     {
         float traversedDist = Vector3.Distance(startPosition, transform.position);
         return traversedDist >= reach;
     }
 
+    // Manages projecile's movement through the world.
     private void TransformProjectile()
     {
         /*
@@ -66,6 +68,7 @@ public class ProjectileBehaviour : MonoBehaviour {
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 
+    // Manages the destruction of the projectile. Can be overriten to add cool effects.
     protected virtual void SelfDestroy()
     {
         Destroy(gameObject);
