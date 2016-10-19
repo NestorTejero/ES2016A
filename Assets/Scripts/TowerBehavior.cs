@@ -7,7 +7,8 @@ public class TowerBehavior : MonoBehaviour {
     public float range = 15f;
     public float damage = 5f;
     public float health = 100f;
-    public float firerate = 1f;             // fire rate in seconds
+    public float firerate = 1f;     // fire rate in seconds
+    public float spread = 0f;       // Spread of the gun (non laser-like aim)
     public float projectileSpeed = 100f;
 
     private float idleTime = 0f;
