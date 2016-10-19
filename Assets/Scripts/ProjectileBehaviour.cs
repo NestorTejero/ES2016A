@@ -8,7 +8,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float damage = 1f;
     public float speed = 100.0f;
 
-    public Transform target;         // Target position.
+    public Transform target;         // TODO Remove this, projectile does NOT need to know its target, it can hit ANY target
     public string targetTagName;     // Target tag.
     public string parentTagName;     // Shooting entity's tag.
     public float reach = 0.0f;       // Projectile is destroyed after exceeding its reach. Using reach=0 disables such feature.
@@ -40,6 +40,8 @@ public class ProjectileBehaviour : MonoBehaviour {
         }
         else
         {
+            // TODO Change looking at target vs looking at where the turret shot, allows for "spread" and different shooting patters
+            // Parabollic etc.
             transform.LookAt(target);
             Update();
         }
@@ -51,12 +53,14 @@ public class ProjectileBehaviour : MonoBehaviour {
         TransformProjectile();
     }
 
+    // Returns true if the distance traversed by the projectile is equal or exceeds its reach.
     private bool ReachExceeded()
     {
         float traversedDist = Vector3.Distance(startPosition, transform.position);
         return traversedDist >= reach;
     }
 
+    // Manages projecile's movement through the world.
     private void TransformProjectile()
     {
         /*
@@ -66,6 +70,7 @@ public class ProjectileBehaviour : MonoBehaviour {
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 
+    // Manages the destruction of the projectile. Can be overriten to add cool effects.
     protected virtual void SelfDestroy()
     {
         Destroy(gameObject);

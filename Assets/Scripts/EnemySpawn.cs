@@ -37,8 +37,13 @@ public class EnemySpawn : MonoBehaviour
 
         // Cancel all Invoke calls if the wave is spawned
         if (totalUnits == 0)
-            CancelInvoke();
+            SelfDestroy();
 
+    }
+
+    protected virtual void SelfDestroy()
+    {
+        Destroy(gameObject);
     }
 
 }

@@ -7,7 +7,9 @@ public class TowerBehavior : MonoBehaviour {
     public float range = 15f;
     public float damage = 5f;
     public float health = 100f;
-    public float firerate = 1f;    // fire rate in seconds
+    public float firerate = 1f;     // fire rate in seconds
+    public float spread = 0f;       // Spread of the gun (non laser-like aim)
+    public float projectileSpeed = 100f;
 
     private float idleTime = 0f;
     private float idleTimeout = 2f;
@@ -50,10 +52,13 @@ public class TowerBehavior : MonoBehaviour {
                 idleTime += idleTimeout;
             }
 
+            // TODO: Take aim
+
             return;
         }
 	}
 
+    // Instantiates and places in the world a projectile directed towards the target.
     private void LaunchProjectile()
     {
         // Shoot ony if there is a target.
@@ -63,6 +68,8 @@ public class TowerBehavior : MonoBehaviour {
             if (pb != null)
             {
                 pb.damage = damage;   // tower damage transferred to the projectile
+                pb.reach = 2 * range;     // projectile reach set as twice the tower's range
+                pb.speed = projectileSpeed;
                 pb.target = target.transform;
                 pb.parentTagName = gameObject.tag;      
                 Instantiate(projectile, transform.position, Quaternion.identity);
