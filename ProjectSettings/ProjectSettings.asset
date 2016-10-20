@@ -13,7 +13,6 @@ PlayerSettings:
   productName: TowerDefense_UB
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenStyle: 0
   m_ShowUnitySplashScreen: 1
   m_VirtualRealitySplashScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -25,7 +24,7 @@ PlayerSettings:
   m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_MobileMTRendering: 0
-  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  m_Stereoscopic3D: 0
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
@@ -51,7 +50,6 @@ PlayerSettings:
   resizableWindow: 0
   useMacAppStoreValidation: 0
   gpuSkinning: 0
-  graphicsJobs: 0
   xboxPIXTextureCapture: 0
   xboxEnableAvatar: 0
   xboxEnableKinect: 0
@@ -95,9 +93,11 @@ PlayerSettings:
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
+  metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   singlePassStereoRendering: 0
   protectGraphicsMemory: 0
+  virtualRealitySupported: 0
   productGUID: dbcc08d838b9d7b4a88fd932f83b31ab
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
@@ -354,6 +354,24 @@ PlayerSettings:
   metroFTAFileTypes: []
   metroProtocolName: 
   metroCompilationOverrides: 1
+  blackberryDeviceAddress: 
+  blackberryDevicePassword: 
+  blackberryTokenPath: 
+  blackberryTokenExires: 
+  blackberryTokenAuthor: 
+  blackberryTokenAuthorId: 
+  blackberryCskPassword: 
+  blackberrySaveLogPath: 
+  blackberrySharedPermissions: 0
+  blackberryCameraPermissions: 0
+  blackberryGPSPermissions: 0
+  blackberryDeviceIDPermissions: 0
+  blackberryMicrophonePermissions: 0
+  blackberryGamepadSupport: 0
+  blackberryBuildId: 0
+  blackberryLandscapeSplashScreen: {fileID: 0}
+  blackberryPortraitSplashScreen: {fileID: 0}
+  blackberrySquareSplashScreen: {fileID: 0}
   tizenProductDescription: 
   tizenProductURL: 
   tizenSigningProfileName: 
@@ -412,6 +430,17 @@ PlayerSettings:
   XboxOne::enus: 1
   stringPropertyNames: []
   vectorPropertyNames: []
+  iOS::VR::enable: 0
+  tvOS::VR::enable: 0
+  Analytics_ServiceEnabled::Analytics_ServiceEnabled: False
+  Build_ServiceEnabled::Build_ServiceEnabled: False
+  Collab_ServiceEnabled::Collab_ServiceEnabled: False
+  ErrorHub_ServiceEnabled::ErrorHub_ServiceEnabled: False
+  Game_Performance_ServiceEnabled::Game_Performance_ServiceEnabled: False
+  Hub_ServiceEnabled::Hub_ServiceEnabled: False
+  Purchasing_ServiceEnabled::Purchasing_ServiceEnabled: False
+  UNet_ServiceEnabled::UNet_ServiceEnabled: False
+  Unity_Ads_ServiceEnabled::Unity_Ads_ServiceEnabled: False
   cloudProjectId: 
   projectName: 
   organizationId: 
