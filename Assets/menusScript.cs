@@ -32,7 +32,7 @@ public class menusScript : MonoBehaviour {
 
     public void startLevel() {
         //Application.LoadLevel(1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void exitGame() {
