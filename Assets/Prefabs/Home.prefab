@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3350664}
   - 136: {fileID: 13660474}
   - 23: {fileID: 2386554}
-  - 114: {fileID: 11488100}
+  - 114: {fileID: 11470866}
   m_Layer: 0
   m_Name: Home
   m_TagString: home
@@ -65,7 +65,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166932}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11488100
+--- !u!114 &11470866
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -73,12 +73,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 166932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c81da1eb7bf7e0408dd3758ac8ff7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  damage: 5
-  health: 100
+  health: 200
 --- !u!136 &13660474
 CapsuleCollider:
   m_ObjectHideFlags: 1

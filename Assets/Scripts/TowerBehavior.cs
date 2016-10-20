@@ -4,22 +4,28 @@ using System.Collections;
 public class TowerBehavior : MonoBehaviour {
 
     // Stats
-    public float range = 15f;
+    public float range = 200f;
     public float damage = 5f;
     public float health = 100f;
+    public float firerate = 1f;     // fire rate in seconds
+    public float spread = 0f;       // Spread of the gun (non laser-like aim)
+    public float projectileSpeed = 100f;
 
     private float idleTime = 0f;
     private float idleTimeout = 2f;
     private GameObject target = null;
 
-	// Use this for initialization
-	void Start () {
-	   
+    // Projectile
+    public Transform projectile;
+
+    // Use this for initialization
+    void Start () {
+        InvokeRepeating("LaunchProjectile", firerate, firerate);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        // The sole purpose of this function is to get a target. Shooting is managed outside.
 	    if(target == null){
 
             // Idle out if we just searched
@@ -46,11 +52,28 @@ public class TowerBehavior : MonoBehaviour {
                 idleTime += idleTimeout;
             }
 
+            // TODO: Take aim
+
             return;
         }
-
-        // TODO shoot code here
-
-
 	}
+
+    // Instantiates and places in the world a projectile directed towards the target.
+    private void LaunchProjectile()
+    {
+        // Shoot ony if there is a target.
+        if (target != null)
+        {
+            ProjectileBehaviour pb = (ProjectileBehaviour)projectile.GetComponent("ProjectileBehaviour");
+            if (pb != null)
+            {
+                pb.damage = damage;   // tower damage transferred to the projectile
+                pb.reach = 2 * range;     // projectile reach set as twice the tower's range
+                pb.speed = projectileSpeed;
+                pb.target = target.transform;
+                pb.parentTagName = gameObject.tag;      
+                Instantiate(projectile, transform.position, Quaternion.identity);
+            }
+        }
+    }
 }
