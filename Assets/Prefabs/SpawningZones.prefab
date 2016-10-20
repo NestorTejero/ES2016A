@@ -56,6 +56,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453092}
+  - 114: {fileID: 11421394}
   m_Layer: 0
   m_Name: SpawningZones
   m_TagString: Untagged
@@ -118,6 +119,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 453092}
   m_RootOrder: 2
+--- !u!114 &11421394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7261a8c17c8cd40bfb6bff734d6a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 176382, guid: ad5c8e3c1ae5e23459693cafb44e53c3, type: 2}
+  spawnTime: 4
+  totalUnits: 20
 --- !u!114 &11421618
 MonoBehaviour:
   m_ObjectHideFlags: 1

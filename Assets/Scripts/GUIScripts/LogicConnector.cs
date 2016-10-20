@@ -33,8 +33,8 @@ public class LogicConnector {
 	}
 
 	public void placeTower(int type) {
-		Debug.Log ("Placing tower of type: " + type);
-	}
+        Debug.Log("Placing tower of type: " + type);
+    }
 
 	public int getTowerCost(int type) {
 		return (_instance.testMode) ? _instance.testTowerCost [type] : _instance.testTowerCost [type];

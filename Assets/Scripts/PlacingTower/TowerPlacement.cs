@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class TowerPlacement : MonoBehaviour {
 
+    public GameObject[] towers; // list of different types of towers (we have only one)
+
     private Transform newTower;
     private GameObject tow;
     private TowerPosition towPos;
@@ -75,6 +77,24 @@ public class TowerPlacement : MonoBehaviour {
         // Instantiate the tower
         tow = Instantiate(go);
         
+        // Adding component to check collision and storing it in towPos variable
+        tow.AddComponent<TowerPosition>();
+        towPos = tow.GetComponent<TowerPosition>();
+
+        // Tower transform variable
+        newTower = tow.transform;
+        // Scaling the tower dimensions (to match the initial towers)
+        newTower.transform.localScale = new Vector3(20, 40, 20);
+    }
+
+    // Instantiating the new tower
+    public void SetItem(int type)
+    {
+        // Boolean to check if we have placed the new tower yet (initially false)
+        isPlaced = false;
+        // Instantiate the tower
+        tow = Instantiate(towers[type]);
+
         // Adding component to check collision and storing it in towPos variable
         tow.AddComponent<TowerPosition>();
         towPos = tow.GetComponent<TowerPosition>();

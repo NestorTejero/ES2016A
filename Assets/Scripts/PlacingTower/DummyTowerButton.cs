@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TowerButton : MonoBehaviour {
+public class DummyTowerButton : MonoBehaviour {
 
     public GameObject[] towers; // list of different types of towers (we have only one)
     private TowerPlacement placement;
