@@ -95,6 +95,7 @@ MonoBehaviour:
   damage: 2.5
   health: 10
   speed: 25
+  moneyValue: 1
   target: {fileID: 0}
   targetTagName: home
 --- !u!135 &13589594
