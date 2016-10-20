@@ -11,7 +11,7 @@ public class HomeBehavior : MonoBehaviour {
         // Take damage after an enemy impact
         if (other.gameObject.tag == "enemy")
         {
-            ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("EnemyBehaviour");
+            EnemyBehaviour pb = (EnemyBehaviour)other.gameObject.GetComponent("EnemyBehaviour");
             TakeDamage(pb.damage);
         }
     }
