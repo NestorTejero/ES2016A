@@ -12,8 +12,9 @@ public class TowerButton {
 	public Boolean Locked;
 	public Boolean ShowCost = true;
 	public int type;
+    public GameObject tower;
 
-	public TowerButton () {}
+    public TowerButton () {}
 
 	public void draw(ScaledRect Position) {
 		if(this.Background != null)
@@ -31,7 +32,10 @@ public class TowerButton {
 			buttonStyle.active.background = this.BackgroundClick as Texture2D;
 
 			if (GUI.Button (Position.getRect (), this.Image, buttonStyle)) {
-                LogicConnector.getInstance ().placeTower (this.type); 
+                              
+                GameObject.FindObjectOfType<TowerPlacement>().SetItem(tower, TowerCost);
+                
+                LogicConnector.getInstance ().placeTower (this.type);
             }
 		}
 

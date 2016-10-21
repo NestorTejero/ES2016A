@@ -6,8 +6,8 @@ using System.Collections;
 public class LogicConnector {
 	public Boolean testMode = false;
 	public int testHealth = 3;
-	public int testCredit = 1200;
-	public int[] testTowerCost = {1000, 2000, 3000};
+	public int testCredit = 500;
+	public int[] testTowerCost = {100, 500, 1000};
 	public float testTime = 60.0f;
 
 	protected static LogicConnector _instance = null;

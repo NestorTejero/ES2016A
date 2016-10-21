@@ -18,8 +18,8 @@ public class TowerBehavior : MonoBehaviour {
     // Projectile
     public Transform projectile;
 
-    // Use this for initialization
-    void Start () {
+    // Use this for initialization (called when tower is placed)
+    public void StartTower () {
         InvokeRepeating("LaunchProjectile", firerate, firerate);
 	}
 	
