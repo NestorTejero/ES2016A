@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - tower
+  - enemy
+  - home
+  - spawn
+  - tower_master
   layers:
   - Default
   - TransparentFX

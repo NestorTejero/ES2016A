@@ -31,8 +31,8 @@ public class TowerButton {
 			buttonStyle.active.background = this.BackgroundClick as Texture2D;
 
 			if (GUI.Button (Position.getRect (), this.Image, buttonStyle)) {
-				LogicConnector.getInstance ().placeTower (this.type);
-			}
+                LogicConnector.getInstance ().placeTower (this.type); 
+            }
 		}
 
 		if (this.ShowCost) {
