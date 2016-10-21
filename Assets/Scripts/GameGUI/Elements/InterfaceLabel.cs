@@ -8,6 +8,7 @@ public class InterfaceLabel {
 	public Color TextColor = new Color(0, 0, 0);
 	public ScaledRect Position = new ScaledRect ();
 	public String Text;
+	public TextAnchor Alignment = TextAnchor.MiddleCenter;
 
 	public InterfaceLabel () {}
 
@@ -15,7 +16,7 @@ public class InterfaceLabel {
 		GUIStyle LabelStyle = new GUIStyle ();
 		LabelStyle.fontSize = (int)(this.FontSize * Position.getXScale());
 		LabelStyle.normal.textColor = this.TextColor;
-		LabelStyle.alignment = TextAnchor.MiddleCenter;
+		LabelStyle.alignment = this.Alignment;
 
 		GUI.Label(this.Position.getRect(), this.Text, LabelStyle);
 	}

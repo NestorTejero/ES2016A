@@ -1,0 +1,48 @@
+﻿using UnityEngine;
+using System;
+using System.Collections;
+
+[Serializable]
+public class InterfaceSettings {
+	public InterfaceContainer Contenedor = new InterfaceContainer();
+	public InterfaceContainer ContenedorBlur = new InterfaceContainer();
+
+	public InterfaceLabel SettingsTitle = new InterfaceLabel ();
+
+	[Header("Controles")]
+	public MenuButton BotonVolver = new MenuButton();
+
+	[Header("Slider preferencias")]
+	public InterfaceSlider VolumenGeneral = new InterfaceSlider ();
+	public InterfaceSlider VolumenMenu = new InterfaceSlider ();
+	public InterfaceSlider VolumenJuego = new InterfaceSlider ();
+
+
+	public InterfaceSettings () {}
+
+	public void Draw () {
+		if (InterfaceState.isInSettings ()) {
+			this.ContenedorBlur.Draw ();
+			this.Contenedor.Draw ();
+			this.SettingsTitle.Draw ();
+
+			if (this.BotonVolver.Draw ()) {
+				InterfaceState.Pause ();
+			}
+
+			this.VolumenGeneral.Value = PlayerPrefs.GetFloat ("VolumenGeneral");
+			float NewVolumenGeneral = this.VolumenGeneral.Draw ();
+			PlayerPrefs.SetFloat ("VolumenGeneral", NewVolumenGeneral);
+
+			this.VolumenMenu.Value = PlayerPrefs.GetFloat ("VolumenMenu");
+			float NewVolumenMenu = this.VolumenMenu.Draw ();
+			PlayerPrefs.SetFloat ("VolumenMenu", NewVolumenMenu);
+
+			this.VolumenJuego.Value = PlayerPrefs.GetFloat ("VolumenJuego");
+			float NewVolumenJuego = this.VolumenJuego.Draw ();
+			PlayerPrefs.SetFloat ("VolumenJuego", NewVolumenJuego);
+		}
+	}
+}
+
+

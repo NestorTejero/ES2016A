@@ -4,6 +4,10 @@ using System.Collections;
 
 [Serializable]
 public class LogicConnector {
+	[Header("Game linking")]
+	public GameObject[] towerObjects;
+
+	[Header("Test utilities")]
 	public Boolean testMode = false;
 	public int testHealth = 3;
 	public int testCredit = 1200;
