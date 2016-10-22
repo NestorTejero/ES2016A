@@ -9,7 +9,9 @@ public class TowerPlacement : MonoBehaviour
     private GameObject tow;
     private TowerPosition towPos;
     private bool isPlaced;
+    private int towerCost;
     public Vector3 scale = new Vector3(10,10,10);
+
 
     // Use this for initialization
     void Start()
@@ -39,13 +41,17 @@ public class TowerPlacement : MonoBehaviour
                 // (height to 0 to place it on the "terrain height 0" and not on the "mountains")
                 // (where we put towers is supposed to be a flat terrain of height 0)
                 newTower.transform.position = new Vector3(point.x, scale.y, point.z);
-
+                
                 // Placing the tower on Click
                 // (need to check newTower collision with other objects, not just other towers)
                 if (Input.GetMouseButtonDown(0) && CanPlace())
                 {
                     // If it is placed no need to update its position again
                     isPlaced = true;
+                    tow.GetComponent<TowerBehavior>().StartTower();
+                    LogicConnector.getInstance().testCredit -= towerCost;
+
+
                 }
             }
 
@@ -72,20 +78,23 @@ public class TowerPlacement : MonoBehaviour
     }
 
     // Instantiating the new tower
-    public void SetItem(GameObject go)
+    public void SetItem(GameObject go, int cost)
     {
         // Boolean to check if we have placed the new tower yet (initially false)
         isPlaced = false;
         // Instantiate the tower
-        tow = Instantiate(go);
+        tow = Instantiate(go);       
 
         // Adding component to check collision and storing it in towPos variable
         tow.AddComponent<TowerPosition>();
         towPos = tow.GetComponent<TowerPosition>();
+        
 
         // Tower transform variable
         newTower = tow.transform;
         // Scaling the tower dimensions (to match the initial towers)
         newTower.transform.localScale = scale;
+        towerCost = cost;
+        
     }
 }

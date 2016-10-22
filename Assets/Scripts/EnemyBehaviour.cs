@@ -7,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float health = 10f;
     public float speed = 50.0f;
 
-    public int moneyValue = 1;
+    public int moneyValue = 10;
     public Transform target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
 
@@ -17,7 +17,6 @@ public class EnemyBehaviour : MonoBehaviour {
         // Beware! Entity is only sensitive to collision whith the player's home and projectiles.
         if (other.gameObject.tag == targetTagName)
         {
-            GameObject.FindObjectOfType<ScoreManager>().LoseLife();
             SelfDestroy();
         }
         if (other.gameObject.tag == "projectile")
@@ -60,6 +59,7 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
+            LogicConnector.getInstance().testCredit += moneyValue;
             SelfDestroy();
         }
     }
@@ -67,15 +67,10 @@ public class EnemyBehaviour : MonoBehaviour {
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
     {
-        GameObject.FindObjectOfType<ScoreManager>().money += moneyValue;
+        
         Destroy(gameObject);
     }
 
-    //
-    void ReachedGoal()
-    {
-        GameObject.FindObjectOfType<ScoreManager>().LoseLife();
-        Destroy(gameObject);
-    }
+
 
 }

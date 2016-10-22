@@ -1,17 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &166932
+--- !u!1 &165944
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 498400}
-  - 33: {fileID: 3350664}
-  - 136: {fileID: 13660474}
-  - 23: {fileID: 2386554}
-  - 114: {fileID: 11470866}
+  - 4: {fileID: 467706}
+  - 33: {fileID: 3314746}
+  - 136: {fileID: 13630302}
+  - 23: {fileID: 2312836}
+  - 114: {fileID: 11444008}
   m_Layer: 0
   m_Name: Home
   m_TagString: home
@@ -19,25 +19,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &498400
+--- !u!4 &467706
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166932}
+  m_GameObject: {fileID: 165944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
-  m_LocalScale: {x: 3, y: 6, z: 3}
+  m_LocalPosition: {x: 0, y: 18, z: 0}
+  m_LocalScale: {x: 9, y: 18, z: 9}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2386554
+--- !u!23 &2312836
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166932}
+  m_GameObject: {fileID: 165944}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,31 +58,33 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3350664
+--- !u!33 &3314746
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166932}
+  m_GameObject: {fileID: 165944}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11470866
+--- !u!114 &11444008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166932}
+  m_GameObject: {fileID: 165944}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c81da1eb7bf7e0408dd3758ac8ff7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
---- !u!136 &13660474
+  maxHealth: 100
+  lifes: 3
+  health: 100
+--- !u!136 &13630302
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166932}
+  m_GameObject: {fileID: 165944}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -99,5 +101,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 166932}
+  m_RootGameObject: {fileID: 165944}
   m_IsPrefabParent: 1

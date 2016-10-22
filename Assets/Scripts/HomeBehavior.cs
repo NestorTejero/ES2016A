@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HomeBehavior : MonoBehaviour {
 
+    public float maxHealth = 100f;
+    public float lifes = 3f;
     public float health = 100f;
 
     // Collision management.
@@ -24,8 +26,11 @@ public class HomeBehavior : MonoBehaviour {
     private void TakeDamage (float damage)
     {
         health = Mathf.Max(0, health - damage);
+        LogicConnector.getInstance().testHealth = (int)(health*lifes/ maxHealth)+1;
         if (health == 0)
         {
+            LogicConnector.getInstance().testHealth = 0;
+            // TO DO: CALL TEAM C METHOD "GAME OVER" (doesnt exist)
             SelfDestroy();
         }
     }
@@ -33,6 +38,7 @@ public class HomeBehavior : MonoBehaviour {
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
     {
+
         Destroy(gameObject);
     }
 }
