@@ -5,7 +5,7 @@ using System.Collections;
 [Serializable]
 public class InterfaceState {
 
-	public enum States {InGame, Paused, Settings};
+	public enum States {InGame, Paused, Settings, GameOver};
 	public States State = InterfaceState.States.InGame;
 
 	protected static InterfaceState _instance = null;
@@ -32,6 +32,11 @@ public class InterfaceState {
 		Time.timeScale = 0;
 	}
 
+	public static void GameOver () {
+		InterfaceState.getInstance ().State = InterfaceState.States.GameOver;
+		Time.timeScale = 0;
+	}
+
 	public static bool isPaused () {
 		return InterfaceState.getInstance ().State == InterfaceState.States.Paused;
 	}
@@ -42,6 +47,10 @@ public class InterfaceState {
 
 	public static bool isInSettings () {
 		return InterfaceState.getInstance ().State == InterfaceState.States.Settings;
+	}
+
+	public static bool isGameOver () {
+		return InterfaceState.getInstance ().State == InterfaceState.States.GameOver;
 	}
 }
 

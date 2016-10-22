@@ -17,7 +17,7 @@ public class InterfaceHealth {
 	public void Draw() {
 		this.Contenedor.Draw ();
 
-		for (int n = 0; n < LogicConnector.getInstance().getHealth(); n++) {
+		for (int n = 0; n < LogicConnector.getHealth(); n++) {
 			ScaledRect ItemPosition = new ScaledRect (this.Contenedor.Dimensions);
 			ItemPosition.rect.x += this.Padding.x + this.Offset.x * n;
 			ItemPosition.rect.y += this.Padding.y + this.Offset.y * n;

@@ -12,7 +12,7 @@ public class InterfaceMoney {
 	public void Draw() {
 		this.Contenedor.Draw ();
 
-		this.Label.SetText (LogicConnector.getInstance ().getCredit ().ToString ());
+		this.Label.SetText (LogicConnector.getCredit ().ToString ());
 		this.Label.Draw ();
 	}
 }

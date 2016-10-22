@@ -26,10 +26,10 @@ public class HomeBehavior : MonoBehaviour {
     private void TakeDamage (float damage)
     {
         health = Mathf.Max(0, health - damage);
-        LogicConnector.getInstance().testHealth = (int)(health*lifes/ maxHealth)+1;
+		LogicConnector.setHealth( (int)(health*lifes/ maxHealth)+1 );
         if (health == 0)
         {
-            LogicConnector.getInstance().testHealth = 0;
+			LogicConnector.setHealth(0);
             // TO DO: CALL TEAM C METHOD "GAME OVER" (doesnt exist)
             SelfDestroy();
         }

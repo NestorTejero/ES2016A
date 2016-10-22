@@ -12,7 +12,7 @@ public class InterfaceTime {
 	public void Draw () {
 		this.Contenedor.Draw ();
 
-		this.Label.SetText (Mathf.Round(LogicConnector.getInstance ().getTime ()).ToString ());
+		this.Label.SetText (Mathf.Round(LogicConnector.getTime ()).ToString ());
 		this.Label.Draw ();
 	}
 }

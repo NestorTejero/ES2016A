@@ -12,7 +12,6 @@ public class TowerButton {
 	public Boolean Locked;
 	public Boolean ShowCost = true;
 	public int type;
-    public GameObject tower;
 
     public TowerButton () {}
 
@@ -20,10 +19,8 @@ public class TowerButton {
 		if(this.Background != null)
 			GUI.DrawTexture(Position.getRect(), this.Background);
 
-		int TowerCost = LogicConnector.getInstance ().getTowerCost (this.type);
-
-
-		if (this.Locked || TowerCost > LogicConnector.getInstance().getCredit()) {
+		int TowerCost = LogicConnector.getTowerCost (this.type);
+		if (this.Locked || TowerCost > LogicConnector.getCredit()) {
 			GUI.DrawTexture(Position.getRect(), this.ImageLocked);
 		} else {
 			GUIStyle buttonStyle = new GUIStyle();
@@ -32,10 +29,7 @@ public class TowerButton {
 			buttonStyle.active.background = this.BackgroundClick as Texture2D;
 
 			if (GUI.Button (Position.getRect (), this.Image, buttonStyle)) {
-                              
-                GameObject.FindObjectOfType<TowerPlacement>().SetItem(tower, TowerCost);
-                
-                LogicConnector.getInstance ().placeTower (this.type);
+                LogicConnector.placeTower (this.type);
             }
 		}
 
