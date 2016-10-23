@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float health = 10f;
     public float speed = 50.0f;
 
+    public int moneyValue = 10;
     public Transform target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
 
@@ -58,6 +59,7 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
+			LogicConnector.increaseCredit(moneyValue);
             SelfDestroy();
         }
     }
@@ -65,6 +67,10 @@ public class EnemyBehaviour : MonoBehaviour {
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
     {
+        
         Destroy(gameObject);
     }
+
+
+
 }

@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class TowerPosition : MonoBehaviour {
+public class TowerPosition : MonoBehaviour
+{
 
     public List<Collider> colliders = new List<Collider>();
 

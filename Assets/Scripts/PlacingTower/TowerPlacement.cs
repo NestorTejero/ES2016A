@@ -2,25 +2,31 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class TowerPlacement : MonoBehaviour {
+public class TowerPlacement : MonoBehaviour
+{
 
     private Transform newTower;
     private GameObject tow;
     private TowerPosition towPos;
     private bool isPlaced;
+    private int towerCost;
+    public Vector3 scale = new Vector3(10,10,10);
+
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
     }
 
     // Update is called once per frame
-    void Update () {
-        
+    void Update()
+    {
+
         // Updating the tower position (and placing it on click)
         if (newTower != null && !isPlaced)
         {
-            
+
             RaycastHit hit = new RaycastHit();
             // Ray that goes from the screen (camera) to the mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -34,23 +40,27 @@ public class TowerPlacement : MonoBehaviour {
                 // Giving the position to the newTower 
                 // (height to 0 to place it on the "terrain height 0" and not on the "mountains")
                 // (where we put towers is supposed to be a flat terrain of height 0)
-                newTower.transform.position = new Vector3(point.x, 0, point.z);
-
+                newTower.transform.position = new Vector3(point.x, scale.y, point.z);
+                
                 // Placing the tower on Click
                 // (need to check newTower collision with other objects, not just other towers)
                 if (Input.GetMouseButtonDown(0) && CanPlace())
                 {
                     // If it is placed no need to update its position again
                     isPlaced = true;
+                    tow.GetComponent<TowerBehavior>().StartTower();
+					LogicConnector.decreaseCredit(towerCost);
+
+
                 }
             }
-            
+
         }
         else
         {
             // already placed (or null)
         }
-	}
+    }
 
     bool CanPlace()
     {
@@ -63,25 +73,28 @@ public class TowerPlacement : MonoBehaviour {
         }
         //Debug.Log("not COLLIDING with Tower");
         return true;
-            
-        
+
+
     }
 
     // Instantiating the new tower
-    public void SetItem(GameObject go)
+    public void SetItem(GameObject go, int cost)
     {
         // Boolean to check if we have placed the new tower yet (initially false)
         isPlaced = false;
         // Instantiate the tower
-        tow = Instantiate(go);
-        
+        tow = Instantiate(go);       
+
         // Adding component to check collision and storing it in towPos variable
         tow.AddComponent<TowerPosition>();
         towPos = tow.GetComponent<TowerPosition>();
+        
 
         // Tower transform variable
         newTower = tow.transform;
         // Scaling the tower dimensions (to match the initial towers)
-        newTower.transform.localScale = new Vector3(20, 40, 20);
+        newTower.transform.localScale = scale;
+        towerCost = cost;
+        
     }
 }
