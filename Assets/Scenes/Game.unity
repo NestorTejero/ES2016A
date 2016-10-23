@@ -484,11 +484,14 @@ MonoBehaviour:
     y: 0
     width: 950
     height: 600
-  LogicConnector:
+  GameMusic: {fileID: 8300000, guid: 96cccf782e6dc7f45b3fe84ac98bd07b, type: 3}
+  MenuMusic: {fileID: 8300000, guid: 14d653804cd17d74c875a9fafc715178, type: 3}
+  GameLogicConnector:
     Health: 3
-    Credit: 1263
-    Time: 60
+    Credit: 500
+    GameTime: 60
     TowerCost: 64000000f4010000e8030000
+    State: 0
     TowerObjects:
     - {fileID: 134950, guid: 3379218c11fdbf7498b730fbb24e79e1, type: 2}
     - {fileID: 134950, guid: 3379218c11fdbf7498b730fbb24e79e1, type: 2}
@@ -497,9 +500,7 @@ MonoBehaviour:
     testHealth: 3
     testCredit: 500
     testTowerCost: 64000000f4010000e8030000
-    testTime: 54.26
-  InterfaceState:
-    State: 0
+    testTime: 60
   ContenedorSuperior:
     Dimensions:
       rect:
@@ -543,7 +544,7 @@ MonoBehaviour:
           y: 15
           width: 100
           height: 30
-      Text: 
+      Text: 500
       Alignment: 4
   InterfazTiempo:
     Contenedor:
@@ -565,7 +566,7 @@ MonoBehaviour:
           y: 15
           width: 100
           height: 30
-      Text: 
+      Text: 60
       Alignment: 4
   ContenedorInferior:
     Dimensions:
@@ -637,109 +638,136 @@ MonoBehaviour:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          x: 350
+          y: 200
+          width: 325
+          height: 200
+      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
     ContenedorBlur:
       Dimensions:
         rect:
           serializedVersion: 2
           x: 0
           y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          width: 950
+          height: 600
+      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
     MenuTitle:
       FontSize: 24
       TextColor: {r: 0, g: 0, b: 0, a: 1}
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 350
+          y: 200
+          width: 325
+          height: 50
+      Text: Menu pausa
       Alignment: 4
     BotonContinuar:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 360
+          y: 250
+          width: 305
+          height: 40
+      Text: Continuar
     BotonOpciones:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 360
+          y: 300
+          width: 305
+          height: 40
+      Text: Opciones
     BotonSalir:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 360
+          y: 350
+          width: 305
+          height: 40
+      Text: Salir
   InterfazSettings:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          x: 300
+          y: 150
+          width: 425
+          height: 300
+      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
     ContenedorBlur:
       Dimensions:
         rect:
           serializedVersion: 2
           x: 0
           y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          width: 950
+          height: 600
+      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
     SettingsTitle:
       FontSize: 24
       TextColor: {r: 0, g: 0, b: 0, a: 1}
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 300
+          y: 150
+          width: 425
+          height: 50
+      Text: Opciones
       Alignment: 4
     BotonVolver:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 655
+          y: 415
+          width: 60
+          height: 25
+      Text: Volver
+    BotonSilenciarGeneral:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 405
+          y: 265
+          width: 100
+          height: 30
+      Text: Silenciar todo
+    BotonSilenciarMenu:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 510
+          y: 265
+          width: 100
+          height: 30
+      Text: Silenciar menu
+    BotonSilenciarJuego:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 615
+          y: 265
+          width: 100
+          height: 30
+      Text: Silenciar juego
     VolumenGeneral:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
-      TextWidth: 0
+          x: 310
+          y: 200
+          width: 405
+          height: 8
+      Text: Volumen general
+      TextWidth: 100
       SliderStyle:
         m_Name: 
         m_Normal:
@@ -875,28 +903,28 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 24
+        FontSize: 12
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 200
+            width: 100
+            height: 8
+        Text: Volumen general
+        Alignment: 3
+      Value: 68.17185
     VolumenMenu:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
-      TextWidth: 0
+          x: 310
+          y: 220
+          width: 405
+          height: 8
+      Text: Volumen menu
+      TextWidth: 100
       SliderStyle:
         m_Name: 
         m_Normal:
@@ -1032,28 +1060,28 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 24
+        FontSize: 12
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 220
+            width: 100
+            height: 8
+        Text: Volumen menu
+        Alignment: 3
+      Value: 19.79854
     VolumenJuego:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
-      TextWidth: 0
+          x: 310
+          y: 240
+          width: 405
+          height: 8
+      Text: Volumen juego
+      TextWidth: 100
       SliderStyle:
         m_Name: 
         m_Normal:
@@ -1189,27 +1217,27 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 24
+        FontSize: 12
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 240
+            width: 100
+            height: 8
+        Text: Volumen juego
+        Alignment: 3
+      Value: 69.93927
   BotonPausa:
     Position:
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-    Text: 
+        x: 630
+        y: 15
+        width: 80
+        height: 30
+    Text: PAUSA
 --- !u!4 &1753859877
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,9 +1260,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 96cccf782e6dc7f45b3fe84ac98bd07b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8242673
   m_Pitch: 1
   Loop: 0
   Mute: 0

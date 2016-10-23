@@ -2,11 +2,13 @@
 using System;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class UserInterface : MonoBehaviour {
 	[Header("General")]
 	public Rect WindowSize = new Rect (0, 0, 950, 600);
-	public LogicConnector LogicConnector = LogicConnector.getInstance();
-	public InterfaceState InterfaceState = InterfaceState.getInstance();
+	public AudioClip GameMusic;
+	public AudioClip MenuMusic;
+	public LogicConnector GameLogicConnector = LogicConnector.getInstance();
 
 	[Header("HUD Superior")]
 	public InterfaceContainer ContenedorSuperior = new InterfaceContainer();
@@ -28,9 +30,18 @@ public class UserInterface : MonoBehaviour {
 	[Header("TEMPORAL - Hasta que se busque sitio")]
 	public MenuButton BotonPausa = new MenuButton ();
 
+	// Private attributes.
+	private AudioSource AudioSource;
 
 	UserInterface() {
 		ScaledRect.WindowSize = this.WindowSize;
+		LogicConnector.ConnectInterface (this);
+	}
+
+	void Awake () {
+		this.AudioSource = GetComponent<AudioSource> ();
+		this.AudioSource.clip = null;
+		LogicConnector.Resume ();
 	}
 
 	void OnGUI() {
@@ -44,7 +55,7 @@ public class UserInterface : MonoBehaviour {
 		InterfazTiempo.Draw ();
 
 		if (BotonPausa.Draw ()) {
-			InterfaceState.Pause ();
+			LogicConnector.Pause ();
 		}
 
 		// Elementos con mas "z index".
@@ -54,17 +65,60 @@ public class UserInterface : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			switch (this.InterfaceState.State) {
-			case InterfaceState.States.InGame:
-				InterfaceState.Pause ();
+			switch (LogicConnector.getInstance ().State) {
+			case LogicConnector.States.InGame:
+				LogicConnector.Pause ();
 				break;
-			case InterfaceState.States.Paused:
-				InterfaceState.Resume ();
+			case LogicConnector.States.Paused:
+				LogicConnector.Resume ();
 				break;
-			case InterfaceState.States.Settings:
-				InterfaceState.Pause ();
+			case LogicConnector.States.Settings:
+				LogicConnector.Pause ();
 				break;
 			}
+		}
+	}
+
+	public void OnPause () {
+		if (this.AudioSource.clip != this.MenuMusic) {
+			this.AudioSource.clip = this.MenuMusic;
+			this.AudioSource.Play ();
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenMenu");
+		}
+	}
+
+	public void OnResume () {
+		if (this.AudioSource.clip != this.GameMusic) {
+			this.AudioSource.clip = this.GameMusic;
+			this.AudioSource.Play ();
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenJuego");
+		}
+
+	}
+
+	public void OnSettings () {
+		if (this.AudioSource.clip != this.MenuMusic) {
+			this.AudioSource.clip = this.MenuMusic;
+			this.AudioSource.Play ();
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenMenu");
+		}
+	}
+
+	public void OnGameOver () {
+
+	}
+
+	public void OnVolumeUpdate (LogicConnector.States State) {
+		switch (State) {
+		case LogicConnector.States.InGame:
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenJuego");
+			break;
+		case LogicConnector.States.Paused:
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenMenu");
+			break;
+		case LogicConnector.States.Settings:
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenMenu");
+			break;
 		}
 	}
 }
