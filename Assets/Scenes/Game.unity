@@ -6916,6 +6916,10 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!4 &671471644 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 467706, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
+  m_PrefabInternal: {fileID: 2142364625}
 --- !u!1 &739976444
 GameObject:
   m_ObjectHideFlags: 0
@@ -11593,10 +11597,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 2146473626}
+  - {fileID: 671471644}
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!1001 &2146473625
+--- !u!1001 &2142364625
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11613,7 +11617,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467706, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -650.2
+      value: -650
       objectReference: {fileID: 0}
     - target: {fileID: 467706, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -11638,7 +11642,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &2146473626 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 467706, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
-  m_PrefabInternal: {fileID: 2146473625}
