@@ -202,7 +202,7 @@ GameObject:
   - 23: {fileID: 252802770}
   m_Layer: 0
   m_Name: Colider
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1967,7 +1967,7 @@ GameObject:
   - 23: {fileID: 639090945}
   m_Layer: 0
   m_Name: Colider (6)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2043,7 +2043,7 @@ GameObject:
   - 23: {fileID: 681709223}
   m_Layer: 0
   m_Name: Colider (1)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2119,7 +2119,7 @@ GameObject:
   - 23: {fileID: 696397346}
   m_Layer: 0
   m_Name: Colider (3)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3760,7 +3760,7 @@ GameObject:
   - 23: {fileID: 730303459}
   m_Layer: 0
   m_Name: Colider (5)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7262,7 +7262,7 @@ GameObject:
   - 23: {fileID: 1267664068}
   m_Layer: 0
   m_Name: Colider (2)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10642,7 +10642,7 @@ GameObject:
   - 23: {fileID: 2052603514}
   m_Layer: 0
   m_Name: Colider (4)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10780,7 +10780,7 @@ GameObject:
   - 23: {fileID: 2129570497}
   m_Layer: 0
   m_Name: Colider (7)
-  m_TagString: Untagged
+  m_TagString: wasteland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

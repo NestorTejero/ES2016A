@@ -8,8 +8,10 @@ public class EnemyBehaviour : MonoBehaviour {
     public float speed = 50.0f;
 
     public int moneyValue = 10;
-    public Transform target;                    // Target position should be that of the player's base.
+    public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
+
+    private NavMeshAgent agent;
 
     // Collision management.
     void OnTriggerEnter(Collider other)
@@ -29,16 +31,20 @@ public class EnemyBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        // Get the Scene's tower
+        // Get the Scene's home
         if (target == null)
-            target = GameObject.FindGameObjectWithTag(targetTagName).transform;
-        Vector3 destination = target.transform.position;
-        destination.y = 0;
+            target = GameObject.FindGameObjectWithTag(targetTagName);
 
-        // Configure navigation agent
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
-        agent.destination = destination;
+        // If home has not been destroyed yet
+        if (target != null)
+        {
+            Vector3 destination = target.transform.position;
+            destination.y = 0;
+            // Configure navigation agent
+            agent = GetComponent<NavMeshAgent>();
+            agent.speed = speed;
+            agent.destination = destination;
+        }  
     }
 
     // Can be modified to add cool effects when the entity takes damage.
