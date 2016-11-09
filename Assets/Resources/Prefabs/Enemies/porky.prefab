@@ -58,6 +58,7 @@ GameObject:
   - 54: {fileID: 5416046}
   - 136: {fileID: 13696252}
   - 114: {fileID: 11465408}
+  - 195: {fileID: 19578402}
   m_Layer: 0
   m_Name: porky
   m_TagString: enemy
@@ -192,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 195, y: 2.0509431, z: 52}
+  m_LocalPosition: {x: 195, y: 0, z: 52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -310,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2.5
   health: 10
-  speed: 25
+  speed: 16
   moneyValue: 10
   target: {fileID: 0}
   targetTagName: home
@@ -356,7 +357,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300000, guid: 4cf02fc5c42e805429350d23893e7d11, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0b3681a7957e3d047b4b4bc7f0c80984, type: 3}
   m_Bones:
   - {fileID: 421378}
   - {fileID: 436954}
@@ -370,6 +371,26 @@ SkinnedMeshRenderer:
     m_Center: {x: -2.4202673, y: 0.103913546, z: -0.53419274}
     m_Extent: {x: 3.2349918, y: 1.7519042, z: 2.050942}
   m_DirtyAABB: 0
+--- !u!195 &19578402
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131514}
+  m_Enabled: 1
+  m_Radius: 3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
