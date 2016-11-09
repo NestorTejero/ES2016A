@@ -5,9 +5,10 @@ using System.Collections.Generic;
 public class TowerPlacement : MonoBehaviour
 {
 
-    private Transform newTower;
+    private Transform newTower;   
     private GameObject tow;
     private TowerPosition towPos;
+    private Color32 colorInicial;
     private bool isPlaced;
     private int towerCost;
     public Vector3 scale = new Vector3(10,10,10);
@@ -47,8 +48,10 @@ public class TowerPlacement : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && CanPlace())
                 {
                     // If it is placed no need to update its position again
+                    newTower.GetComponent<Renderer>().material.color = colorInicial;
+                    Destroy(newTower.GetComponent<TowerPosition>());
                     isPlaced = true;
-                    tow.GetComponent<TowerBehavior>().StartTower();
+                    newTower.GetComponent<TowerBehavior>().StartTower();
 					LogicConnector.decreaseCredit(towerCost);
 
 
@@ -73,8 +76,6 @@ public class TowerPlacement : MonoBehaviour
         }
         //Debug.Log("not COLLIDING with Tower");
         return true;
-
-
     }
 
     // Instantiating the new tower
@@ -83,18 +84,20 @@ public class TowerPlacement : MonoBehaviour
         // Boolean to check if we have placed the new tower yet (initially false)
         isPlaced = false;
         // Instantiate the tower
-        tow = Instantiate(go);       
+        tow = Instantiate(go);
 
         // Adding component to check collision and storing it in towPos variable
         tow.AddComponent<TowerPosition>();
         towPos = tow.GetComponent<TowerPosition>();
-        
+
 
         // Tower transform variable
         newTower = tow.transform;
         // Scaling the tower dimensions (to match the initial towers)
-        newTower.transform.localScale = scale;
+        //newTower.transform.localScale = scale;
         towerCost = cost;
+        colorInicial = newTower.GetComponent<Renderer>().material.color;
+        newTower.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 125);
         
     }
 }

@@ -31,7 +31,7 @@ public class InterfaceSlider {
 		FinalPosition.rect.x += this.TextWidth;
 		FinalPosition.rect.width -= this.TextWidth;
 
-		this.Value = GUI.HorizontalSlider (FinalPosition.getRect (), this.Value, 0.0f, 1.0f);
+		this.Value = GUI.HorizontalSlider (FinalPosition.getRect (), this.Value, 0.0f, 100.0f);
 		return this.Value;
 	}
 }
