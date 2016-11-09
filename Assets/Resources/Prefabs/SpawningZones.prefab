@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 445740}
   - 114: {fileID: 11489742}
+  - 65: {fileID: 6528648}
   m_Layer: 0
   m_Name: Zone_1
   m_TagString: spawn
@@ -40,6 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459524}
   - 114: {fileID: 11451470}
+  - 65: {fileID: 6581848}
   m_Layer: 0
   m_Name: Zone_2
   m_TagString: spawn
@@ -56,6 +58,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 493374}
   - 114: {fileID: 11449536}
+  - 65: {fileID: 6546378}
   m_Layer: 0
   m_Name: Zone_3
   m_TagString: spawn
@@ -118,6 +121,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 421150}
   m_RootOrder: 2
+--- !u!65 &6528648
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40, y: 2, z: 35}
+  m_Center: {x: 0, y: 0, z: 7.5}
+--- !u!65 &6546378
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25, y: 2, z: 30}
+  m_Center: {x: -7.5, y: 0, z: 0}
+--- !u!65 &6581848
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40, y: 2, z: 30}
+  m_Center: {x: 0, y: 0, z: -10}
 --- !u!114 &11449536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 176382, guid: ad5c8e3c1ae5e23459693cafb44e53c3, type: 2}
-  spawnTime: 2
+  spawnTime: 10
   totalUnits: 20
 --- !u!114 &11451470
 MonoBehaviour:
@@ -144,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 176382, guid: ad5c8e3c1ae5e23459693cafb44e53c3, type: 2}
-  spawnTime: 2
+  spawnTime: 10
   totalUnits: 20
 --- !u!114 &11489742
 MonoBehaviour:
@@ -158,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
-  spawnTime: 2
+  spawnTime: 10
   totalUnits: 20
 --- !u!1001 &100100000
 Prefab:

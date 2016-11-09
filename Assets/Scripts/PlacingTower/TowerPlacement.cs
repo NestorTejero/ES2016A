@@ -76,8 +76,6 @@ public class TowerPlacement : MonoBehaviour
         }
         //Debug.Log("not COLLIDING with Tower");
         return true;
-
-
     }
 
     // Instantiating the new tower
