@@ -30,27 +30,15 @@ public class EnemyBehaviour : MonoBehaviour {
     void Start ()
     {
         // Get the Scene's tower
-        target = GameObject.FindGameObjectWithTag(targetTagName).transform;
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (target != null)
-        {
-            /* Enemy just advances towards the player's base. */
-            TransformEnemy();
-        }
-    }
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag(targetTagName).transform;
+        Vector3 destination = target.transform.position;
+        destination.y = 0;
 
-    protected virtual void TransformEnemy()
-    {
-        // Get direction vector to tower
-        Vector3 dir = target.transform.position - this.transform.position;
-        // Dont move on Y axis (Vertical)
-        dir.y = 0;
-        // Move X units per second
-        transform.Translate(dir.normalized * speed * Time.deltaTime);
+        // Configure navigation agent
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
+        agent.destination = destination;
     }
 
     // Can be modified to add cool effects when the entity takes damage.

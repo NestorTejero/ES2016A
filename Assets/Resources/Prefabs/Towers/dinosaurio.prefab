@@ -27,6 +27,7 @@ GameObject:
   - 65: {fileID: 6522666}
   - 137: {fileID: 13719602}
   - 114: {fileID: 11457770}
+  - 208: {fileID: 20892534}
   m_Layer: 0
   m_Name: dinosaurio
   m_TagString: tower
@@ -317,6 +318,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.042605914, y: -0.01910336, z: 0.04100513}
     m_Extent: {x: 0.09762422, y: 0.029103376, z: 0.11728777}
   m_DirtyAABB: 0
+--- !u!208 &20892534
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141678}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 10.5, y: 11, z: 4}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2, y: 4, z: 1}
+  m_TimeToStationary: 0.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
