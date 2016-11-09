@@ -687,10 +687,10 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 300
-          y: 150
+          y: 132
           width: 425
           height: 300
-      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      Background: {fileID: 2800000, guid: a6533a7c687cb8c4e84c0d603b88b799, type: 3}
     ContenedorBlur:
       Dimensions:
         rect:
@@ -699,7 +699,7 @@ MonoBehaviour:
           y: 0
           width: 950
           height: 600
-      Background: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+      Background: {fileID: 2800000, guid: cb27edaed7a07de439ef2c468b1cecc2, type: 3}
     SettingsTitle:
       FontSize: 24
       TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -717,7 +717,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 655
-          y: 415
+          y: 400
           width: 60
           height: 25
       Text: Volver
@@ -726,7 +726,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 405
-          y: 265
+          y: 360
           width: 100
           height: 30
       Text: Silenciar todo
@@ -735,7 +735,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 510
-          y: 265
+          y: 360
           width: 100
           height: 30
       Text: Silenciar menu
@@ -744,7 +744,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 615
-          y: 265
+          y: 360
           width: 100
           height: 30
       Text: Silenciar juego
@@ -753,7 +753,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 310
-          y: 200
+          y: 240
           width: 405
           height: 8
       Text: Volumen general
@@ -790,8 +790,8 @@ MonoBehaviour:
           m_Top: 0
           m_Bottom: 0
         m_Margin:
-          m_Left: 0
-          m_Right: 0
+          m_Left: 10
+          m_Right: 10
           m_Top: 0
           m_Bottom: 0
         m_Padding:
@@ -877,7 +877,7 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 12
+        FontSize: 14
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
@@ -894,7 +894,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 310
-          y: 220
+          y: 280
           width: 405
           height: 8
       Text: Volumen menu
@@ -1018,7 +1018,7 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 12
+        FontSize: 14
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
@@ -1035,7 +1035,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 310
-          y: 240
+          y: 320
           width: 405
           height: 8
       Text: Volumen juego
@@ -1159,7 +1159,7 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 12
+        FontSize: 14
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
@@ -1203,7 +1203,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 96cccf782e6dc7f45b3fe84ac98bd07b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.03861843
+  m_Volume: 0.033091176
   m_Pitch: 1
   Loop: 0
   Mute: 0
