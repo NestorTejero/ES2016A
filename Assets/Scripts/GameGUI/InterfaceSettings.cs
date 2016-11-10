@@ -21,9 +21,6 @@ public class InterfaceSettings {
 
 	[Header("Controles")]
 	public MenuButton BotonVolver = new MenuButton();
-	public MenuButton BotonSilenciarGeneral = new MenuButton();
-	public MenuButton BotonSilenciarMenu = new MenuButton();
-	public MenuButton BotonSilenciarJuego = new MenuButton ();
 
 	[Header("Slider preferencias")]
 	public InterfaceSlider VolumenGeneral = new InterfaceSlider ();
@@ -34,53 +31,26 @@ public class InterfaceSettings {
 	public InterfaceSettings () {}
 
 	public void Draw () {
-		if (LogicConnector.isInSettings ()) {
+		if (InterfaceState.isInSettings ()) {
 			this.ContenedorBlur.Draw ();
 			this.Contenedor.Draw ();
 			this.SettingsTitle.Draw ();
 
 			if (this.BotonVolver.Draw ()) {
-				LogicConnector.Pause ();
+				InterfaceState.Pause ();
 			}
 
-			if (this.BotonSilenciarGeneral.Draw ()) {
-				PlayerPrefs.SetFloat ("VolumenGeneral", 0);
-				LogicConnector.triggerVolumeUpdate ();
-			}
-
-			if (this.BotonSilenciarMenu.Draw ()) {
-				PlayerPrefs.SetFloat ("VolumenMenu", 0);
-				LogicConnector.triggerVolumeUpdate ();
-			}
-
-			if (this.BotonSilenciarJuego.Draw ()) {
-				PlayerPrefs.SetFloat ("VolumenJuego", 0);
-				LogicConnector.triggerVolumeUpdate ();
-			}
-
-			float PreviousVolumenGeneral = PlayerPrefs.GetFloat ("VolumenGeneral");
-			this.VolumenGeneral.Value = PreviousVolumenGeneral;
+			this.VolumenGeneral.Value = PlayerPrefs.GetFloat ("VolumenGeneral");
 			float NewVolumenGeneral = this.VolumenGeneral.Draw ();
 			PlayerPrefs.SetFloat ("VolumenGeneral", NewVolumenGeneral);
 
-
-			float PreviousVolumenMenu = PlayerPrefs.GetFloat ("VolumenMenu");
-			this.VolumenMenu.Value = PreviousVolumenMenu;
+			this.VolumenMenu.Value = PlayerPrefs.GetFloat ("VolumenMenu");
 			float NewVolumenMenu = this.VolumenMenu.Draw ();
 			PlayerPrefs.SetFloat ("VolumenMenu", NewVolumenMenu);
 
-
-			float PreviousVolumenJuego = PlayerPrefs.GetFloat ("VolumenJuego");
-			this.VolumenJuego.Value = PreviousVolumenJuego;
+			this.VolumenJuego.Value = PlayerPrefs.GetFloat ("VolumenJuego");
 			float NewVolumenJuego = this.VolumenJuego.Draw ();
 			PlayerPrefs.SetFloat ("VolumenJuego", NewVolumenJuego);
-
-
-			if (PreviousVolumenGeneral != NewVolumenGeneral ||
-			    PreviousVolumenMenu != NewVolumenMenu ||
-			    PreviousVolumenJuego != NewVolumenJuego) {
-				LogicConnector.triggerVolumeUpdate ();
-			}
 		}
 	}
 }

@@ -4,16 +4,27 @@ using System.Collections.Generic;
 
 public class TowerPosition : MonoBehaviour
 {
+    private string[] detectionList = {"tower", "home", "enemy", "spawn", "wasteland"};
 
     public List<Collider> colliders = new List<Collider>();
 
-    // If tower collides with another object add it to the colliders list
-    // (now only with towers)
+    // If tower collides with another object in the detection list add it to the colliders list
     void OnTriggerEnter(Collider c)
-    {
-        if (c.tag == "tower")
+    {   
+        foreach(string tag in detectionList)
         {
-            colliders.Add(c);
+            if (c.tag == tag)
+                colliders.Add(c);
+        }
+    }
+
+
+    void OnTriggerStay(Collider c)
+    {
+        foreach (string tag in detectionList)
+        {
+            if (c.tag == tag)
+                gameObject.GetComponent<Renderer>().material.color = new Color32(255, 0, 0, 125);
         }
     }
 
@@ -21,9 +32,13 @@ public class TowerPosition : MonoBehaviour
     // (now only with towers)
     void OnTriggerExit(Collider c)
     {
-        if (c.tag == "tower")
+        foreach (string tag in detectionList)
         {
-            colliders.Remove(c);
+            if (c.tag == tag)
+            {
+                colliders.Remove(c);
+                gameObject.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 125);
+            }    
         }
     }
 }

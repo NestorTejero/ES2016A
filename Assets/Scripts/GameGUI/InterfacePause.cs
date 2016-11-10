@@ -28,16 +28,16 @@ public class InterfacePause {
 	public InterfacePause () {}
 
 	public void Draw () {
-		if (LogicConnector.isPaused ()) {
+		if (InterfaceState.isPaused ()) {
 			this.ContenedorBlur.Draw ();
 			this.Contenedor.Draw ();
 			this.MenuTitle.Draw ();
 
 			if (this.BotonContinuar.Draw ()) {
-				LogicConnector.Resume ();
+				InterfaceState.Resume ();
 			}
 			if (this.BotonOpciones.Draw ()) {
-				LogicConnector.Settings ();
+				InterfaceState.Settings ();
 			}
 			if (this.BotonSalir.Draw ()) {
 				Application.Quit ();
