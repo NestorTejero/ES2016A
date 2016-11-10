@@ -98,7 +98,7 @@ public class LogicConnector {
 
 	public static void placeTower(int type) {
 		LogicConnector instance = LogicConnector.getInstance ();
-		GameObject.FindObjectOfType<TowerPlacement>().SetItem(instance.TowerObjects [type], LogicConnector.getTowerCost (type));
+		GameObject.FindObjectOfType<TowerPlacement>().SetItem(instance.TowerObjects [type], type, LogicConnector.getTowerCost (type));
     }
 
 	public static int getTowerCost(int type) {

@@ -11,6 +11,11 @@ public class TowerPlacement : MonoBehaviour
     private Color32 colorInicial;
     private bool isPlaced;
     private int towerCost;
+    public int type_tower; // 0 -> dinosaur / 1 -> tank / 2 -> tower
+    public int height;
+    public int height_dinosaur = 7; // dinosaur height placement
+    public int height_tank = 0; // tank height placement
+    public int height_tower = 4; // tower height placement
     public Vector3 scale = new Vector3(10,10,10);
 
 
@@ -41,7 +46,7 @@ public class TowerPlacement : MonoBehaviour
                 // Giving the position to the newTower 
                 // (height to 0 to place it on the "terrain height 0" and not on the "mountains")
                 // (where we put towers is supposed to be a flat terrain of height 0)
-                newTower.transform.position = new Vector3(point.x, scale.y, point.z);
+                newTower.transform.position = new Vector3(point.x, height, point.z);
                 
                 // Placing the tower on Click
                 // (need to check newTower collision with other objects, not just other towers)
@@ -79,7 +84,7 @@ public class TowerPlacement : MonoBehaviour
     }
 
     // Instantiating the new tower
-    public void SetItem(GameObject go, int cost)
+    public void SetItem(GameObject go, int type, int cost)
     {
         // Boolean to check if we have placed the new tower yet (initially false)
         isPlaced = false;
@@ -95,6 +100,25 @@ public class TowerPlacement : MonoBehaviour
         newTower = tow.transform;
         // Scaling the tower dimensions (to match the initial towers)
         //newTower.transform.localScale = scale;
+
+        // Selecting type of tower
+        type_tower = type;
+
+        // tower height placement depends on the type of tower
+        switch (type)
+        {
+            case 0:
+                height = height_dinosaur;
+                break;
+            case 1:
+                height = height_tank;
+                break;
+            case 2:
+                height = height_tower;
+                break;
+        }
+
+
         towerCost = cost;
         colorInicial = newTower.GetComponent<Renderer>().material.color;
         newTower.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 125);
