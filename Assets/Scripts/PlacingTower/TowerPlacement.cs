@@ -49,7 +49,7 @@ public class TowerPlacement : MonoBehaviour
                     // If it is placed no need to update its position again
                     isPlaced = true;
                     tow.GetComponent<TowerBehavior>().StartTower();
-                    LogicConnector.getInstance().testCredit -= towerCost;
+					LogicConnector.decreaseCredit(towerCost);
 
 
                 }

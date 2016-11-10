@@ -59,7 +59,7 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
-            LogicConnector.getInstance().testCredit += moneyValue;
+			LogicConnector.increaseCredit(moneyValue);
             SelfDestroy();
         }
     }

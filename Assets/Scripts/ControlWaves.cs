@@ -10,7 +10,7 @@ public class ControlWaves : MonoBehaviour
 
     void Start()
     {
-        LogicConnector.getInstance().testTime = 60.0f;
+		LogicConnector.setTime(60.0f);
         SetSpawns = Instantiate(SpawningZones);
 
     }
@@ -34,9 +34,8 @@ public class ControlWaves : MonoBehaviour
         else
         {
 
-            LogicConnector.getInstance().testTime -= Time.deltaTime;
-
-            if (LogicConnector.getInstance().testTime < 0)
+			LogicConnector.decreaseTime(Time.deltaTime);
+			if (LogicConnector.getTime () < 0)
             {
                 Start();
             }
