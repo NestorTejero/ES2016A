@@ -44,7 +44,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a2f77412c3bccd641a6d0770cccab3db, type: 2}
+  - {fileID: 2100000, guid: aa1750480deddff49bdd0ef7986808ae, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -93,6 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e5c0084ca45544cb0908481f3e66ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type_tower: 0
+  height: 0
+  height_dinosaur: 7
+  height_tank: 0
+  height_tower: 4
   scale: {x: 10, y: 10, z: 10}
 --- !u!114 &11476462
 MonoBehaviour:
@@ -105,13 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 200
-  damage: 5
+  range: 150
+  damage: 1
   health: 100
-  firerate: 1
+  firerate: 0.5
   spread: 0
   projectileSpeed: 100
-  projectile: {fileID: 498000, guid: 5f1ce9b380951474d994203ffada65d0, type: 2}
+  projectile: {fileID: 498000, guid: f2af5d7f9c7a66d4fb6a7c50e24386c7, type: 2}
 --- !u!136 &13654350
 CapsuleCollider:
   m_ObjectHideFlags: 1
