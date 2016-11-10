@@ -198,9 +198,9 @@ Light:
   m_GameObject: {fileID: 52839744}
   m_Enabled: 1
   serializedVersion: 6
-  m_Type: 3
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 3
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -218,12 +218,24 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_AreaSize: {x: 15.309549, y: 68.68653}
---- !u!1 &100284208
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &289099402
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289099400}
+  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+--- !u!1 &982832024
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -250,6 +262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
+
   m_Father: {fileID: 1812475457}
   m_RootOrder: 5
 --- !u!108 &100284210
@@ -10538,7 +10551,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1512485315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10739,11 +10752,11 @@ MonoBehaviour:
     Dimensions:
       rect:
         serializedVersion: 2
-        x: 0
+        x: 343
         y: 500
-        width: 950
-        height: 100
-    Background: {fileID: 2800000, guid: b25eaad2c0671a74cad8c1aff6875166, type: 3}
+        width: 250
+        height: 91.2
+    Background: {fileID: 2800000, guid: 89ec20c1ea7d90a458005f2bd31103b8, type: 3}
   InterfazAvatar:
     Contenedor:
       Dimensions:
@@ -10753,25 +10766,25 @@ MonoBehaviour:
           y: 510
           width: 85
           height: 85
-      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
-    Avatar: {fileID: 2800000, guid: bc34a959cfa29a942b6c331e5c5be55b, type: 3}
+      Background: {fileID: 0}
+    Avatar: {fileID: 2800000, guid: 0d5d3ed1ac7e04e4785756b29d917620, type: 3}
     DimensionesAvatar:
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 75
-        height: 75
+        x: 292
+        y: -10
+        width: 83.6
+        height: 91.2
   InterfazTorres:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 520
+          x: 385
           y: 515
           width: 420
           height: 70
-      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      Background: {fileID: 0}
     Torres:
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
@@ -10799,26 +10812,27 @@ MonoBehaviour:
       type: 2
     Offset: {x: 70, y: 0}
     Padding: {x: 5, y: 5}
-    Dimensiones: {x: 60, y: 60}
+    Dimensiones: {x: 50, y: 50}
   InterfazPausa:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          x: 335
+          y: 175
+          width: 350
+          height: 350
+      Background: {fileID: 2800000, guid: a6533a7c687cb8c4e84c0d603b88b799, type: 3}
+
     ContenedorBlur:
       Dimensions:
         rect:
           serializedVersion: 2
           x: 0
           y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          width: 950
+          height: 600
+      Background: {fileID: 2800000, guid: cb27edaed7a07de439ef2c468b1cecc2, type: 3}
     MenuTitle:
       FontSize: 24
       TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -10835,48 +10849,48 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 360
+          y: 280
+          width: 305
+          height: 40
+      Text: Continuar
     BotonOpciones:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 360
+          y: 330
+          width: 305
+          height: 40
+      Text: Opciones
     BotonSalir:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 360
+          y: 380
+          width: 305
+          height: 40
+      Text: Salir
   InterfazSettings:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          x: 300
+          y: 132
+          width: 425
+          height: 300
+      Background: {fileID: 2800000, guid: a6533a7c687cb8c4e84c0d603b88b799, type: 3}
     ContenedorBlur:
       Dimensions:
         rect:
           serializedVersion: 2
           x: 0
           y: 0
-          width: 0
-          height: 0
-      Background: {fileID: 0}
+          width: 950
+          height: 600
+      Background: {fileID: 2800000, guid: cb27edaed7a07de439ef2c468b1cecc2, type: 3}
     SettingsTitle:
       FontSize: 24
       TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -10893,21 +10907,48 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 655
+          y: 400
+          width: 60
+          height: 25
+      Text: Volver
+    BotonSilenciarGeneral:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 405
+          y: 360
+          width: 100
+          height: 30
+      Text: Silenciar todo
+    BotonSilenciarMenu:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 510
+          y: 360
+          width: 100
+          height: 30
+      Text: Silenciar menu
+    BotonSilenciarJuego:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 615
+          y: 360
+          width: 100
+          height: 30
+      Text: Silenciar juego
     VolumenGeneral:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
-      TextWidth: 0
+          x: 310
+          y: 240
+          width: 405
+          height: 8
+      Text: Volumen general
+      TextWidth: 100
       SliderStyle:
         m_Name: 
         m_Normal:
@@ -10940,8 +10981,8 @@ MonoBehaviour:
           m_Top: 0
           m_Bottom: 0
         m_Margin:
-          m_Left: 0
-          m_Right: 0
+          m_Left: 10
+          m_Right: 10
           m_Top: 0
           m_Bottom: 0
         m_Padding:
@@ -11027,7 +11068,7 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 24
+        FontSize: 14
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
@@ -11043,12 +11084,12 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
-      TextWidth: 0
+          x: 310
+          y: 280
+          width: 405
+          height: 8
+      Text: Volumen menu
+      TextWidth: 100
       SliderStyle:
         m_Name: 
         m_Normal:
@@ -11168,7 +11209,7 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 24
+        FontSize: 14
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
@@ -11184,12 +11225,12 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
-      TextWidth: 0
+          x: 310
+          y: 320
+          width: 405
+          height: 8
+      Text: Volumen juego
+      TextWidth: 100
       SliderStyle:
         m_Name: 
         m_Normal:
@@ -11309,7 +11350,7 @@ MonoBehaviour:
         m_StretchWidth: 1
         m_StretchHeight: 0
       Label:
-        FontSize: 24
+        FontSize: 14
         TextColor: {r: 0, g: 0, b: 0, a: 1}
         Position:
           rect:
@@ -11342,7 +11383,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!82 &1753859878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11354,7 +11395,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7501994
   m_Pitch: 1
   Loop: 0
   Mute: 0
