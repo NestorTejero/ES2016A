@@ -562,11 +562,11 @@ MonoBehaviour:
     Dimensions:
       rect:
         serializedVersion: 2
-        x: 0
+        x: 343
         y: 500
-        width: 950
-        height: 100
-    Background: {fileID: 2800000, guid: b25eaad2c0671a74cad8c1aff6875166, type: 3}
+        width: 250
+        height: 91.2
+    Background: {fileID: 2800000, guid: 89ec20c1ea7d90a458005f2bd31103b8, type: 3}
   InterfazAvatar:
     Contenedor:
       Dimensions:
@@ -576,25 +576,25 @@ MonoBehaviour:
           y: 510
           width: 85
           height: 85
-      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
-    Avatar: {fileID: 2800000, guid: bc34a959cfa29a942b6c331e5c5be55b, type: 3}
+      Background: {fileID: 0}
+    Avatar: {fileID: 2800000, guid: 0d5d3ed1ac7e04e4785756b29d917620, type: 3}
     DimensionesAvatar:
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 75
-        height: 75
+        x: 292
+        y: -10
+        width: 83.6
+        height: 91.2
   InterfazTorres:
     Contenedor:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 520
+          x: 385
           y: 515
           width: 420
           height: 70
-      Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      Background: {fileID: 0}
     Torres:
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
@@ -622,7 +622,7 @@ MonoBehaviour:
       type: 2
     Offset: {x: 70, y: 0}
     Padding: {x: 5, y: 5}
-    Dimensiones: {x: 60, y: 60}
+    Dimensiones: {x: 50, y: 50}
   InterfazPausa:
     Contenedor:
       Dimensions:
@@ -1203,7 +1203,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 96cccf782e6dc7f45b3fe84ac98bd07b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.033091176
+  m_Volume: 0.7501994
   m_Pitch: 1
   Loop: 0
   Mute: 0
