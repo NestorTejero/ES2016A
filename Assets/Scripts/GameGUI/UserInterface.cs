@@ -34,8 +34,6 @@ public class UserInterface : MonoBehaviour {
 	private AudioSource AudioSource;
 
 	UserInterface() {
-    
-    UserInterface() {
 		ScaledRect.WindowSize = this.WindowSize;
 		LogicConnector.ConnectInterface (this);
 	}
