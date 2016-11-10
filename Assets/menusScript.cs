@@ -6,17 +6,35 @@ using UnityEngine.SceneManagement;
 public class menusScript : MonoBehaviour {
 
     public Canvas quitMenu;
+    public Canvas MenuConfiguration;
     public Button startText;
     public Button endText;
+    public Button configurationText;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip MenuPrincipalMusic;
+    private UserInterface InterfaceAudioSettings;
+    private AudioSource AudioSource;
+    private AudioSource AudioSourceGame;
+    // Use this for initialization
+    void Start () {
         quitMenu = quitMenu.GetComponent<Canvas>();
+        MenuConfiguration = MenuConfiguration.GetComponent<Canvas>();
         startText = startText.GetComponent<Button>();
         endText = endText.GetComponent<Button>();
+        configurationText = configurationText.GetComponent<Button>();
         quitMenu.enabled = false;
+        MenuConfiguration.enabled = false;
+        PlayAudio();
+    }
+
+    void Awake()
+    {
+        InterfaceAudioSettings = GetComponent<UserInterface>();
+        AudioSource = GetComponent<AudioSource>();
+        AudioSourceGame = new AudioSource();
+        PlayAudio();
         
-	}
+    }
 
     public void ExitPress() {
         quitMenu.enabled = true;
@@ -24,15 +42,57 @@ public class menusScript : MonoBehaviour {
         endText.enabled = false;
     }
 
+    public void MenuConfig()
+    {
+        MenuConfiguration.enabled = true;
+        startText.enabled = false;
+        endText.enabled = false;
+    }
+
+    public void MuteSound()
+    {
+        if (AudioSource.mute == false)
+        {
+            AudioSource.mute = true;
+        }
+        if (AudioListener.volume != 0.0F)
+        {
+            AudioListener.volume = 0.0F;
+        }
+    }
+
     public void NoPress() {
-        quitMenu.enabled = false;
+
+        if (quitMenu.enabled == true)
+        {
+            quitMenu.enabled = false;
+        }
+
+        if (MenuConfiguration.enabled==true)
+        {
+            MenuConfiguration.enabled = false;
+        }
+
         startText.enabled = true;
         endText.enabled = true;
     }
 
+    public void UnMute()
+    {
+        if (AudioSource.mute == true)
+        {
+            AudioSource.mute = false;
+        }
+        if (AudioListener.volume == 0.0F)
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+        }
+    }
+
     public void startLevel() {
-        //Application.LoadLevel(1);
-        SceneManager.LoadScene(3);
+        Scene sc=SceneManager.GetActiveScene();
+        int numSceneActive = sc.buildIndex;
+        SceneManager.LoadScene(numSceneActive+1);
     }
 
     public void exitGame() {
@@ -43,4 +103,10 @@ public class menusScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void PlayAudio()
+    {
+        AudioSource.Play();
+        AudioSource.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+    }
 }
