@@ -24,7 +24,7 @@ public class DummyTowerButton : MonoBehaviour {
         // Calling method from TowerPlacement, where we give the functionality
         if (GUI.Button(new Rect(Screen.width / 10, Screen.height / 10, 100, 30), towers[0].name))
         {
-            placement.SetItem(towers[0], 0);
+            placement.SetItem(towers[0], 0, 0);
         }
 
         // DESTROYER BUTTON!!!
