@@ -12,6 +12,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public string targetTagName = "home";       // Player tag. 
 
     private NavMeshAgent agent;
+	private Animator anim;
+
 
     // Collision management.
     void OnTriggerEnter(Collider other)
@@ -31,6 +33,9 @@ public class EnemyBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+
+		anim = GetComponent<Animator> ();
+
         // Get the Scene's home
         if (target == null)
             target = GameObject.FindGameObjectWithTag(targetTagName);
@@ -45,6 +50,7 @@ public class EnemyBehaviour : MonoBehaviour {
             agent.speed = speed;
             agent.destination = destination;
         }  
+
     }
 
     // Can be modified to add cool effects when the entity takes damage.
