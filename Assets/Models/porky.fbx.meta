@@ -1,17 +1,42 @@
 fileFormatVersion: 2
-guid: 308c1cb93418a104abfcfda7792681d0
-timeCreated: 1476298174
+guid: e3d939a57c5783f4790402f1eb726434
+timeCreated: 1478863321
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
-    7400000: Default Take
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.001_end
+    100008: Bone.002
+    100010: Bone.002_end
+    100012: Bone.003
+    100014: Bone.003_end
+    100016: Bone.004
+    100018: Bone.004_end
+    100020: Bone.005
+    100022: Bone.005_end
+    100024: //RootNode
+    100026: Sphere.000
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.001_end
+    400008: Bone.002
+    400010: Bone.002_end
+    400012: Bone.003
+    400014: Bone.003_end
+    400016: Bone.004
+    400018: Bone.004_end
+    400020: Bone.005
+    400022: Bone.005_end
+    400024: //RootNode
+    400026: Sphere.000
+    4300000: Sphere.000
+    7400000: Armature|walk
     9500000: //RootNode
+    13700000: Sphere.000
   materials:
     importMaterials: 1
     materialName: 0

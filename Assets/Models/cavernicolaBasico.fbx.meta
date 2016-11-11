@@ -12,6 +12,29 @@ ModelImporter:
     100008: Point.002
     100010: Point.003
     100012: Sphere
+    100014: Bone
+    100016: Bone.001
+    100018: Bone.002
+    100020: Bone.003
+    100022: Bone.004
+    100024: Bone.004_end
+    100026: Bone.006
+    100028: Bone.007
+    100030: Bone.008
+    100032: Bone.009
+    100034: Bone.009_end
+    100036: Bone.010
+    100038: Bone.011
+    100040: Bone.012
+    100042: Bone.013
+    100044: Bone.014
+    100046: Bone.014_end
+    100048: Bone.015
+    100050: Bone.016
+    100052: Bone.016_end
+    100054: Bone_end
+    100056: cavernicolabasico
+    100058: cavernicolabasicoArmature
     400000: Camera
     400002: //RootNode
     400004: Point
@@ -19,9 +42,35 @@ ModelImporter:
     400008: Point.002
     400010: Point.003
     400012: Sphere
+    400014: Bone
+    400016: Bone.001
+    400018: Bone.002
+    400020: Bone.003
+    400022: Bone.004
+    400024: Bone.004_end
+    400026: Bone.006
+    400028: Bone.007
+    400030: Bone.008
+    400032: Bone.009
+    400034: Bone.009_end
+    400036: Bone.010
+    400038: Bone.011
+    400040: Bone.012
+    400042: Bone.013
+    400044: Bone.014
+    400046: Bone.014_end
+    400048: Bone.015
+    400050: Bone.016
+    400052: Bone.016_end
+    400054: Bone_end
+    400056: cavernicolabasico
+    400058: cavernicolabasicoArmature
     2300000: Sphere
+    2300002: cavernicolabasico
     3300000: Sphere
+    3300002: cavernicolabasico
     4300000: Sphere
+    4300002: cavernicolabasico
   materials:
     importMaterials: 1
     materialName: 0

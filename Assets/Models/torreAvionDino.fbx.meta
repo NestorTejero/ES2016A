@@ -1,15 +1,47 @@
 fileFormatVersion: 2
-guid: bf95e7b5b2159954e9b968a78c9f2a92
-timeCreated: 1478890415
+guid: e93bb3757807f0944a98764efb112ec8
+timeCreated: 1478863321
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Colon Statue
+    100000: Camera
+    100002: Cube
+    100004: cubo derecha
+    100006: cuboizquierda
+    100008: Lamp
+    100010: Plane
+    100012: Plane.001
+    100014: Plane.002
+    100016: //RootNode
+    400000: Camera
+    400002: Cube
+    400004: cubo derecha
+    400006: cuboizquierda
+    400008: Lamp
+    400010: Plane
+    400012: Plane.001
+    400014: Plane.002
+    400016: //RootNode
+    2300000: Cube
+    2300002: cubo derecha
+    2300004: cuboizquierda
+    2300006: Plane
+    2300008: Plane.001
+    2300010: Plane.002
+    3300000: Cube
+    3300002: cubo derecha
+    3300004: cuboizquierda
+    3300006: Plane
+    3300008: Plane.001
+    3300010: Plane.002
+    4300000: Plane
+    4300002: Plane.001
+    4300004: Cube
+    4300006: Plane.002
+    4300008: cuboizquierda
+    4300010: cubo derecha
+    7400000: Cube|Disparo
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -40,7 +72,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
