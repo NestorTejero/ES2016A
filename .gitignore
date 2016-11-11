@@ -29,6 +29,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+#Blender generated files
+*.blend1
+
 ============
 OS generated
 ============
