@@ -84,7 +84,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: 0.16666667
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 6e9041583a4d8da418809058487df253, type: 2}
 --- !u!1 &26545080
 GameObject:
   m_ObjectHideFlags: 0
@@ -10576,7 +10576,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawningZones: {fileID: 143804, guid: 0ee0903a2720df244ba2e91584468bb5, type: 2}
   SetSpawns: {fileID: 0}
-  nextEnemy: {fileID: 0}
 --- !u!4 &1512485314
 Transform:
   m_ObjectHideFlags: 0

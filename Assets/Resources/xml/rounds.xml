@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RoundCollection>
+	<Rounds>
+		<Round id="1">
+			<name>GordoAtacaYCamina</name>
+			<damage>2.5</damage>
+			<health>10.0</health>
+			<speed>5.0</speed>
+			<money>10</money>
+			<amount>20</amount>
+			<spawnTime>2.0</spawnTime>
+		</Round>
+		<Round id="2">
+			<name>porky</name>
+			<damage>2.5</damage>
+			<health>12.5</health>
+			<speed>5.0</speed>
+			<money>15</money>
+			<amount>20</amount>
+			<spawnTime>2.0</spawnTime>
+		</Round>
+	</Rounds>
+</RoundCollection>
+		

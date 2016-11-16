@@ -3,11 +3,11 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
     // STATS
-    public float damage = 2.5f;
-    public float health = 10f;
-    public float speed = 50.0f;
+    public float damage;
+    public float health;
+    public float speed;
+    public int moneyValue;
 
-    public int moneyValue = 10;
     public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
 
