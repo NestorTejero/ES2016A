@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class TowerDeletion : MonoBehaviour
 {
     // Tower deletion stats
-    public float paybackRate = 0.25f;
+    public float paybackRate = 0.25f;   // controls how much credit is obtained from deleting a tower
     // Tower stats
     private int towerCost;
     private string tag = "tower";
@@ -29,23 +29,26 @@ public class TowerDeletion : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "tower")
             {
-                tower = hit.transform.gameObject;
+                tower = hit.transform.gameObject;       // get selection if game object is a tower
             }
             if (Input.GetMouseButtonDown(0) && tower != null)
-                RemoveTower();
+            {
+                RemoveTower(tower);
+                tower = null;           // clear selection
+                enabled = false;        // disable button 
+            }           
         }   
     }
 
-    private void RemoveTower()
+    // Destroy given game object if it has tower behavior component. Credit increased.
+    public void removeTower(GameObject go)
     {
-        TowerBehavior tb = tower.GetComponent<TowerBehavior>();
+        TowerBehavior tb = go.GetComponent<TowerBehavior>();
         if (tb != null)
         {
             LogicConnector.increaseCredit( (int) (tb.cost * paybackRate));
-        }
-        Destroy(tower);
-        tower = null;
-        enabled = false;
+            Destroy(tower);
+        }    
     }
 }
 
