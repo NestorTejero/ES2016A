@@ -59,6 +59,8 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
+            // Uncomment in dev integration (Team C did a new logic connector)
+            //LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() -= 1);
 			LogicConnector.increaseCredit(moneyValue);
             SelfDestroy();
         }
@@ -66,8 +68,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
-    {
-        
+    {       
         Destroy(gameObject);
     }
 

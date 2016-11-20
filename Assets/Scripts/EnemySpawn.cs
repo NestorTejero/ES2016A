@@ -33,8 +33,7 @@ public class EnemySpawn : MonoBehaviour
         enemyStats.moneyValue = getMoney();
 
         Instantiate(Enemy);
-        
-        
+             
         totalUnits -= 1;
     }
 

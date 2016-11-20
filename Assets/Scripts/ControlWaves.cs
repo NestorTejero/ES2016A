@@ -11,51 +11,73 @@ public class ControlWaves : MonoBehaviour
     public GameObject SpawningZones;
     public GameObject SetSpawns;
     private GameObject nextEnemy;
-    private XmlNodeList nodeList;
-    private int totalRounds, currentRound;
+    private XmlNode root;
+    private XmlNodeList roundList,enemyList;
+    private int totalRounds, currentRound, totalEnemies, currentEnemy;
+
 
     void Start()
     {
 
         // Read xml document and get rounds info
         XmlDocument newXml = new XmlDocument();
-        newXml.Load(Application.dataPath + "/Resources/xml/rounds.xml");
+        newXml.Load(Application.dataPath + "/Resources/Xml/rounds.xml");
 
-        XmlNode root = newXml.DocumentElement;
+        root = newXml.DocumentElement;
         
-        nodeList = root.SelectNodes("(Rounds/Round)");
+        roundList = root.SelectNodes("(Rounds/Round)");       
+    
+        totalRounds = roundList.Count;
+        currentRound = 0;
 
-        totalRounds = nodeList.Count;
-        currentRound = 1;
         LogicConnector.setTime(30.0f);
-       
 
     }
 
     void NextRound()
     {
 
-        LogicConnector.setTime(30.0f);      
+        // Initialize round stats
+        // Uncomment in dev integration (Team C did a new logic connector)
+        //InterfaceState.Battling();
+        LogicConnector.setTime(30.0f);
+        currentRound += 1;                                  
+        enemyList = root.SelectNodes("(Rounds/Round["+currentRound+"]/Enemy)");
+        totalEnemies = 0;
+        currentEnemy = 0;
+        for (int i = 0; i < enemyList.Count; i++)
+            totalEnemies += Int32.Parse(enemyList[i]["amount"].InnerText);
+        totalEnemies *= ((GameObject)Resources.Load("Prefabs/SpawningZones", typeof(GameObject))).transform.childCount;
+        // Uncomment in dev integration (Team C did a new logic connector)
+        //LogicConnector.setTotalEnemies(totalEnemies);
+        //LogicConnector.setEnemiesLeft(totalEnemies);  
+
+
+    }
+
+    void NextEnemy()
+    {
+
         SetSpawns = Instantiate(SpawningZones);
 
-        // Put enemy into spawn zones
-        nextEnemy = (GameObject)Resources.Load("Prefabs/Enemies/" + nodeList[currentRound - 1]["name"].InnerText, typeof(GameObject));
+        // Put enemies into spawn zones
         foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("spawn"))
         {
-            // Initialize round stats
+            // Initialize enemy stats
             EnemySpawn Enemy = spawn.GetComponent<EnemySpawn>();
-            Enemy.setEnemy(nextEnemy);
-            Enemy.setTotalUnits(Int32.Parse(nodeList[currentRound - 1]["amount"].InnerText));
-            Enemy.setSpawnTime(float.Parse(nodeList[currentRound - 1]["spawnTime"].InnerText));
-            Enemy.setDamage(float.Parse(nodeList[currentRound - 1]["damage"].InnerText));
-            Enemy.setHealth(float.Parse(nodeList[currentRound - 1]["health"].InnerText));
-            Enemy.setSpeed(float.Parse(nodeList[currentRound - 1]["speed"].InnerText));
-            Enemy.setMoney(Int32.Parse(nodeList[currentRound - 1]["money"].InnerText));
-            
+            Enemy.setEnemy((GameObject)Resources.Load("Prefabs/Enemies/" + enemyList[currentEnemy]["name"].InnerText, typeof(GameObject)));
+            Enemy.setTotalUnits(Int32.Parse(enemyList[currentEnemy]["amount"].InnerText));
+            Enemy.setSpawnTime(float.Parse(enemyList[currentEnemy]["spawnTime"].InnerText));
+            Enemy.setDamage(float.Parse(enemyList[currentEnemy]["damage"].InnerText));
+            Enemy.setHealth(float.Parse(enemyList[currentEnemy]["health"].InnerText));
+            Enemy.setSpeed(float.Parse(enemyList[currentEnemy]["speed"].InnerText));
+            Enemy.setMoney(Int32.Parse(enemyList[currentEnemy]["money"].InnerText));
 
         }
-        
-        currentRound += 1;
+
+        currentEnemy += 1;
+
+
 
     }
 
@@ -65,31 +87,33 @@ public class ControlWaves : MonoBehaviour
         // After kill the wave, destroy spawn zones and start a count
         if (SetSpawns)
         {
-            if (!GameObject.FindGameObjectWithTag("spawn"))
-            {
-                if (!GameObject.FindGameObjectWithTag("enemy"))
-                {
-                    Destroy(SetSpawns);
+            if (!GameObject.FindGameObjectWithTag("spawn"))                         
+                Destroy(SetSpawns);
 
-                }
-            }
         }
-
-        // Check if you completed all rounds
-        else if (currentRound > totalRounds)
-            Debug.Log("YOU WIN!");
-
-        // After 60 seconds, start a new wave
         else
         {
 
-			LogicConnector.decreaseTime(Time.deltaTime);
-			if (LogicConnector.getTime () < 0)
-            {
-                
+            // Start next round
+            if (LogicConnector.getTime() < 0)
                 NextRound();
 
-            }
+            // Check if round finished
+            else if (enemyList != null && currentEnemy < enemyList.Count)
+                NextEnemy();
+
+            // Condition to win
+            else if (currentRound == totalRounds)
+                Debug.Log("YOU WIN!");
+          
+            // Uncomment in dev integration (Team C did a new logic connector)
+            //else if (InterfaceState.isInBattling())
+            //    InterfaceState.Break();
+
+            // After N seconds, start a new wave
+            else if (!GameObject.FindGameObjectWithTag("enemy"))
+                LogicConnector.decreaseTime(Time.deltaTime);
+
         }
 
     }
