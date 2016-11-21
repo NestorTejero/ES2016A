@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class TowerBehavior : MonoBehaviour
@@ -52,7 +52,7 @@ public class TowerBehavior : MonoBehaviour
 			float destAngle = Vector3.Angle (transform.forward, dir);
 			float deltaAngle = (destAngle - currAngle);
 
-			transform.rotation.eulerAngles.Set(0, currAngle + deltaAngle * Time.deltaTime, 0);
+			transform.LookAt (target.transform);
 		
 		}
 	}
