@@ -54,10 +54,12 @@ public class menusScript : MonoBehaviour {
         if (AudioSource.mute == false)
         {
             AudioSource.mute = true;
+            AudioSource.Stop();
         }
         if (AudioListener.volume != 0.0F)
         {
             AudioListener.volume = 0.0F;
+            InterfaceAudioSettings.AudioSource.Stop();
         }
     }
 
@@ -82,17 +84,20 @@ public class menusScript : MonoBehaviour {
         if (AudioSource.mute == true)
         {
             AudioSource.mute = false;
+            PlayAudio();
         }
         if (AudioListener.volume == 0.0F)
         {
-            AudioListener.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+            AudioListener.volume = 1.5F; //PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
         }
     }
 
     public void startLevel() {
-        Scene sc=SceneManager.GetActiveScene();
-        int numSceneActive = sc.buildIndex;
-        SceneManager.LoadScene(numSceneActive+1);
+        //Scene sc=SceneManager.GetActiveScene();
+        //int numSceneActive = sc.buildIndex;
+        //SceneManager.LoadScene(numSceneActive+1);
+        AudioSource.Stop();
+        SceneManager.LoadScene("Game");
     }
 
     public void exitGame() {

@@ -35,6 +35,8 @@ ModelImporter:
     100054: Bone_end
     100056: cavernicolabasico
     100058: cavernicolabasicoArmature
+    100060: enemy-cavernicola
+    100062: enemy-cavernicolaArmature
     400000: Camera
     400002: //RootNode
     400004: Point
@@ -65,12 +67,17 @@ ModelImporter:
     400054: Bone_end
     400056: cavernicolabasico
     400058: cavernicolabasicoArmature
+    400060: enemy-cavernicola
+    400062: enemy-cavernicolaArmature
     2300000: Sphere
     2300002: cavernicolabasico
+    2300004: enemy-cavernicola
     3300000: Sphere
     3300002: cavernicolabasico
+    3300004: enemy-cavernicola
     4300000: Sphere
     4300002: cavernicolabasico
+    4300004: enemy-cavernicola
   materials:
     importMaterials: 1
     materialName: 0

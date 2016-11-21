@@ -11,6 +11,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UserInterface : MonoBehaviour {
 	[Header("General")]
@@ -38,12 +39,20 @@ public class UserInterface : MonoBehaviour {
 	[Header("TEMPORAL - Hasta que se busque sitio")]
 	public MenuButton BotonPausa = new MenuButton ();
 
-
-	UserInterface() {
+    public AudioClip GameMusic;
+    public AudioSource AudioSource;
+    
+    UserInterface() {
 		ScaledRect.WindowSize = this.WindowSize;
 	}
 
-	void OnGUI() {
+    void Awake()
+    {
+        AudioSource = GetComponent<AudioSource>();
+        PlayAudio();
+    }
+
+    void OnGUI() {
 		// Interfaces del juego.
 		ContenedorSuperior.Draw ();
 		ContenedorInferior.Draw ();
@@ -60,7 +69,7 @@ public class UserInterface : MonoBehaviour {
 		// Elementos con mas "z index".
 		InterfazPausa.Draw ();
 		InterfazSettings.Draw ();
-	}
+    }
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
@@ -76,5 +85,17 @@ public class UserInterface : MonoBehaviour {
 				break;
 			}
 		}
+        
+        if (InterfaceState.isGameOver())
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 	}
+
+    public void PlayAudio()
+    {
+        AudioSource.Play();
+        AudioSource.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+    }
+
 }
