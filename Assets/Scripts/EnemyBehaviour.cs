@@ -3,13 +3,17 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
     // STATS
-    public float damage = 2.5f;
-    public float health = 10f;
-    public float speed = 50.0f;
+    public float damage;
+    public float health;
+    public float speed;
+    public int moneyValue;
 
-    public int moneyValue = 10;
-    public Transform target;                    // Target position should be that of the player's base.
+    public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
+
+    private NavMeshAgent agent;
+	private Animator anim;
+
 
     // Collision management.
     void OnTriggerEnter(Collider other)
@@ -29,28 +33,24 @@ public class EnemyBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        // Get the Scene's tower
-        target = GameObject.FindGameObjectWithTag(targetTagName).transform;
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
+
+		anim = GetComponent<Animator> ();
+
+        // Get the Scene's home
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag(targetTagName);
+
+        // If home has not been destroyed yet
         if (target != null)
         {
-            /* Enemy just advances towards the player's base. */
-            TransformEnemy();
-        }
-    }
+            Vector3 destination = target.transform.position;
+            destination.y = 0;
+            // Configure navigation agent
+            agent = GetComponent<NavMeshAgent>();
+            agent.speed = speed;
+            agent.destination = destination;
+        }  
 
-    protected virtual void TransformEnemy()
-    {
-        // Get direction vector to tower
-        Vector3 dir = target.transform.position - this.transform.position;
-        // Dont move on Y axis (Vertical)
-        dir.y = 0;
-        // Move X units per second
-        transform.Translate(dir.normalized * speed * Time.deltaTime);
     }
 
     // Can be modified to add cool effects when the entity takes damage.
@@ -59,6 +59,8 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
+            // Uncomment in dev integration (Team C did a new logic connector)
+            //LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() -= 1);
 			LogicConnector.increaseCredit(moneyValue);
             SelfDestroy();
         }
@@ -66,8 +68,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
-    {
-        
+    {       
         Destroy(gameObject);
     }
 

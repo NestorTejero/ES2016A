@@ -9,6 +9,10 @@ TagManager:
   - home
   - spawn
   - tower_master
+  - terrain
+  - projectile
+  - limit
+  - wasteland
   layers:
   - Default
   - TransparentFX
