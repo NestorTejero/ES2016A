@@ -50,7 +50,8 @@ public class ControlWaves : MonoBehaviour
         totalEnemies *= ((GameObject)Resources.Load("Prefabs/SpawningZones", typeof(GameObject))).transform.childCount;
         // Uncomment in dev integration (Team C did a new logic connector)
         //LogicConnector.setTotalEnemies(totalEnemies);
-        //LogicConnector.setEnemiesLeft(totalEnemies);  
+        //LogicConnector.setEnemiesLeft(totalEnemies);
+        //LogicConnector.setRoundNumber(currentRound); <-- CHECK IF METHOD NAME IS CORRECT  
 
 
     }
@@ -84,7 +85,7 @@ public class ControlWaves : MonoBehaviour
     void Update()
     {
 
-        // After kill the wave, destroy spawn zones and start a count
+        // After kill the wave, destroy spawn zones
         if (SetSpawns)
         {
             if (!GameObject.FindGameObjectWithTag("spawn"))                         
