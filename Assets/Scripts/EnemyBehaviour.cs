@@ -3,11 +3,11 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
     // STATS
-    public float damage = 2.5f;
-    public float health = 10f;
-    public float speed = 50.0f;
+    public float damage;
+    public float health;
+    public float speed;
+    public int moneyValue;
 
-    public int moneyValue = 10;
     public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
 
@@ -59,6 +59,8 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
+            // Uncomment in dev integration (Team C did a new logic connector)
+            //LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() -= 1);
 			LogicConnector.increaseCredit(moneyValue);
             SelfDestroy();
         }
@@ -66,8 +68,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
-    {
-        
+    {       
         Destroy(gameObject);
     }
 
