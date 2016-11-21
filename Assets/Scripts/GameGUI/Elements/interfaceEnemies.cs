@@ -13,19 +13,21 @@ using System;
 using System.Collections;
 
 [Serializable]
-public class InterfaceTime {
+public class interfaceEnemies {
 	public InterfaceContainer Contenedor = new InterfaceContainer ();
-	public InterfaceLabel Label = new InterfaceLabel ();
+	public enemiesLeftLabel Label = new enemiesLeftLabel ();
+	public totalEnemiesLabel Label2 = new totalEnemiesLabel ();
 
-	public InterfaceTime () {}
+	public interfaceEnemies () {}
 
 	public void Draw () {
-
-		if ((InterfaceState.isInGame()) && (InterfaceState.isInBreak ())) {
+		if ((InterfaceState.isInGame()) && (InterfaceState.isInBattling ())) {
 			this.Contenedor.Draw ();
 
-			this.Label.SetText (Mathf.Round(LogicConnector.getTime ()).ToString ());
+			this.Label.SetText (LogicConnector.getEnemiesLeft().ToString () + "/");
 			this.Label.Draw ();
+			this.Label2.SetText (LogicConnector.getTotalEnemies().ToString ());
+			this.Label2.Draw ();
 		}
 
 	}

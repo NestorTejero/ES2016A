@@ -13,21 +13,25 @@ using System;
 using System.Collections;
 
 [Serializable]
-public class InterfaceTime {
-	public InterfaceContainer Contenedor = new InterfaceContainer ();
-	public InterfaceLabel Label = new InterfaceLabel ();
+public class totalEnemiesLabel {
+	public int FontSize = 24;
+	public Color TextColor = new Color(0, 0, 0);
+	public ScaledRect Position = new ScaledRect ();
+	public String Text;
+	public TextAnchor Alignment = TextAnchor.MiddleCenter;
 
-	public InterfaceTime () {}
+	public totalEnemiesLabel () {}
 
 	public void Draw () {
+		GUIStyle LabelStyle = new GUIStyle ();
+		LabelStyle.fontSize = (int)(this.FontSize * Position.getXScale());
+		LabelStyle.normal.textColor = this.TextColor;
+		LabelStyle.alignment = this.Alignment;
 
-		if ((InterfaceState.isInGame()) && (InterfaceState.isInBreak ())) {
-			this.Contenedor.Draw ();
+		GUI.Label(this.Position.getRect(), this.Text, LabelStyle);
+	}
 
-			this.Label.SetText (Mathf.Round(LogicConnector.getTime ()).ToString ());
-			this.Label.Draw ();
-		}
-
+	public void SetText(String Text) {
+		this.Text = Text;
 	}
 }
-
