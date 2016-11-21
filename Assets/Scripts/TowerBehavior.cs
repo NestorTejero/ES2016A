@@ -12,6 +12,7 @@ public class TowerBehavior : MonoBehaviour
     public float spread = 0f;       // Spread of the gun (non laser-like aim)
     public float projectileSpeed = 100f;
     public float scanRate = 0.5f;   // target scanning rate, should be smaller than firerate
+    public int cost = 100;          // tower value
 
     private GameObject target = null;
 

@@ -5,11 +5,13 @@ public class DummyTowerButton : MonoBehaviour {
 
     public GameObject[] towers; // list of different types of towers (we have only one)
     private TowerPlacement placement;
+    private TowerDeletion deletion;
 
     // Use this for initialization
     void Start()
     {
         placement = GetComponent<TowerPlacement>();
+        deletion = GetComponent<TowerDeletion>();
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class DummyTowerButton : MonoBehaviour {
         // DESTROYER BUTTON!!!
         if (GUI.Button(new Rect(Screen.width / 10, Screen.height / 10 + 50, 100, 30), "DESTROY"))
         {
-            DestroyAllTowers();
+            deletion.enabled = true;
         }
     }
 
@@ -40,5 +42,10 @@ public class DummyTowerButton : MonoBehaviour {
         {
             Destroy(go);
         }
+    }
+
+    private void Destroy()
+    {
+        TowerDeletion del = gameObject.GetComponent<TowerDeletion>();
     }
 }

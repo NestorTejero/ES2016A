@@ -113,10 +113,12 @@ MonoBehaviour:
   range: 150
   damage: 1
   health: 100
-  firerate: 0.5
+  fireRate: 1
   spread: 0
   projectileSpeed: 100
-  projectile: {fileID: 498000, guid: f2af5d7f9c7a66d4fb6a7c50e24386c7, type: 2}
+  scanRate: 0.5
+  cost: 100
+  projectile: {fileID: 498000, guid: 7e11bd6c371fe3c4d9992314b58a0486, type: 2}
 --- !u!136 &13654350
 CapsuleCollider:
   m_ObjectHideFlags: 1

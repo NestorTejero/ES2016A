@@ -56,6 +56,7 @@ public class TowerPlacement : MonoBehaviour
                     newTower.GetComponent<Renderer>().material.color = colorInicial;
                     Destroy(newTower.GetComponent<TowerPosition>());
                     isPlaced = true;
+                    newTower.GetComponent<TowerBehavior>().cost = towerCost;    // set tower value
                     newTower.GetComponent<TowerBehavior>().StartTower();
 					LogicConnector.decreaseCredit(towerCost);
 
