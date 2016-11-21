@@ -33,7 +33,7 @@ public class TowerDeletion : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0) && tower != null)
             {
-                RemoveTower(tower);
+                removeTower(tower);
                 tower = null;           // clear selection
                 enabled = false;        // disable button 
             }           
