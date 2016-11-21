@@ -16,6 +16,8 @@ using System.Collections;
 public class InterfaceSettings {
 	public InterfaceContainer Contenedor = new InterfaceContainer();
 	public InterfaceContainer ContenedorBlur = new InterfaceContainer();
+	public interfaceEnemies interfaceEnemies = new interfaceEnemies ();
+	public InterfaceTime InterfazTiempo = new InterfaceTime ();
 
 	public InterfaceLabel SettingsTitle = new InterfaceLabel ();
 
@@ -51,7 +53,7 @@ public class InterfaceSettings {
 			this.VolumenJuego.Value = PlayerPrefs.GetFloat ("VolumenJuego");
 			float NewVolumenJuego = this.VolumenJuego.Draw ();
 			PlayerPrefs.SetFloat ("VolumenJuego", NewVolumenJuego);
-		}
+		} 
 	}
 }
 

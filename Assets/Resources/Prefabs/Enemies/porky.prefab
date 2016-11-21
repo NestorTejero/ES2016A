@@ -310,9 +310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2.5
-  health: 10
-  speed: 25
-  moneyValue: 10
+  health: 12.5
+  speed: 5
+  moneyValue: 15
   target: {fileID: 0}
   targetTagName: home
 --- !u!136 &13696252

@@ -23,6 +23,7 @@ public class UserInterface : MonoBehaviour {
 	public InterfaceHealth InterfazVida = new InterfaceHealth ();
 	public InterfaceMoney InterfazDinero = new InterfaceMoney ();
 	public InterfaceTime InterfazTiempo = new InterfaceTime ();
+	public interfaceEnemies interfaceEnemies = new interfaceEnemies ();
 
 	[Header("HUD Inferior")]
 	public InterfaceContainer ContenedorInferior = new InterfaceContainer();
@@ -52,6 +53,7 @@ public class UserInterface : MonoBehaviour {
 		InterfazAvatar.Draw ();
 		InterfazTorres.draw ();
 		InterfazTiempo.Draw ();
+		interfaceEnemies.Draw ();
 
 		if (BotonPausa.Draw ()) {
 			InterfaceState.Pause ();

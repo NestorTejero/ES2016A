@@ -20,6 +20,8 @@ public class LogicConnector {
 	[SerializeField] private int Credit;
 	[SerializeField] private float Time;
 	[SerializeField] private int[] TowerCost = { 100, 500, 1000 };
+	[SerializeField] private int enemiesLeft;
+	[SerializeField] private int totalEnemies;
 
 	[Header("Game linking")]
 	public GameObject[] TowerObjects;
@@ -37,6 +39,8 @@ public class LogicConnector {
 	[SerializeField] private int testCredit = 500;
 	[SerializeField] private int[] testTowerCost = { 100, 500, 1000 };
 	[SerializeField] private float testTime = 60.0f;
+	[SerializeField] private int testEnemiesLeft = 7;
+	[SerializeField] private int testTotalEnemies = 15;
 
 	protected static LogicConnector _instance = null;
 	protected LogicConnector () {}
@@ -115,6 +119,36 @@ public class LogicConnector {
 		LogicConnector instance = LogicConnector.getInstance ();
 		return (instance.testMode) ? instance.testTowerCost [type] : instance.TowerCost [type];
 	}
+
+	/* Getters & Setters to show enemies info per wave */
+
+	public static int getEnemiesLeft(){
+		LogicConnector instance = LogicConnector.getInstance ();
+		return (instance.testMode) ? instance.testEnemiesLeft : instance.enemiesLeft;
+		//return 7;
+	}
+
+	public static int getTotalEnemies(){
+		LogicConnector instance = LogicConnector.getInstance ();
+		return (instance.testMode) ? instance.testTotalEnemies : instance.totalEnemies;
+		//return 15;
+	}
+
+	public static void setEnemiesLeft(int enemies){
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.enemiesLeft = enemies;
+	}
+
+	public static void setTotalEnemies(int enemies){
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.totalEnemies = enemies;
+	}
+
+	public static void decreaseEnemies(){
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.testEnemiesLeft -= 1;
+	}
+		
 }
 
 

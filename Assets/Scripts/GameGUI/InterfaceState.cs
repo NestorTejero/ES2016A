@@ -6,7 +6,9 @@ using System.Collections;
 public class InterfaceState {
 
 	public enum States {InGame, Paused, Settings, GameOver};
+	public enum SubStates {InBattling, InBreak}
 	public States State = InterfaceState.States.InGame;
+	public SubStates SubState = InterfaceState.SubStates.InBattling;
 
 	protected static InterfaceState _instance = null;
 	protected InterfaceState () {}
@@ -37,6 +39,22 @@ public class InterfaceState {
 		Time.timeScale = 0;
 	}
 
+	public static void Break () {
+		InterfaceState.getInstance ().State = InterfaceState.States.InGame;
+		InterfaceState.getInstance ().SubState = InterfaceState.SubStates.InBreak;
+		Time.timeScale = 1;
+	}
+
+	public static void Battling () {
+		InterfaceState.getInstance ().State = InterfaceState.States.InGame;
+		InterfaceState.getInstance ().SubState = InterfaceState.SubStates.InBattling;
+		Time.timeScale = 1;
+	}
+	/*public static void RestWave () {
+		InterfaceState.getInstance ().State = InterfaceState.States.InRest;
+		Time.timeScale = 1;
+	}*/
+
 	public static bool isPaused () {
 		return InterfaceState.getInstance ().State == InterfaceState.States.Paused;
 	}
@@ -51,6 +69,16 @@ public class InterfaceState {
 
 	public static bool isGameOver () {
 		return InterfaceState.getInstance ().State == InterfaceState.States.GameOver;
+	}
+
+	/* NEW METHODS */
+
+	public static bool isInBattling () {
+		return InterfaceState.getInstance ().SubState == InterfaceState.SubStates.InBattling;
+	}
+
+	public static bool isInBreak () {
+		return InterfaceState.getInstance ().SubState == InterfaceState.SubStates.InBreak;
 	}
 }
 

@@ -20,10 +20,14 @@ public class InterfaceTime {
 	public InterfaceTime () {}
 
 	public void Draw () {
-		this.Contenedor.Draw ();
 
-		this.Label.SetText (Mathf.Round(LogicConnector.getTime ()).ToString ());
-		this.Label.Draw ();
+		if ((InterfaceState.isInGame()) && (InterfaceState.isInBreak ())) {
+			this.Contenedor.Draw ();
+
+			this.Label.SetText (Mathf.Round(LogicConnector.getTime ()).ToString ());
+			this.Label.Draw ();
+		}
+
 	}
 }
 
