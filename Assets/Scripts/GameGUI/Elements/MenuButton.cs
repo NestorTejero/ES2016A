@@ -16,11 +16,13 @@ using System.Collections;
 public class MenuButton {
 	public ScaledRect Position = new ScaledRect ();
 	public String Text;
+    public Texture TexturaSlider;
 
 	public MenuButton () {
 	}
 
 	public bool Draw () {
+        GUI.DrawTexture(Position.getRect(), TexturaSlider);
 		return GUI.Button (this.Position.getRect (), this.Text);
 	}
 }
