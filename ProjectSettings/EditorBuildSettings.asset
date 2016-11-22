@@ -5,10 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
   - enabled: 0
     path: Assets/Scenes/Intro & Loading/Pantalla.unity
   - enabled: 0
     path: Assets/Scenes/Intro & Loading/Start2.unity
+=======
+  - enabled: 1
+    path: Assets/Scenes/Start2.unity
+  - enabled: 1
+    path: Assets/Scenes/Pantalla.unity
+>>>>>>> change_main_menu
   - enabled: 1
     path: Assets/Scenes/menuScene.unity
   - enabled: 1

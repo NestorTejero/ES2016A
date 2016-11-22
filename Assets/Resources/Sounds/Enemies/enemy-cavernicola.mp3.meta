@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Sounds/Enemies/enemy-cavernicola.mp3.meta
 guid: 2241e2dbdcdd74a4293da80c2cbcca11
 timeCreated: 1479317612
+=======
+guid: f512e553631768e4a95bb31b46ef37e5
+timeCreated: 1479755084
+>>>>>>> change_main_menu:Assets/Resources/Sounds/Enemies/enemy-cavernicola.mp3.meta
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

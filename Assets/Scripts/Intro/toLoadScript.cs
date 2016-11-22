@@ -9,10 +9,13 @@ public class toLoadScript : MonoBehaviour {
 
 	[SerializeField]
 	private Text loadingText;
+	private Image welcomeTo;
 
 	[Header("Visuals Components to the script")]
 	public Text nameOfGame;
+	public Image conquerorName;
 	public Text producers;
+	public Image producersImage;
 
 	int count = 0;
 
@@ -37,10 +40,15 @@ public class toLoadScript : MonoBehaviour {
 
 		// This line waits for 3 seconds before executing the next line in the coroutine.
 		// This line is only necessary for this demo. The scenes are so simple that they load too fast to read the "Loading..." text.
+
 		yield return new WaitForSeconds(1);
 		nameOfGame.gameObject.SetActive (true);
+		conquerorName.gameObject.SetActive(true);
+
 		yield return new WaitForSeconds(1.5f);
 		producers.gameObject.SetActive (true);
+		producersImage.gameObject.SetActive (true);
+
 		yield return new WaitForSeconds(1.2f);
 
 
