@@ -50,7 +50,7 @@ public class InterfaceMoney {
     public void ShowCounUp()
     {
         var credit_now = LogicConnector.getCredit();
-        if (LastMoney > credit_now)
+        if (LastMoney < credit_now)
         {
             if (!ShowingCoinUp)
             {
@@ -69,6 +69,9 @@ public class InterfaceMoney {
             {
                 MoneyUpContainer.Draw();
             }
+        }else
+        {
+            LastMoney = credit_now;
         }
     }
 }
