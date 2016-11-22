@@ -19,12 +19,61 @@ public class InterfaceMoney {
 
 	public InterfaceMoney () {}
 
-	public void Draw() {
+    #region Variables actualización money
+
+    public InterfaceContainer MoneyUpContainer = new InterfaceContainer();
+
+    
+    //public Texture TexturaMoneyUp;
+    //public ScaledRect PosiTionMoneyUp;
+    //public int MoneyUpTime;
+
+    private float MoneyUpDeltaTime = 1.0f;
+    private float LastDeltaTime = 0f;
+    private int LastMoney = -1;
+    private bool ShowingCoinUp = false;
+    #endregion
+
+    public void Draw() {
 		this.Contenedor.Draw ();
 
-		this.Label.SetText (LogicConnector.getCredit ().ToString ());
+		this.Label.SetText (LogicConnector.getCredit().ToString ());
 		this.Label.Draw ();
-	}
+
+
+        if (LastMoney == -1)
+            LastMoney = LogicConnector.getCredit();
+
+        ShowCounUp();
+        
+    }
+    public void ShowCounUp()
+    {
+        var credit_now = LogicConnector.getCredit();
+        if (LastMoney < credit_now)
+        {
+            if (!ShowingCoinUp)
+            {
+                ShowingCoinUp = true;
+                LastDeltaTime = Time.realtimeSinceStartup;
+            }
+            else
+            {
+                if (LastDeltaTime + MoneyUpDeltaTime < Time.realtimeSinceStartup)
+                {
+                    ShowingCoinUp = false;
+                    LastMoney = credit_now;
+                }
+            }
+            if (ShowingCoinUp)
+            {
+                MoneyUpContainer.Draw();
+            }
+        }else
+        {
+            LastMoney = credit_now;
+        }
+    }
 }
 
 
