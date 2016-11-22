@@ -12296,7 +12296,7 @@ MonoBehaviour:
   GameMusic: {fileID: 0}
   MenuMusic: {fileID: 0}
   GameLogicConnector:
-    State: 0
+    State: 2
     SubState: 0
     TowerObjects:
     - {fileID: 141678, guid: fb69400150368cf478b845b05712e449, type: 2}
@@ -12563,9 +12563,9 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 300
-          y: 132
+          y: 142.3
           width: 425
-          height: 300
+          height: 332.7
       Background: {fileID: 2800000, guid: a6533a7c687cb8c4e84c0d603b88b799, type: 3}
     ContenedorBlur:
       Dimensions:
@@ -12648,8 +12648,8 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 655
-          y: 400
+          x: 650
+          y: 436.8
           width: 60
           height: 25
       Text: Volver
@@ -12657,29 +12657,56 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 310
+          y: 350
+          width: 120
+          height: 30
+      Text: MUTE ALL
     BotonSilenciarMenu:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 450
+          y: 350
+          width: 120
+          height: 30
+      Text: MUTE MENU
     BotonSilenciarJuego:
       Position:
         rect:
           serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-      Text: 
+          x: 590
+          y: 350
+          width: 120
+          height: 30
+      Text: MUTE JUEGO
+    BotonFacil:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 310
+          y: 390
+          width: 120
+          height: 30
+      Text: FACIL
+    BotonMedio:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 450
+          y: 390
+          width: 120
+          height: 30
+      Text: MEDIO
+    BotonDificil:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 590
+          y: 390
+          width: 120
+          height: 30
+      Text: DIFICIL
     VolumenGeneral:
       Position:
         rect:
@@ -12830,13 +12857,13 @@ MonoBehaviour:
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 240
+            width: 100
+            height: 8
+        Text: Volumen general
+        Alignment: 3
+      Value: 0.92507887
     VolumenMenu:
       Position:
         rect:
@@ -12987,13 +13014,13 @@ MonoBehaviour:
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 280
+            width: 100
+            height: 8
+        Text: Volumen menu
+        Alignment: 3
+      Value: 0.6219888
     VolumenJuego:
       Position:
         rect:
@@ -13144,13 +13171,13 @@ MonoBehaviour:
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 320
+            width: 100
+            height: 8
+        Text: Volumen juego
+        Alignment: 3
+      Value: 0.8910238
 --- !u!4 &1753859877
 Transform:
   m_ObjectHideFlags: 0
