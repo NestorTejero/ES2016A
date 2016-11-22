@@ -27,6 +27,7 @@ public class UserInterface : MonoBehaviour {
 	public InterfaceTime InterfazTiempo = new InterfaceTime ();
 	public interfaceEnemies interfaceEnemies = new interfaceEnemies ();
 	public MenuButton BotonPausa = new MenuButton ();
+	public MenuButton BotonStart = new MenuButton ();
 
 	[Header("HUD Inferior")]
 	public InterfaceContainer ContenedorInferior = new InterfaceContainer();
@@ -66,6 +67,10 @@ public class UserInterface : MonoBehaviour {
 
 		if (BotonPausa.Draw ()) {
 			LogicConnector.Pause ();
+		}
+
+		if (BotonStart.Draw ()) {
+			// Early start.
 		}
 
 		// Elementos con mas "z index".
