@@ -25,7 +25,7 @@ public class TowerBehavior : MonoBehaviour
     public Transform projectile;
 
 	public void Start(){
-		StartTower ();
+		//StartTower ();
 	}
 
 
