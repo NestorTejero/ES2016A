@@ -8,7 +8,7 @@ public class TowerBehavior : MonoBehaviour
     public float range = 200f;
 	public float health = 100f;
 	public int cost = 100;				// tower value
-	public float scanRate = 2f;		// target scanning rate, should be smaller than firerate
+	public float scanRate = 0.5f;		// target scanning rate, should be smaller than firerate
 
 	public float damage = 5f;
     public float fireRate = 1f;    		// fire rate in seconds
@@ -25,10 +25,17 @@ public class TowerBehavior : MonoBehaviour
     public Transform projectile;
 
 	public void Start(){
-		//StartTower ();
+		StartTower ();
 	}
 
+
 	public void Update(){
+
+		if (target != null) {
+			transform.LookAt (target.transform.position + Vector3.up*2);
+		}
+
+		/*
 		float time = Time.timeSinceLevelLoad;
 		Debug.Log ("Update");
 
@@ -52,10 +59,12 @@ public class TowerBehavior : MonoBehaviour
 			float destAngle = Vector3.Angle (transform.forward, dir);
 			float deltaAngle = (destAngle - currAngle);
 
-			transform.LookAt (target.transform);
+			transform.LookAt (target.transform.position + Vector3.up*2);
 		
 		}
+		*/
 	}
+
 
 	private GameObject FindEnemies(){
 		// Look for nearest GameObject with tag "enemy", within range
@@ -77,8 +86,8 @@ public class TowerBehavior : MonoBehaviour
     // Use this for initialization
     public void StartTower()
     {
-        //InvokeRepeating("LaunchProjectile", fireRate, fireRate);
-        //InvokeRepeating("SearchTarget", scanRate, scanRate);
+        InvokeRepeating("LaunchProjectile", fireRate, fireRate);
+        InvokeRepeating("SearchTarget", scanRate, scanRate);
     }
 
     // Instantiates and places in the world a projectile directed towards the target.

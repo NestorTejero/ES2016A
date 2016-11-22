@@ -1,68 +1,28 @@
 fileFormatVersion: 2
-guid: 7e76687de31e24b4b8ea20e95b75b3fa
-timeCreated: 1476982841
+guid: 6e9160272d6f8c447a2a24554f4d724e
+timeCreated: 1479768656
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Camera
-    100002: Camera.001
-    100004: Cube
-    100006: Cube.001
-    100008: Cube.002
-    100010: Cube.003
-    100012: Cube.004
-    100014: Cube.010
-    100016: Cylinder
-    100018: Cylinder.001
-    100020: Lamp
-    100022: Lamp.001
-    100024: //RootNode
-    100026: torre-tanqueDino
+    100002: Cylinder
+    100004: Lamp
+    100006: Plane
+    100008: //RootNode
     400000: Camera
-    400002: Camera.001
-    400004: Cube
-    400006: Cube.001
-    400008: Cube.002
-    400010: Cube.003
-    400012: Cube.004
-    400014: Cube.010
-    400016: Cylinder
-    400018: Cylinder.001
-    400020: Lamp
-    400022: Lamp.001
-    400024: //RootNode
-    400026: torre-tanqueDino
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Cube.002
-    2300006: Cube.003
-    2300008: Cube.004
-    2300010: Cube.010
-    2300012: Cylinder
-    2300014: Cylinder.001
-    2300016: //RootNode
-    2300018: torre-tanqueDino
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Cube.002
-    3300006: Cube.003
-    3300008: Cube.004
-    3300010: Cube.010
-    3300012: Cylinder
-    3300014: Cylinder.001
-    3300016: //RootNode
-    3300018: torre-tanqueDino
-    4300000: Cube.004
-    4300002: Cylinder.001
-    4300004: Cylinder
-    4300006: Cube.003
-    4300008: Cube.002
-    4300010: Cube.001
-    4300012: Cube
-    4300014: Cube.010
-    4300016: torre-tanque
-    4300018: torre-tanqueDino
+    400002: Cylinder
+    400004: Lamp
+    400006: Plane
+    400008: //RootNode
+    2300000: Cylinder
+    2300002: Plane
+    2300004: //RootNode
+    3300000: Cylinder
+    3300002: Plane
+    3300004: //RootNode
+    4300000: Cylinder
+    4300002: Plane
   materials:
     importMaterials: 1
     materialName: 0
