@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class TowerBehavior : MonoBehaviour
@@ -6,18 +6,82 @@ public class TowerBehavior : MonoBehaviour
 
     // Stats
     public float range = 200f;
-    public float damage = 5f;
-    public float health = 100f;
-    public float fireRate = 1f;     // fire rate in seconds
-    public float spread = 0f;       // Spread of the gun (non laser-like aim)
-    public float projectileSpeed = 100f;
-    public float scanRate = 0.5f;   // target scanning rate, should be smaller than firerate
-    public int cost = 100;          // tower value
+	public float health = 100f;
+	public int cost = 100;				// tower value
+	public float scanRate = 0.5f;		// target scanning rate, should be smaller than firerate
+
+	public float damage = 5f;
+    public float fireRate = 1f;    		// fire rate in seconds
+    public float fireCone = 30f;		// Cone of fire for targetting and shooting
+	public float turnSpeed = 90;		// Angles per second of the turret
+    public float projectileSpeed = 100f;// Speed in m/s
+
+	private float timeLastFired = 0;
+	private float timeLastScan = 0;
 
     private GameObject target = null;
 
     // Projectile
     public Transform projectile;
+
+	public void Start(){
+		//StartTower ();
+	}
+
+
+	public void Update(){
+
+		if (target != null) {
+			transform.LookAt (target.transform.position + Vector3.up*2);
+		}
+
+		/*
+		float time = Time.timeSinceLevelLoad;
+		Debug.Log ("Update");
+
+		// Scan every time fireRate seconds pass
+		if (target == null && (timeLastScan + fireRate) < time) {
+			timeLastScan = time;
+
+			target = FindEnemies ();
+			if (target == null)
+				return;
+		}
+
+		if (target != null) {
+		
+			Debug.Log ("Rotating");
+			// Get target direction
+			Vector3 dir = target.transform.position - transform.position;
+			dir.y = 0;
+
+			float currAngle = transform.rotation.eulerAngles.y;
+			float destAngle = Vector3.Angle (transform.forward, dir);
+			float deltaAngle = (destAngle - currAngle);
+
+			transform.LookAt (target.transform.position + Vector3.up*2);
+		
+		}
+		*/
+	}
+
+
+	private GameObject FindEnemies(){
+		// Look for nearest GameObject with tag "enemy", within range
+		GameObject[] targetList = GameObject.FindGameObjectsWithTag("enemy");
+
+		float dist = range * range;
+		foreach (GameObject t in targetList)
+		{
+			if (t == null)
+				continue;
+			// Calculate distance squared
+			float dist2 = (transform.position - t.transform.position).sqrMagnitude;
+			if (dist2 <= dist)
+				return t;
+		}
+		return null;
+	}
 
     // Use this for initialization
     public void StartTower()

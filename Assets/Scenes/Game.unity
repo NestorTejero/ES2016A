@@ -10820,6 +10820,7 @@ MonoBehaviour:
         width: 75
         height: 25
     Text: PAUSA
+    TexturaSlider: {fileID: 0}
   BotonStart:
     Position:
       rect:
@@ -10829,6 +10830,7 @@ MonoBehaviour:
         width: 75
         height: 25
     Text: START
+    TexturaSlider: {fileID: 0}
   ContenedorInferior:
     Dimensions:
       rect:
@@ -10900,7 +10902,7 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 335
-          y: 175
+          y: 142.3
           width: 350
           height: 350
       Background: {fileID: 2800000, guid: a6533a7c687cb8c4e84c0d603b88b799, type: 3}
@@ -10912,7 +10914,7 @@ MonoBehaviour:
           y: 0
           width: 950
           height: 600
-      Background: {fileID: 2800000, guid: cb27edaed7a07de439ef2c468b1cecc2, type: 3}
+      Background: {fileID: 0}
     MenuTitle:
       FontSize: 24
       TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -10929,29 +10931,32 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 360
-          y: 280
-          width: 305
-          height: 40
-      Text: Continuar
+          x: 350
+          y: 320
+          width: 100
+          height: 100
+      Text: 
+      TexturaSlider: {fileID: 2800000, guid: d5cfa6deb11c53a4e9ef9d685a49fc96, type: 3}
     BotonOpciones:
       Position:
         rect:
           serializedVersion: 2
-          x: 360
-          y: 330
-          width: 305
-          height: 40
-      Text: Opciones
+          x: 460
+          y: 320
+          width: 100
+          height: 100
+      Text: 
+      TexturaSlider: {fileID: 2800000, guid: 7bca37c359e73a548bc3fda7ceccf31d, type: 3}
     BotonSalir:
       Position:
         rect:
           serializedVersion: 2
-          x: 360
-          y: 380
-          width: 305
-          height: 40
-      Text: Salir
+          x: 570
+          y: 320
+          width: 100
+          height: 100
+      Text: 
+      TexturaSlider: {fileID: 2800000, guid: 5ed9c3864b8af3844ad9a7959abb7ae4, type: 3}
   InterfazSettings:
     Contenedor:
       Dimensions:
@@ -10970,7 +10975,7 @@ MonoBehaviour:
           y: 0
           width: 950
           height: 600
-      Background: {fileID: 2800000, guid: cb27edaed7a07de439ef2c468b1cecc2, type: 3}
+      Background: {fileID: 0}
     interfaceEnemies:
       Contenedor:
         Dimensions:
@@ -11048,6 +11053,7 @@ MonoBehaviour:
           width: 60
           height: 25
       Text: Volver
+      TexturaSlider: {fileID: 0}
     BotonSilenciarGeneral:
       Position:
         rect:
@@ -11057,6 +11063,7 @@ MonoBehaviour:
           width: 120
           height: 30
       Text: MUTE ALL
+      TexturaSlider: {fileID: 0}
     BotonSilenciarMenu:
       Position:
         rect:
@@ -11066,6 +11073,7 @@ MonoBehaviour:
           width: 120
           height: 30
       Text: MUTE MENU
+      TexturaSlider: {fileID: 0}
     BotonSilenciarJuego:
       Position:
         rect:
@@ -11075,6 +11083,7 @@ MonoBehaviour:
           width: 120
           height: 30
       Text: MUTE JUEGO
+      TexturaSlider: {fileID: 0}
     BotonFacil:
       Position:
         rect:
@@ -11084,6 +11093,7 @@ MonoBehaviour:
           width: 120
           height: 30
       Text: FACIL
+      TexturaSlider: {fileID: 0}
     BotonMedio:
       Position:
         rect:
@@ -11093,6 +11103,7 @@ MonoBehaviour:
           width: 120
           height: 30
       Text: MEDIO
+      TexturaSlider: {fileID: 0}
     BotonDificil:
       Position:
         rect:
@@ -11102,6 +11113,7 @@ MonoBehaviour:
           width: 120
           height: 30
       Text: DIFICIL
+      TexturaSlider: {fileID: 0}
     VolumenGeneral:
       Position:
         rect:

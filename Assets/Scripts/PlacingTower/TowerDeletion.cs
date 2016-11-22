@@ -44,6 +44,9 @@ public class TowerDeletion : MonoBehaviour
     public void removeTower(GameObject go)
     {
         TowerBehavior tb = go.GetComponent<TowerBehavior>();
+        if (tb == null)
+            tb = go.GetComponentInChildren<TowerBehavior>();
+
         if (tb != null)
         {
             LogicConnector.increaseCredit( (int) (tb.cost * paybackRate));

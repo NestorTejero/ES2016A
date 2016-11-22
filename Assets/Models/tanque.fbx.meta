@@ -18,6 +18,7 @@ ModelImporter:
     100020: Lamp
     100022: Lamp.001
     100024: //RootNode
+    100026: torre-tanqueDino
     400000: Camera
     400002: Camera.001
     400004: Cube
@@ -31,6 +32,7 @@ ModelImporter:
     400020: Lamp
     400022: Lamp.001
     400024: //RootNode
+    400026: torre-tanqueDino
     2300000: Cube
     2300002: Cube.001
     2300004: Cube.002
@@ -39,6 +41,8 @@ ModelImporter:
     2300010: Cube.010
     2300012: Cylinder
     2300014: Cylinder.001
+    2300016: //RootNode
+    2300018: torre-tanqueDino
     3300000: Cube
     3300002: Cube.001
     3300004: Cube.002
@@ -47,6 +51,8 @@ ModelImporter:
     3300010: Cube.010
     3300012: Cylinder
     3300014: Cylinder.001
+    3300016: //RootNode
+    3300018: torre-tanqueDino
     4300000: Cube.004
     4300002: Cylinder.001
     4300004: Cylinder
@@ -55,6 +61,8 @@ ModelImporter:
     4300010: Cube.001
     4300012: Cube
     4300014: Cube.010
+    4300016: torre-tanque
+    4300018: torre-tanqueDino
   materials:
     importMaterials: 1
     materialName: 0
