@@ -55,9 +55,9 @@ public class menusScript : MonoBehaviour {
         {
             AudioSource.mute = true;
         }
-        if (AudioListener.volume != 0.0F)
+        if (AudioSource.volume != 0.0F)
         {
-            AudioListener.volume = 0.0F;
+            AudioSource.volume = 0.0F;
         }
     }
 
@@ -83,9 +83,14 @@ public class menusScript : MonoBehaviour {
         {
             AudioSource.mute = false;
         }
-        if (AudioListener.volume == 0.0F)
-        {
-            AudioListener.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+        if (AudioSource.volume == 0.0F)
+		{
+			//AudioSource.Play();
+			AudioSource.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+			print (PlayerPrefs.GetFloat("VolumenJuego"));
+			print (PlayerPrefs.GetFloat("VolumenGeneral"));
+			//AudioSource.volume = 1.5F;
+
         }
     }
 
@@ -106,7 +111,11 @@ public class menusScript : MonoBehaviour {
 
     public void PlayAudio()
     {
-        AudioSource.Play();
+		AudioSource.Play();
+		PlayerPrefs.SetFloat ("VolumenGeneral", 1F);
+		print (PlayerPrefs.GetFloat("VolumenJuego"));
+		print (PlayerPrefs.GetFloat("VolumenGeneral"));
         AudioSource.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
+		//AudioSource.volume = 1.5F;
     }
 }
