@@ -10753,8 +10753,8 @@ MonoBehaviour:
           x: 880
           y: 65
           width: 40
-          height: 40
-      Background: {fileID: 2800000, guid: 92460ce69ba1e9148a15f3ef6ec01f41, type: 3}
+          height: 36
+      Background: {fileID: 2800000, guid: 4cbd3b234c5af7947b1948b6f8009d27, type: 3}
   InterfazTiempo:
     Contenedor:
       Dimensions:
