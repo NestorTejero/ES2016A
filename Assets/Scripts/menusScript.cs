@@ -90,8 +90,6 @@ public class menusScript : MonoBehaviour {
 		{
 			//AudioSource.Play();
 			AudioSource.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
-			print (PlayerPrefs.GetFloat("VolumenJuego"));
-			print (PlayerPrefs.GetFloat("VolumenGeneral"));
 			//AudioSource.volume = 1.5F;
 
         }
@@ -100,7 +98,7 @@ public class menusScript : MonoBehaviour {
     public void startLevel() {
         Scene sc=SceneManager.GetActiveScene();
         int numSceneActive = sc.buildIndex;
-        SceneManager.LoadScene(numSceneActive+1);
+		SceneManager.LoadScene(numSceneActive+1);
     }
 
     public void exitGame() {
@@ -116,8 +114,6 @@ public class menusScript : MonoBehaviour {
     {
 		AudioSource.Play();
 		PlayerPrefs.SetFloat ("VolumenGeneral", 1F);
-		print (PlayerPrefs.GetFloat("VolumenJuego"));
-		print (PlayerPrefs.GetFloat("VolumenGeneral"));
         AudioSource.volume = PlayerPrefs.GetFloat("VolumenGeneral") * PlayerPrefs.GetFloat("VolumenJuego");
 		//AudioSource.volume = 1.5F;
     }
