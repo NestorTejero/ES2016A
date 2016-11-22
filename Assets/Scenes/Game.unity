@@ -10709,7 +10709,7 @@ MonoBehaviour:
         y: 0
         width: 950
         height: 60
-    Background: {fileID: 2800000, guid: 1ba0f36513b86d34faaa47cae3d98bf7, type: 3}
+    Background: {fileID: 2800000, guid: db3ff87e9adbba24f992922fc82614b7, type: 3}
   InterfazVida:
     Contenedor:
       Dimensions:
@@ -10719,7 +10719,7 @@ MonoBehaviour:
           y: 1.5
           width: 154
           height: 57
-      Background: {fileID: 2800000, guid: 92460ce69ba1e9148a15f3ef6ec01f41, type: 3}
+      Background: {fileID: 0}
     Imagen: {fileID: 2800000, guid: 930ee64ce3beae145943a59de5df2125, type: 3}
     Offset: {x: 50, y: 0}
     Padding: {x: 2.5, y: 5}
@@ -10729,11 +10729,11 @@ MonoBehaviour:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 787
-          y: 1.5
-          width: 154
-          height: 57
-      Background: {fileID: 2800000, guid: e989d9a56d9e9174b830f3f46810dfd0, type: 3}
+          x: 800
+          y: 5
+          width: 40
+          height: 47
+      Background: {fileID: 2800000, guid: 2ce16313e53abbe489698e650c24d31b, type: 3}
     Label:
       FontSize: 30
       TextColor: {r: 0.9956389, g: 1, b: 0.6838235, a: 1}
