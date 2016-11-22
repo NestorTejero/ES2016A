@@ -21,7 +21,7 @@ public class InterfaceTime {
 
 	public void Draw () {
 
-		if ((InterfaceState.isInGame()) && (InterfaceState.isInBreak ())) {
+		if ((LogicConnector.isInGame()) && (LogicConnector.isInBreak ())) {
 			this.Contenedor.Draw ();
 
 			this.Label.SetText (Mathf.Round(LogicConnector.getTime ()).ToString ());

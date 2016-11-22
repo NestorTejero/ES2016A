@@ -8,31 +8,40 @@
  * 			Para evitar tener que hacer el trabajo repetidas veces por favor habla con			*
  * 			los autores, intentemos no pisarnos el trabajo para poder avanzar todos mejor.		*
  * --------------------------------------------------------------------------------------------	*/
+
+/* --------------------------------------------------------------------------------------------	*
+ * README2: Este script pretende ser el conector entre la logica de la GUI y la logica del		*
+ *			juego. En principio estaba pensado para ser una parte de la logica de la gui		*
+ *			que buscara los datos de la logica del juego, pero en sprints anteriores se uso		*
+ *			por parte de los otros equipos variables de test de este script como parte de la	*
+ *			logica principal del juego.															*
+ *			A raiz de esto se han creado variables y metodos para acomodar esta parte de la		*
+ * 			logica (Se encuentran bajo el header <Game logic values> y asi prevenir que se		*
+ *			vuelvan a utilizar las que son para el testeo de la gui, bajo el header				*
+ *			<test values>.																		*
+ * -------------------------------------------------------------------------------------------- */
 using UnityEngine;
 using System;
 using System.Collections;
 
 [Serializable]
 public class LogicConnector {
+	public enum States {InGame, Paused, Settings, GameOver};
+	public enum SubStates {InBattling, InBreak};
+	[Header("Game linking")]
+	public States State = LogicConnector.States.InGame;
+	public SubStates SubState = LogicConnector.SubStates.InBattling;
+	public GameObject[] TowerObjects;
+
 	// Variables de la logica.
 	[Header("Game logic values")]
 	[SerializeField] private int Health;
 	[SerializeField] private int Credit;
-	[SerializeField] private float Time;
+	[SerializeField] private float GameTime;
 	[SerializeField] private int[] TowerCost = { 100, 500, 1000 };
 	[SerializeField] private int enemiesLeft;
 	[SerializeField] private int totalEnemies;
 
-	[Header("Game linking")]
-	public GameObject[] TowerObjects;
-
-	/* NOTA PARA EL FUTURO LECTOR:
-	 * A continuación se hayan variables de TEST no deben ser usadas fuera de este código
-	 * y sirven principalmente para testear la aplicación. No son para uso en la lógica
-	 * del juego. Thanks!.
-	 * (Se han añadido variables por si se desea utilizar esta clase como contenedor de
-	 * los costes de las torres, creditos del jugador y vida de la torre)
-	 */
 	[Header("Test values")]
 	[SerializeField] private Boolean testMode = false;
 	[SerializeField] private int testHealth = 3;
@@ -42,6 +51,7 @@ public class LogicConnector {
 	[SerializeField] private int testEnemiesLeft = 7;
 	[SerializeField] private int testTotalEnemies = 15;
 
+	private UserInterface UserInterface;
 	protected static LogicConnector _instance = null;
 	protected LogicConnector () {}
 	public static LogicConnector getInstance() {
@@ -50,6 +60,10 @@ public class LogicConnector {
 		return _instance;
 	}
 
+	public static void ConnectInterface (UserInterface userInterface) {
+		LogicConnector.getInstance().UserInterface = userInterface;
+	}
+	
 	public static int getHealth() {
 		LogicConnector instance = LogicConnector.getInstance ();
 		return (instance.testMode) ? instance.testHealth : instance.Health;
@@ -92,22 +106,22 @@ public class LogicConnector {
 
 	public static float getTime() {
 		LogicConnector instance = LogicConnector.getInstance ();
-		return (instance.testMode) ? instance.testTime : instance.Time;
+		return (instance.testMode) ? instance.testTime : instance.GameTime;
 	}
 
 	public static void setTime(float Time) {
 		LogicConnector instance = LogicConnector.getInstance ();
-		instance.Time = Time;
+		instance.GameTime = Time;
 	}
 
 	public static void increaseTime(float Time) {
 		LogicConnector instance = LogicConnector.getInstance ();
-		instance.Time += Time;
+		instance.GameTime += Time;
 	}
 
 	public static void decreaseTime(float Time) {
 		LogicConnector instance = LogicConnector.getInstance ();
-		instance.Time -= Time;
+		instance.GameTime -= Time;
 	}
 
 	public static void placeTower(int type) {
@@ -147,6 +161,84 @@ public class LogicConnector {
 	public static void decreaseEnemies(){
 		LogicConnector instance = LogicConnector.getInstance ();
 		instance.testEnemiesLeft -= 1;
+	}
+
+	public static void Pause () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.State = LogicConnector.States.Paused;
+		Time.timeScale = 0;
+		if (instance.UserInterface != null)
+			instance.UserInterface.OnPause ();
+	}
+
+	public static void Resume () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.State = LogicConnector.States.InGame;
+		Time.timeScale = 1;
+		if (instance.UserInterface != null)
+			instance.UserInterface.OnResume ();
+	}
+
+	public static void Settings () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.State = LogicConnector.States.Settings;
+		Time.timeScale = 0;
+		if (instance.UserInterface != null)
+			instance.UserInterface.OnSettings ();
+	}
+
+	public static void GameOver () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		instance.State = LogicConnector.States.GameOver;
+		Time.timeScale = 0;
+		if (instance.UserInterface != null)
+			instance.UserInterface.OnGameOver ();
+	}
+
+	public static void Break () {
+		LogicConnector.getInstance ().State = LogicConnector.States.InGame;
+		LogicConnector.getInstance ().SubState = LogicConnector.SubStates.InBreak;
+		Time.timeScale = 1;
+	}
+
+	public static void Battling () {
+		LogicConnector.getInstance ().State = LogicConnector.States.InGame;
+		LogicConnector.getInstance ().SubState = LogicConnector.SubStates.InBattling;
+		Time.timeScale = 1;
+	}
+
+	public static bool isPaused () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		return instance.State == LogicConnector.States.Paused;
+	}
+
+	public static bool isInGame () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		return instance.State == LogicConnector.States.InGame;
+	}
+
+	public static bool isInSettings () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		return instance.State == LogicConnector.States.Settings;
+	}
+
+	public static bool isGameOver () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		return instance.State == LogicConnector.States.GameOver;
+	}
+
+	public static bool isInBattling () {
+		return LogicConnector.getInstance ().SubState == LogicConnector.SubStates.InBattling;
+	}
+
+	public static bool isInBreak () {
+		return LogicConnector.getInstance ().SubState == LogicConnector.SubStates.InBreak;
+	}
+
+	public static void triggerVolumeUpdate () {
+		LogicConnector instance = LogicConnector.getInstance ();
+		if (instance.UserInterface != null)
+			instance.UserInterface.OnVolumeUpdate (instance.State);
 	}
 		
 }

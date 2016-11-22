@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45125622, g: 0.5012193, b: 0.5751267, a: 1}
+  m_IndirectSpecularColor: {r: 0.4512564, g: 0.5012196, b: 0.57512736, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -117,10 +117,10 @@ Transform:
   m_LocalRotation: {x: 0.01946305, y: 0.19194224, z: 0.027828546, w: 0.98081857}
   m_LocalPosition: {x: 48.1, y: 0.4, z: 122.6}
   m_LocalScale: {x: 1, y: 1, z: 334.75864}
-  m_LocalEulerAnglesHint: {x: 1.5755999, y: 22.194199, z: 3.5595}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 1.5755999, y: 22.194199, z: 3.5595}
 --- !u!23 &26545082
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -130,7 +130,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -143,7 +142,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -194,10 +192,10 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 14.72, y: 2.17, z: 33.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &52839746
 Light:
   m_ObjectHideFlags: 0
@@ -215,7 +213,6 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -241,10 +238,10 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 46.6, y: 5.9, z: 169.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &100284210
 Light:
   m_ObjectHideFlags: 0
@@ -262,7 +259,6 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -376,10 +372,10 @@ Transform:
   m_LocalRotation: {x: 0.38268346, y: 0, z: 0, w: 0.9238795}
   m_LocalPosition: {x: 105, y: 50, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &154852281
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,10 +402,10 @@ Transform:
   m_LocalRotation: {x: -0.008174636, y: 0.6854654, z: 0.0073572504, w: 0.72802216}
   m_LocalPosition: {x: 11.6, y: 0.3, z: 102.1}
   m_LocalScale: {x: 0.5450534, y: 0.8352106, z: 1}
-  m_LocalEulerAnglesHint: {x: -1.26, y: 86.5513, z: -0.0284}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: -1.26, y: 86.5513, z: -0.0284}
 --- !u!199 &154852283
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -419,7 +415,6 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -432,7 +427,6 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -460,7 +454,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 154852281}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 5
   startDelay:
     scalar: 0
@@ -498,13 +492,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -579,7 +572,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startColor:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -666,8 +658,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 14.4
@@ -1170,7 +1166,6 @@ ParticleSystem:
   ColorModule:
     enabled: 1
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -1257,8 +1252,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
   UVModule:
     enabled: 0
@@ -1963,7 +1962,6 @@ ParticleSystem:
   ColorBySpeedModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -2050,13 +2048,17 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 2
     type: 0
     collisionMode: 0
     plane0: {fileID: 0}
@@ -2171,7 +2173,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     minKillSpeed: 0
-    maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -2230,10 +2231,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30.2, y: -2, z: 53.6}
   m_LocalScale: {x: 1, y: 1, z: 334.75864}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &249835227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2243,7 +2244,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -2256,7 +2256,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -2308,10 +2307,10 @@ Transform:
   m_LocalRotation: {x: 0.06972123, y: -0.21751279, z: -0.08405421, w: 0.9699289}
   m_LocalPosition: {x: 69.7, y: -5.5, z: 177.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 5.6633997, y: -25.8357, z: -11.2057}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 5.6633997, y: -25.8357, z: -11.2057}
 --- !u!199 &277869644
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -2321,7 +2320,6 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -2334,7 +2332,6 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -2362,7 +2359,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 277869642}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 5
   startDelay:
     scalar: 0
@@ -2400,13 +2397,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -2481,7 +2477,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startColor:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -2568,8 +2563,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 14.4
@@ -3072,7 +3071,6 @@ ParticleSystem:
   ColorModule:
     enabled: 1
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -3159,8 +3157,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
   UVModule:
     enabled: 0
@@ -3865,7 +3867,6 @@ ParticleSystem:
   ColorBySpeedModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -3952,13 +3953,17 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 2
     type: 0
     collisionMode: 0
     plane0: {fileID: 0}
@@ -4073,7 +4078,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     minKillSpeed: 0
-    maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -4138,7 +4142,6 @@ Light:
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -4164,10 +4167,10 @@ Transform:
   m_LocalRotation: {x: 0.25396842, y: 0.51757985, z: -0.164229, w: 0.80039996}
   m_LocalPosition: {x: 100, y: 50, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 35.2087, y: 65.777596, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 35.2087, y: 65.777596, z: 0}
 --- !u!1 &339021319
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,10 +4197,10 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 12.8, y: 18.66, z: 180.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &339021321
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -4207,7 +4210,6 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -4220,7 +4222,6 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4248,7 +4249,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 339021319}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 5
   startDelay:
     scalar: 0
@@ -4286,13 +4287,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -4367,7 +4367,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startColor:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -4454,8 +4453,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 1
@@ -4963,7 +4966,6 @@ ParticleSystem:
   ColorModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -5050,8 +5052,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
   UVModule:
     enabled: 0
@@ -5756,7 +5762,6 @@ ParticleSystem:
   ColorBySpeedModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -5843,13 +5848,17 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 2
     type: 0
     collisionMode: 0
     plane0: {fileID: 0}
@@ -5964,7 +5973,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     minKillSpeed: 0
-    maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -6023,10 +6031,10 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.05815776, z: 0, w: 0.9983074}
   m_LocalPosition: {x: 199.7, y: -2, z: 132.8}
   m_LocalScale: {x: 1, y: 1, z: 334.75864}
-  m_LocalEulerAnglesHint: {x: 0, y: -6.6681, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: -6.6681, z: 0}
 --- !u!23 &392605100
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6036,7 +6044,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -6049,7 +6056,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -6102,10 +6108,10 @@ Transform:
   m_LocalRotation: {x: 0.013600868, y: -0.65135473, z: -0.008677223, w: 0.7586019}
   m_LocalPosition: {x: 136.8, y: -2.6, z: 202.3}
   m_LocalScale: {x: 1, y: 1, z: 334.7587}
-  m_LocalEulerAnglesHint: {x: 0.5347, y: -81.3087, z: -1.7699}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0.5347, y: -81.3087, z: -1.7699}
 --- !u!23 &533482193
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6115,7 +6121,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -6128,7 +6133,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -6181,10 +6185,10 @@ Transform:
   m_LocalRotation: {x: 0.05099616, y: 0.41022828, z: 0.055547882, w: 0.90886}
   m_LocalPosition: {x: 85, y: 1.1, z: 170.2}
   m_LocalScale: {x: 1, y: 1, z: 334.7586}
-  m_LocalEulerAnglesHint: {x: 2.7008998, y: 48.779697, z: 8.2197}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 2.7008998, y: 48.779697, z: 8.2197}
 --- !u!23 &599583130
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6194,7 +6198,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -6207,7 +6210,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -6259,10 +6261,10 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 12.9, y: 15, z: 179.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &619607399
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -6272,7 +6274,6 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -6285,7 +6286,6 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -6313,7 +6313,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619607397}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 5
   startDelay:
     scalar: 0
@@ -6351,13 +6351,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -6432,7 +6431,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startColor:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -6519,8 +6517,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 14.4
@@ -7023,7 +7025,6 @@ ParticleSystem:
   ColorModule:
     enabled: 1
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -7110,8 +7111,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
   UVModule:
     enabled: 0
@@ -7816,7 +7821,6 @@ ParticleSystem:
   ColorBySpeedModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -7903,13 +7907,17 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 2
     type: 0
     collisionMode: 0
     plane0: {fileID: 0}
@@ -8024,7 +8032,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     minKillSpeed: 0
-    maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -8081,10 +8088,10 @@ Transform:
   m_LocalRotation: {x: 0.5774902, y: -0.19211109, z: -0.37086257, w: 0.7014695}
   m_LocalPosition: {x: 33.33, y: 12.65, z: 176.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 41.889, y: -69.6242, z: -85.5367}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 41.889, y: -69.6242, z: -85.5367}
 --- !u!108 &739976446
 Light:
   m_ObjectHideFlags: 0
@@ -8102,7 +8109,6 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -8144,10 +8150,10 @@ Transform:
   m_LocalRotation: {x: 0.6679649, y: 0.019970192, z: -0.020639777, w: 0.74363846}
   m_LocalPosition: {x: 9.2, y: 5.2, z: 110.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 83.8651, y: 1.1409, z: -2.1548}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 83.8651, y: 1.1409, z: -2.1548}
 --- !u!108 &896206908
 Light:
   m_ObjectHideFlags: 0
@@ -8165,7 +8171,6 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -8208,10 +8213,10 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 41.9, y: -3.4, z: 165.2}
   m_LocalScale: {x: 1, y: 1.4962913, z: 1}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &948803365
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -8221,7 +8226,6 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -8234,7 +8238,6 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -8262,7 +8265,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 948803363}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 5
   startDelay:
     scalar: 0
@@ -8300,13 +8303,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -8381,7 +8383,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startColor:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -8468,8 +8469,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 14.4
@@ -8972,7 +8977,6 @@ ParticleSystem:
   ColorModule:
     enabled: 1
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -9059,8 +9063,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
   UVModule:
     enabled: 0
@@ -9765,7 +9773,6 @@ ParticleSystem:
   ColorBySpeedModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -9852,13 +9859,17 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 2
     type: 0
     collisionMode: 0
     plane0: {fileID: 0}
@@ -9973,7 +9984,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     minKillSpeed: 0
-    maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -10048,10 +10058,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.026907666, z: 0, w: 0.99963796}
   m_LocalPosition: {x: 99.6, y: -2, z: 50.4}
   m_LocalScale: {x: 1, y: 1, z: 334.75864}
-  m_LocalEulerAnglesHint: {x: 0, y: 3.0837998, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 3.0837998, z: 0}
 --- !u!23 &992381722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10061,7 +10071,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -10074,7 +10083,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -10127,10 +10135,10 @@ Transform:
   m_LocalRotation: {x: 0.016052077, y: -0.23949027, z: -0.0016151016, w: 0.9707647}
   m_LocalPosition: {x: 169, y: -1.8, z: 181.1}
   m_LocalScale: {x: 1, y: 1, z: 334.75867}
-  m_LocalEulerAnglesHint: {x: 1.7415999, y: -27.726, z: -0.62049997}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 1.7415999, y: -27.726, z: -0.62049997}
 --- !u!23 &1081392542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10140,7 +10148,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -10153,7 +10160,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -10204,10 +10210,10 @@ Transform:
   m_LocalRotation: {x: 0.70302737, y: -0.07584615, z: -0.07584615, w: 0.70302725}
   m_LocalPosition: {x: 74.28, y: 4.22, z: 185}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 77.6849, y: -90, z: -90}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 77.6849, y: -90, z: -90}
 --- !u!108 &1095693994
 Light:
   m_ObjectHideFlags: 0
@@ -10225,7 +10231,6 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -10269,10 +10274,10 @@ Transform:
   m_LocalRotation: {x: 0.09052647, y: 0.67856216, z: 0.08930183, w: 0.72345257}
   m_LocalPosition: {x: 85.23388, y: 1.136353, z: 169.62741}
   m_LocalScale: {x: 1, y: 1, z: 334.7586}
-  m_LocalEulerAnglesHint: {x: 0.5609, y: 86.4041, z: 14.600599}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0.5609, y: 86.4041, z: 14.600599}
 --- !u!23 &1187062915
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10282,7 +10287,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -10295,7 +10299,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -10347,10 +10350,10 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 133.2, y: 44.9, z: 22.5}
   m_LocalScale: {x: 1.1327283, y: 0.37282813, z: 1}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1269626904
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -10360,7 +10363,6 @@ ParticleSystemRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -10373,7 +10375,6 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -10401,7 +10402,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1269626902}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 10
   startDelay:
     scalar: 0
@@ -10439,13 +10440,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 0
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 0
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -10510,7 +10510,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startColor:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -10597,8 +10596,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 1
@@ -11096,7 +11099,6 @@ ParticleSystem:
   ColorModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -11183,8 +11185,12 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
   UVModule:
     enabled: 0
@@ -11889,7 +11895,6 @@ ParticleSystem:
   ColorBySpeedModule:
     enabled: 0
     gradient:
-      serializedVersion: 2
       maxGradient:
         key0:
           serializedVersion: 2
@@ -11976,13 +11981,17 @@ ParticleSystem:
         atime7: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor:
+        serializedVersion: 2
+        rgba: 4294967295
+      maxColor:
+        serializedVersion: 2
+        rgba: 4294967295
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
     enabled: 0
-    serializedVersion: 3
+    serializedVersion: 2
     type: 0
     collisionMode: 0
     plane0: {fileID: 0}
@@ -12097,7 +12106,6 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     minKillSpeed: 0
-    maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -12168,10 +12176,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 750, y: 50, z: 750}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1512485315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12214,10 +12222,10 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 9.7, y: 18.2, z: 182}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &1635576338
 Light:
   m_ObjectHideFlags: 0
@@ -12235,7 +12243,6 @@ Light:
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -12286,27 +12293,28 @@ MonoBehaviour:
     y: 0
     width: 950
     height: 600
-  LogicConnector:
-    Health: 3
-    Credit: 3000
-    Time: 60
-    TowerCost: 64000000f4010000e8030000
-    enemiesLeft: 0
-    totalEnemies: 0
+  GameMusic: {fileID: 0}
+  MenuMusic: {fileID: 0}
+  GameLogicConnector:
+    State: 2
+    SubState: 0
     TowerObjects:
     - {fileID: 141678, guid: fb69400150368cf478b845b05712e449, type: 2}
     - {fileID: 117610, guid: 248f018e6d4c7b5418a3120b010b01de, type: 2}
     - {fileID: 106906, guid: 4f681e75cc6012e42bec259614fdcbd4, type: 2}
+    Health: 3
+    Credit: 2000
+    GameTime: 30
+    TowerCost: 64000000f4010000e8030000
+    enemiesLeft: 7
+    totalEnemies: 15
     testMode: 0
     testHealth: 3
     testCredit: 500
     testTowerCost: 64000000f4010000e8030000
-    testTime: 54.26
+    testTime: 60
     testEnemiesLeft: 7
     testTotalEnemies: 15
-  InterfaceState:
-    State: 0
-    SubState: 0
   ContenedorSuperior:
     Dimensions:
       rect:
@@ -12350,7 +12358,7 @@ MonoBehaviour:
           y: 15
           width: 100
           height: 30
-      Text: 
+      Text: 2000
       Alignment: 4
   InterfazTiempo:
     Contenedor:
@@ -12394,7 +12402,7 @@ MonoBehaviour:
           y: 15
           width: 100
           height: 30
-      Text: 
+      Text: 7/
       Alignment: 4
     Label2:
       FontSize: 20
@@ -12406,8 +12414,26 @@ MonoBehaviour:
           y: 15
           width: 100
           height: 30
-      Text: 
+      Text: 15
       Alignment: 4
+  BotonPausa:
+    Position:
+      rect:
+        serializedVersion: 2
+        x: 578.1
+        y: 15
+        width: 75
+        height: 25
+    Text: PAUSA
+  BotonStart:
+    Position:
+      rect:
+        serializedVersion: 2
+        x: 686.13
+        y: 15
+        width: 75
+        height: 25
+    Text: START
   ContenedorInferior:
     Dimensions:
       rect:
@@ -12537,9 +12563,9 @@ MonoBehaviour:
         rect:
           serializedVersion: 2
           x: 300
-          y: 132
+          y: 142.3
           width: 425
-          height: 300
+          height: 332.7
       Background: {fileID: 2800000, guid: a6533a7c687cb8c4e84c0d603b88b799, type: 3}
     ContenedorBlur:
       Dimensions:
@@ -12622,11 +12648,65 @@ MonoBehaviour:
       Position:
         rect:
           serializedVersion: 2
-          x: 655
-          y: 400
+          x: 650
+          y: 436.8
           width: 60
           height: 25
       Text: Volver
+    BotonSilenciarGeneral:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 310
+          y: 350
+          width: 120
+          height: 30
+      Text: MUTE ALL
+    BotonSilenciarMenu:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 450
+          y: 350
+          width: 120
+          height: 30
+      Text: MUTE MENU
+    BotonSilenciarJuego:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 590
+          y: 350
+          width: 120
+          height: 30
+      Text: MUTE JUEGO
+    BotonFacil:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 310
+          y: 390
+          width: 120
+          height: 30
+      Text: FACIL
+    BotonMedio:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 450
+          y: 390
+          width: 120
+          height: 30
+      Text: MEDIO
+    BotonDificil:
+      Position:
+        rect:
+          serializedVersion: 2
+          x: 590
+          y: 390
+          width: 120
+          height: 30
+      Text: DIFICIL
     VolumenGeneral:
       Position:
         rect:
@@ -12777,13 +12857,13 @@ MonoBehaviour:
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 240
+            width: 100
+            height: 8
+        Text: Volumen general
+        Alignment: 3
+      Value: 0.92507887
     VolumenMenu:
       Position:
         rect:
@@ -12934,13 +13014,13 @@ MonoBehaviour:
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
+            x: 310
+            y: 280
+            width: 100
+            height: 8
+        Text: Volumen menu
+        Alignment: 3
+      Value: 0.6219888
     VolumenJuego:
       Position:
         rect:
@@ -13091,22 +13171,13 @@ MonoBehaviour:
         Position:
           rect:
             serializedVersion: 2
-            x: 0
-            y: 0
-            width: 0
-            height: 0
-        Text: 
-        Alignment: 4
-      Value: 0
-  BotonPausa:
-    Position:
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-    Text: 
+            x: 310
+            y: 320
+            width: 100
+            height: 8
+        Text: Volumen juego
+        Alignment: 3
+      Value: 0.8910238
 --- !u!4 &1753859877
 Transform:
   m_ObjectHideFlags: 0
@@ -13116,10 +13187,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1753859878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13274,7 +13345,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 339021320}
   - {fileID: 1635576337}
@@ -13298,6 +13368,7 @@ Transform:
   - {fileID: 277869643}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2044921002
 Prefab:
   m_ObjectHideFlags: 0
