@@ -11,6 +11,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class InterfacePause {
@@ -22,7 +23,7 @@ public class InterfacePause {
 	[Header("Opciones menu")]
 	public MenuButton BotonContinuar = new MenuButton ();
 	public MenuButton BotonOpciones = new MenuButton ();
-	public MenuButton BotonSalir = new MenuButton ();
+	public MenuButton BotonReturn = new MenuButton ();
 
 
 	public InterfacePause () {}
@@ -39,9 +40,9 @@ public class InterfacePause {
 			if (this.BotonOpciones.Draw ()) {
 				LogicConnector.Settings ();
 			}
-			if (this.BotonSalir.Draw ()) {
-				Application.Quit ();
-			}
+			if (this.BotonReturn.Draw ()) {
+                SceneManager.LoadScene("menuScene");
+            }
 		}
 	}
 }

@@ -11,6 +11,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [ExecuteInEditMode]
 public class UserInterface : MonoBehaviour {
@@ -92,7 +93,11 @@ public class UserInterface : MonoBehaviour {
 				break;
 			}
 		}
-	}
+        if (LogicConnector.isGameOver())
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 
 	public void OnPause () {
 		if (this.AudioSource.clip != this.MenuMusic) {
