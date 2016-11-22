@@ -47,17 +47,33 @@ public class TowerPlacement : MonoBehaviour
                 // (height to 0 to place it on the "terrain height 0" and not on the "mountains")
                 // (where we put towers is supposed to be a flat terrain of height 0)
                 newTower.transform.position = new Vector3(point.x, height, point.z);
-                
+                // Cancell the tower placement by using right click and the Tower is not placed if clicking over the HUD
+                if ((Input.GetMouseButtonDown(1)) || Input.GetMouseButtonDown(0) && Input.mousePosition.y < 50 && Input.mousePosition.x
+                    > 189 && Input.mousePosition.x < 345 || Input.GetMouseButtonDown(0) && Input.mousePosition.y > 283)
+                {
+                    Destroy(tow);
+                }
                 // Placing the tower on Click
                 // (need to check newTower collision with other objects, not just other towers)
-                if (Input.GetMouseButtonDown(0) && CanPlace())
+                else if (Input.GetMouseButtonDown(0) && CanPlace())
                 {
                     // If it is placed no need to update its position again
                     newTower.GetComponent<Renderer>().material.color = colorInicial;
                     Destroy(newTower.GetComponent<TowerPosition>());
                     isPlaced = true;
-                    newTower.GetComponent<TowerBehavior>().cost = towerCost;    // set tower value
-                    newTower.GetComponent<TowerBehavior>().StartTower();
+
+                    if (newTower.GetComponent<TowerBehavior>() != null)     // One-object prefab
+                    {
+                        newTower.GetComponent<TowerBehavior>().cost = towerCost;    // set tower value
+                        newTower.GetComponent<TowerBehavior>().StartTower();
+                    }
+                    else    // Prefab composed by multiple objects
+                    {
+                        // Beware! We are assuming that tower has only one child!
+                        newTower.GetComponentInChildren<TowerBehavior>().cost = towerCost;    // set tower value
+                        newTower.GetComponentInChildren<TowerBehavior>().StartTower();
+                    }
+                    
 					LogicConnector.decreaseCredit(towerCost);
 
 
