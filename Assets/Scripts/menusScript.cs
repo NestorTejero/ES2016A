@@ -38,6 +38,7 @@ public class menusScript : MonoBehaviour {
 
     public void ExitPress() {
         quitMenu.enabled = true;
+		MenuConfiguration.enabled = false;
         startText.enabled = false;
         endText.enabled = false;
     }
