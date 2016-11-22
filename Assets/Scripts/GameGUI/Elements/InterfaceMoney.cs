@@ -28,10 +28,10 @@ public class InterfaceMoney {
     //public ScaledRect PosiTionMoneyUp;
     //public int MoneyUpTime;
 
-    private float MoneyUpDeltaTime = 5.0f;
+    private float MoneyUpDeltaTime = 1.0f;
     private float LastDeltaTime = 0f;
     private int LastMoney = -1;
-    private bool ShowCoinUp = false;
+    private bool ShowingCoinUp = false;
     #endregion
 
     public void Draw() {
@@ -41,29 +41,31 @@ public class InterfaceMoney {
 		this.Label.Draw ();
 
 
-        var credit_now = LogicConnector.getCredit();
         if (LastMoney == -1)
-            LastMoney = credit_now;
+            LastMoney = LogicConnector.getCredit();
 
-        Debug.Log(String.Format("LastMoney: {0}, CreditNow: {1}, LastDeltaTime: {2}, TimeNow: {3}", LastMoney, credit_now, LastDeltaTime, Time.realtimeSinceStartup));
-
-
+        ShowCounUp();
+        
+    }
+    public void ShowCounUp()
+    {
+        var credit_now = LogicConnector.getCredit();
         if (LastMoney > credit_now)
         {
-            if (!ShowCoinUp)
+            if (!ShowingCoinUp)
             {
-                ShowCoinUp = true;
+                ShowingCoinUp = true;
                 LastDeltaTime = Time.realtimeSinceStartup;
-            }else
+            }
+            else
             {
-                if(LastDeltaTime + MoneyUpDeltaTime < Time.realtimeSinceStartup)
+                if (LastDeltaTime + MoneyUpDeltaTime < Time.realtimeSinceStartup)
                 {
-                    ShowCoinUp = false;
+                    ShowingCoinUp = false;
                     LastMoney = credit_now;
                 }
             }
-
-            if (ShowCoinUp)
+            if (ShowingCoinUp)
             {
                 MoneyUpContainer.Draw();
             }
