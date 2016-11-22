@@ -56,8 +56,19 @@ public class TowerPlacement : MonoBehaviour
                     newTower.GetComponent<Renderer>().material.color = colorInicial;
                     Destroy(newTower.GetComponent<TowerPosition>());
                     isPlaced = true;
-                    newTower.GetComponent<TowerBehavior>().cost = towerCost;    // set tower value
-                    newTower.GetComponent<TowerBehavior>().StartTower();
+
+                    if (newTower.GetComponent<TowerBehavior>() != null)     // One-object prefab
+                    {
+                        newTower.GetComponent<TowerBehavior>().cost = towerCost;    // set tower value
+                        newTower.GetComponent<TowerBehavior>().StartTower();
+                    }
+                    else    // Prefab composed by multiple objects
+                    {
+                        // Beware! We are assuming that tower has only one child!
+                        newTower.GetComponentInChildren<TowerBehavior>().cost = towerCost;    // set tower value
+                        newTower.GetComponentInChildren<TowerBehavior>().StartTower();
+                    }
+                    
 					LogicConnector.decreaseCredit(towerCost);
 
 
