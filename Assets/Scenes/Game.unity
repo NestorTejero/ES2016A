@@ -10955,8 +10955,8 @@ MonoBehaviour:
           y: 320
           width: 100
           height: 100
-      Text: Retornar
-      TexturaSlider: {fileID: 2800000, guid: 860b67a762625284fad488a88c4222d1, type: 3}
+      Text: 
+      TexturaSlider: {fileID: 2800000, guid: 5ed9c3864b8af3844ad9a7959abb7ae4, type: 3}
   InterfazSettings:
     Contenedor:
       Dimensions:
@@ -11560,7 +11560,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfd47a377468c7f41a07a50d605f5436, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7501994
+  m_Volume: 0.6460035
   m_Pitch: 1
   Loop: 0
   Mute: 0
