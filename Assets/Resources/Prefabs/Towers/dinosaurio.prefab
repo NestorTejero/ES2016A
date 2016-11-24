@@ -275,10 +275,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 200
-  damage: 5
   health: 100
-  firerate: 1
-  spread: 0
+  cost: 100
+  scanRate: 0.5
+  damage: 5
+  fireRate: 1
+  fireCone: 30
+  turnSpeed: 90
   projectileSpeed: 100
   projectile: {fileID: 498000, guid: 7e11bd6c371fe3c4d9992314b58a0486, type: 2}
 --- !u!137 &13719602
