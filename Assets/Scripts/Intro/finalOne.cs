@@ -28,6 +28,8 @@ public class finalOne : MonoBehaviour {
 	public Image progressBar; 
 	public Text loadingText;
 	public Text doneText;
+	public Image LoadingImage;
+	public Image doneImage;
 	public Transform TextIndicator; 
 	public Image circle1;
 	public Image circle2;
@@ -70,7 +72,9 @@ public class finalOne : MonoBehaviour {
 			} else {
 				TextIndicator.gameObject.SetActive (false);
 				loadingText.gameObject.SetActive (false);
+				LoadingImage.gameObject.SetActive (false);
 				doneText.gameObject.SetActive (true);
+				doneImage.gameObject.SetActive (true);
 				circle1.gameObject.SetActive (false);
 				circle2.gameObject.SetActive (false);
 				circle3.gameObject.SetActive (false);
