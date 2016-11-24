@@ -6,6 +6,7 @@ public class HomeBehavior : MonoBehaviour {
     public float maxHealth = 100f;
     public float lifes = 3f;
     public float health = 100f;
+    public int initCredit = 300;        // Initial ammount of credit
 
     // Collision management.
     void OnTriggerEnter(Collider other)
@@ -20,7 +21,7 @@ public class HomeBehavior : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	
+        LogicConnector.setCredit(initCredit);
 	}
 
     private void TakeDamage (float damage)

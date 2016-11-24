@@ -6,29 +6,29 @@
 	
 		<Round id="1">
 			<Enemy>
-				<name>GordoAtacaYCamina</name>
+				<name>enemy-gordo</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
-				<money>10</money>
+				<money>5</money>
 				<amount>5</amount>
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>porky</name>
+				<name>enemy-porky</name>
 				<damage>2.5</damage>
 				<health>12.5</health>
 				<speed>5.0</speed>
-				<money>15</money>
+				<money>10</money>
 				<amount>10</amount>
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>GordoAtacaYCamina</name>
+				<name>enemy-gordo</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
-				<money>10</money>
+				<money>5</money>
 				<amount>5</amount>
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
@@ -38,20 +38,20 @@
 		
 		<Round id="2">
 			<Enemy>
-				<name>porky</name>
+				<name>enemy-porky</name>
 				<damage>2.5</damage>
 				<health>12.5</health>
 				<speed>5.0</speed>
-				<money>15</money>
+				<money>10</money>
 				<amount>5</amount>
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>GordoAtacaYCamina</name>
+				<name>enemy-gordo</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
-				<money>10</money>
+				<money>5</money>
 				<amount>5</amount>
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
