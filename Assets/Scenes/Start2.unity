@@ -270,10 +270,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 802203626}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7, y: 15}
-  m_SizeDelta: {x: -561.5, y: -520}
+  m_AnchorMin: {x: 0.39830977, y: 0.39550003}
+  m_AnchorMax: {x: 0.5967699, y: 0.59800005}
+  m_AnchoredPosition: {x: 9.5, y: 17}
+  m_SizeDelta: {x: 345.5, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &448230676
 MonoBehaviour:
@@ -579,10 +579,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 802203626}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.2333374, y: 0.002105713}
-  m_SizeDelta: {x: -0.43921, y: -0.0036621}
+  m_AnchorMin: {x: 0.39830977, y: 0.39550003}
+  m_AnchorMax: {x: 0.5967699, y: 0.59800005}
+  m_AnchoredPosition: {x: 30.525124, y: -33.958855}
+  m_SizeDelta: {x: 906.5608, y: 509.99634}
   m_Pivot: {x: 0.5311559, y: 0.42948824}
 --- !u!114 &1252153372
 MonoBehaviour:
