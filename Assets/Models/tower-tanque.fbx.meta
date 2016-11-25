@@ -6,10 +6,15 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: torre-tanqueDino
     400000: //RootNode
+    400002: torre-tanqueDino
     2300000: //RootNode
+    2300002: torre-tanqueDino
     3300000: //RootNode
+    3300002: torre-tanqueDino
     4300000: torre-tanqueDino
+    4300002: torre-tanque
   materials:
     importMaterials: 1
     materialName: 0

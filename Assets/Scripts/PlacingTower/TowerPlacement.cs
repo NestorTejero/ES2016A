@@ -12,10 +12,7 @@ public class TowerPlacement : MonoBehaviour
     private bool isPlaced;
     private int towerCost;
     public int type_tower; // 0 -> dinosaur / 1 -> tank / 2 -> tower
-    public int height;
-    public int height_dinosaur = 7; // dinosaur height placement
-    public int height_tank = 0; // tank height placement
-    public int height_tower = 4; // tower height placement
+
     public Vector3 scale = new Vector3(10,10,10);
 
 
@@ -46,7 +43,7 @@ public class TowerPlacement : MonoBehaviour
                 // Giving the position to the newTower 
                 // (height to 0 to place it on the "terrain height 0" and not on the "mountains")
                 // (where we put towers is supposed to be a flat terrain of height 0)
-                newTower.transform.position = new Vector3(point.x, height, point.z);
+                newTower.transform.position = new Vector3(point.x, newTower.position.y, point.z);
                 // Cancell the tower placement by using right click and the Tower is not placed if clicking over the HUD
                 if ((Input.GetMouseButtonDown(1)) || Input.GetMouseButtonDown(0) && Input.mousePosition.y < 50 && Input.mousePosition.x
                     > 189 && Input.mousePosition.x < 345 || Input.GetMouseButtonDown(0) && Input.mousePosition.y > 283)
@@ -120,21 +117,6 @@ public class TowerPlacement : MonoBehaviour
 
         // Selecting type of tower
         type_tower = type;
-
-        // tower height placement depends on the type of tower
-        switch (type)
-        {
-            case 0:
-                height = height_dinosaur;
-                break;
-            case 1:
-                height = height_tank;
-                break;
-            case 2:
-                height = height_tower;
-                break;
-        }
-
 
         towerCost = cost;
         colorInicial = newTower.GetComponent<Renderer>().material.color;

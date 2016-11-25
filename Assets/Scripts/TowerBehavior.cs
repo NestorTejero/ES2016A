@@ -31,11 +31,12 @@ public class TowerBehavior : MonoBehaviour
 
 	public void Update(){
 
-		if (target != null) {
-			transform.LookAt (target.transform.position + Vector3.up*2);
-		}
+        if (target != null && name != "torre-piedra(Clone)")
+        {
+            transform.LookAt(target.transform.position + Vector3.up * 2);
+        }
 
-		/*
+        /*
 		float time = Time.timeSinceLevelLoad;
 		Debug.Log ("Update");
 
@@ -63,7 +64,7 @@ public class TowerBehavior : MonoBehaviour
 		
 		}
 		*/
-	}
+    }
 
 
 	private GameObject FindEnemies(){
