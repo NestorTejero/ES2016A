@@ -38,8 +38,7 @@ public class ControlWaves : MonoBehaviour
     {
 
         // Initialize round stats
-        // Uncomment in dev integration (Team C did a new logic connector)
-        //InterfaceState.Battling();
+        LogicConnector.Battling();
         LogicConnector.setTime(30.0f);
         currentRound += 1;                                  
         enemyList = root.SelectNodes("(Rounds/Round["+currentRound+"]/Enemy)");
@@ -48,10 +47,10 @@ public class ControlWaves : MonoBehaviour
         for (int i = 0; i < enemyList.Count; i++)
             totalEnemies += Int32.Parse(enemyList[i]["amount"].InnerText);
         totalEnemies *= ((GameObject)Resources.Load("Prefabs/SpawningZones", typeof(GameObject))).transform.childCount;
-        // Uncomment in dev integration (Team C did a new logic connector)
-        //LogicConnector.setTotalEnemies(totalEnemies);
-        //LogicConnector.setEnemiesLeft(totalEnemies);
-        //LogicConnector.setRoundNumber(currentRound); <-- CHECK IF METHOD NAME IS CORRECT  
+
+        LogicConnector.setTotalEnemies(totalEnemies);
+        LogicConnector.setEnemiesLeft(totalEnemies);
+        //LogicConnector.setRoundNumber(currentRound); <-- CHECK IF METHOD NAME IS CORRECT (TEAM C!!)
 
 
     }
@@ -107,13 +106,13 @@ public class ControlWaves : MonoBehaviour
             else if (currentRound == totalRounds)
                 Debug.Log("YOU WIN!");
           
-            // Uncomment in dev integration (Team C did a new logic connector)
-            //else if (InterfaceState.isInBattling())
-            //    InterfaceState.Break();
 
             // After N seconds, start a new wave
-            else if (!GameObject.FindGameObjectWithTag("enemy"))
+            else if (!GameObject.FindGameObjectWithTag("enemy")){
+				if (LogicConnector.isInBattling())
+					LogicConnector.Break();
                 LogicConnector.decreaseTime(Time.deltaTime);
+			}
 
         }
 

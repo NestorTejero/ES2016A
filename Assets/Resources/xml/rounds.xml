@@ -6,12 +6,12 @@
 	
 		<Round id="1">
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-cavernicola</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
 				<money>5</money>
-				<amount>5</amount>
+				<amount>1</amount>
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
 			<Enemy>
@@ -24,7 +24,7 @@
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-cavernicola</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
@@ -47,7 +47,7 @@
 				<spawnTime>2.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-cavernicola</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>

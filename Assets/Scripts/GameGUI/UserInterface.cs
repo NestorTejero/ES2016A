@@ -53,6 +53,7 @@ public class UserInterface : MonoBehaviour {
 		this.AudioSource = GetComponent<AudioSource> ();
 		this.AudioSource.clip = null;
 		LogicConnector.Resume ();
+		LogicConnector.getInstance ().SubState = LogicConnector.SubStates.InBreak;
 	}
 
 	void OnGUI() {
