@@ -147,18 +147,17 @@ public class TowerSelection : MonoBehaviour
     // Sell the given game object if it has tower behavior component. Give some credit back.
     public void sellTower(GameObject go)
     {
+        // Try to obtain behavior from tower
         TowerBehavior tb = go.GetComponent<TowerBehavior>();
+        if (tb == null) // Try to obtain behavior from tower's children (aka rotative parts)
+            tb = go.GetComponentInChildren<TowerBehavior>();   
+
         if (tb != null)
         {
-            LogicConnector.increaseCredit( (int) (tb.cost * paybackRate));
+            // Increase credit and remove game object
+            LogicConnector.increaseCredit((int)(tb.cost * paybackRate));
             Destroy(tower);
-
-            tower = null;
-
-            // set boolean values
-            this.showSelected = true;
-            newTower = false;
-        }    
+        }
     }
 }
 
