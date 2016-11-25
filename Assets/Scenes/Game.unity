@@ -10871,7 +10871,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &1512485315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13405,7 +13405,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!82 &1753859878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13417,10 +13417,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfd47a377468c7f41a07a50d605f5436, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
@@ -13588,7 +13588,7 @@ Transform:
   - {fileID: 697019319}
   - {fileID: 1931045439}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1931045438
 GameObject:
   m_ObjectHideFlags: 0
@@ -13702,7 +13702,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467706, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 165944, guid: 5a093298d928f804db20f13831fb1bf1, type: 2}
       propertyPath: m_Name
