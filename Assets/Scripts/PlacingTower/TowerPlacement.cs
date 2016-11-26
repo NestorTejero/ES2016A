@@ -11,6 +11,9 @@ public class TowerPlacement : MonoBehaviour
     private Color32 colorInicial;
     private bool isPlaced;
     private int towerCost;
+    private float numHeight;
+    private float numWidth1;
+    private float numWidth2;
     public int type_tower; // 0 -> dinosaur / 1 -> tank / 2 -> tower
 
     public Vector3 scale = new Vector3(10,10,10);
@@ -38,6 +41,10 @@ public class TowerPlacement : MonoBehaviour
             // (= ray collision with the terrain, hit is the output)
             if (Terrain.activeTerrain.GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {
+                //Adaptacion de la pantalla al GUI inferior
+                numHeight = (Screen.height - 330) / 6f;
+                numWidth1 = (Screen.width - 400) / 1.61f;
+                numWidth2 = (Screen.width - 400) / 3.14f;
                 // Point of the terrain where we are aiming at
                 Vector3 point = hit.point;
                 // Giving the position to the newTower 
@@ -45,8 +52,8 @@ public class TowerPlacement : MonoBehaviour
                 // (where we put towers is supposed to be a flat terrain of height 0)
                 newTower.transform.position = new Vector3(point.x, newTower.position.y, point.z);
                 // Cancell the tower placement by using right click and the Tower is not placed if clicking over the HUD
-                if ((Input.GetMouseButtonDown(1)) || Input.GetMouseButtonDown(0) && Input.mousePosition.y < 50 && Input.mousePosition.x
-                    > 189 && Input.mousePosition.x < 345 || Input.GetMouseButtonDown(0) && Input.mousePosition.y > 283)
+                if (Input.GetMouseButtonDown(1) || (Input.GetMouseButtonDown(0) && Input.mousePosition.y < (54 + numHeight)
+                    && Input.mousePosition.x < (249 + numWidth1) && Input.mousePosition.x > (127 + numWidth2)))
                 {
                     Destroy(tow);
                 }
