@@ -17,10 +17,11 @@ public class EnemyBehaviour : MonoBehaviour {
     private Vector3 position;
     private bool isAttacking = false;
 
-
+    // Destroy nearby towers if enemy is unable to move.
     void isBlocked()
     {
-        if (position.x < gameObject.transform.position.x+2 && position.x > gameObject.transform.position.x-2 && position.z < gameObject.transform.position.z + 2 && position.z > gameObject.transform.position.z - 2 && !isAttacking)
+        if (position.x < gameObject.transform.position.x+2 && position.x > gameObject.transform.position.x-2 &&
+            position.z < gameObject.transform.position.z + 2 && position.z > gameObject.transform.position.z - 2 && !isAttacking)
         {
             Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, 3);
             int i = 0;
@@ -34,10 +35,6 @@ public class EnemyBehaviour : MonoBehaviour {
             }
         }
         position = gameObject.transform.position;
-
-
-
-
     }
 
 
@@ -48,6 +45,8 @@ public class EnemyBehaviour : MonoBehaviour {
         if (other.gameObject.tag == targetTagName)
         {
             isAttacking = true;
+            if (other != null)
+                other.GetComponent<HomeBehavior>().takeDamage(damage);
             SelfDestroy();
         }
         if (other.gameObject.tag == "projectile")
