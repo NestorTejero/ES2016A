@@ -9,7 +9,7 @@ public class TowerPlacement : MonoBehaviour
     private GameObject tow;
     private TowerPosition towPos;
     private Color32 colorInicial;
-    private bool isPlaced;
+    public bool isPlaced;
     private int towerCost;
     private float numHeight;
     private float numWidth1;
@@ -65,6 +65,7 @@ public class TowerPlacement : MonoBehaviour
                     newTower.GetComponent<Renderer>().material.color = colorInicial;
                     Destroy(newTower.GetComponent<TowerPosition>());
                     isPlaced = true;
+                    newTower.GetComponent<NavMeshObstacle>().enabled = true;
 
                     if (newTower.GetComponent<TowerBehavior>() != null)     // One-object prefab
                     {
@@ -128,6 +129,7 @@ public class TowerPlacement : MonoBehaviour
         towerCost = cost;
         colorInicial = newTower.GetComponent<Renderer>().material.color;
         newTower.GetComponent<Renderer>().material.color = new Color32(0, 255, 0, 125);
-        
+        newTower.GetComponent<NavMeshObstacle>().enabled = false;
+
     }
 }
