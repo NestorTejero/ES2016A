@@ -862,7 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2.5
-  health: 1000
+  health: 10000
   speed: 5
   moneyValue: 5
   target: {fileID: 0}
