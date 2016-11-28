@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 250
   scrollSpeed: 250
-  minimumBoundary: {x: 10, y: 20, z: 10}
+  minimumBoundary: {x: 10, y: 20, z: -10}
   maximumBoundary: {x: 190, y: 80, z: 120}
   targetTag: home
 --- !u!81 &136881509
@@ -12698,7 +12698,7 @@ MonoBehaviour:
     State: 0
     SubState: 1
     TowerObjects:
-    - {fileID: 128134, guid: 4aa32ee2037a9f34595da5a44b06d920, type: 2}
+    - {fileID: 108318, guid: 4aa32ee2037a9f34595da5a44b06d920, type: 2}
     - {fileID: 117610, guid: 248f018e6d4c7b5418a3120b010b01de, type: 2}
     - {fileID: 106906, guid: 4f681e75cc6012e42bec259614fdcbd4, type: 2}
     Health: 3
@@ -13574,7 +13574,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfd47a377468c7f41a07a50d605f5436, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 1

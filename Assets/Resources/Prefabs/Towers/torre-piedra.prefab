@@ -1,20 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &128134
+--- !u!1 &108318
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 427028}
-  - 33: {fileID: 3317540}
-  - 23: {fileID: 2353260}
-  - 95: {fileID: 9553398}
-  - 208: {fileID: 20842318}
-  - 54: {fileID: 5404868}
-  - 65: {fileID: 6569278}
-  - 114: {fileID: 11419456}
+  - 4: {fileID: 440666}
+  - 33: {fileID: 3371210}
+  - 23: {fileID: 2367142}
+  - 208: {fileID: 20865796}
+  - 65: {fileID: 6522164}
+  - 54: {fileID: 5428774}
+  - 114: {fileID: 11402280}
   m_Layer: 0
   m_Name: torre-piedra
   m_TagString: tower
@@ -22,25 +21,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &427028
+--- !u!4 &440666
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 84.15635, y: 2.7028422, z: 106.37045}
-  m_LocalScale: {x: 1.2890851, y: 1.2890851, z: 1.2890851}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_GameObject: {fileID: 108318}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 75.56266, y: 0.026347553, z: 80.45811}
+  m_LocalScale: {x: 100, y: 100.000015, z: 100.000015}
+  m_LocalEulerAnglesHint: {x: -89.980194, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2353260
+--- !u!23 &2367142
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
+  m_GameObject: {fileID: 108318}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,19 +60,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3317540
+--- !u!33 &3371210
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
-  m_Mesh: {fileID: 4300000, guid: e954fb4130ab07e498db90e772b8640a, type: 3}
---- !u!54 &5404868
+  m_GameObject: {fileID: 108318}
+  m_Mesh: {fileID: 4300000, guid: 009491b8c417eba479219c1c9fe7e2b1, type: 3}
+--- !u!54 &5428774
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
+  m_GameObject: {fileID: 108318}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -83,41 +82,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6569278
+--- !u!65 &6522164
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
+  m_GameObject: {fileID: 108318}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.49963, y: 2.4996305, z: 4.8528633}
-  m_Center: {x: -0.0021020174, y: 0.006065966, z: 0.32971808}
---- !u!95 &9553398
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fc40c0b9b8ea23946986ee8242d12fde, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11419456
+  m_Size: {x: 0.03222236, y: 0.032222353, z: 0.0625575}
+  m_Center: {x: -0.0000030389056, y: 0.0000087684, z: 0.031015277}
+--- !u!114 &11402280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
+  m_GameObject: {fileID: 108318}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
@@ -133,20 +115,20 @@ MonoBehaviour:
   turnSpeed: 90
   projectileSpeed: 100
   projectile: {fileID: 498000, guid: 7e11bd6c371fe3c4d9992314b58a0486, type: 2}
---- !u!208 &20842318
+--- !u!208 &20865796
 NavMeshObstacle:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128134}
+  m_GameObject: {fileID: 108318}
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.25, y: 1.25, z: 2.426}
+  m_Extents: {x: 0.016, y: 0.016, z: 0.031000001}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.002, y: 0.006, z: 0.33}
+  m_Center: {x: 0, y: 0, z: 0.031000001}
   m_TimeToStationary: 0.5
 --- !u!1001 &100100000
 Prefab:
@@ -157,5 +139,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 128134}
+  m_RootGameObject: {fileID: 108318}
   m_IsPrefabParent: 1
