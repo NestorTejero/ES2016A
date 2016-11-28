@@ -69,7 +69,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 456032}
   - 137: {fileID: 13708410}
-  - 95: {fileID: 9529468}
   - 65: {fileID: 6507598}
   m_Layer: 0
   m_Name: enemy-gordo
@@ -585,7 +584,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 195, y: 0, z: 52}
+  m_LocalPosition: {x: 79.33, y: 0.0000009536743, z: 88.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -600,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152012}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2.277759, z: 0.09137375}
+  m_LocalPosition: {x: 1.06, y: 2.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
@@ -644,8 +643,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.000000002706464, z: -0.000000003994074}
-  m_LocalScale: {x: 0.5362888, y: 0.4087168, z: 0.4087168}
+  m_LocalPosition: {x: 0, y: -4.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 442348}
@@ -814,25 +813,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.458622, y: 11.034321, z: 6.516597}
-  m_Center: {x: 0.032940324, y: 5.4474545, z: -0.4520609}
---- !u!95 &9529468
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111012}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2d12db00fd08900468ff319a351b95c8, type: 3}
-  m_Controller: {fileID: 9100000, guid: b1884c38c29908e408fd75b4caf71927, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_Size: {x: 3.3565674, y: 4.6355715, z: 2.1751614}
+  m_Center: {x: 0.6631775, y: 6.212806, z: -0.22779083}
 --- !u!95 &9571190
 Animator:
   serializedVersion: 3
@@ -841,8 +823,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131050}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2d12db00fd08900468ff319a351b95c8, type: 3}
-  m_Controller: {fileID: 9100000, guid: b1884c38c29908e408fd75b4caf71927, type: 2}
+  m_Avatar: {fileID: 9000000, guid: c39e99ddcbddd6b4cadffa90ef0152f7, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4d8cf8fd702a49f4791622c99321e593, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -896,7 +878,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300002, guid: 2d12db00fd08900468ff319a351b95c8, type: 3}
+  m_Mesh: {fileID: 4300002, guid: c39e99ddcbddd6b4cadffa90ef0152f7, type: 3}
   m_Bones:
   - {fileID: 413844}
   - {fileID: 487674}
@@ -925,8 +907,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 413844}
   m_AABB:
-    m_Center: {x: 0.04612899, y: 0.017665505, z: -0.13634974}
-    m_Extent: {x: 2.2089722, y: 2.5362754, z: 1.248425}
+    m_Center: {x: 0.34490544, y: -0.0111756325, z: -0.13634968}
+    m_Extent: {x: 2.1987004, y: 2.0499415, z: 1.248425}
   m_DirtyAABB: 0
 --- !u!195 &19520726
 NavMeshAgent:
@@ -935,7 +917,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131050}
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
