@@ -96,9 +96,9 @@ public class menusScript : MonoBehaviour {
     }
 
     public void startLevel() {
-        Scene sc=SceneManager.GetActiveScene();
-        int numSceneActive = sc.buildIndex;
-		SceneManager.LoadScene(numSceneActive+1);
+        // Scene sc=SceneManager.GetActiveScene();
+        // int numSceneActive = sc.buildIndex;
+		SceneManager.LoadScene("Game");
     }
 
     public void exitGame() {
