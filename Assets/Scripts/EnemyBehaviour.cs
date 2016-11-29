@@ -16,6 +16,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private float time = 0;
     private Vector3 position;
     private bool isAttacking = false;
+    private bool isDead = false;
 
     // Destroy nearby towers if enemy is unable to move.
     void isBlocked()
@@ -91,10 +92,13 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
-
-            LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft()-1);
-			LogicConnector.increaseCredit(moneyValue);
-            SelfDestroy();
+            if (!isDead)
+            {
+                isDead = true;
+                LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() - 1);
+                LogicConnector.increaseCredit(moneyValue);
+                SelfDestroy();
+            }
         }
     }
 

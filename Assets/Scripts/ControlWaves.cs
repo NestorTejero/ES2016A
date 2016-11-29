@@ -102,16 +102,20 @@ public class ControlWaves : MonoBehaviour
             else if (enemyList != null && currentEnemy < enemyList.Count)
                 NextEnemy();
 
-            // Condition to win
-            else if (currentRound == totalRounds)
-                Debug.Log("YOU WIN!");
-          
+        
 
             // After N seconds, start a new wave
             else if (!GameObject.FindGameObjectWithTag("enemy")){
-				if (LogicConnector.isInBattling())
-					LogicConnector.Break();
-                LogicConnector.decreaseTime(Time.deltaTime);
+                // Condition to win
+                if (currentRound == totalRounds)
+                    Debug.Log("YOU WIN!");
+                else
+                {
+                    if (LogicConnector.isInBattling())
+                        LogicConnector.Break();
+                    LogicConnector.decreaseTime(Time.deltaTime);
+                }
+                
 			}
 
         }
