@@ -11,12 +11,7 @@ public class HomeBehavior : MonoBehaviour {
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
-        // Take damage after an enemy impact
-        if (other.gameObject.tag == "enemy")
-        {
-            EnemyBehaviour pb = (EnemyBehaviour)other.gameObject.GetComponent("EnemyBehaviour");
-            TakeDamage(pb.damage);
-        }
+        // This function could prove itself useful if we want to implement shooter enemies.
     }
 
     // Use this for initialization
@@ -24,10 +19,11 @@ public class HomeBehavior : MonoBehaviour {
         LogicConnector.setCredit(initCredit);
 	}
 
-    private void TakeDamage (float damage)
+    public void takeDamage (float damage)
     {
         health = Mathf.Max(0, health - damage);
 		LogicConnector.setHealth( (int)(health*lifes/ maxHealth)+1 );
+
         if (health == 0)
         {
 			LogicConnector.setHealth(0);

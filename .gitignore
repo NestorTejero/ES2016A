@@ -31,7 +31,6 @@ sysinfo.txt
 
 #Blender generated files
 *.blend1
-*.blend.meta
 
 ============
 OS generated

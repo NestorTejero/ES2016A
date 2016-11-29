@@ -13,6 +13,30 @@ public class EnemyBehaviour : MonoBehaviour {
 
     private NavMeshAgent agent;
 	private Animator anim;
+    private float time = 0;
+    private Vector3 position;
+    private bool isAttacking = false;
+    private bool isDead = false;
+
+    // Destroy nearby towers if enemy is unable to move.
+    void isBlocked()
+    {
+        if (position.x < gameObject.transform.position.x+2 && position.x > gameObject.transform.position.x-2 &&
+            position.z < gameObject.transform.position.z + 2 && position.z > gameObject.transform.position.z - 2 && !isAttacking)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, 3);
+            int i = 0;
+            while (i < hitColliders.Length)
+            {
+                if (hitColliders[i].tag == "tower")
+                {
+                    Destroy(hitColliders[i].gameObject);
+                }
+                i++;
+            }
+        }
+        position = gameObject.transform.position;
+    }
 
 
     // Collision management.
@@ -21,6 +45,9 @@ public class EnemyBehaviour : MonoBehaviour {
         // Beware! Entity is only sensitive to collision whith the player's home and projectiles.
         if (other.gameObject.tag == targetTagName)
         {
+            isAttacking = true;
+            if (other != null)
+                other.GetComponent<HomeBehavior>().takeDamage(damage);
             SelfDestroy();
         }
         if (other.gameObject.tag == "projectile")
@@ -28,7 +55,10 @@ public class EnemyBehaviour : MonoBehaviour {
             ProjectileBehaviour pb = (ProjectileBehaviour) other.gameObject.GetComponent("ProjectileBehaviour");
             TakeDamage(pb.damage);
         }
+
+
     }
+
 
     // Use this for initialization
     void Start ()
@@ -49,7 +79,10 @@ public class EnemyBehaviour : MonoBehaviour {
             agent = GetComponent<NavMeshAgent>();
             agent.speed = speed;
             agent.destination = destination;
-        }  
+        }
+
+        position = gameObject.transform.position;
+        InvokeRepeating("isBlocked", 0, 3);
 
     }
 
@@ -59,10 +92,13 @@ public class EnemyBehaviour : MonoBehaviour {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
         {
-            // Uncomment in dev integration (Team C did a new logic connector)
-            //LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() -= 1);
-			LogicConnector.increaseCredit(moneyValue);
-            SelfDestroy();
+            if (!isDead)
+            {
+                isDead = true;
+                LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() - 1);
+                LogicConnector.increaseCredit(moneyValue);
+                SelfDestroy();
+            }
         }
     }
 

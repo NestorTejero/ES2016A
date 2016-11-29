@@ -12,7 +12,7 @@
 				<speed>5.0</speed>
 				<money>5</money>
 				<amount>5</amount>
-				<spawnTime>2.0</spawnTime>
+				<spawnTime>4.0</spawnTime>
 			</Enemy>
 			<Enemy>
 				<name>enemy-porky</name>
@@ -21,16 +21,16 @@
 				<speed>5.0</speed>
 				<money>10</money>
 				<amount>10</amount>
-				<spawnTime>2.0</spawnTime>
+				<spawnTime>4.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-cavernicola</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
 				<money>5</money>
 				<amount>5</amount>
-				<spawnTime>2.0</spawnTime>
+				<spawnTime>4.0</spawnTime>
 			</Enemy>
 		</Round>
 		
@@ -44,16 +44,16 @@
 				<speed>5.0</speed>
 				<money>10</money>
 				<amount>5</amount>
-				<spawnTime>2.0</spawnTime>
+				<spawnTime>4.0</spawnTime>
 			</Enemy>
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-cavernicola</name>
 				<damage>2.5</damage>
 				<health>10.0</health>
 				<speed>5.0</speed>
 				<money>5</money>
 				<amount>5</amount>
-				<spawnTime>2.0</spawnTime>
+				<spawnTime>4.0</spawnTime>
 			</Enemy>
 		</Round>
 		

@@ -17,7 +17,7 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         // Call Spawn method every "spawnTime" seconds       
-        InvokeRepeating("Spawn", 0, spawnTime);
+        InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
     void Spawn()
