@@ -32,6 +32,8 @@ public class TowerPlacement : MonoBehaviour
         // Updating the tower position (and placing it on click)
         if (newTower != null && !isPlaced)
         {
+            // Disable TowerSelection script cause we do not want to select towers while placing one
+            GameObject.Find("GameScripts").GetComponent<TowerSelection>().enabled = false;
 
             RaycastHit hit = new RaycastHit();
             // Ray that goes from the screen (camera) to the mouse position
@@ -47,9 +49,7 @@ public class TowerPlacement : MonoBehaviour
                 numWidth2 = (Screen.width - 400) / 3.14f;
                 // Point of the terrain where we are aiming at
                 Vector3 point = hit.point;
-                // Giving the position to the newTower 
-                // (height to 0 to place it on the "terrain height 0" and not on the "mountains")
-                // (where we put towers is supposed to be a flat terrain of height 0)
+                // Giving the position to the newTower (using the height of the object itself for y axis and mouse  for x and z axis)
                 newTower.transform.position = new Vector3(point.x, newTower.position.y, point.z);
                 // Cancell the tower placement by using right click and the Tower is not placed if clicking over the HUD
                 if (Input.GetMouseButtonDown(1) || (Input.GetMouseButtonDown(0) && Input.mousePosition.y < (54 + numHeight)
@@ -81,7 +81,6 @@ public class TowerPlacement : MonoBehaviour
                     
 					LogicConnector.decreaseCredit(towerCost);
 
-
                 }
             }
 
@@ -89,6 +88,9 @@ public class TowerPlacement : MonoBehaviour
         else
         {
             // already placed (or null)
+
+            // Re enable TowerSelection script
+            GameObject.Find("GameScripts").GetComponent<TowerSelection>().enabled = true;
         }
     }
 

@@ -47,67 +47,33 @@ public class TowerSelection : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    if (hit.transform.tag == "Button")
+                    // If we already have a tower selected, reset the color and unselect it
+                    if (tower != null)
                     {
-
+                        // set back the initial renderer color of the tower
+                        tower.GetComponent<Renderer>().material.color = colorInicial;
+                        // unselect the tower
+                        tower = null;
                     }
-                    // Check if we clicked a tower
+
+                    // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
                     if (hit.transform.gameObject.tag == "tower")
                     {
-                        // If we already have a tower selected, unselect it and reset the color
-                        if (tower != null)
-                        {
-                            // set back the initial renderer color of the tower (if it is not a new tower)
-                            if (!newTower)
-                            {
-                                tower.GetComponent<Renderer>().material.color = colorInicial;
-                            }
-                            // unselect the tower
-                            tower = null;
-                        }
-
                         // get the new selection
                         tower = hit.transform.gameObject;
+                        // store the initial color
+                        colorInicial = tower.GetComponent<Renderer>().material.color;
+                        // set blue color for a selected tower
+                        tower.GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 125);
 
-                        // If we are selecting a tower we are placing (new tower) do not select it
-                        if (tower.GetComponent<Renderer>().material.color == new Color32(0, 255, 0, 125) ||
-                            tower.GetComponent<Renderer>().material.color == new Color32(255, 0, 0, 125))
-                        {
-                            tower = null;
-
-                            // set boolean values
-                            this.showSelected = false;
-                            newTower = true;
-                        }
-                        // Selecting a tower we have already placed
-                        else
-                        {
-                            // store the initial color
-                            colorInicial = tower.GetComponent<Renderer>().material.color;
-                            // set blue color for a selected tower
-                            tower.GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 125);
-
-                            // set boolean values
-                            this.showSelected = true;
-                            newTower = false;
-                        }
+                        // means OnGUI method will draw the buttons and evaluate the click on them
+                        this.showSelected = true;
                     }
-                    // If not, unselect the tower
+                    // If not, clear the buttons from OnGUI
                     else
                     {
-                        if (tower != null)
-                        {
-                            // set back the initial renderer color of the tower (if it is not a new tower)
-                            if (!newTower)
-                            {
-                                tower.GetComponent<Renderer>().material.color = colorInicial;
-                            }
-                            // unselect the tower
-                            tower = null;
-                        }
-                        // set boolean values
+                        // means OnGUI method will do nothing 
                         this.showSelected = false;
-                        newTower = false;
                     }
                 }
             }
