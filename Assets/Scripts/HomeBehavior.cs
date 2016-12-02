@@ -27,7 +27,7 @@ public class HomeBehavior : MonoBehaviour {
         if (health == 0)
         {
 			LogicConnector.setHealth(0);
-            // TO DO: CALL TEAM C METHOD "GAME OVER" (doesnt exist)
+            LogicConnector.GameOver();
             SelfDestroy();
         }
     }
