@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2312836}
   - 114: {fileID: 11444008}
   - 136: {fileID: 13685208}
+  - 208: {fileID: 20824548}
   m_Layer: 0
   m_Name: Home
   m_TagString: home
@@ -89,10 +90,25 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 6
+  m_Radius: 5.5
   m_Height: 20
   m_Direction: 1
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!208 &20824548
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165944}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 5, y: 10, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

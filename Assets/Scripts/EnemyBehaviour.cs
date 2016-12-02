@@ -88,6 +88,13 @@ public class EnemyBehaviour : MonoBehaviour {
 
     }
 
+    // Temporary solution to some enemies not facing the tower when attacking
+    void Update()
+    {
+        if (isAttacking && target != null)
+            transform.LookAt(target.transform.position);
+    }
+
     // Can be modified to add cool effects when the entity takes damage.
     protected virtual void TakeDamage(float damage)
     {
