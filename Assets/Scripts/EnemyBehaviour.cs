@@ -50,7 +50,8 @@ public class EnemyBehaviour : MonoBehaviour {
             if (other != null)
             {
                 target = other.gameObject;
-                InvokeRepeating("Attack", attackRate, attackRate);
+                Stop(); // stop moving
+                InvokeRepeating("Attack", attackRate, attackRate); // start attacking
             }               
             
         }
@@ -121,6 +122,20 @@ public class EnemyBehaviour : MonoBehaviour {
         }
         // Assign damage to target.
         target.GetComponent<HomeBehavior>().takeDamage(damage);
+    }
+
+    // Stops navigation agent movement.
+    private void Stop()
+    {
+        if (agent != null)
+            agent.Stop();
+    }
+
+    // Resumes navigation agent movement.
+    private void Resume()
+    {
+        if (agent != null)
+            agent.Resume();
     }
 
 
