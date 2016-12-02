@@ -20,8 +20,9 @@ public class ControlWaves : MonoBehaviour
     {
 
         // Read xml document and get rounds info
+        TextAsset textAsset = (TextAsset)Resources.Load("Xml/rounds");
         XmlDocument newXml = new XmlDocument();
-        newXml.Load(Application.dataPath + "/Resources/Xml/rounds.xml");
+        newXml.LoadXml(textAsset.text);
 
         root = newXml.DocumentElement;
         
