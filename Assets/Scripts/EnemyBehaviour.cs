@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float health;
     public float speed;
     public int moneyValue;
+    public float attackRate = 1f; // time between attacks (in seconds)
 
     public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
@@ -15,8 +16,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	private Animator anim;
     private float time = 0;
     private Vector3 position;
-    private bool isAttacking = false;
-    private bool isDead = false;
+    private bool isAttacking = false;  // attacking mode flag
+    private bool isDead = false;  
 
     // Destroy nearby towers if enemy is unable to move.
     void isBlocked()
@@ -47,23 +48,23 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             isAttacking = true;
             if (other != null)
-                other.GetComponent<HomeBehavior>().takeDamage(damage);
-            SelfDestroy();
+            {
+                target = other.gameObject;
+                InvokeRepeating("Attack", attackRate, attackRate);
+            }               
+            
         }
         if (other.gameObject.tag == "projectile")
         {
-            ProjectileBehaviour pb = (ProjectileBehaviour) other.gameObject.GetComponent("ProjectileBehaviour");
+            ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
             TakeDamage(pb.damage);
         }
-
-
     }
 
 
     // Use this for initialization
     void Start ()
     {
-
 		anim = GetComponent<Animator> ();
 
         // Get the Scene's home
@@ -106,6 +107,20 @@ public class EnemyBehaviour : MonoBehaviour {
     protected virtual void SelfDestroy()
     {       
         Destroy(gameObject);
+    }
+
+    // Assign damage to the target.
+    private void Attack()
+    {
+        // Disable attacking mode if target has been destroyed.
+        if (target == null)
+        {
+            isAttacking = false;
+            CancelInvoke(); // cancel all invokes
+            return;
+        }
+        // Assign damage to target.
+        target.GetComponent<HomeBehavior>().takeDamage(damage);
     }
 
 
