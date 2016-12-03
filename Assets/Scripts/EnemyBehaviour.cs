@@ -9,6 +9,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public int moneyValue;
     public float attackRate = 1f; // time between attacks (in seconds)
 
+    private float rotSpeed = 50;  // rotation speed
+
     public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
 
@@ -16,7 +18,11 @@ public class EnemyBehaviour : MonoBehaviour {
 	private Animator anim;
     private float time = 0;
     private Vector3 position;
-    private bool isAttacking = false;  // attacking mode flag
+
+    // FLAGS
+    private bool isAttacking = false;       // attacking mode flag
+    private bool targetLocked = false;      // if false -> rotate to face target if attacking
+                                            // if true  -> look at target
     private bool isDead = false;  
 
     // Destroy nearby towers if enemy is unable to move.
@@ -91,8 +97,22 @@ public class EnemyBehaviour : MonoBehaviour {
     // Temporary solution to some enemies not facing the tower when attacking
     void Update()
     {
+        // TODO: Optimize these lines of code
         if (isAttacking && target != null)
-            transform.LookAt(target.transform.position);
+        {
+            transform.LookAt(target.transform);
+            /*
+            if (targetLocked)
+            {
+                transform.LookAt(target.transform);
+            }      
+            else
+            {
+                targetLocked = IsFacingOther(target.transform);
+                transform.Rotate(new Vector3(0, Time.deltaTime * rotSpeed, 0));
+            }   
+            */
+        }              
     }
 
     // Can be modified to add cool effects when the entity takes damage.
@@ -145,6 +165,19 @@ public class EnemyBehaviour : MonoBehaviour {
             agent.Resume();
     }
 
+    private bool IsFacingOther(Transform other)
+    {
+        // Return false if there is no target.
+        if (other == null)
+            return false;
 
+        // Check if this transform is facing its target.
+        if (Vector3.Dot(transform.forward, (other.position - transform.position).normalized) == 1)
+        {
+            targetLocked = true;
+            return true;    // Return true if facing target.
+        }           
+        return false;
+    }
 
 }
