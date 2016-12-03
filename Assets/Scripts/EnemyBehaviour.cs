@@ -25,21 +25,27 @@ public class EnemyBehaviour : MonoBehaviour {
                                             // if true  -> look at target
     private bool isDead = false;  
 
-    // Destroy nearby towers if enemy is unable to move.
+    // Checks if enemy is unable to move, and manages such situation.
     void isBlocked()
     {
+        // Check if blocked
         if (position.x < gameObject.transform.position.x+2 && position.x > gameObject.transform.position.x-2 &&
             position.z < gameObject.transform.position.z + 2 && position.z > gameObject.transform.position.z - 2 && !isAttacking)
         {
             Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, 3);
-            int i = 0;
-            while (i < hitColliders.Length)
+            foreach (Collider collider in hitColliders)
             {
-                if (hitColliders[i].tag == "tower")
+                // Enemy is blocked by a tower
+                if (collider.tag == "tower")
                 {
-                    Destroy(hitColliders[i].gameObject);
+                    CancelInvoke("isBlocked");          // abort isBlocked checking
+
+                    target = collider.gameObject;       // target blocking tower
+                    isAttacking = true;
+                    Stop();                                             // stop moving
+                    InvokeRepeating("Attack", attackRate, attackRate);  // begin attack on new target
+                    break;
                 }
-                i++;
             }
         }
         position = gameObject.transform.position;
@@ -49,25 +55,31 @@ public class EnemyBehaviour : MonoBehaviour {
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
-        // Beware! Entity is only sensitive to collision whith the player's home and projectiles.
-        if (other.gameObject.tag == targetTagName)
+        switch (other.gameObject.tag)
         {
-            isAttacking = true;
-            if (other != null)
-            {
-                target = other.gameObject;
-                Stop(); // stop moving
-                InvokeRepeating("Attack", attackRate, attackRate); // start attacking
-            }               
-            
-        }
-        if (other.gameObject.tag == "projectile")
-        {
-            ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
-            TakeDamage(pb.damage);
+            case "projectile":  // Enemy gets hit by a projectile
+                ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
+                TakeDamage(pb.damage);      // manage damage inflicted by the projectile
+                break;
+
+            case "home": // Enemy reaches home
+                if (isAttacking)
+                    return;     // do nothing if attacking
+                
+                target = other.gameObject;                          // set target
+                isAttacking = true;
+                Stop();                                             // stop moving
+                InvokeRepeating("Attack", attackRate, attackRate);  // begin attack
+                break;
+
+            case "tower": // Enemy collides with a tower
+                if (isAttacking)
+                    return;     // do nothing if attacking
+
+                InvokeRepeating("isBlocked", 0, 3);     // begin checking if enemy is blocked
+                break;
         }
     }
-
 
     // Use this for initialization
     void Start ()
@@ -90,14 +102,12 @@ public class EnemyBehaviour : MonoBehaviour {
         }
 
         position = gameObject.transform.position;
-        InvokeRepeating("isBlocked", 0, 3);
-
     }
 
     // Temporary solution to some enemies not facing the tower when attacking
     void Update()
     {
-        // TODO: Optimize these lines of code
+        // TODO: Implement rotation
         if (isAttacking && target != null)
         {
             transform.LookAt(target.transform);
@@ -144,11 +154,15 @@ public class EnemyBehaviour : MonoBehaviour {
         if (target == null)
         {
             isAttacking = false;
-            CancelInvoke(); // cancel all invokes
+            CancelInvoke("Attack"); // cancel all invokes
+            Resume();               // resume movement
             return;
         }
         // Assign damage to target.
-        target.GetComponent<HomeBehavior>().takeDamage(damage);
+        if (target.tag == "home")
+            target.GetComponent<HomeBehavior>().takeDamage(damage);
+        else if (target.tag == "tower")
+            target.GetComponent<TowerBehavior>().takeDamage(damage);
     }
 
     // Stops navigation agent movement.
