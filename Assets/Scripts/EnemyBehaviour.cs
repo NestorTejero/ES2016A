@@ -10,7 +10,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public float attackRate = 1f; // time between attacks (in seconds)
 
     // Private STATS: By reducing the ammount of public stats we limint the cost of balancing the game.
-    private float rotSpeed = 100;  // rotation speed
+    private float rotSpeed = 2.5f;  // rotation speed
 
     public GameObject target;                   // target position should be that of the player's base
     public string targetTagName = "home";       // player tag. 
@@ -182,25 +182,17 @@ public class EnemyBehaviour : MonoBehaviour {
     // Check if enemy is facing given transform. Rotate towards it if not facing.
     private void FaceTarget(Transform other)
     {    
-        float tol = 0.02f;     // tolerance in degrees
-        // Normalized orientation of the enemy relative to target position
-        Vector3 orientation = (transform.forward - 
-            (target.transform.position - transform.position).normalized).normalized;
-
-        if (Mathf.Abs(orientation.x) < tol || Mathf.Abs(orientation.z) < tol)
+        if (Vector3.Dot(transform.forward, (other.position - transform.position).normalized) > 0.95)
         {
             targetLocked = true;  // set flag if enemy is reasonably facing its target
             return;
         }
-        // Rotate clockwise if target lies on the right, rotate anti-clockwise if target lies on the left
-        if (orientation.x < 0 && orientation.z < 0)
-            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));  // rotate clockwise 
-        else if (orientation.x >= 0 && orientation.z >= 0)
-            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));  // rotate clockwise 
-        else if (orientation.x < 0 && orientation.z >= 0)
-            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));  // rotate anti-clockwise
-        else if (orientation.x >= 0 && orientation.z < 0)
-            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));  // rotate anti-clockwise
+
+        // Rotate towards target direction
+        Vector3 targetDir = target.transform.position - transform.position;
+        targetDir.y = transform.position.y;                     // prevent enemy from staring at the ground
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, rotSpeed * Time.deltaTime, 0.0F);
+        transform.rotation = Quaternion.LookRotation(newDir);   // apply rotation
     }
 
 }
