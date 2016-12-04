@@ -108,21 +108,16 @@ public class EnemyBehaviour : MonoBehaviour {
     void Update()
     {
         // TODO: Implement rotation
-        if (isAttacking && target != null)
+        if (!isAttacking || target == null)
         {
+            targetLocked = false; // reset lock flag
+            return;
+        }
+
+        if (targetLocked)
             transform.LookAt(target.transform);
-            /*
-            if (targetLocked)
-            {
-                transform.LookAt(target.transform);
-            }      
-            else
-            {
-                targetLocked = IsFacingOther(target.transform);
-                transform.Rotate(new Vector3(0, Time.deltaTime * rotSpeed, 0));
-            }   
-            */
-        }              
+        else
+            FaceTarget(target.transform);        
     }
 
     // Can be modified to add cool effects when the entity takes damage.
@@ -179,19 +174,24 @@ public class EnemyBehaviour : MonoBehaviour {
             agent.Resume();
     }
 
-    private bool IsFacingOther(Transform other)
+    // Check if enemy is facing given transform. Rotate towards it if not facing.
+    // TODO: Do the shortest rotation
+    private void FaceTarget(Transform other)
     {
-        // Return false if there is no target.
-        if (other == null)
-            return false;
+        float tol = 20;     // tolerance in degrees        
 
-        // Check if this transform is facing its target.
-        if (Vector3.Dot(transform.forward, (other.position - transform.position).normalized) == 1)
-        {
-            targetLocked = true;
-            return true;    // Return true if facing target.
-        }           
-        return false;
+        Vector3 orientation = transform.forward;                               // enemy orientation
+        Vector3 targetPos = (other.position - transform.position).normalized;  // target position relative to enemy
+        float angle = Vector3.Angle(orientation, targetPos);                   // angle between orientation and enemy position
+
+        Debug.Log("angle= " + Vector3.Angle(orientation, targetPos));
+
+        if (Mathf.Abs(angle) <= tol)
+            targetLocked = true;    // set flag if its reasonably facing target
+        else
+            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+        
+            
     }
 
 }
