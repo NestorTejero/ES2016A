@@ -2,17 +2,18 @@
 using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
-    // STATS
+    // Public STATS
     public float damage;
     public float health;
     public float speed;
     public int moneyValue;
     public float attackRate = 1f; // time between attacks (in seconds)
 
-    private float rotSpeed = 75;  // rotation speed
+    // Private STATS: By reducing the ammount of public stats we limint the cost of balancing the game.
+    private float rotSpeed = 100;  // rotation speed
 
-    public GameObject target;                    // Target position should be that of the player's base.
-    public string targetTagName = "home";       // Player tag. 
+    public GameObject target;                   // target position should be that of the player's base
+    public string targetTagName = "home";       // player tag. 
 
     private NavMeshAgent agent;
 	private Animator anim;
@@ -76,7 +77,7 @@ public class EnemyBehaviour : MonoBehaviour {
                 if (isAttacking)
                     return;     // do nothing if attacking
 
-                InvokeRepeating("isBlocked", 0, 3);     // begin checking if enemy is blocked
+                InvokeRepeating("isBlocked", 3, 3);     // begin checking if enemy is blocked
                 break;
         }
     }
@@ -180,24 +181,26 @@ public class EnemyBehaviour : MonoBehaviour {
 
     // Check if enemy is facing given transform. Rotate towards it if not facing.
     private void FaceTarget(Transform other)
-    {
-        float tol = 0.018f;     // tolerance      
+    {    
+        float tol = 0.02f;     // tolerance in degrees
+        // Normalized orientation of the enemy relative to target position
         Vector3 orientation = (transform.forward - 
-            (other.position - transform.position).normalized).normalized;   // enemy orientation relative to target
-        
-        if (Mathf.Abs(orientation.z) < tol)
+            (target.transform.position - transform.position).normalized).normalized;
+
+        if (Mathf.Abs(orientation.x) < tol || Mathf.Abs(orientation.z) < tol)
         {
             targetLocked = true;  // set flag if enemy is reasonably facing its target
             return;
         }
-        if (orientation.x < 0 && orientation.z < 0)         // turn clockwise if target is to the right
-            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
-        else if (orientation.x < 0 && orientation.z >= 0)   // turn anti-clockwise if target is to the left
-            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));
-        else if (orientation.x >= 0 && orientation.z < 0)   // turn anti-clockwise if target is to the left
-            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));
-        else if (orientation.x >= 0 && orientation.z >= 0)  // turn clockwise if target is to the right
-            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+        // Rotate clockwise if target lies on the right, rotate anti-clockwise if target lies on the left
+        if (orientation.x < 0 && orientation.z < 0)
+            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));  // rotate clockwise 
+        else if (orientation.x >= 0 && orientation.z >= 0)
+            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));  // rotate clockwise 
+        else if (orientation.x < 0 && orientation.z >= 0)
+            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));  // rotate anti-clockwise
+        else if (orientation.x >= 0 && orientation.z < 0)
+            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));  // rotate anti-clockwise
     }
 
 }
