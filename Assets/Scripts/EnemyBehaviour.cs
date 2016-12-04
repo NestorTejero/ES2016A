@@ -114,8 +114,9 @@ public class EnemyBehaviour : MonoBehaviour {
             return;
         }
 
-        if (targetLocked)
-            transform.LookAt(target.transform);
+        if (targetLocked)   // If target is locked look forwards to it
+            transform.LookAt(new Vector3(target.transform.position.x, 
+                transform.position.y, target.transform.position.z));
         else
             FaceTarget(target.transform);        
     }
@@ -153,6 +154,9 @@ public class EnemyBehaviour : MonoBehaviour {
             Resume();               // resume movement
             return;
         }
+        if (!targetLocked)  // do not assign damage if target is not locked 
+            return;
+
         // Assign damage to target.
         if (target.tag == "home")
             target.GetComponent<HomeBehavior>().takeDamage(damage);
@@ -177,7 +181,7 @@ public class EnemyBehaviour : MonoBehaviour {
     // Check if enemy is facing given transform. Rotate towards it if not facing.
     private void FaceTarget(Transform other)
     {
-        float tol = 0.18f;     // tolerance      
+        float tol = 0.018f;     // tolerance      
         Vector3 orientation = (transform.forward - 
             (other.position - transform.position).normalized).normalized;   // enemy orientation relative to target
         
