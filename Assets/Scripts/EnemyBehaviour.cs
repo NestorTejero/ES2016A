@@ -9,7 +9,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public int moneyValue;
     public float attackRate = 1f; // time between attacks (in seconds)
 
-    private float rotSpeed = 50;  // rotation speed
+    private float rotSpeed = 75;  // rotation speed
 
     public GameObject target;                    // Target position should be that of the player's base.
     public string targetTagName = "home";       // Player tag. 
@@ -175,23 +175,25 @@ public class EnemyBehaviour : MonoBehaviour {
     }
 
     // Check if enemy is facing given transform. Rotate towards it if not facing.
-    // TODO: Do the shortest rotation
     private void FaceTarget(Transform other)
     {
-        float tol = 20;     // tolerance in degrees        
-
-        Vector3 orientation = transform.forward;                               // enemy orientation
-        Vector3 targetPos = (other.position - transform.position).normalized;  // target position relative to enemy
-        float angle = Vector3.Angle(orientation, targetPos);                   // angle between orientation and enemy position
-
-        Debug.Log("angle= " + Vector3.Angle(orientation, targetPos));
-
-        if (Mathf.Abs(angle) <= tol)
-            targetLocked = true;    // set flag if its reasonably facing target
-        else
-            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+        float tol = 0.18f;     // tolerance      
+        Vector3 orientation = (transform.forward - 
+            (other.position - transform.position).normalized).normalized;   // enemy orientation relative to target
         
-            
+        if (Mathf.Abs(orientation.z) < tol)
+        {
+            targetLocked = true;  // set flag if enemy is reasonably facing its target
+            return;
+        }
+        if (orientation.x < 0 && orientation.z < 0)         // turn clockwise if target is to the right
+            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+        else if (orientation.x < 0 && orientation.z >= 0)   // turn anti-clockwise if target is to the left
+            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));
+        else if (orientation.x >= 0 && orientation.z < 0)   // turn anti-clockwise if target is to the left
+            transform.Rotate(new Vector3(0, -rotSpeed * Time.deltaTime, 0));
+        else if (orientation.x >= 0 && orientation.z >= 0)  // turn clockwise if target is to the right
+            transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
     }
 
 }
