@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 200
-  health: 100
+  health: 5
   cost: 100
   scanRate: 2
   damage: 5

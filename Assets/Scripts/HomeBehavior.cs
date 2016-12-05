@@ -19,6 +19,7 @@ public class HomeBehavior : MonoBehaviour {
         LogicConnector.setCredit(initCredit);
 	}
 
+    // Take damage.
     public void takeDamage (float damage)
     {
         health = Mathf.Max(0, health - damage);

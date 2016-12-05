@@ -173,9 +173,24 @@ public class TowerBehavior : MonoBehaviour
             return intercept_2;
     }
 
+    // TODO: implement dispersion
     private Vector3 Disperse(Vector3 aiming)
     {
         return aiming;
+    }
+
+    // Take damage.
+    public void takeDamage(float damage)
+    {
+        health = Mathf.Max(0, health - damage);
+        if (health == 0)
+            SelfDestroy();     
+    }
+
+    // Can be modified to add cool effects when the entity is destroyed.
+    protected virtual void SelfDestroy()
+    {
+        Destroy(gameObject);
     }
 }
 
