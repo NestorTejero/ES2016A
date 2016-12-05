@@ -7,22 +7,23 @@ public class EnemyBehaviour : MonoBehaviour {
     public float health;
     public float speed;
     public int moneyValue;
-    public float attackRate = 1f; // time between attacks (in seconds)
+    public float attackRate = 1f;           // time between attacks (in seconds)
+    public string targetTagName = "home";   // player tag 
 
     // Private STATS: By reducing the ammount of public stats we limint the cost of balancing the game.
-    private float rotSpeed = 2.5f;  // rotation speed
-
-    public GameObject target;                   // target position should be that of the player's base
-    public string targetTagName = "home";       // player tag. 
-
+    private float rotSpeed = 2.5f;          // rotation speed
     private NavMeshAgent agent;
-	private Animator anim;
+    private Animator anim;
     private float time = 0;
     private Vector3 position;
 
+    // Targets: Enemy moves towards target and attacks it if in contact
+    public GameObject target;               // object the enemy is currently attacking 
+    private GameObject primaryTarget;       // priority target
+
     // FLAGS
-    private bool isAttacking = false;       // attacking mode flag
-    private bool targetLocked = false;      // if false -> rotate to face target if attacking
+    public bool isAttacking = false;        // attacking mode flag
+    public bool targetLocked = false;       // if false -> rotate to face target if attacking
                                             // if true  -> look at target
     private bool isDead = false;  
 
@@ -38,13 +39,9 @@ public class EnemyBehaviour : MonoBehaviour {
             {
                 // Enemy is blocked by a tower
                 if (collider.tag == "tower")
-                {
-                    CancelInvoke("isBlocked");          // abort isBlocked checking
-
-                    target = collider.gameObject;       // target blocking tower
-                    isAttacking = true;
-                    Stop();                                             // stop moving
-                    InvokeRepeating("Attack", attackRate, attackRate);  // begin attack on new target
+                {              
+                    SetTarget(collider.gameObject);     // target blocking tower           
+                    StartAttack();                      // begin attack        
                     break;
                 }
             }
@@ -60,19 +57,16 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             case "projectile":  // Enemy gets hit by a projectile
                 ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
-                TakeDamage(pb.damage);      // manage damage inflicted by the projectile
+                TakeDamage(pb.damage);          // manage damage inflicted by the projectile
                 break;
 
-            case "home": // Enemy reaches home
-                if (isAttacking)
-                    return;     // do nothing if attacking
-                
-                target = other.gameObject;                          // set target
-                isAttacking = true;
-                Stop();                                             // stop moving
-                InvokeRepeating("Attack", attackRate, attackRate);  // begin attack
+            case "home":  // Enemy reaches home
+                if (!isAttacking)
+                {
+                    SetTarget(other.gameObject); // set home as target
+                    StartAttack();               // begin attacking home
+                }
                 break;
-
             default:
                 return;
         }
@@ -82,21 +76,12 @@ public class EnemyBehaviour : MonoBehaviour {
     void Start ()
     {
 		anim = GetComponent<Animator> ();
+   
+        // Configure navigation agent
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
+        SetTarget(targetTagName);   // set primary target as current target
 
-        // Get the Scene's home
-        if (target == null)
-            target = GameObject.FindGameObjectWithTag(targetTagName);
-
-        // If home has not been destroyed yet
-        if (target != null)
-        {
-            Vector3 destination = target.transform.position;
-            destination.y = 0;
-            // Configure navigation agent
-            agent = GetComponent<NavMeshAgent>();
-            agent.speed = speed;
-            agent.destination = destination;
-        }
 
         position = gameObject.transform.position;
         InvokeRepeating("isBlocked", 3, 3);         // blockade checkout
@@ -105,19 +90,17 @@ public class EnemyBehaviour : MonoBehaviour {
     // Temporary solution to some enemies not facing the tower when attacking
     void Update()
     {
-        // TODO: Implement rotation
-        if (!isAttacking || target == null)
-        {
-            targetLocked = false;   // reset lock flag
-            Resume();               // move on
-            return;
-        }
+        if (target == null)
+            Reset();
 
-        if (targetLocked)   // If target is locked look forwards to it
-            transform.LookAt(new Vector3(target.transform.position.x, 
-                transform.position.y, target.transform.position.z));
-        else
-            FaceTarget(target.transform);        
+        if (isAttacking)        // face target while attacking
+        {
+            if (targetLocked)   // if target is locked look forwards to it
+                transform.LookAt(new Vector3(target.transform.position.x,
+                    transform.position.y, target.transform.position.z));
+            else
+                FaceTarget(target.transform);  // rotate to face enemy if it's not locked
+        }     
     }
 
     // Can be modified to add cool effects when the entity takes damage.
@@ -138,22 +121,43 @@ public class EnemyBehaviour : MonoBehaviour {
 
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
-    {       
+    {
         Destroy(gameObject);
+    }
+
+    // Start attacking current target
+    private void StartAttack()
+    {
+        if (target == null)
+            return;
+
+        CancelInvoke();         // Cancel all invocations
+
+        agent.Stop();         // stop nav agent
+        isAttacking = true;
+        InvokeRepeating("Attack", attackRate, attackRate);
+    }
+
+    // Stop current attack
+    private void StopAttack()
+    {
+        CancelInvoke("Attack");     // Abort attack
+
+        targetLocked = false;       // reset target locked tag
+        isAttacking = false;        // reset attack flag
+        SetTarget(targetTagName);   // reset target
+
+        agent.Resume();             // resume nav agent
+        InvokeRepeating("isBlocked", 3, 3); // resume blockade checkout
     }
 
     // Assign damage to the target.
     private void Attack()
     {
-        // Disable attacking mode if target has been destroyed.
         if (target == null)
-        {
-            isAttacking = false;
-            CancelInvoke("Attack"); // cancel all invokes
-            //Resume();               // resume movement
-            return;
-        }
-        if (!targetLocked)  // do not assign damage if target is not locked 
+            StopAttack();       // stop if target has been destroyed
+
+        if (!targetLocked)      // do not assign damage if target has not been locked
             return;
 
         // Assign damage to target.
@@ -162,24 +166,10 @@ public class EnemyBehaviour : MonoBehaviour {
         else if (target.tag == "tower")
         {
             TowerBehavior tb = target.GetComponent<TowerBehavior>();
-            if (tb == null)
+            if (tb == null)     // search behavior in children if its not found in object
                 tb = target.GetComponentInChildren<TowerBehavior>();
             tb.takeDamage(damage);
         }          
-    }
-
-    // Stops navigation agent movement.
-    private void Stop()
-    {
-        if (agent != null)
-            agent.Stop();
-    }
-
-    // Resumes navigation agent movement.
-    private void Resume()
-    {
-        if (agent != null)
-            agent.Resume();
     }
 
     // Check if enemy is facing given transform. Rotate towards it if not facing.
@@ -196,6 +186,56 @@ public class EnemyBehaviour : MonoBehaviour {
         targetDir.y = transform.position.y;                     // prevent enemy from staring at the ground
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, rotSpeed * Time.deltaTime, 0.0F);
         transform.rotation = Quaternion.LookRotation(newDir);   // apply rotation
+    }
+
+    // Assign current target from given tag.
+    private void SetTarget(string tag)
+    {
+        if (tag.Equals(targetTagName))  // check if tag equals that of primary taget
+        {
+            if (primaryTarget == null)  // search for primary target if not assigned
+                primaryTarget = GameObject.FindGameObjectWithTag(tag);
+            target = primaryTarget;     // set target
+        }   
+        else
+            target = GameObject.FindGameObjectWithTag(tag);     // search target
+
+        agent.ResetPath();              // reset agent's current path
+        SetDestination(target);         // set destination
+    }
+
+    // Assign current target from given object.
+    private void SetTarget(GameObject go)
+    {
+        target = go;
+        SetDestination(target);
+    }
+
+    // Set object's position as destination, such object defined by given tag.
+    private void SetDestination(GameObject go)
+    {
+        if (agent == null)
+            return;
+
+        if (go != null)
+        {
+            Vector3 destination = go.transform.position;
+            destination.y = 0;
+            agent.destination = destination;
+        }
+        else
+            agent.Stop();
+    }
+
+    // Resets enemy. Used as safety measure to ensure no enemy stays idle
+    private void Reset()
+    {
+        CancelInvoke(); // cancel all invokes
+        
+        isAttacking = false;        // reset attack flag
+        targetLocked = false;       // reset target locked flag
+        SetTarget(targetTagName);               // set primary target as target
+        InvokeRepeating("isBlocked", 3, 3);     // restart blockade checkout
     }
 
 }
