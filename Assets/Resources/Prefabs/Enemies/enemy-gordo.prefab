@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11429236}
   - 195: {fileID: 19558936}
   - 54: {fileID: 5499140}
+  - 65: {fileID: 6508462}
   m_Layer: 0
   m_Name: enemy-gordo
   m_TagString: enemy
@@ -29,7 +30,6 @@ GameObject:
   - 4: {fileID: 484240}
   - 33: {fileID: 3305856}
   - 23: {fileID: 2391420}
-  - 65: {fileID: 6543606}
   m_Layer: 0
   m_Name: enemy-gordo
   m_TagString: Untagged
@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 195, y: 0, z: 52}
+  m_LocalPosition: {x: 48.8463, y: 2.0471985, z: 23.893251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -87,10 +87,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177350}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 53.62888, y: 40.87168, z: 40.87168}
-  m_LocalEulerAnglesHint: {x: -89.980194, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 424470}
   m_RootOrder: 0
@@ -142,18 +142,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6543606
+--- !u!65 &6508462
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177350}
+  m_GameObject: {fileID: 105100}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07109984, y: 0.042777065, z: 0.098607786}
-  m_Center: {x: 0, y: 0.005020884, z: -0.00078453857}
+  m_Size: {x: 3.536248, y: 3.9113722, z: 1.4773983}
+  m_Center: {x: -0.02028656, y: -0.048900127, z: -0.23870087}
 --- !u!95 &9525594
 Animator:
   serializedVersion: 3
@@ -200,11 +200,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2.5
-  health: 10
-  speed: 5
+  health: 25
+  speed: 1.5
   moneyValue: 5
-  target: {fileID: 0}
+  attackRate: 1
   targetTagName: home
+  target: {fileID: 0}
+  isAttacking: 0
+  targetLocked: 0
 --- !u!195 &19558936
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -212,7 +215,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105100}
   m_Enabled: 1
-  m_Radius: 2.2
+  m_Radius: 1.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
