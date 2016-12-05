@@ -73,12 +73,8 @@ public class EnemyBehaviour : MonoBehaviour {
                 InvokeRepeating("Attack", attackRate, attackRate);  // begin attack
                 break;
 
-            case "tower": // Enemy collides with a tower
-                if (isAttacking)
-                    return;     // do nothing if attacking
-
-                InvokeRepeating("isBlocked", 3, 3);     // begin checking if enemy is blocked
-                break;
+            default:
+                return;
         }
     }
 
@@ -103,6 +99,7 @@ public class EnemyBehaviour : MonoBehaviour {
         }
 
         position = gameObject.transform.position;
+        InvokeRepeating("isBlocked", 3, 3);         // blockade checkout
     }
 
     // Temporary solution to some enemies not facing the tower when attacking
@@ -111,7 +108,8 @@ public class EnemyBehaviour : MonoBehaviour {
         // TODO: Implement rotation
         if (!isAttacking || target == null)
         {
-            targetLocked = false; // reset lock flag
+            targetLocked = false;   // reset lock flag
+            Resume();               // move on
             return;
         }
 
@@ -152,7 +150,7 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             isAttacking = false;
             CancelInvoke("Attack"); // cancel all invokes
-            Resume();               // resume movement
+            //Resume();               // resume movement
             return;
         }
         if (!targetLocked)  // do not assign damage if target is not locked 
@@ -162,7 +160,12 @@ public class EnemyBehaviour : MonoBehaviour {
         if (target.tag == "home")
             target.GetComponent<HomeBehavior>().takeDamage(damage);
         else if (target.tag == "tower")
-            target.GetComponent<TowerBehavior>().takeDamage(damage);
+        {
+            TowerBehavior tb = target.GetComponent<TowerBehavior>();
+            if (tb == null)
+                tb = target.GetComponentInChildren<TowerBehavior>();
+            tb.takeDamage(damage);
+        }          
     }
 
     // Stops navigation agent movement.
@@ -182,7 +185,7 @@ public class EnemyBehaviour : MonoBehaviour {
     // Check if enemy is facing given transform. Rotate towards it if not facing.
     private void FaceTarget(Transform other)
     {    
-        if (Vector3.Dot(transform.forward, (other.position - transform.position).normalized) > 0.95)
+        if (Vector3.Dot(transform.forward, (other.position - transform.position).normalized) > 0.9)
         {
             targetLocked = true;  // set flag if enemy is reasonably facing its target
             return;
