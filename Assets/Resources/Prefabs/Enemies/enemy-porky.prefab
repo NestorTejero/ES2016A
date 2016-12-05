@@ -1202,6 +1202,7 @@ MonoBehaviour:
   health: 12.5
   speed: 5
   moneyValue: 10
+  attackRate: 1
   target: {fileID: 0}
   targetTagName: home
 --- !u!137 &13725484
