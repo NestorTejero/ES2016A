@@ -14,8 +14,9 @@ public class TowerBehavior : MonoBehaviour
 
 	public float turnSpeed = 2f;		// Angles per second of the turret
 	public bool canRotate = true;
+	public bool canRotatePitch = false;
 
-    public float projectileSpeed = 100f;// Speed in m/s
+    public float projectileSpeed = 20f;// Speed in m/s
 
 	private float timeLastFired = 0f;	// Last time we fired a projectile
 	private float timeLastSearch = 0f;	// Last time we searched for enemies 
@@ -27,11 +28,10 @@ public class TowerBehavior : MonoBehaviour
 	private float targetSpeed = 0;
 
     // Projectile
-    public Transform projectile;
 	public GameObject projectilePrefab;
 
 	public void Start(){
-		StartTower ();
+		//StartTower ();
 	}
 
 	// Use this for initialization
@@ -59,15 +59,17 @@ public class TowerBehavior : MonoBehaviour
 
 			// If we're somewhat facing the target, fire at it
 			if (alignFactor > 0.95) {
-				FireProjectile (transform.forward);
+				//FireProjectile (transform.forward);
+				FireProjectile();
 			}
 
 			// If We're not aligned with the target, rotate towards it
 			if (alignFactor < 1){
 				// Target slightly ahead of target
-				Vector3 targetDir = (target.transform.position + (targetSpeed * .5f * target.transform.forward) )- transform.position;
+				Vector3 targetDir = (target.transform.position + (targetSpeed * .5f * target.transform.forward) ) - transform.position;
 				// prevent Tower from staring at the ground
-				targetDir.y = transform.position.y;
+				if(!canRotatePitch)
+					targetDir.y = 0f; //transform.position.y;
 
 				// Calculate new direction and apply
 				Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 0.0F);
@@ -103,8 +105,10 @@ public class TowerBehavior : MonoBehaviour
 				continue;			
 			// Calculate distance squared, and if less than current min dist, aquire target
 			float dist2 = (transform.position - t.transform.position).sqrMagnitude;
-			if (dist2 <= ran2 && dist2 < minDist)
+			if (dist2 <= ran2 && dist2 < minDist) {
 				foundTarget = t;
+				minDist = dist2;
+			}
 		}
 
 		// Return found target, or null if none in range
@@ -116,48 +120,33 @@ public class TowerBehavior : MonoBehaviour
 	}
 		
 
-	// Fire a projectile in the given direction
-	private void FireProjectile(Vector3 direction){
-		// Return if the timeout time has not passed since we last fired
+    // Instantiates and places in the world a projectile directed towards the target.
+    private void FireProjectile()
+    {
 		if ( timeLastFired + fireRate > Time.time)
 			return;
 		timeLastFired = Time.time;
 
-		GameObject proj = (GameObject) Instantiate (projectilePrefab, transform.position+transform.forward, Quaternion.identity);
-
-		//proj.transform.position = transform.position + Vector3.up + transform.forward;
-
-		ProjectileBehaviour pb = proj.GetComponent<ProjectileBehaviour>();
-		if (pb != null)
-		{
-			pb.damage = damage;   // tower damage transferred to the projectile
-			pb.reach = 2 * range;     // projectile reach set as twice the tower's range
-			pb.speed = projectileSpeed;
-			pb.target = target.transform;
-			pb.parentTagName = gameObject.tag;
-		}
-
-	}
-
-    // Instantiates and places in the world a projectile directed towards the target.
-    private void LaunchProjectile()
-    {
         // Shoot ony if there is a target.
         if (target != null)
         {
-            Vector3 aim = TakeAim();
+            //Vector3 aim = TakeAim();
 
-            //transform.LookAt(aim);
-            ProjectileBehaviour pb = (ProjectileBehaviour)projectile.GetComponent("ProjectileBehaviour");
-            if (pb != null)
-            {
-                pb.damage = damage;   // tower damage transferred to the projectile
-                pb.reach = 2 * range;     // projectile reach set as twice the tower's range
-                pb.speed = projectileSpeed;
-                pb.target = target.transform;
-                pb.parentTagName = gameObject.tag;
-                Instantiate(projectile, transform.position, Quaternion.LookRotation(Disperse(aim)));
-            }
+			// Instantiate new Projectile Prefab, set it's position
+			// to the muzzle of the turret and looking forward
+			GameObject proj = Instantiate(projectilePrefab,
+				transform.Find("muzzle").transform.position,
+				Quaternion.LookRotation(transform.forward)
+			) as GameObject;
+
+			// Edit Projectile parametres after instance
+			ProjectileBehaviour pb = proj.GetComponent<ProjectileBehaviour>();
+			pb.damage = damage;   // tower damage transferred to the projectile
+			pb.reach = 2 * range;     // projectile reach set as twice the tower's range
+			pb.speed = projectileSpeed;
+			// Set tags
+			pb.parentTagName = gameObject.tag;
+			pb.targetTag = target.tag;
         }
     }
 
