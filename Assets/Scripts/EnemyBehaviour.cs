@@ -40,13 +40,16 @@ public class EnemyBehaviour : MonoBehaviour {
                 // Enemy is blocked by a tower
                 if (collider.tag == "tower")
                 {              
-                    SetTarget(collider.gameObject);     // target blocking tower           
-                    StartAttack();                      // begin attack        
-                    break;
+                    SetTarget(collider.gameObject);             // target blocking tower           
+                    StartAttack();                              // begin attack        
+                    position = gameObject.transform.position;   // store current position
+                    return;
                 }
             }
+            // Reset if enemy is frozen
+            Reset();
         }
-        position = gameObject.transform.position;
+        position = gameObject.transform.position;   // store current position
     }
 
 
@@ -84,7 +87,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
 
         position = gameObject.transform.position;
-        InvokeRepeating("isBlocked", 3, 3);         // blockade checkout
+        InvokeRepeating("isBlocked", 2, 2);         // blockade checkout
     }
 
     // Temporary solution to some enemies not facing the tower when attacking
@@ -148,7 +151,7 @@ public class EnemyBehaviour : MonoBehaviour {
         SetTarget(targetTagName);   // reset target
 
         agent.Resume();             // resume nav agent
-        InvokeRepeating("isBlocked", 3, 3); // resume blockade checkout
+        InvokeRepeating("isBlocked", 2, 2); // resume blockade checkout
     }
 
     // Assign damage to the target.
@@ -231,11 +234,13 @@ public class EnemyBehaviour : MonoBehaviour {
     private void Reset()
     {
         CancelInvoke(); // cancel all invokes
-        
+
+        position = gameObject.transform.position;   // store current position
+
         isAttacking = false;        // reset attack flag
         targetLocked = false;       // reset target locked flag
         SetTarget(targetTagName);               // set primary target as target
-        InvokeRepeating("isBlocked", 3, 3);     // restart blockade checkout
+        InvokeRepeating("isBlocked", 2, 2);     // restart blockade checkout
     }
 
 }
