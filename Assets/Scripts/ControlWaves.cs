@@ -8,6 +8,7 @@ using System;
 public class ControlWaves : MonoBehaviour
 {
 
+    public Score score;
     public GameObject SpawningZones;
     public GameObject SetSpawns;
     private GameObject nextEnemy;
@@ -30,7 +31,7 @@ public class ControlWaves : MonoBehaviour
     
         totalRounds = roundList.Count;
         currentRound = 0;
-
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
         LogicConnector.setTime(30.0f);
 
     }
@@ -41,7 +42,9 @@ public class ControlWaves : MonoBehaviour
         // Initialize round stats
         LogicConnector.Battling();
         LogicConnector.setTime(30.0f);
-        currentRound += 1;                                  
+        if (currentRound > 0)
+            score.setRound(currentRound);
+        currentRound += 1;                                        
         enemyList = root.SelectNodes("(Rounds/Round["+currentRound+"]/Enemy)");
         totalEnemies = 0;
         currentEnemy = 0;
@@ -109,7 +112,29 @@ public class ControlWaves : MonoBehaviour
             else if (!GameObject.FindGameObjectWithTag("enemy")){
                 // Condition to win
                 if (currentRound == totalRounds)
-                    Debug.Log("YOU WIN!");
+                {
+                    score.setRound(currentRound);
+
+                    /*
+                    // DEBUG SCORE
+                    Debug.Log(score.getRound());
+                    Debug.Log(score.getEnemies());
+                    Debug.Log(score.getTowersBuilt());
+                    Debug.Log(score.getTowersSold());
+                    Debug.Log(score.getGoldEarned());
+                    Debug.Log(score.getTime());
+                    Debug.Log(score.getScore());
+                    */
+
+                    // Send info score to LogicConnector (Team C)
+
+                    // Call Win method (Team C)
+                    Debug.Log("YOU WIN!"); 
+
+
+
+                }
+                    
                 else
                 {
                     if (LogicConnector.isInBattling())

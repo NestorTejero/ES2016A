@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class TowerSelection : MonoBehaviour
 {
+
+    public Score score;
+
     // Tower deletion stats
     public float paybackRate = 0.66f;   // controls how much credit is obtained from deleting a tower
 
@@ -22,6 +25,7 @@ public class TowerSelection : MonoBehaviour
     {
         upgrade_button = new Rect(Screen.width / 10, Screen.height / 10, 100, 30);
         sell_button = new Rect(Screen.width / 10, Screen.height / 10 + 50, 100, 30);
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -122,6 +126,7 @@ public class TowerSelection : MonoBehaviour
         {
             // Increase credit and remove game object
             LogicConnector.increaseCredit((int)(tb.cost * paybackRate));
+            score.incTowersSold(); // Increment towers sold
             Destroy(tower);
         }
     }

@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
+
+    public Score score;
+
     // Public STATS
     public float damage;
     public float health;
@@ -79,7 +82,8 @@ public class EnemyBehaviour : MonoBehaviour {
     void Start ()
     {
 		anim = GetComponent<Animator> ();
-   
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
+
         // Configure navigation agent
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
@@ -115,6 +119,8 @@ public class EnemyBehaviour : MonoBehaviour {
             if (!isDead)
             {
                 isDead = true;
+                score.incEnemies(); // Increment enemies defeated
+                score.incGoldEarned(moneyValue); // Increment gold earned
                 LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() - 1);
                 LogicConnector.increaseCredit(moneyValue);
                 SelfDestroy();

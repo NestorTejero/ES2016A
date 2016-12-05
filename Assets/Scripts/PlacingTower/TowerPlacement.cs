@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TowerPlacement : MonoBehaviour
 {
-
+    public Score score;
     private Transform newTower;   
     private GameObject tow;
     private TowerPosition towPos;
@@ -22,7 +22,7 @@ public class TowerPlacement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -80,6 +80,7 @@ public class TowerPlacement : MonoBehaviour
                     }
                     
 					LogicConnector.decreaseCredit(towerCost);
+                    score.incTowersBuilt(); // Increment towers built
 
                 }
             }
