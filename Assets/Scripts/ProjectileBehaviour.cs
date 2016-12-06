@@ -8,17 +8,29 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float damage = 1f;
     public float speed = 100.0f;
 
-    public Transform target;         // TODO Remove this, projectile does NOT need to know its target, it can hit ANY target
-    public string targetTagName;     // Target tag.
-    public string parentTagName;     // Shooting entity's tag.
-    public float reach = 0.0f;       // Projectile is destroyed after exceeding its reach. Using reach=0 disables such feature.
+    public string targetTag;		// Target tag.
+    public string parentTagName;		// Shooting entity's tag.
+    public float reach = 0.0f;			// Projectile is destroyed after exceeding its reach. Using reach=0 disables such feature.
+
+	public float gravity = 0.0f;
+	public float upAccel = 0.0f;
 
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
-        // Projectile self destructs when colliding with any entity other than that which shot it.
-        if (other.gameObject.tag != parentTagName)
-        {
+
+		// Destroy on contact with terrain
+		if (other.gameObject.tag == "terrain") {
+			SelfDestroy ();
+		}
+
+        // Projectile Exerts damage on target tag
+		if (other.gameObject.tag == targetTag){
+			
+			// Check for enemy script, if so, cast damage
+			EnemyBehaviour enemyB = other.gameObject.GetComponent<EnemyBehaviour>();
+			if(enemyB != null)
+				enemyB.TakeDamage(this.damage);
             SelfDestroy();
         }
     }
@@ -28,19 +40,6 @@ public class ProjectileBehaviour : MonoBehaviour {
     {
         //Initializing the enemy position
         startPosition = transform.position;
-
-        if (target == null)
-        {
-            // Check if we have a target.
-            Debug.LogWarning("Projectile has not a target.");
-        }
-        else
-        {
-            // TODO Change looking at target vs looking at where the turret shot, allows for "spread" and different shooting patters
-            // Parabollic etc.
-            transform.LookAt(target);
-            Update();
-        }
     }
 	
 	// Update is called once per frame
@@ -56,8 +55,8 @@ public class ProjectileBehaviour : MonoBehaviour {
     // Returns true if the distance traversed by the projectile is equal or exceeds its reach.
     private bool ReachExceeded()
     {
-        float traversedDist = Vector3.Distance(startPosition, transform.position);
-        return traversedDist >= reach;
+		float traversedDist = (transform.position - startPosition).sqrMagnitude;
+		return traversedDist >= reach * reach;
     }
 
     // Manages projecile's movement through the world.
@@ -68,6 +67,10 @@ public class ProjectileBehaviour : MonoBehaviour {
          * interesting to implement some parabolic movement.
          */
         transform.position += transform.forward * speed * Time.deltaTime;
+
+		// subtract gravity from upAccel, for parabolic projectiles
+		upAccel -= gravity * Time.deltaTime;
+		transform.position += transform.up * upAccel * Time.deltaTime;
     }
 
     // Manages the destruction of the projectile. Can be overriten to add cool effects.

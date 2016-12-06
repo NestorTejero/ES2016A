@@ -26,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 502.81143, y: -1525.7104, z: 902.91205}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 46.200703, y: 0.35, z: 21.674135}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c70bf2ba03cb6674c8ddc7380714effd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -76,12 +76,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b5b3c236fabb14c8e9ae23b31ba042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  speed: 100
-  target: {fileID: 0}
-  targetTagName: enemy
-  parentTagName: tower
-  reach: 0
+  damage: 5
+  speed: 10
+  targetTag: 
+  parentTagName: 
+  reach: 70
+  gravity: 5
+  upAccel: 2
 --- !u!135 &13549124
 SphereCollider:
   m_ObjectHideFlags: 1

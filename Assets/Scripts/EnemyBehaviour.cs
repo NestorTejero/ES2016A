@@ -58,11 +58,12 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         switch (other.gameObject.tag)
         {
-            case "projectile":  // Enemy gets hit by a projectile
+            /* Moved to ProjectileBehavior
+			case "projectile":  // Enemy gets hit by a projectile
                 ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
                 TakeDamage(pb.damage);          // manage damage inflicted by the projectile
                 break;
-
+                */
             case "home":  // Enemy reaches home
                 if (!isAttacking)
                 {
@@ -107,7 +108,7 @@ public class EnemyBehaviour : MonoBehaviour {
     }
 
     // Can be modified to add cool effects when the entity takes damage.
-    protected virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         health = Mathf.Max(0, health - damage);
         if (health == 0)
