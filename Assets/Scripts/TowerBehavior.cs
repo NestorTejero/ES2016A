@@ -205,9 +205,13 @@ public class TowerBehavior : MonoBehaviour
     }
 
     // Can be modified to add cool effects when the entity is destroyed.
-    protected virtual void SelfDestroy()
-    {
-        Destroy(gameObject);
-    }
+	protected virtual void SelfDestroy()
+	{
+		// Delete parent object if it exists
+		if (transform.parent == null)
+			Destroy(gameObject);
+		else
+			Destroy(transform.parent.gameObject);
+	}
 }
 
