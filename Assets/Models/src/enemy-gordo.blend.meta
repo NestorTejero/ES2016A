@@ -33,6 +33,8 @@ ModelImporter:
     100050: //RootNode
     100052: enemy-gordo
     100054: enemy-gordoEsqueleto
+    100056: Cubo
+    100058: Esqueleto
     400000: Bone
     400002: Bone_001
     400004: Bone_002
@@ -61,14 +63,21 @@ ModelImporter:
     400050: //RootNode
     400052: enemy-gordo
     400054: enemy-gordoEsqueleto
+    400056: Cubo
+    400058: Esqueleto
     2300000: Cilindro
     3300000: Cilindro
     4300000: Cilindro
     4300002: enemy-gordo
+    4300004: Cubo
     7400000: Default Take
     7400002: EsqueletoAction
+    7400004: Atacar_001
+    7400006: enemy-gordo-Andar
+    7400008: enemy-gordo-Atacar
     9500000: //RootNode
     13700000: enemy-gordo
+    13700002: Cubo
   materials:
     importMaterials: 1
     materialName: 0
