@@ -234,7 +234,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 421234}
   - 137: {fileID: 13792544}
-  - 65: {fileID: 6514624}
   m_Layer: 0
   m_Name: enemy-cavernicola
   m_TagString: Untagged
@@ -345,6 +344,7 @@ GameObject:
   - 114: {fileID: 11469328}
   - 195: {fileID: 19593574}
   - 54: {fileID: 5472776}
+  - 65: {fileID: 6542310}
   m_Layer: 0
   m_Name: enemy-cavernicola
   m_TagString: enemy
@@ -374,7 +374,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 195, y: 0, z: 52}
+  m_LocalPosition: {x: 43.83661, y: 0, z: 36.706966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -718,18 +718,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6514624
+--- !u!65 &6542310
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152002}
+  m_GameObject: {fileID: 193098}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.042437762, y: 0.039418466, z: 0.08270634}
-  m_Center: {x: -0.0005944926, y: 0.0006169819, z: 0.0017497726}
+  m_Size: {x: 1, y: 2.0253513, z: 1}
+  m_Center: {x: 0, y: 1.047813, z: 0}
 --- !u!95 &9558238
 Animator:
   serializedVersion: 3
@@ -780,8 +780,10 @@ MonoBehaviour:
   speed: 5
   moneyValue: 5
   attackRate: 1
-  target: {fileID: 0}
   targetTagName: home
+  target: {fileID: 0}
+  isAttacking: 0
+  targetLocked: 0
 --- !u!137 &13792544
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

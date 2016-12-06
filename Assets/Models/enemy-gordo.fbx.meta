@@ -40,6 +40,9 @@ ModelImporter:
     100064: enemy-gordo
     100066: enemy-gordoEsqueleto
     100068: Sun
+    100070: Cubo
+    100072: Esqueleto
+    100074: Lamp
     400000: //RootNode
     400002: Bone
     400004: Bone.001
@@ -75,6 +78,9 @@ ModelImporter:
     400064: enemy-gordo
     400066: enemy-gordoEsqueleto
     400068: Sun
+    400070: Cubo
+    400072: Esqueleto
+    400074: Lamp
     2300000: //RootNode
     2300002: Cilindro
     2300004: enemy-gordo
@@ -83,8 +89,14 @@ ModelImporter:
     3300004: enemy-gordo
     4300000: enemy-gordo
     4300002: Cilindro
+    4300004: Cubo
+    7400000: Esqueleto|Action
+    7400002: Esqueleto|Atacar.001
+    7400004: Esqueleto|enemy-gordo-Andar
+    7400006: Esqueleto|enemy-gordo-Atacar
     9500000: //RootNode
     11100000: //RootNode
+    13700000: Cubo
   materials:
     importMaterials: 1
     materialName: 0
@@ -95,13 +107,7 @@ ModelImporter:
     resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: '
-
-      Imported file ''enemy-gordo'' conversion failed: Required human bone ''Hips''
-      not found
-
-
-'
+    animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0

@@ -5,131 +5,148 @@ public class TowerBehavior : MonoBehaviour
 {
 
     // Stats
-    public float range = 200f;
+    public float range = 30f;			// Range in meters
 	public float health = 100f;
 	public int cost = 100;				// tower value
-	public float scanRate = 0.5f;		// target scanning rate, should be smaller than firerate
 
 	public float damage = 5f;
     public float fireRate = 1f;    		// fire rate in seconds
-    public float fireCone = 30f;		// Cone of fire for targetting and shooting
-	public float turnSpeed = 90;		// Angles per second of the turret
-    public float projectileSpeed = 100f;// Speed in m/s
 
-	private float timeLastFired = 0;
-	private float timeLastScan = 0;
+	public float turnSpeed = 2f;		// Angles per second of the turret
+	public bool canRotate = true;
+	public bool canRotatePitch = false;
+
+    public float projectileSpeed = 20f;// Speed in m/s
+
+	private float timeLastFired = 0f;	// Last time we fired a projectile
+	private float timeLastSearch = 0f;	// Last time we searched for enemies 
+	private float searchTimeout = 1f;	// Time in seconds in between searching for enemies
+
+	private bool isPlaced = false;
 
     private GameObject target = null;
+	private float targetSpeed = 0;
 
     // Projectile
-    public Transform projectile;
+	public GameObject projectilePrefab;
 
 	public void Start(){
 		//StartTower ();
 	}
 
+	// Use this for initialization
+	public void StartTower(){
+		isPlaced = true;
+	}
 
 	public void Update(){
+		// If the tower has not been placed, do nothing
+		if (!isPlaced)
+			return;
 
-        if (target != null && name != "torre-piedra(Clone)")
-        {
-            transform.LookAt(target.transform.position + Vector3.up * 2);
+		// Recheck if our target has gone out of range
+		if (target && IsTooFar(target))
+			target = null;
+
+		// Find a new target in case we don't have one
+		if (target == null) {
+			target = FindNextTarget ();		
+		}
+
+        if (target != null && canRotate){
+			
+			float alignFactor = Vector3.Dot(transform.forward, (target.transform.position - transform.position).normalized);
+
+			// If we're somewhat facing the target, fire at it
+			if (alignFactor > 0.95) {
+				//FireProjectile (transform.forward);
+				FireProjectile();
+			}
+
+			// If We're not aligned with the target, rotate towards it
+			if (alignFactor < 1){
+				// Target slightly ahead of target
+				Vector3 targetDir = (target.transform.position + (targetSpeed * .5f * target.transform.forward) ) - transform.position;
+				// prevent Tower from staring at the ground
+				if(!canRotatePitch)
+					targetDir.y = 0f; //transform.position.y;
+
+				// Calculate new direction and apply
+				Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 0.0F);
+				transform.rotation = Quaternion.LookRotation(newDir, Vector3.up);   
+			}
         }
 
-        /*
-		float time = Time.timeSinceLevelLoad;
-		Debug.Log ("Update");
-
-		// Scan every time fireRate seconds pass
-		if (target == null && (timeLastScan + fireRate) < time) {
-			timeLastScan = time;
-
-			target = FindEnemies ();
-			if (target == null)
-				return;
-		}
-
-		if (target != null) {
-		
-			Debug.Log ("Rotating");
-			// Get target direction
-			Vector3 dir = target.transform.position - transform.position;
-			dir.y = 0;
-
-			float currAngle = transform.rotation.eulerAngles.y;
-			float destAngle = Vector3.Angle (transform.forward, dir);
-			float deltaAngle = (destAngle - currAngle);
-
-			transform.LookAt (target.transform.position + Vector3.up*2);
-		
-		}
-		*/
+		return;
     }
 
+	// Quick method for finding stray targets
+	private bool IsTooFar(GameObject obj){
+		return (transform.position - obj.transform.position).sqrMagnitude > range * range;
+	}
 
-	private GameObject FindEnemies(){
+	// Finds the closest target that's in range of the turret
+	private GameObject FindNextTarget(){
+		// Return if the timeout time has not passed since the last search
+		if ( timeLastSearch + searchTimeout > Time.time)
+			return null;
+		timeLastSearch = Time.time;
+
 		// Look for nearest GameObject with tag "enemy", within range
 		GameObject[] targetList = GameObject.FindGameObjectsWithTag("enemy");
 
-		float dist = range * range;
+		float ran2 = range * range;
+		float minDist = float.PositiveInfinity;
+		GameObject foundTarget = null;
+
 		foreach (GameObject t in targetList)
 		{
 			if (t == null)
-				continue;
-			// Calculate distance squared
+				continue;			
+			// Calculate distance squared, and if less than current min dist, aquire target
 			float dist2 = (transform.position - t.transform.position).sqrMagnitude;
-			if (dist2 <= dist)
-				return t;
+			if (dist2 <= ran2 && dist2 < minDist) {
+				foundTarget = t;
+				minDist = dist2;
+			}
+		}
+
+		// Return found target, or null if none in range
+		if (foundTarget != null) {
+			targetSpeed = foundTarget.GetComponent<NavMeshAgent> ().speed;
+			return foundTarget;
 		}
 		return null;
 	}
-
-    // Use this for initialization
-    public void StartTower()
-    {
-        InvokeRepeating("LaunchProjectile", fireRate, fireRate);
-        InvokeRepeating("SearchTarget", scanRate, scanRate);
-    }
+		
 
     // Instantiates and places in the world a projectile directed towards the target.
-    private void LaunchProjectile()
+    private void FireProjectile()
     {
+		if ( timeLastFired + fireRate > Time.time)
+			return;
+		timeLastFired = Time.time;
+
         // Shoot ony if there is a target.
         if (target != null)
         {
-            Vector3 aim = TakeAim();
+            //Vector3 aim = TakeAim();
 
-            //transform.LookAt(aim);
-            ProjectileBehaviour pb = (ProjectileBehaviour)projectile.GetComponent("ProjectileBehaviour");
-            if (pb != null)
-            {
-                pb.damage = damage;   // tower damage transferred to the projectile
-                pb.reach = 2 * range;     // projectile reach set as twice the tower's range
-                pb.speed = projectileSpeed;
-                pb.target = target.transform;
-                pb.parentTagName = gameObject.tag;
-                Instantiate(projectile, transform.position, Quaternion.LookRotation(Disperse(aim)));
+			// Instantiate new Projectile Prefab, set it's position
+			// to the muzzle of the turret and looking forward
+			GameObject proj = Instantiate(projectilePrefab,
+				transform.Find("muzzle").transform.position,
+				Quaternion.LookRotation(transform.forward)
+			) as GameObject;
 
-                //Instantiate(projectile, transform.position, Quaternion.identity);
-            }
-        }
-    }
-
-    // Search for the closest target.
-    private void SearchTarget()
-    {
-        // Look for nearest GameObject with tag "enemy", within range
-        GameObject[] targetList = GameObject.FindGameObjectsWithTag("enemy");
-
-        float dist = range * range;
-        foreach (GameObject t in targetList)
-        {
-            if (t == null)
-                continue;
-            // Calculate distance squared
-            float dist2 = (transform.position - t.transform.position).sqrMagnitude;
-            if (dist2 <= dist)
-                target = t;
+			// Edit Projectile parametres after instance
+			ProjectileBehaviour pb = proj.GetComponent<ProjectileBehaviour>();
+			pb.damage = damage;   // tower damage transferred to the projectile
+			pb.reach = 2 * range;     // projectile reach set as twice the tower's range
+			pb.speed = projectileSpeed;
+			// Set tags
+			pb.parentTagName = gameObject.tag;
+			pb.targetTag = target.tag;
         }
     }
 
@@ -188,9 +205,13 @@ public class TowerBehavior : MonoBehaviour
     }
 
     // Can be modified to add cool effects when the entity is destroyed.
-    protected virtual void SelfDestroy()
-    {
-        Destroy(gameObject);
-    }
+	protected virtual void SelfDestroy()
+	{
+		// Delete parent object if it exists
+		if (transform.parent == null)
+			Destroy(gameObject);
+		else
+			Destroy(transform.parent.gameObject);
+	}
 }
 
