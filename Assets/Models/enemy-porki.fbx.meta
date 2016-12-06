@@ -112,7 +112,7 @@ ModelImporter:
     13700000: enemy-cavernicola
     13700002: enemy-porki
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
