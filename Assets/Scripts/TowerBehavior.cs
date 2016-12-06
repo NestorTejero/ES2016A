@@ -22,7 +22,7 @@ public class TowerBehavior : MonoBehaviour
 	private float timeLastSearch = 0f;	// Last time we searched for enemies 
 	private float searchTimeout = 1f;	// Time in seconds in between searching for enemies
 
-	private bool isPlaced = false;
+	public bool isPlaced = false;		// Toggle this in editor to test turrets without playing
 
     private GameObject target = null;
 	private float targetSpeed = 0;

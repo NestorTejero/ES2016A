@@ -15,6 +15,8 @@ public class ProjectileBehaviour : MonoBehaviour {
 	public float gravity = 0.0f;
 	public float upAccel = 0.0f;
 
+	private Vector3 prevPos; // Used to rotate with pitch
+
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
@@ -40,6 +42,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     {
         //Initializing the enemy position
         startPosition = transform.position;
+		prevPos = transform.position;
     }
 	
 	// Update is called once per frame
@@ -71,6 +74,12 @@ public class ProjectileBehaviour : MonoBehaviour {
 		// subtract gravity from upAccel, for parabolic projectiles
 		upAccel -= gravity * Time.deltaTime;
 		transform.position += transform.up * upAccel * Time.deltaTime;
+
+		// Calculate delta position for pitch rotation
+		Vector3 deltaPos = transform.position - prevPos;
+		Vector3 lookAtPos = transform.position + deltaPos;
+
+		transform.LookAt (lookAtPos);
     }
 
     // Manages the destruction of the projectile. Can be overriten to add cool effects.
