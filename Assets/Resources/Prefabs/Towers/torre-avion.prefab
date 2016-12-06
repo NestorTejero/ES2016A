@@ -238,7 +238,7 @@ MonoBehaviour:
   range: 40
   health: 100
   cost: 200
-  damage: 1
+  damage: 2
   fireRate: 0.33
   turnSpeed: 2
   canRotate: 1

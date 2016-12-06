@@ -42,10 +42,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171256}
-  m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.3826833}
-  m_LocalPosition: {x: 77.898, y: 3.1438, z: 124.26}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 124.844025, y: 101.316765, z: 124.84399}
-  m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 445162}
   m_Father: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b5b3c236fabb14c8e9ae23b31ba042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 0
   speed: 30
   targetTag: 
   parentTagName: 
