@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111676}
   m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.3826833}
-  m_LocalPosition: {x: 77.355, y: 3.2899, z: 124.69}
+  m_LocalPosition: {x: 77.23, y: 3.2899, z: 124.815}
   m_LocalScale: {x: 63.39411, y: 62.21676, z: 107.93791}
   m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
   m_Children: []
@@ -79,10 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   speed: 20
-  target: {fileID: 0}
-  targetTagName: 
+  targetTag: 
   parentTagName: 
   reach: 0
+  gravity: 1
+  upAccel: 2
 --- !u!135 &13512216
 SphereCollider:
   m_ObjectHideFlags: 1

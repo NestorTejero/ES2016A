@@ -26,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107780}
   m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.3826833}
-  m_LocalPosition: {x: 78.131, y: 3.169, z: 123.64}
-  m_LocalScale: {x: 19.119528, y: 19.010996, z: 13.327454}
+  m_LocalPosition: {x: 78.479, y: 3.169, z: 123.27}
+  m_LocalScale: {x: 16.235235, y: 16.143076, z: 11.316929}
   m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,10 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 35
-  target: {fileID: 0}
-  targetTagName: 
+  targetTag: 
   parentTagName: 
   reach: 0
+  gravity: 0
+  upAccel: 0
 --- !u!135 &13555198
 SphereCollider:
   m_ObjectHideFlags: 1
