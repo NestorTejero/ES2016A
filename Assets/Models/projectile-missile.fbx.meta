@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1ddccf0996eb00b42af425af5d14cd5d
-timeCreated: 1480981814
+guid: 5a1e14b08dedd1041a3b0acfbdcc99b3
+timeCreated: 1480982556
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,8 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: projectile-missile2
-    7400000: Default Take
+    4300000: projectile_missile
+    7400000: projectile_missile|Fly
     9500000: //RootNode
   materials:
     importMaterials: 1
