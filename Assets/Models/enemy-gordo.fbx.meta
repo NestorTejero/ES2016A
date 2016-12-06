@@ -43,6 +43,7 @@ ModelImporter:
     100070: Cubo
     100072: Esqueleto
     100074: Lamp
+    100076: Gordo Armature
     400000: //RootNode
     400002: Bone
     400004: Bone.001
@@ -81,6 +82,7 @@ ModelImporter:
     400070: Cubo
     400072: Esqueleto
     400074: Lamp
+    400076: Gordo Armature
     2300000: //RootNode
     2300002: Cilindro
     2300004: enemy-gordo
@@ -94,9 +96,18 @@ ModelImporter:
     7400002: Esqueleto|Atacar.001
     7400004: Esqueleto|enemy-gordo-Andar
     7400006: Esqueleto|enemy-gordo-Atacar
+    7400008: enemy-gordo|Action
+    7400010: enemy-gordo|enemy-gordo-Andar
+    7400012: Cubo|Action
+    7400014: Cubo|enemy-gordo-Andar
+    7400016: Gordo Armature|Action
+    7400018: Gordo Armature|Atacar.001
+    7400020: Gordo Armature|enemy-gordo-Andar
+    7400022: Gordo Armature|enemy-gordo-Atacar
     9500000: //RootNode
     11100000: //RootNode
     13700000: Cubo
+    13700002: enemy-gordo
   materials:
     importMaterials: 1
     materialName: 0
@@ -111,13 +122,197 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Gordo Armature|enemy-gordo-Andar
+      takeName: Gordo Armature|enemy-gordo-Andar
+      firstFrame: 0
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: enemy-gordo
+        weight: 1
+      - path: Gordo Armature
+        weight: 1
+      - path: Gordo Armature/Bone
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.003
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.003/Bone.004
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Gordo Armature/Bone.002
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022/Bone.023
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022/Bone.023/Bone.024
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022/Bone.023/Bone.024/Bone.024_end
+        weight: 1
+      - path: Gordo Armature/Bone.017
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019/Bone.020
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019/Bone.020/Bone.021
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019/Bone.020/Bone.021/Bone.021_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Gordo Armature|enemy-gordo-Atacar
+      takeName: Gordo Armature|enemy-gordo-Atacar
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: enemy-gordo
+        weight: 1
+      - path: Gordo Armature
+        weight: 1
+      - path: Gordo Armature/Bone
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.003
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.003/Bone.004
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Gordo Armature/Bone/Bone.001/Bone.011/Bone.012/Bone.013/Bone.014/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Gordo Armature/Bone.002
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022/Bone.023
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022/Bone.023/Bone.024
+        weight: 1
+      - path: Gordo Armature/Bone.002/Bone.022/Bone.023/Bone.024/Bone.024_end
+        weight: 1
+      - path: Gordo Armature/Bone.017
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019/Bone.020
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019/Bone.020/Bone.021
+        weight: 1
+      - path: Gordo Armature/Bone.017/Bone.019/Bone.020/Bone.021/Bone.021_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -137,11 +332,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 90
+    normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
@@ -155,7 +350,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
