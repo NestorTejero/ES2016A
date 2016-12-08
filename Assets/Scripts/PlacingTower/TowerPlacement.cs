@@ -61,7 +61,7 @@ public class TowerPlacement : MonoBehaviour
                 numWidth2 = (Screen.width - 400) / 3.14f;
 
                 //Adaptacion de la pantalla al HUD superior
-                numHeightsup = (Screen.height - 539) / 1.11f;
+                numHeightsup = (Screen.height - 539) / 1.049f;
 
                 // Point of the terrain where we are aiming at
                 Vector3 point = hit.point;
@@ -96,7 +96,6 @@ public class TowerPlacement : MonoBehaviour
                     }
                     
 					LogicConnector.decreaseCredit(towerCost);
-
                 }
             }
 
