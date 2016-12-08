@@ -69,7 +69,8 @@ public class EnemyBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		anim = GetComponent<Animator> ();
+        anim = GetComponent<Animator> ();
+
         score = GameObject.Find("GameScripts").GetComponent<Score>();
 
         // Configure navigation agent
@@ -130,7 +131,9 @@ public class EnemyBehaviour : MonoBehaviour {
 
         CancelInvoke();         // Cancel all invocations
 
-        agent.Stop();         // stop nav agent
+        agent.Stop();                    // stop nav agent       
+        anim.CrossFade("Atacar", 0.1f);  // transition to attack animation
+
         isAttacking = true;
         InvokeRepeating("Attack", attackRate, attackRate);
     }
@@ -143,6 +146,8 @@ public class EnemyBehaviour : MonoBehaviour {
         targetLocked = false;       // reset target locked tag
         isAttacking = false;        // reset attack flag
         SetTarget(targetTagName);   // reset target
+
+        anim.CrossFade("Andar", 0.1f);  // transition to walk animation
 
         agent.Resume();             // resume nav agent
         InvokeRepeating("isBlocked", 2, 2); // resume blockade checkout
