@@ -11,9 +11,12 @@ public class TowerPlacement : MonoBehaviour
     private Color32 colorInicial;
     public bool isPlaced;
     private int towerCost;
-    private float numHeight;
+    private float numHeightinf;
+    private float numHeightsup;
     private float numWidth1;
     private float numWidth2;
+    public bool pauseModeOn;
+
     public int type_tower; // 0 -> dinosaur / 1 -> tank / 2 -> tower
 
     public Vector3 scale = new Vector3(10,10,10);
@@ -38,22 +41,35 @@ public class TowerPlacement : MonoBehaviour
             RaycastHit hit = new RaycastHit();
             // Ray that goes from the screen (camera) to the mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            //Lock the lower HUD in the paused state
+            if (LogicConnector.isPaused())
+            {
+                pauseModeOn = true;
+                Destroy(tow);
+            }
+            else if (LogicConnector.isInGame())
+            {
+                pauseModeOn = false;
+            }
             // Getting the position of the terrain we are pointing at
             // (= ray collision with the terrain, hit is the output)
             if (Terrain.activeTerrain.GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {
-                //Adaptacion de la pantalla al GUI inferior
-                numHeight = (Screen.height - 330) / 6f;
+                //Adaptacion de la pantalla al HUD inferior
+                numHeightinf = (Screen.height - 330) / 6f;
                 numWidth1 = (Screen.width - 400) / 1.61f;
                 numWidth2 = (Screen.width - 400) / 3.14f;
+
+                //Adaptacion de la pantalla al HUD superior
+                numHeightsup = (Screen.height - 539) / 1.11f;
+
                 // Point of the terrain where we are aiming at
                 Vector3 point = hit.point;
                 // Giving the position to the newTower (using the height of the object itself for y axis and mouse  for x and z axis)
                 newTower.transform.position = new Vector3(point.x, newTower.position.y, point.z);
                 // Cancell the tower placement by using right click and the Tower is not placed if clicking over the HUD
-                if (Input.GetMouseButtonDown(1) || (Input.GetMouseButtonDown(0) && Input.mousePosition.y < (54 + numHeight)
-                    && Input.mousePosition.x < (249 + numWidth1) && Input.mousePosition.x > (127 + numWidth2)))
+                if (Input.GetMouseButtonDown(1) || pauseModeOn || (Input.GetMouseButtonDown(0) && Input.mousePosition.y < (54 + numHeightinf)
+                    && Input.mousePosition.x < (249 + numWidth1) && Input.mousePosition.x > (127 + numWidth2)) || (Input.GetMouseButtonDown(0) && Input.mousePosition.y > (502 + numHeightsup)))
                 {
                     Destroy(tow);
                 }
