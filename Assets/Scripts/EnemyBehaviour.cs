@@ -59,23 +59,10 @@ public class EnemyBehaviour : MonoBehaviour {
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)
+        if (other.gameObject.tag == "home" && !isAttacking)
         {
-            /* Moved to ProjectileBehavior
-			case "projectile":  // Enemy gets hit by a projectile
-                ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
-                TakeDamage(pb.damage);          // manage damage inflicted by the projectile
-                break;
-                */
-            case "home":  // Enemy reaches home
-                if (!isAttacking)
-                {
-                    SetTarget(other.gameObject); // set home as target
-                    StartAttack();               // begin attacking home
-                }
-                break;
-            default:
-                return;
+            SetTarget(other.gameObject); // set home as target
+            StartAttack();               // begin attacking home
         }
     }
 
