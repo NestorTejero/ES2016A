@@ -14,7 +14,7 @@ public class TowerSelection : MonoBehaviour
     private bool showSelected = false;  // Variable to check if a tower is selected (used on the OnGUI method to show/hide the buttons)
     private bool newTower = false;      // variable to control the case we are placing a tower
     private Color32 colorInicial;       // Renderer color of the selected tower
-
+    public bool pauseModeOn;
     // Buttons
     private Rect upgrade_button;
     private Rect sell_button;
@@ -49,6 +49,15 @@ public class TowerSelection : MonoBehaviour
                 RaycastHit hit = new RaycastHit();
                 // Ray that goes from the screen (camera) to the mouse position
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                //Lock the sell/upgrade tower in the paused state
+                if (LogicConnector.isPaused())
+                {
+                    pauseModeOn = true;
+                }
+                else if (LogicConnector.isInGame())
+                {
+                    pauseModeOn = false;
+                }
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
                     // If we already have a tower selected, reset the color and unselect it
@@ -61,7 +70,7 @@ public class TowerSelection : MonoBehaviour
                     }
 
                     // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
-                    if (hit.transform.gameObject.tag == "tower")
+                    if (hit.transform.gameObject.tag == "tower" && !pauseModeOn)
                     {
                         // get the new selection
                         tower = hit.transform.gameObject;
