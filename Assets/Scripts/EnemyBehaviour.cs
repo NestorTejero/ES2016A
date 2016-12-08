@@ -77,9 +77,10 @@ public class EnemyBehaviour : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         SetTarget(targetTagName);   // set primary target as current target
+        transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
 
+        position = gameObject.transform.position;   // store init position
 
-        position = gameObject.transform.position;
         InvokeRepeating("isBlocked", 2, 2);         // blockade checkout
     }
 
@@ -147,8 +148,6 @@ public class EnemyBehaviour : MonoBehaviour {
         isAttacking = false;        // reset attack flag
         SetTarget(targetTagName);   // reset target
 
-        anim.CrossFade("Andar", 0.1f);  // transition to walk animation
-
         agent.Resume();             // resume nav agent
         InvokeRepeating("isBlocked", 2, 2); // resume blockade checkout
     }
@@ -204,6 +203,8 @@ public class EnemyBehaviour : MonoBehaviour {
 
         agent.ResetPath();              // reset agent's current path
         SetDestination(target);         // set destination
+
+        anim.CrossFade("Andar", 0.1f);  // transition to walk animation
     }
 
     // Assign current target from given object.
