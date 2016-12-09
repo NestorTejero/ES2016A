@@ -13,7 +13,7 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 6
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -37,12 +37,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 6
   m_GIWorkflowMode: 0
+  m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -53,22 +53,17 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 4
+    serializedVersion: 3
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
     m_TextureHeight: 1024
-    m_AO: 0
     m_AOMaxDistance: 1
-    m_CompAOExponent: 0
-    m_CompAOExponentDirect: 0
     m_Padding: 2
+    m_CompAOExponent: 0
     m_LightmapParameters: {fileID: 0}
-    m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
-    m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
   m_LightingDataAsset: {fileID: 0}
@@ -113,7 +108,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39629711}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -123,7 +118,6 @@ Light:
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
-    m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
@@ -136,10 +130,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!4 &39629713
 Transform:
   m_ObjectHideFlags: 0
@@ -184,10 +178,10 @@ RectTransform:
   - {fileID: 194039762}
   m_Father: {fileID: 1532311199}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: -17}
-  m_SizeDelta: {x: 482, y: 262}
+  m_AnchorMin: {x: 0.42872342, y: 0.4358701}
+  m_AnchorMax: {x: 0.5787422, y: 0.58447427}
+  m_AnchoredPosition: {x: 9, y: -19}
+  m_SizeDelta: {x: 362, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55228401
 MonoBehaviour:
@@ -732,10 +726,10 @@ RectTransform:
   - {fileID: 519521164}
   m_Father: {fileID: 536537427}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: -17}
-  m_SizeDelta: {x: 482, y: 262}
+  m_AnchorMin: {x: 0.4262641, y: 0.43721446}
+  m_AnchorMax: {x: 0.613761, y: 0.60487014}
+  m_AnchoredPosition: {x: -13, y: -24}
+  m_SizeDelta: {x: 332, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215220312
 MonoBehaviour:
@@ -1234,10 +1228,10 @@ RectTransform:
   - {fileID: 1163107660}
   m_Father: {fileID: 1552371189}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -493, y: -214}
-  m_SizeDelta: {x: 196, y: 103}
+  m_AnchorMin: {x: 0.42622656, y: 0.5}
+  m_AnchorMax: {x: 0.5737736, y: 0.64873403}
+  m_AnchoredPosition: {x: -314, y: -275}
+  m_SizeDelta: {x: 78, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672878690
 MonoBehaviour:
@@ -1571,20 +1565,17 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: fc613211b58a040709f007bd8498e16e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -2311,10 +2302,10 @@ RectTransform:
   - {fileID: 1677703896}
   m_Father: {fileID: 1552371189}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: -225}
-  m_SizeDelta: {x: 402, y: 98}
+  m_AnchorMin: {x: 0.42622656, y: 0.43587014}
+  m_AnchorMax: {x: 0.5737736, y: 0.58125985}
+  m_AnchoredPosition: {x: -15, y: -230.5}
+  m_SizeDelta: {x: 284, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465123969
 MonoBehaviour:
@@ -3252,7 +3243,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 167.49}
+  m_AnchoredPosition: {x: 11, y: 154}
   m_SizeDelta: {x: 546, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891995202
@@ -3331,10 +3322,10 @@ RectTransform:
   - {fileID: 1891995201}
   m_Father: {fileID: 1552371189}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.25}
-  m_SizeDelta: {x: 1231, y: 530.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915077760
 MonoBehaviour:
@@ -3522,10 +3513,10 @@ RectTransform:
   - {fileID: 208423870}
   m_Father: {fileID: 1552371189}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504, y: -218}
-  m_SizeDelta: {x: 181, y: 95}
+  m_AnchorMin: {x: 0.42622656, y: 0.43587014}
+  m_AnchorMax: {x: 0.5737736, y: 0.58125985}
+  m_AnchoredPosition: {x: 276.5, y: -232}
+  m_SizeDelta: {x: 63, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2042873337
 MonoBehaviour:
