@@ -15,13 +15,17 @@ public class ControlWaves : MonoBehaviour
     private XmlNode root;
     private XmlNodeList roundList,enemyList;
     private int totalRounds, currentRound, totalEnemies, currentEnemy;
+    private String difficulty;
 
 
     void Start()
     {
 
+        // GET DIFFICULTY FROM LOGICCONNECTOR
+        difficulty = "hard"; // easy, medium or hard
+
         // Read xml document and get rounds info
-        TextAsset textAsset = (TextAsset)Resources.Load("Xml/rounds");
+        TextAsset textAsset = (TextAsset)Resources.Load("Xml/rounds_"+difficulty);
         XmlDocument newXml = new XmlDocument();
         newXml.LoadXml(textAsset.text);
 
