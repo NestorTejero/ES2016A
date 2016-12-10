@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class TowerSelection : MonoBehaviour
 {
+
+    public Score score;
+
     // Tower deletion stats
     public float paybackRate = 0.66f;   // controls how much credit is obtained from deleting a tower
 
@@ -11,7 +14,6 @@ public class TowerSelection : MonoBehaviour
     private bool showSelected = false;  // Variable to check if a tower is selected (used on the OnGUI method to show/hide the buttons)
     private bool newTower = false;      // variable to control the case we are placing a tower
     private Color32 colorInicial;       // Renderer color of the selected tower
-
     // Buttons
     private Rect upgrade_button;
     private Rect sell_button;
@@ -22,13 +24,14 @@ public class TowerSelection : MonoBehaviour
     {
         upgrade_button = new Rect(Screen.width / 10, Screen.height / 10, 100, 30);
         sell_button = new Rect(Screen.width / 10, Screen.height / 10 + 50, 100, 30);
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && LogicConnector.isInGame())
         {
             // conversion from GUI to Screen position
             Vector3 v3Pos = Input.mousePosition;
@@ -122,6 +125,7 @@ public class TowerSelection : MonoBehaviour
         {
             // Increase credit and remove game object
             LogicConnector.increaseCredit((int)(tb.cost * paybackRate));
+            score.incTowersSold(); // Increment towers sold
             Destroy(tower);
         }
     }

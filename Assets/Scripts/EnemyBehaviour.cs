@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
+
+    public Score score;
+
     // Public STATS
     public float damage;
     public float health;
@@ -58,38 +61,28 @@ public class EnemyBehaviour : MonoBehaviour {
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)
+        if (other.gameObject.tag == "home" && !isAttacking)
         {
-            /* Moved to ProjectileBehavior
-			case "projectile":  // Enemy gets hit by a projectile
-                ProjectileBehaviour pb = (ProjectileBehaviour)other.gameObject.GetComponent("ProjectileBehaviour");
-                TakeDamage(pb.damage);          // manage damage inflicted by the projectile
-                break;
-                */
-            case "home":  // Enemy reaches home
-                if (!isAttacking)
-                {
-                    SetTarget(other.gameObject); // set home as target
-                    StartAttack();               // begin attacking home
-                }
-                break;
-            default:
-                return;
+            SetTarget(other.gameObject); // set home as target
+            StartAttack();               // begin attacking home
         }
     }
 
     // Use this for initialization
     void Start ()
     {
-		anim = GetComponent<Animator> ();
-   
+        anim = GetComponent<Animator> ();
+
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
+
         // Configure navigation agent
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         SetTarget(targetTagName);   // set primary target as current target
+        transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z));
 
+        position = gameObject.transform.position;   // store init position
 
-        position = gameObject.transform.position;
         InvokeRepeating("isBlocked", 2, 2);         // blockade checkout
     }
 
@@ -118,6 +111,8 @@ public class EnemyBehaviour : MonoBehaviour {
             if (!isDead)
             {
                 isDead = true;
+                score.incEnemies(); // Increment enemies defeated
+                score.incGoldEarned(moneyValue); // Increment gold earned
                 LogicConnector.setEnemiesLeft(LogicConnector.getEnemiesLeft() - 1);
                 LogicConnector.increaseCredit(moneyValue);
                 SelfDestroy();
@@ -151,7 +146,9 @@ public class EnemyBehaviour : MonoBehaviour {
 
         CancelInvoke();         // Cancel all invocations
 
-        agent.Stop();         // stop nav agent
+        agent.Stop();                    // stop nav agent       
+        anim.CrossFade("Atacar", 0.1f);  // transition to attack animation
+
         isAttacking = true;
         InvokeRepeating("Attack", attackRate, attackRate);
     }
@@ -220,6 +217,8 @@ public class EnemyBehaviour : MonoBehaviour {
 
         agent.ResetPath();              // reset agent's current path
         SetDestination(target);         // set destination
+
+        anim.CrossFade("Andar", 0.1f);  // transition to walk animation
     }
 
     // Assign current target from given object.

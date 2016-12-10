@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HomeBehavior : MonoBehaviour {
 
+    public Score score;
+
     public float maxHealth = 100f;
     public float lifes = 3f;
     public float health = 100f;
@@ -17,7 +19,8 @@ public class HomeBehavior : MonoBehaviour {
     // Use this for initialization
     void Start () {
         LogicConnector.setCredit(initCredit);
-	}
+        score = GameObject.Find("GameScripts").GetComponent<Score>();
+    }
 
     // Take damage.
     public void takeDamage (float damage)
@@ -27,7 +30,22 @@ public class HomeBehavior : MonoBehaviour {
 
         if (health == 0)
         {
-			LogicConnector.setHealth(0);
+
+            LogicConnector.setHealth(0);
+
+            /*
+            // DEBUG SCORE
+            Debug.Log(score.getRound());
+            Debug.Log(score.getEnemies());
+            Debug.Log(score.getTowersBuilt());
+            Debug.Log(score.getTowersSold());
+            Debug.Log(score.getGoldEarned());
+            Debug.Log(score.getTime());
+            Debug.Log(score.getScore());
+            */
+
+            // Send info score to LogicConnector (Team C)
+
             LogicConnector.GameOver();
             SelfDestroy();
         }
