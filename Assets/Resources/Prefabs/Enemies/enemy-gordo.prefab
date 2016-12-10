@@ -984,6 +984,7 @@ MonoBehaviour:
   attackRate: 0.5
   targetTagName: home
   target: {fileID: 0}
+  hitPrefab: {fileID: 150010, guid: 0f70a837b9c3ea14d9b68c2c772531b7, type: 2}
   isAttacking: 0
   targetLocked: 0
 --- !u!136 &13672262

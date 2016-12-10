@@ -24,6 +24,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public GameObject target;               // object the enemy is currently attacking 
     private GameObject primaryTarget;       // priority target
 
+    public GameObject hitPrefab;            // holds impact particle effect
+
     // FLAGS
     public bool isAttacking = false;        // attacking mode flag
     public bool targetLocked = false;       // if false -> rotate to face target if attacking
@@ -116,6 +118,18 @@ public class EnemyBehaviour : MonoBehaviour {
                 SelfDestroy();
             }
         }
+    }
+
+    public void TakeDamage(GameObject projectile)
+    {
+        // Instantiate hit object at the position of the impact. 
+        // Blood splatters in the same way and direction as the projectile.
+        GameObject hit = Instantiate(hitPrefab,
+                projectile.transform.position, Quaternion.LookRotation(projectile.transform.forward)
+        ) as GameObject;
+        Destroy(hit, 1f);   // destroy hit object after 1 second 
+
+        TakeDamage(projectile.GetComponent<ProjectileBehaviour>().damage);
     }
 
     // Can be modified to add cool effects when the entity is destroyed.
