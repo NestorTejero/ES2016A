@@ -121,6 +121,7 @@ public class TowerPlacement : MonoBehaviour
             isPlaced = false;
             // Instantiate the tower
             tow = Instantiate(go);
+            tow.name = go.name;
 
             // Adding component to check collision and storing it in towPos variable
             tow.AddComponent<TowerPosition>();

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System;
 
 public class TowerSelection : MonoBehaviour
 {
@@ -11,9 +13,19 @@ public class TowerSelection : MonoBehaviour
     public float paybackRate = 0.66f;   // controls how much credit is obtained from deleting a tower
 
     private GameObject tower;           // Tower selected by the user
+    private TowerBehavior towerBehavior;
+    private string towerName;
+    private int towerLevel;
+    private int upgradeCost;
+    private string upgradeText;
     private bool showSelected = false;  // Variable to check if a tower is selected (used on the OnGUI method to show/hide the buttons)
-    private bool newTower = false;      // variable to control the case we are placing a tower
     private Color32 colorInicial;       // Renderer color of the selected tower
+
+    // XML read variables
+    private XmlNode root;
+    private XmlNodeList towerList;
+    private XmlNodeList towerNode;
+
     // Buttons
     private Rect upgrade_button;
     private Rect sell_button;
@@ -22,8 +34,17 @@ public class TowerSelection : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        upgrade_button = new Rect(Screen.width / 10, Screen.height / 10, 100, 30);
-        sell_button = new Rect(Screen.width / 10, Screen.height / 10 + 50, 100, 30);
+        // Define buttons size and position
+        upgrade_button = new Rect(Screen.width / 10, Screen.height / 10, 120, 30);
+        sell_button = new Rect(Screen.width / 10, Screen.height / 10 + 50, 120, 30);
+
+        // Read xml document and get towers stats
+        TextAsset textAsset = (TextAsset)Resources.Load("Xml/towers");
+        XmlDocument newXml = new XmlDocument();
+        newXml.LoadXml(textAsset.text);
+        root = newXml.DocumentElement;
+
+        // Score variable to show the end-of-game stats (towers sold, upgraded...)
         score = GameObject.Find("GameScripts").GetComponent<Score>();
     }
 
@@ -87,47 +108,125 @@ public class TowerSelection : MonoBehaviour
     // display 2 buttons for selling and upgrading the tower 
     void OnGUI()
     {
-        // If we have a selected tower display the buttons and give the functionality
+        // If we have a selected tower, display the buttons and give the functionality
         if (showSelected)
         {
-            
+            // Set tower variables: behavior, name, level, upgrade cost etc.
+            setTowerVariables();
+
             // Upgrade button
-            if (GUI.Button(upgrade_button, "UPGRADE"))
+            if (GUI.Button(upgrade_button, upgradeText ))
             {
-                //UPGRADE functionality
+                // UPGRADE functionality
+                upgradeTower();
             }
 
             // Sell button
             if (GUI.Button(sell_button, "SELL"))
             {
                 // SELL functionality
-                sellTower(tower);
+                sellTower();
             }
         }
     }
 
-    // Open the tower combat stats and display 2 buttons for selling and upgrading the tower 
-    void OnMouseDown()
+    // Set tower variables: name, level, towerNode, upgrade cost and upgrade button text
+    public void setTowerVariables()
     {
-        //this.showSelected = true;
-        
+        // Reset upgrade button text
+        upgradeText = "ERROR";
+
+        // Try to obtain behavior from tower (behavior script has the level!)
+        towerBehavior = tower.GetComponent<TowerBehavior>();
+        if (towerBehavior == null) // Try to obtain behavior from tower's children (aka rotative parts)
+            towerBehavior = tower.GetComponentInChildren<TowerBehavior>();
+
+        if (towerBehavior != null)
+        {
+            // Set variables
+            towerName = tower.name;
+            towerLevel = towerBehavior.level;
+            try {
+                towerNode = root.SelectNodes("(Towers/Tower[@name='" + towerName + "']/Level)");
+            }
+            catch
+            {
+                towerNode = null;
+                Debug.Log("ERROR: could not read the xml element with name " + towerName);
+            }
+
+            // Store the upgradeCost if there are possible upgrades and modify upgrade button text
+            if (towerNode != null && canUpgrade())
+            {
+                // towerLevel index works as a list 0,1,2... and not as the xml is done with id 1,2,3...
+                // To acces to the level 2 tower stats we use index 1, instead of using a 2 that is the level 2 id, so be careful!
+                upgradeCost = Int32.Parse(towerNode[towerLevel]["cost"].InnerText);
+
+                // Text with the upgrade cost
+                upgradeText = "UPGRADE " + upgradeCost.ToString();
+            }
+            else
+            {
+                // Text showing there are no more possible upgrades
+                upgradeText = "NO UPGRADES";
+            }
+        }
     }
 
-    // Sell the given game object if it has tower behavior component. Give some credit back.
-    public void sellTower(GameObject go)
+    // Sell the selected tower. Give some credit back.
+    public void sellTower()
     {
-        // Try to obtain behavior from tower
-        TowerBehavior tb = go.GetComponent<TowerBehavior>();
-        if (tb == null) // Try to obtain behavior from tower's children (aka rotative parts)
-            tb = go.GetComponentInChildren<TowerBehavior>();   
-
-        if (tb != null)
-        {
-            // Increase credit and remove game object
-            LogicConnector.increaseCredit((int)(tb.cost * paybackRate));
-            score.incTowersSold(); // Increment towers sold
+        if (towerBehavior != null) {
+            // Increase credit and remove the selected tower
+            LogicConnector.increaseCredit((int)(towerBehavior.cost * paybackRate));
             Destroy(tower);
+
+            // Increment towers sold (for the final score)
+            score.incTowersSold(); 
         }
+    }
+
+    // Upgrade the selected tower. Costs some credit.
+    public void upgradeTower()
+    {
+        // Check if we have a tower behavior and if the tower is upgradeable (check actual tower max level)
+        if (towerBehavior != null && canUpgrade())
+        {
+            // Modify tower stats if we have enough credit (we have already checked if there are possible upgrades)
+            if (upgradeCost <= LogicConnector.getCredit())
+            {
+                Debug.Log("SUCCESSFUL upgrade");
+                // Decrease credit 
+                LogicConnector.decreaseCredit(upgradeCost);
+                // Increment towers upgraded (for the final score)
+                score.incTowersUpgraded();
+
+                // Update stats
+                towerBehavior.setRange(float.Parse(towerNode[towerLevel]["range"].InnerText));
+                towerBehavior.setHealth(float.Parse(towerNode[towerLevel]["health"].InnerText));
+                towerBehavior.setDamage(float.Parse(towerNode[towerLevel]["damage"].InnerText));
+                towerBehavior.setFireRate(float.Parse(towerNode[towerLevel]["firerate"].InnerText));
+                towerBehavior.setTurnSpeed(float.Parse(towerNode[towerLevel]["turnspeed"].InnerText));
+                towerBehavior.setProjectileSpeed(float.Parse(towerNode[towerLevel]["projectilespeed"].InnerText));
+                // add total cost, for selling purposes (returning a proportion of the total cost: initial + upgrades)
+                towerBehavior.addCost(Int32.Parse(towerNode[towerLevel]["cost"].InnerText));
+
+                // Update tower level
+                towerLevel += 1;
+                towerBehavior.setLevel(towerLevel);
+            }
+            else
+            {
+                Debug.Log("ERROR no money for upgrade");
+            }
+        }
+    }
+
+    // Return whether the selected tower can be upgraded
+    public Boolean canUpgrade()
+    {
+        // True if level is lower than maximum levels of the selected tower
+        return towerLevel < towerNode.Count;
     }
 }
 
