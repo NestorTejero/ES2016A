@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TowerCollection>
+	<Towers>
+	
+		<Tower id="torre-piedra">
+			<Level id="1">
+				<range>20</range>
+				<health>100.0</health>
+				<cost>100</cost>
+				<damage>6</damage>
+				<firerate>1.0</firerate>
+				<turnspeed>2.0</turnspeed>
+			</Level>
+			<Level id="2">
+				<range>30</range>
+				<health>100.0</health>
+				<cost>50</cost>
+				<damage>6</damage>
+				<firerate>0.5</firerate>
+				<turnspeed>2.0</turnspeed>
+			</Level>
+			<Level id="3">
+				<range>40</range>
+				<health>100.0</health>
+				<cost>150</cost>
+				<damage>12</damage>
+				<firerate>0.5</firerate>
+				<turnspeed>4.0</turnspeed>
+			</Level>
+		</Tower>
+
+		<Tower id="torre-tanque">
+			<Level id="1">
+				<range>45</range>
+				<health>100.0</health>
+				<cost>500</cost>
+				<damage>12</damage>
+				<firerate>2.0</firerate>
+				<turnspeed>1.0</turnspeed>
+			</Level>
+			<Level id="2">
+				<range>75</range>
+				<health>100.0</health>
+				<cost>250</cost>
+				<damage>12</damage>
+				<firerate>1.5</firerate>
+				<turnspeed>2.0</turnspeed>
+			</Level>
+			<Level id="3">
+				<range>75</range>
+				<health>100.0</health>
+				<cost>750</cost>
+				<damage>24</damage>
+				<firerate>1.5</firerate>
+				<turnspeed>2.0</turnspeed>
+			</Level>
+		</Tower>
+
+		<Tower id="torre-avion">
+			<Level id="1">
+				<range>40</range>
+				<health>100.0</health>
+				<cost>1000</cost>
+				<damage>2</damage>
+				<firerate>0.33</firerate>
+				<turnspeed>2.0</turnspeed>
+			</Level>
+			<Level id="2">
+				<range>50</range>
+				<health>100.0</health>
+				<cost>500</cost>
+				<damage>5</damage>
+				<firerate>0.33</firerate>
+				<turnspeed>3.0</turnspeed>
+			</Level>
+			<Level id="3">
+				<range>50</range>
+				<health>100.0</health>
+				<cost>1500</cost>
+				<damage>10</damage>
+				<firerate>0.33</firerate>
+				<turnspeed>3.0</turnspeed>
+			</Level>
+		</Tower>
+
+		
+	</Towers>
+</TowerCollection>
+		
