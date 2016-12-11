@@ -46,7 +46,6 @@ public class menusScript : MonoBehaviour {
     public void MenuConfig()
     {
         MenuConfiguration.enabled = true;
-		//Image men = MenuConfiguration.GetComponent<Image> ();
         startText.enabled = false;
         endText.enabled = false;
     }
