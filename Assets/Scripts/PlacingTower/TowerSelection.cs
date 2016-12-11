@@ -14,6 +14,7 @@ public class TowerSelection : MonoBehaviour
     private bool showSelected = false;  // Variable to check if a tower is selected (used on the OnGUI method to show/hide the buttons)
     private bool newTower = false;      // variable to control the case we are placing a tower
     private Color32 colorInicial;       // Renderer color of the selected tower
+
     // Buttons
     private Rect upgrade_button;
     private Rect sell_button;
@@ -31,7 +32,7 @@ public class TowerSelection : MonoBehaviour
     void Update()
     {
         // Check click
-        if (Input.GetMouseButtonDown(0) && LogicConnector.isInGame())
+        if (Input.GetMouseButtonDown(0))
         {
             // conversion from GUI to Screen position
             Vector3 v3Pos = Input.mousePosition;
