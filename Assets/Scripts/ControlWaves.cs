@@ -22,7 +22,7 @@ public class ControlWaves : MonoBehaviour
     {
 
         // GET DIFFICULTY FROM LOGICCONNECTOR
-        difficulty = "hard"; // easy, medium or hard
+        difficulty = LogicConnector.GetDifficulty(); // easy, medium or hard
 
         // Read xml document and get rounds info
         TextAsset textAsset = (TextAsset)Resources.Load("Xml/rounds_"+difficulty);
