@@ -19,6 +19,7 @@ public class UserInterface : MonoBehaviour {
 	public Rect WindowSize = new Rect (0, 0, 950, 600);
 	public AudioClip GameMusic;
 	public AudioClip MenuMusic;
+	public AudioClip GameOverMusic;
 	public LogicConnector GameLogicConnector = LogicConnector.getInstance();
 
 	[Header("HUD Superior")]
@@ -133,7 +134,11 @@ public class UserInterface : MonoBehaviour {
 	}
 
 	public void OnGameOver () {
-
+		if (this.AudioSource.clip != this.GameOverMusic) {
+			this.AudioSource.clip = this.GameOverMusic;
+			this.AudioSource.Play ();
+			this.AudioSource.volume = PlayerPrefs.GetFloat ("VolumenGeneral") * PlayerPrefs.GetFloat ("VolumenMenu");
+		}
 	}
 
 	public void OnVolumeUpdate (LogicConnector.States State) {
