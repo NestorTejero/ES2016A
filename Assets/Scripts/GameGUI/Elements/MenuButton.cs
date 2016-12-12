@@ -22,7 +22,8 @@ public class MenuButton {
 	}
 
 	public bool Draw () {
-        GUI.DrawTexture(Position.getRect(), TexturaSlider);
+		if(TexturaSlider)
+        	GUI.DrawTexture(Position.getRect(), TexturaSlider);
 		return GUI.Button (this.Position.getRect (), this.Text);
 	}
 }

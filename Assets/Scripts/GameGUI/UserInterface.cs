@@ -41,6 +41,9 @@ public class UserInterface : MonoBehaviour {
 	[Header("HUD Settings")]
 	public InterfaceSettings InterfazSettings = new InterfaceSettings();
 
+	[Header("HUD Game Over")]
+	public InterfaceGameOver InterfazGameOver = new InterfaceGameOver();
+
 	// Private attributes.
 	private AudioSource AudioSource;
 
@@ -67,17 +70,19 @@ public class UserInterface : MonoBehaviour {
 		InterfazTiempo.Draw ();
 		interfaceEnemies.Draw ();
 
-		if (BotonPausa.Draw ()) {
+
+		if (BotonPausa.Draw () && LogicConnector.isInGame ()) {
 			LogicConnector.Pause ();
 		}
 
-		if (BotonStart.Draw ()) {
+		if (BotonStart.Draw () && LogicConnector.isInGame ()) {
 			// Early start.
 		}
 
 		// Elementos con mas "z index".
 		InterfazPausa.Draw ();
 		InterfazSettings.Draw ();
+		InterfazGameOver.Draw ();
 	}
 
 	void Update () {
@@ -94,10 +99,12 @@ public class UserInterface : MonoBehaviour {
 				break;
 			}
 		}
+		/*
         if (LogicConnector.isGameOver())
         {
             SceneManager.LoadScene("GameOver");
         }
+        */
     }
 
 	public void OnPause () {

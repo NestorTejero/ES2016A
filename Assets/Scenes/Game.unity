@@ -10996,6 +10996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f9bf25354d0ee4796470bfcdb7ca31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 0}
   paybackRate: 0.66
 --- !u!114 &1512485313
 MonoBehaviour:
@@ -11035,6 +11036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e5c0084ca45544cb0908481f3e66ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 0}
   isPlaced: 0
   type_tower: 0
   scale: {x: 10, y: 10, z: 10}
@@ -13543,6 +13545,25 @@ MonoBehaviour:
         Text: Volumen juego
         Alignment: 3
       Value: 0.8910238
+  InterfazGameOver:
+    Contenedor:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+      Background: {fileID: 0}
+    ContenedorBlur:
+      Dimensions:
+        rect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+      Background: {fileID: 0}
 --- !u!4 &1753859877
 Transform:
   m_ObjectHideFlags: 0
