@@ -237,10 +237,11 @@ public class LogicConnector {
 
 	public static void triggerVolumeUpdate () {
 		LogicConnector instance = LogicConnector.getInstance ();
-		if (instance.UserInterface != null)
+		if (instance.UserInterface != null) {
 			instance.UserInterface.OnVolumeUpdate (instance.State);
+		}
 	}
-		
+
 }
 
 

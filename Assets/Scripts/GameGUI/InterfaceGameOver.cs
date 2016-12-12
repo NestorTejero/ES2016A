@@ -30,6 +30,16 @@ public class InterfaceGameOver {
 
 	public void Draw () {
 		if (LogicConnector.isGameOver ()) {
+			// Update stats
+			GameObject go = GameObject.Find("GameScripts");
+			Score score = go.GetComponent (typeof(Score)) as Score;
+			VariableRondas.SetText (score.getRound ().ToString());
+			VariableEnemigos.SetText (score.getEnemies ().ToString());
+			VariableTorresCompradas.SetText (score.getTowersBuilt ().ToString());
+			VariableTorresVendidas.SetText (score.getTowersSold ().ToString());
+			VariableDinero.SetText (score.getGoldEarned ().ToString());
+			VariablePuntuacion.SetText (score.getScore ().ToString());
+
 			TituloRondas.Draw ();
 			VariableRondas.Draw ();
 			TituloEnemigos.Draw ();
