@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class InterfaceGameOver {
@@ -41,6 +42,14 @@ public class InterfaceGameOver {
 			VariableDinero.Draw ();
 			TituloPuntuacion.Draw ();
 			VariablePuntuacion.Draw ();
+
+			if (BotonMenuPrincipal.Draw ()) {
+				SceneManager.LoadScene ("menuScene");
+			}
+
+			if (BotonSalir.Draw ()) {
+				Application.Quit ();
+			}
 		}
 	}
 }
