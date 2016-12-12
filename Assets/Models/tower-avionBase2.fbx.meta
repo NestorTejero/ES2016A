@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: 009491b8c417eba479219c1c9fe7e2b1
-timeCreated: 1480170568
+guid: 1d86d814e8562c744ba2797f42f41527
+timeCreated: 1481579206
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cilindro.001
-    100004: Lamp
-    100006: Lamp.001
-    100008: Lamp.002
-    100010: Lamp.003
-    100012: //RootNode
-    400000: Camera
-    400002: Cilindro.001
-    400004: Lamp
-    400006: Lamp.001
-    400008: Lamp.002
-    400010: Lamp.003
-    400012: //RootNode
-    2300000: Cilindro.001
-    3300000: Cilindro.001
-    4300000: Cilindro.001
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: tower-avion-base
   materials:
     importMaterials: 1
     materialName: 0
@@ -62,7 +50,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 15
+    normalSmoothAngle: 30
     normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
