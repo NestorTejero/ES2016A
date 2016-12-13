@@ -638,7 +638,7 @@ Animator:
   m_GameObject: {fileID: 184080}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 588b417139e27454680aad7a1c5ddba1, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45a0836c08825ba4f9470a2a047b81f7, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
   score: {fileID: 0}
   damage: 10
   health: 20
-  speed: 1
+  speed: 1.5
   moneyValue: 10
   attackRate: 1
   targetTagName: home
