@@ -33,8 +33,14 @@ public class LogicConnector {
 	public SubStates SubState = LogicConnector.SubStates.InBattling;
 	public GameObject[] TowerObjects;
 
-	// Variables de la logica.
-	[Header("Game logic values")]
+    //Enum dificultad juego
+    public enum Difficulty { Easy, Medium, Hard };
+    [Header("Game Difficulty")]
+    public Difficulty Difficult = LogicConnector.Difficulty.Easy;
+    private String difficulty;
+
+    // Variables de la logica.
+    [Header("Game logic values")]
 	[SerializeField] private int Health;
 	[SerializeField] private int Credit;
 	[SerializeField] private float GameTime;
@@ -240,7 +246,18 @@ public class LogicConnector {
 		if (instance.UserInterface != null)
 			instance.UserInterface.OnVolumeUpdate (instance.State);
 	}
-		
+
+    public static void SetDifficulty()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.difficulty = instance.Difficult.ToString();
+    }
+
+    public static string GetDifficulty()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return instance.difficulty;
+    }
 }
 
 

@@ -78,6 +78,10 @@ public class UserInterface : MonoBehaviour {
 		// Elementos con mas "z index".
 		InterfazPausa.Draw ();
 		InterfazSettings.Draw ();
+
+        //SetDifficulty
+        LogicConnector.SetDifficulty();
+
 	}
 
 	void Update () {
