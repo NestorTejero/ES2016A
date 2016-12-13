@@ -32,6 +32,15 @@
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
 			</Enemy>
+      <Enemy>
+        <name>enemy-neanderthal</name>
+        <damage>2.5</damage>
+        <health>10.0</health>
+        <speed>5.0</speed>
+        <money>5</money>
+        <amount>5</amount>
+        <spawnTime>4.0</spawnTime>
+      </Enemy>
 		</Round>
 		
 		
@@ -55,6 +64,15 @@
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
 			</Enemy>
+      <Enemy>
+        <name>enemy-neanderthal</name>
+        <damage>2.5</damage>
+        <health>10.0</health>
+        <speed>5.0</speed>
+        <money>5</money>
+        <amount>5</amount>
+        <spawnTime>4.0</spawnTime>
+      </Enemy>
 		</Round>
 		
 		
