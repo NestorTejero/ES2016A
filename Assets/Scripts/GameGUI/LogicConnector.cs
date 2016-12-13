@@ -37,7 +37,7 @@ public class LogicConnector {
     public enum Difficulty { Easy, Medium, Hard };
     [Header("Game Difficulty")]
     public Difficulty Difficult = LogicConnector.Difficulty.Easy;
-    private String difficulty;
+    private String difficulty = LogicConnector.Difficulty.Easy.ToString();
 
     // Variables de la logica.
     [Header("Game logic values")]
