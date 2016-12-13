@@ -198,8 +198,6 @@ public class TowerSelection : MonoBehaviour
                 Debug.Log("SUCCESSFUL upgrade");
                 // Decrease credit 
                 LogicConnector.decreaseCredit(upgradeCost);
-                // Increment towers upgraded (for the final score)
-                score.incTowersUpgraded();
 
                 // Update stats
                 towerBehavior.setRange(float.Parse(towerNode[towerLevel]["range"].InnerText));

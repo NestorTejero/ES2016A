@@ -24,7 +24,7 @@ public class interfaceEnemies {
 		if ((LogicConnector.isInGame()) && (LogicConnector.isInBattling ())) {
 			this.Contenedor.Draw ();
 
-			this.Label.SetText (LogicConnector.getEnemiesLeft().ToString () + "/");
+			this.Label.SetText (LogicConnector.getEnemiesLeft().ToString () + " / ");
 			this.Label.Draw ();
 			this.Label2.SetText (LogicConnector.getTotalEnemies().ToString ());
 			this.Label2.Draw ();

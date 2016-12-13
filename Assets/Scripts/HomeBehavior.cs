@@ -33,18 +33,14 @@ public class HomeBehavior : MonoBehaviour {
 
             LogicConnector.setHealth(0);
 
-            /*
-            // DEBUG SCORE
-            Debug.Log(score.getRound());
-            Debug.Log(score.getEnemies());
-            Debug.Log(score.getTowersBuilt());
-            Debug.Log(score.getTowersSold());
-            Debug.Log(score.getGoldEarned());
-            Debug.Log(score.getTime());
-            Debug.Log(score.getScore());
-            */
-
-            // Send info score to LogicConnector (Team C)
+            LogicConnector.setRound(score.getRound());
+            LogicConnector.setEnemies(score.getEnemies());
+            LogicConnector.setTowersBuilt(score.getTowersBuilt());
+            LogicConnector.setTowersSold(score.getTowersSold());
+            LogicConnector.setGoldEarned(score.getGoldEarned());
+            LogicConnector.setTotalTime(score.getTime());
+            LogicConnector.setScore(score.getScore());
+            LogicConnector.setWin(false);
 
             LogicConnector.GameOver();
             SelfDestroy();

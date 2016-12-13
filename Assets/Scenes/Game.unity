@@ -5941,10 +5941,10 @@ Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 398610273}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.17, y: 6.98, z: 74.61}
-  m_LocalScale: {x: 1.5358175, y: 14.086626, z: 1.4071089}
+  m_GameObject: {fileID: 533482191}
+  m_LocalRotation: {x: 0.013600868, y: -0.65135473, z: -0.008677223, w: 0.7586019}
+  m_LocalPosition: {x: 136.8, y: -2.6, z: 202.3}
+  m_LocalScale: {x: 1, y: 1, z: 334.7587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1812475457}
@@ -6033,11 +6033,11 @@ Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 452251656}
-  m_LocalRotation: {x: 0, y: -0.7036269, z: 0, w: 0.71056974}
-  m_LocalPosition: {x: -5.39, y: 1.8000001, z: 1.66}
-  m_LocalScale: {x: 0.84342396, y: 3.6029491, z: 0.50760597}
-  m_LocalEulerAnglesHint: {x: 0, y: -89.4374, z: 0}
+  m_GameObject: {fileID: 599583128}
+  m_LocalRotation: {x: 0.05099616, y: 0.41022828, z: 0.055547882, w: 0.90886}
+  m_LocalPosition: {x: 65.2, y: 2.2, z: 153.8}
+  m_LocalScale: {x: 1.8951339, y: 1, z: 1067.6868}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 353750132}
   m_RootOrder: 5
@@ -6125,11 +6125,11 @@ Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 513064710}
-  m_LocalRotation: {x: 0, y: -0.21570544, z: 0, w: 0.97645855}
-  m_LocalPosition: {x: -2.09, y: 1.8000001, z: 6.15}
-  m_LocalScale: {x: 0.8434239, y: 3.6029491, z: 0.507606}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.913898, z: 0}
+  m_GameObject: {fileID: 619607397}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 12.9, y: 15, z: 179.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 353750132}
   m_RootOrder: 2
@@ -14663,6 +14663,7 @@ MonoBehaviour:
     - {fileID: 108318, guid: 4aa32ee2037a9f34595da5a44b06d920, type: 2}
     - {fileID: 117610, guid: 248f018e6d4c7b5418a3120b010b01de, type: 2}
     - {fileID: 106906, guid: 4f681e75cc6012e42bec259614fdcbd4, type: 2}
+    Difficult: 0
     Health: 3
     Credit: 2000
     GameTime: 30
@@ -14735,9 +14736,9 @@ MonoBehaviour:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 395
+          x: 390
           y: 1.5
-          width: 154
+          width: 115
           height: 57
       Background: {fileID: 2800000, guid: 638cf48e156032645974a37ca92bca5c, type: 3}
     Label:
@@ -14748,7 +14749,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 425
           y: 15
-          width: 100
+          width: 40
           height: 30
       Text: 30
       Alignment: 4
@@ -14757,20 +14758,20 @@ MonoBehaviour:
       Dimensions:
         rect:
           serializedVersion: 2
-          x: 395
+          x: 390
           y: 1.5
-          width: 154
+          width: 115
           height: 57
-      Background: {fileID: 2800000, guid: 92460ce69ba1e9148a15f3ef6ec01f41, type: 3}
+      Background: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
     Label:
-      FontSize: 40
+      FontSize: 30
       TextColor: {r: 0, g: 0, b: 0, a: 1}
       Position:
         rect:
           serializedVersion: 2
           x: 415
           y: 15
-          width: 100
+          width: 40
           height: 30
       Text: 7/
       Alignment: 4
@@ -14782,7 +14783,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 445
           y: 15
-          width: 100
+          width: 60
           height: 30
       Text: 15
       Alignment: 4
@@ -15059,36 +15060,6 @@ MonoBehaviour:
           height: 30
       Text: 
       TexturaSlider: {fileID: 2800000, guid: 48268c8c7f818954786808ca8fef87c1, type: 3}
-    BotonFacil:
-      Position:
-        rect:
-          serializedVersion: 2
-          x: 310
-          y: 390
-          width: 120
-          height: 30
-      Text: 
-      TexturaSlider: {fileID: 2800000, guid: 57fc068775f2f8a40b1c61d700535085, type: 3}
-    BotonMedio:
-      Position:
-        rect:
-          serializedVersion: 2
-          x: 450
-          y: 390
-          width: 120
-          height: 30
-      Text: 
-      TexturaSlider: {fileID: 2800000, guid: 3ac3b39316cf30a41bf0f0254002cc89, type: 3}
-    BotonDificil:
-      Position:
-        rect:
-          serializedVersion: 2
-          x: 590
-          y: 390
-          width: 120
-          height: 30
-      Text: 
-      TexturaSlider: {fileID: 2800000, guid: 5cef7cf643cc5804b931690dd0c82f1d, type: 3}
     VolumenGeneral:
       Position:
         rect:

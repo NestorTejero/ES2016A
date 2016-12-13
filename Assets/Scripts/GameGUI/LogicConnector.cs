@@ -47,8 +47,16 @@ public class LogicConnector {
 	[SerializeField] private int[] TowerCost = { 100, 500, 1000 };
 	[SerializeField] private int enemiesLeft;
 	[SerializeField] private int totalEnemies;
+    [SerializeField] private int round;
+    [SerializeField] private int enemies;
+    [SerializeField] private int towersBuilt;
+    [SerializeField] private int towersSold;
+    [SerializeField] private int goldEarned;
+    [SerializeField] private double totalTime;
+    [SerializeField] private int score;
+    [SerializeField] private bool win;
 
-	[Header("Test values")]
+    [Header("Test values")]
 	[SerializeField] private Boolean testMode = false;
 	[SerializeField] private int testHealth = 3;
 	[SerializeField] private int testCredit = 500;
@@ -56,8 +64,16 @@ public class LogicConnector {
 	[SerializeField] private float testTime = 60.0f;
 	[SerializeField] private int testEnemiesLeft = 7;
 	[SerializeField] private int testTotalEnemies = 15;
+    [SerializeField] private int testRound = 1;
+    [SerializeField] private int testEnemies = 10;
+    [SerializeField] private int testTowersBuilt = 5;
+    [SerializeField] private int testTowersSold = 2;
+    [SerializeField] private int testGoldEarned = 549;
+    [SerializeField] private double testTotalTime = 234.2343;
+    [SerializeField] private int testScore = 400;
+    [SerializeField] private bool testWin = true;
 
-	private UserInterface UserInterface;
+    private UserInterface UserInterface;
 	protected static LogicConnector _instance = null;
 	protected LogicConnector () {}
 	public static LogicConnector getInstance() {
@@ -169,7 +185,13 @@ public class LogicConnector {
 		instance.testEnemiesLeft -= 1;
 	}
 
-	public static void Pause () {
+    public static void Start()
+    {
+        if (isInBreak())
+            GameObject.FindObjectOfType<ControlWaves>().NextRound();
+    }
+
+    public static void Pause () {
 		LogicConnector instance = LogicConnector.getInstance ();
 		instance.State = LogicConnector.States.Paused;
 		Time.timeScale = 0;
@@ -257,6 +279,102 @@ public class LogicConnector {
     {
         LogicConnector instance = LogicConnector.getInstance();
         return instance.difficulty;
+    }
+
+    public static int getRound()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testRound : instance.round;
+    }
+
+    public static int getEnemies()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testEnemies : instance.enemies;
+    }
+
+    public static int getTowersBuilt()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowersBuilt : instance.towersBuilt;
+    }
+
+    public static int getTowersSold()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowersSold : instance.towersSold;
+    }
+
+    public static int getGoldEarned()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testGoldEarned : instance.goldEarned;
+    }
+
+    public static double getTotalTime()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTotalTime : instance.totalTime;
+    }
+
+    public static int getScore()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testScore : instance.score;
+    }
+
+    public static bool getWin()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testWin : instance.win;
+    }
+
+    public static void setRound(int round)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.round = round;
+    }
+
+    public static void setEnemies(int enemies)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.enemies = enemies;
+    }
+
+    public static void setTowersBuilt(int towersBuilt)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towersBuilt = towersBuilt;
+    }
+
+    public static void setTowersSold(int towersSold)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towersSold = towersSold;
+    }
+
+    public static void setGoldEarned(int goldEarned)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.goldEarned = goldEarned;
+    }
+
+    public static void setTotalTime(double totalTime)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.totalTime = totalTime;
+    }
+
+    public static void setScore(int score)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.score = score;
+    }
+
+    public static void setWin(bool win)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.win = win;
     }
 }
 
