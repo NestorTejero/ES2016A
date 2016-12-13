@@ -119,23 +119,16 @@ public class ControlWaves : MonoBehaviour
                 {
                     score.setRound(currentRound);
 
-                    /*
-                    // DEBUG SCORE
-                    Debug.Log(score.getRound());
-                    Debug.Log(score.getEnemies());
-                    Debug.Log(score.getTowersBuilt());
-                    Debug.Log(score.getTowersSold());
-                    Debug.Log(score.getGoldEarned());
-                    Debug.Log(score.getTime());
-                    Debug.Log(score.getScore());
-                    */
+                    LogicConnector.setRound(score.getRound());
+                    LogicConnector.setEnemies(score.getEnemies());
+                    LogicConnector.setTowersBuilt(score.getTowersBuilt());
+                    LogicConnector.setTowersSold(score.getTowersSold());
+                    LogicConnector.setGoldEarned(score.getGoldEarned());
+                    LogicConnector.setTotalTime(score.getTime());
+                    LogicConnector.setScore(score.getScore());
+                    LogicConnector.setWin(true);
 
-                    // Send info score to LogicConnector (Team C)
-
-                    // Call Win method (Team C)
-                    Debug.Log("YOU WIN!"); 
-
-
+                    LogicConnector.GameOver();
 
                 }
                     

@@ -7,9 +7,8 @@ public class Score : MonoBehaviour {
     private int enemies;
     private int towersBuilt;
     private int towersSold;
-    private int towersUpgraded;
     private int goldEarned;
-    private float time;
+    private double time;
     private int score;
 
 
@@ -20,7 +19,7 @@ public class Score : MonoBehaviour {
         towersBuilt = 0;
         towersSold = 0;
         goldEarned = 0;
-        time = 0;
+        time = 0.0;
         score = 0;
 
 	}
@@ -52,17 +51,12 @@ public class Score : MonoBehaviour {
         return towersSold;
     }
 
-    public int getTowersUpgraded()
-    {
-        return towersUpgraded;
-    }
-
     public int getGoldEarned()
     {
         return goldEarned;
     }
 
-    public float getTime()
+    public double getTime()
     {
         return time;
     }
@@ -92,11 +86,6 @@ public class Score : MonoBehaviour {
     public void incTowersSold()
     {
         this.towersSold++;
-    }
-
-    public void incTowersUpgraded()
-    {
-        this.towersUpgraded++;
     }
 
     public void incGoldEarned(int goldEarned)
