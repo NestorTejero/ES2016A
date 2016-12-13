@@ -169,7 +169,13 @@ public class LogicConnector {
 		instance.testEnemiesLeft -= 1;
 	}
 
-	public static void Pause () {
+    public static void Start()
+    {
+        if (isInBreak())
+            GameObject.FindObjectOfType<ControlWaves>().NextRound();
+    }
+
+    public static void Pause () {
 		LogicConnector instance = LogicConnector.getInstance ();
 		instance.State = LogicConnector.States.Paused;
 		Time.timeScale = 0;

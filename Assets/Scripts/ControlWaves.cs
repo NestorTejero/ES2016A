@@ -40,7 +40,7 @@ public class ControlWaves : MonoBehaviour
 
     }
 
-    void NextRound()
+    public void NextRound()
     {
 
         // Initialize round stats

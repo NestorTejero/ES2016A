@@ -72,8 +72,8 @@ public class UserInterface : MonoBehaviour {
 		}
 
 		if (BotonStart.Draw ()) {
-			// Early start.
-		}
+            LogicConnector.Start();
+        }
 
 		// Elementos con mas "z index".
 		InterfazPausa.Draw ();

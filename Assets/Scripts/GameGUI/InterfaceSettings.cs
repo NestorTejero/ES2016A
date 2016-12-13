@@ -27,11 +27,6 @@ public class InterfaceSettings {
 	public MenuButton BotonSilenciarMenu = new MenuButton();
 	public MenuButton BotonSilenciarJuego = new MenuButton ();
 
-	[Header("Controles dificultad")]
-	public MenuButton BotonFacil = new MenuButton();
-	public MenuButton BotonMedio = new MenuButton();
-	public MenuButton BotonDificil = new MenuButton();
-
 	[Header("Slider preferencias")]
 	public InterfaceSlider VolumenGeneral = new InterfaceSlider ();
 	public InterfaceSlider VolumenMenu = new InterfaceSlider ();
@@ -89,17 +84,6 @@ public class InterfaceSettings {
 				LogicConnector.triggerVolumeUpdate ();
 			}
 
-			if (this.BotonFacil.Draw ()) {
-				// Dificultad facil.
-			}
-
-			if (this.BotonMedio.Draw ()) {
-				// Dificultad media.
-			}
-
-			if (this.BotonDificil.Draw ()) {
-				// Dificiltad dificil.
-			}
 		} 
 	}
 }
