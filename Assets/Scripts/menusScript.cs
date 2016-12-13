@@ -9,16 +9,35 @@ public class menusScript : MonoBehaviour {
     public Canvas MenuConfiguration;
     public Button startText;
     public Button endText;
+    public Button ButtonMute;
+    public Button ButtonLevel;
     public Button configurationText;
+
+    public Image ImageYes;
+    public Image ImageNo;
+    public Image ImageLevelEasy;
+    public Image ImageLevelMedium;
+    public Image ImageLevelHard;
 
     public AudioClip MenuPrincipalMusic;
     private UserInterface InterfaceAudioSettings;
     private AudioSource AudioSource;
     private AudioSource AudioSourceGame;
+
+    public LogicConnector GameLogicConnector = LogicConnector.getInstance();
     // Use this for initialization
     void Start () {
         quitMenu = quitMenu.GetComponent<Canvas>();
         MenuConfiguration = MenuConfiguration.GetComponent<Canvas>();
+        ButtonMute = ButtonMute.GetComponent<Button>();
+        ButtonLevel = ButtonLevel.GetComponent<Button>();
+
+        ImageYes = ImageYes.GetComponent<Image>();
+        ImageNo = ImageNo.GetComponent<Image>();
+        ImageLevelEasy = ImageLevelEasy.GetComponent<Image>();
+        ImageLevelMedium = ImageLevelMedium.GetComponent<Image>();
+        ImageLevelHard = ImageLevelHard.GetComponent<Image>();
+
         startText = startText.GetComponent<Button>();
         endText = endText.GetComponent<Button>();
         configurationText = configurationText.GetComponent<Button>();
@@ -46,9 +65,77 @@ public class menusScript : MonoBehaviour {
     public void MenuConfig()
     {
         MenuConfiguration.enabled = true;
-		//Image men = MenuConfiguration.GetComponent<Image> ();
+
+        ImageYes.enabled = false;
+        ImageNo.enabled = false;
+        ImageLevelEasy.enabled = false;
+        ImageLevelMedium.enabled = false;
+        ImageLevelHard.enabled = false;
+
         startText.enabled = false;
         endText.enabled = false;
+    }
+
+    public void Mute()
+    {
+        ImageYes.enabled = true;
+        ImageNo.enabled = true;
+        if (ImageLevelEasy.enabled == true)
+        {
+            ImageLevelEasy.enabled = false;
+        }
+        if (ImageLevelMedium.enabled == true)
+        {
+            ImageLevelMedium.enabled = false;
+        }
+        if (ImageLevelHard.enabled == true)
+        {
+            ImageLevelHard.enabled = false;
+        }
+        
+    }
+
+    public void Level()
+    {
+        ImageLevelEasy.enabled = true;
+        ImageLevelMedium.enabled = true;
+        ImageLevelHard.enabled = true;
+        if(ImageYes.enabled == true)
+        {
+            ImageYes.enabled = false;
+        }
+        if(ImageNo.enabled == true)
+        {
+            ImageNo.enabled = false;
+        }
+        
+    }
+
+    public void SetLevelEasy()
+    {
+        var instance =LogicConnector.getInstance();
+        instance.Difficult = LogicConnector.Difficulty.Easy;
+        ImageLevelEasy.enabled = false;
+        ImageLevelMedium.enabled = false;
+        ImageLevelHard.enabled = false;
+    }
+
+    public void SetLevelMedium()
+    {
+        var instance = LogicConnector.getInstance();
+        instance.Difficult = LogicConnector.Difficulty.Medium;
+        ImageLevelEasy.enabled = false;
+        ImageLevelMedium.enabled = false;
+        ImageLevelHard.enabled = false;
+    }
+
+    public void SetLevelHard()
+    {
+        var instance = LogicConnector.getInstance();
+        instance.Difficult = LogicConnector.Difficulty.Hard;
+        ImageLevelEasy.enabled = false;
+        ImageLevelMedium.enabled = false;
+        ImageLevelHard.enabled = false;
     }
 
     public void MuteSound()
@@ -61,6 +148,9 @@ public class menusScript : MonoBehaviour {
         {
             AudioSource.volume = 0.0F;
         }
+
+        ImageYes.enabled = false;
+        ImageNo.enabled = false;
     }
 
     public void NoPress() {
@@ -94,6 +184,9 @@ public class menusScript : MonoBehaviour {
 			//AudioSource.volume = 1.5F;
 
         }
+
+        ImageYes.enabled = false;
+        ImageNo.enabled = false;
     }
 
     public void startLevel() {
