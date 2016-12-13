@@ -7,13 +7,14 @@ public class TowerBehavior : MonoBehaviour
     // Stats
     public int level = 1;
     public float range = 30f;			// Range in meters
+	public float minRange = 0f;			// Minimun distance to target (for some turrets, shooting enemies too close is impossible
 	public float health = 100f;
 	public int cost = 100;				// tower value
 
 	public float damage = 5f;
     public float fireRate = 1f;    		// fire rate in seconds
 
-	public float turnSpeed = 2f;		// Angles per second of the turret
+	public float turnSpeed = Mathf.PI / 2f;		// Radians per second of the turret
 	public bool canRotate = true;
 	public bool canRotatePitch = false;
 
@@ -38,6 +39,14 @@ public class TowerBehavior : MonoBehaviour
 	// Use this for initialization
 	public void StartTower(){
 		isPlaced = true;
+
+		// Delete markers once placed
+		GameObject rangeEnabledMarker = transform.parent.Find("range-enabled").gameObject;
+		GameObject rangeDisabledMarker = transform.parent.Find("range-disabled").gameObject;
+		if(rangeEnabledMarker)
+			Destroy(rangeEnabledMarker);
+		if(rangeDisabledMarker)
+			Destroy(rangeDisabledMarker);
 	}
 
 	public void Update(){
@@ -55,8 +64,15 @@ public class TowerBehavior : MonoBehaviour
 		}
 
         if (target != null && canRotate){
-			
-			float alignFactor = Vector3.Dot(transform.forward, (target.transform.position - transform.position).normalized);
+
+			Vector3 enemyDir = target.transform.position - transform.position;
+			enemyDir.Normalize ();
+
+			// If the turret does not rotate on the X axis, set enemy co-planar
+			// TODO this is not working¿?
+			if(!canRotatePitch)
+				enemyDir.y = transform.position.y;
+			float alignFactor = Vector3.Dot(transform.forward, enemyDir);
 
 			// If we're somewhat facing the target, fire at it
 			if (alignFactor > 0.95) {
@@ -81,9 +97,11 @@ public class TowerBehavior : MonoBehaviour
 		return;
     }
 
-	// Quick method for finding stray targets
+	// Determine if target is in range
 	private bool IsTooFar(GameObject obj){
-		return (transform.position - obj.transform.position).sqrMagnitude > range * range;
+		float dist2 = (transform.position - obj.transform.position).sqrMagnitude;
+		// Return true if target is too close OR too far
+		return ((dist2 < minRange*minRange) || (dist2 > range * range));
 	}
 
 	// Finds the closest target that's in range of the turret
@@ -102,7 +120,7 @@ public class TowerBehavior : MonoBehaviour
 
 		foreach (GameObject t in targetList)
 		{
-			if (t == null)
+			if (t == null || IsTooFar(t))
 				continue;			
 			// Calculate distance squared, and if less than current min dist, aquire target
 			float dist2 = (transform.position - t.transform.position).sqrMagnitude;
