@@ -65,11 +65,13 @@ public class menusScript : MonoBehaviour {
     public void MenuConfig()
     {
         MenuConfiguration.enabled = true;
+
         ImageYes.enabled = false;
         ImageNo.enabled = false;
         ImageLevelEasy.enabled = false;
         ImageLevelMedium.enabled = false;
         ImageLevelHard.enabled = false;
+
         startText.enabled = false;
         endText.enabled = false;
     }

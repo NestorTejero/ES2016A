@@ -5,6 +5,7 @@ public class TowerBehavior : MonoBehaviour
 {
 
     // Stats
+    public int level = 1;
     public float range = 30f;			// Range in meters
 	public float health = 100f;
 	public int cost = 100;				// tower value
@@ -213,5 +214,47 @@ public class TowerBehavior : MonoBehaviour
 		else
 			Destroy(transform.parent.gameObject);
 	}
+
+
+    // SETTERS for upgrading towers
+    public void setLevel(int l)
+    {
+        this.level = l;
+    }
+    public void setRange(float r)
+    {
+        this.range = r;
+    }
+
+    public void setHealth(float h)
+    {
+        this.health = h;
+    }
+
+    public void addCost(int c)
+    {
+        this.cost += c;
+    }
+
+    public void setDamage(float d)
+    {
+        this.damage = d;
+    }
+
+    public void setFireRate(float fr)
+    {
+        this.fireRate = fr;
+    }
+
+    public void setTurnSpeed(float ts)
+    {
+        this.turnSpeed = ts;
+    }
+
+    public void setProjectileSpeed(float ps)
+    {
+        this.projectileSpeed = ps;
+    }
+
 }
 
