@@ -7,12 +7,15 @@ public class menusScript : MonoBehaviour {
 
     public Canvas quitMenu;
     public Canvas MenuConfiguration;
+    public Canvas MenuDiff;
     public Button startText;
     public Button endText;
     public Button ButtonMute;
-    public Button ButtonLevel;
     public Button configurationText;
-
+    public Button Play;
+    public Button Settings;
+    public Button Exit;
+    
     public Image ImageYes;
     public Image ImageNo;
     public Image ImageLevelEasy;
@@ -29,8 +32,11 @@ public class menusScript : MonoBehaviour {
     void Start () {
         quitMenu = quitMenu.GetComponent<Canvas>();
         MenuConfiguration = MenuConfiguration.GetComponent<Canvas>();
+        MenuDiff = MenuDiff.GetComponent<Canvas>();
         ButtonMute = ButtonMute.GetComponent<Button>();
-        ButtonLevel = ButtonLevel.GetComponent<Button>();
+        Play = Play.GetComponent<Button>();
+        Settings = Settings.GetComponent<Button>();
+        Exit = Exit.GetComponent<Button>();
 
         ImageYes = ImageYes.GetComponent<Image>();
         ImageNo = ImageNo.GetComponent<Image>();
@@ -43,6 +49,7 @@ public class menusScript : MonoBehaviour {
         configurationText = configurationText.GetComponent<Button>();
         quitMenu.enabled = false;
         MenuConfiguration.enabled = false;
+        MenuDiff.enabled = false;
         PlayAudio();
     }
 
@@ -60,6 +67,9 @@ public class menusScript : MonoBehaviour {
 		configurationText.enabled = false;
         startText.enabled = false;
         endText.enabled = false;
+        Play.enabled = false;
+        Settings.enabled = false;
+        Exit.enabled = false;
     }
 
     public void MenuConfig()
@@ -68,12 +78,13 @@ public class menusScript : MonoBehaviour {
 
         ImageYes.enabled = false;
         ImageNo.enabled = false;
-        ImageLevelEasy.enabled = false;
-        ImageLevelMedium.enabled = false;
-        ImageLevelHard.enabled = false;
 
         startText.enabled = false;
         endText.enabled = false;
+
+        Play.enabled = false;
+        Settings.enabled = false;
+        Exit.enabled = false;
     }
 
     public void Mute()
@@ -115,27 +126,21 @@ public class menusScript : MonoBehaviour {
     {
         var instance =LogicConnector.getInstance();
         instance.Difficult = LogicConnector.Difficulty.Easy;
-        ImageLevelEasy.enabled = false;
-        ImageLevelMedium.enabled = false;
-        ImageLevelHard.enabled = false;
+        SceneManager.LoadScene("Game");
     }
 
     public void SetLevelMedium()
     {
         var instance = LogicConnector.getInstance();
         instance.Difficult = LogicConnector.Difficulty.Medium;
-        ImageLevelEasy.enabled = false;
-        ImageLevelMedium.enabled = false;
-        ImageLevelHard.enabled = false;
+        SceneManager.LoadScene("Game");
     }
 
     public void SetLevelHard()
     {
         var instance = LogicConnector.getInstance();
         instance.Difficult = LogicConnector.Difficulty.Hard;
-        ImageLevelEasy.enabled = false;
-        ImageLevelMedium.enabled = false;
-        ImageLevelHard.enabled = false;
+        SceneManager.LoadScene("Game");
     }
 
     public void MuteSound()
@@ -165,10 +170,22 @@ public class menusScript : MonoBehaviour {
             MenuConfiguration.enabled = false;
         }
 
+        if (MenuDiff.enabled==true)
+        {
+            MenuDiff.enabled = false;
+        }
+
 		configurationText.enabled = true;
 
         startText.enabled = true;
         endText.enabled = true;
+        Play.enabled = true;
+        Settings.enabled = true;
+        Exit.enabled = true;
+        ImageLevelEasy.enabled = false;
+        ImageLevelMedium.enabled = false;
+        ImageLevelHard.enabled = false;
+
     }
 
     public void UnMute()
@@ -192,7 +209,13 @@ public class menusScript : MonoBehaviour {
     public void startLevel() {
         // Scene sc=SceneManager.GetActiveScene();
         // int numSceneActive = sc.buildIndex;
-		SceneManager.LoadScene("Game");
+        ImageLevelEasy.enabled = true;
+        ImageLevelMedium.enabled = true;
+        ImageLevelHard.enabled = true;
+        MenuDiff.enabled = true;
+        Play.enabled = false;
+        Settings.enabled = false;
+        Exit.enabled = false;
     }
 
     public void exitGame() {
