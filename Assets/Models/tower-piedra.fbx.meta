@@ -20,8 +20,11 @@ ModelImporter:
     400010: Lamp.003
     400012: //RootNode
     2300000: Cilindro.001
+    2300002: //RootNode
     3300000: Cilindro.001
+    3300002: //RootNode
     4300000: Cilindro.001
+    4300002: tower-piedra
   materials:
     importMaterials: 1
     materialName: 0
