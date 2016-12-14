@@ -373,7 +373,7 @@ MonoBehaviour:
   canRotate: 1
   canRotatePitch: 0
   projectileSpeed: 30
-  isPlaced: 1
+  isPlaced: 0
   projectilePrefab: {fileID: 171256, guid: 1fa0324e93111104fb606c3dd1fe82bc, type: 2}
 --- !u!135 &13523360
 SphereCollider:
