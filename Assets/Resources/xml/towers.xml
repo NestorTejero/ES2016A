@@ -34,31 +34,31 @@
 
 		<Tower name="torre-tanque">
 			<Level id="1">
-				<range>36.0</range>
+				<range>32.0</range>
 				<health>3.0</health>
 				<cost>500</cost>
-				<damage>12.0</damage>
-				<firerate>2.0</firerate>
+				<damage>8.0</damage>
+				<firerate>1.5</firerate>
 				<turnspeed>1.0</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>50.0</range>
+				<range>36.0</range>
 				<health>4.0</health>
 				<cost>250</cost>
-				<damage>15.0</damage>
-				<firerate>2.0</firerate>
+				<damage>12.0</damage>
+				<firerate>1.5</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="3">
-				<range>50.0</range>
+				<range>42.0</range>
 				<health>8.0</health>
 				<cost>750</cost>
 				<damage>18.0</damage>
 				<firerate>1.5</firerate>
 				<turnspeed>2.0</turnspeed>
-				<projectilespeed>30.0</projectilespeed>
+				<projectilespeed>40.0</projectilespeed>
 			</Level>
 		</Tower>
 
@@ -88,7 +88,7 @@
 				<damage>10.0</damage>
 				<firerate>0.33</firerate>
 				<turnspeed>3.0</turnspeed>
-				<projectilespeed>30.0</projectilespeed>
+				<projectilespeed>50.0</projectilespeed>
 			</Level>
 		</Tower>
 
