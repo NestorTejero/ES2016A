@@ -366,7 +366,7 @@ MonoBehaviour:
   level: 1
   range: 24
   minRange: 14
-  health: 100
+  health: 1
   cost: 100
   damage: 5
   fireRate: 1
