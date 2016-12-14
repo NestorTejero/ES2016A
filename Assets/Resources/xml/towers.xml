@@ -4,29 +4,29 @@
 	
 		<Tower name="torre-piedra">
 			<Level id="1">
-				<range>20.0</range>
-				<health>15.0</health>
+				<range>24.0</range>
+				<health>1.0</health>
 				<cost>100</cost>
-				<damage>6.0</damage>
+				<damage>5.0</damage>
 				<firerate>1.0</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>30.0</range>
-				<health>15.0</health>
+				<range>24.0</range>
+				<health>1.5</health>
 				<cost>50</cost>
-				<damage>6.0</damage>
-				<firerate>0.5</firerate>
+				<damage>7.5</damage>
+				<firerate>1.0</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="3">
-				<range>40.0</range>
-				<health>15.0</health>
+				<range>24.0</range>
+				<health>3.0</health>
 				<cost>150</cost>
 				<damage>12.0</damage>
-				<firerate>0.5</firerate>
+				<firerate>1.0</firerate>
 				<turnspeed>4.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
@@ -34,8 +34,8 @@
 
 		<Tower name="torre-tanque">
 			<Level id="1">
-				<range>45.0</range>
-				<health>20.0</health>
+				<range>34.0</range>
+				<health>3.0</health>
 				<cost>500</cost>
 				<damage>12.0</damage>
 				<firerate>2.0</firerate>
@@ -43,19 +43,19 @@
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>75.0</range>
-				<health>20.0</health>
+				<range>50.0</range>
+				<health>4.0</health>
 				<cost>250</cost>
-				<damage>12.0</damage>
-				<firerate>1.5</firerate>
+				<damage>15.0</damage>
+				<firerate>2.0</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="3">
-				<range>75.0</range>
-				<health>20.0</health>
+				<range>50.0</range>
+				<health>8.0</health>
 				<cost>750</cost>
-				<damage>24.0</damage>
+				<damage>18.0</damage>
 				<firerate>1.5</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
@@ -64,8 +64,8 @@
 
 		<Tower name="torre-avion">
 			<Level id="1">
-				<range>40.0</range>
-				<health>25.0</health>
+				<range>28.0</range>
+				<health>2.5</health>
 				<cost>1000</cost>
 				<damage>2.0</damage>
 				<firerate>0.33</firerate>
@@ -73,8 +73,8 @@
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>50.0</range>
-				<health>25.0</health>
+				<range>32.0</range>
+				<health>4.0</health>
 				<cost>500</cost>
 				<damage>5.0</damage>
 				<firerate>0.33</firerate>
@@ -82,8 +82,8 @@
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="3">
-				<range>50.0</range>
-				<health>25.0</health>
+				<range>32.0</range>
+				<health>4.0</health>
 				<cost>1500</cost>
 				<damage>10.0</damage>
 				<firerate>0.33</firerate>
