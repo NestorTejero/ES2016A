@@ -366,7 +366,7 @@ MonoBehaviour:
   level: 1
   range: 28
   minRange: 14
-  health: 100
+  health: 2.5
   cost: 200
   damage: 2
   fireRate: 0.33
@@ -400,7 +400,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.040000003, y: 0.030000001, z: 0.040000003}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.004, z: 0}
   m_TimeToStationary: 0.5
