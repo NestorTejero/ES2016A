@@ -4,7 +4,7 @@
 	
 		<Tower name="torre-piedra">
 			<Level id="1">
-				<range>24.0</range>
+				<range>32.0</range>
 				<health>1.0</health>
 				<cost>100</cost>
 				<damage>5.0</damage>
@@ -13,7 +13,7 @@
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>24.0</range>
+				<range>32.0</range>
 				<health>1.5</health>
 				<cost>50</cost>
 				<damage>7.5</damage>
@@ -22,7 +22,7 @@
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="3">
-				<range>24.0</range>
+				<range>32.0</range>
 				<health>3.0</health>
 				<cost>150</cost>
 				<damage>12.0</damage>
@@ -34,7 +34,7 @@
 
 		<Tower name="torre-tanque">
 			<Level id="1">
-				<range>34.0</range>
+				<range>36.0</range>
 				<health>3.0</health>
 				<cost>500</cost>
 				<damage>12.0</damage>

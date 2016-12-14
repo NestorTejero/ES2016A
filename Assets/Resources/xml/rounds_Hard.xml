@@ -8,7 +8,7 @@
       <Enemy>
         <name>enemy-gordo</name>
         <damage>1.5</damage>
-        <health>28.5</health>
+        <health>15.0</health>
         <speed>4.0</speed>
         <money>10</money>
         <amount>5</amount>
@@ -17,7 +17,7 @@
       <Enemy>
         <name>enemy-porky</name>
         <damage>1.5</damage>
-        <health>35.0</health>
+        <health>20.0</health>
         <speed>4.0</speed>
         <money>20</money>
         <amount>10</amount>
@@ -26,7 +26,7 @@
       <Enemy>
         <name>enemy-cavernicola</name>
         <damage>0.5</damage>
-        <health>20.0</health>
+        <health>10.0</health>
         <speed>6.0</speed>
         <money>5</money>
         <amount>5</amount>
@@ -35,7 +35,7 @@
       <Enemy>
         <name>enemy-neanderthal</name>
         <damage>2.0</damage>
-        <health>25.5</health>
+        <health>12.5</health>
         <speed>3.0</speed>
         <money>10</money>
         <amount>5</amount>
@@ -49,7 +49,7 @@
       <Enemy>
         <name>enemy-porky</name>
         <damage>1.5</damage>
-        <health>35.0</health>
+        <health>20.0</health>
         <speed>4.0</speed>
         <money>20</money>
         <amount>5</amount>
@@ -58,7 +58,7 @@
       <Enemy>
         <name>enemy-cavernicola</name>
         <damage>0.5</damage>
-        <health>20.0</health>
+        <health>10.0</health>
         <speed>6.0</speed>
         <money>5</money>
         <amount>5</amount>
@@ -67,7 +67,7 @@
       <Enemy>
         <name>enemy-neanderthal</name>
         <damage>2.0</damage>
-        <health>25.5</health>
+        <health>12.5</health>
         <speed>3.0</speed>
         <money>5</money>
         <amount>5</amount>

@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  range: 24
+  range: 32
   minRange: 14
   health: 1
   cost: 100
@@ -399,7 +399,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.016, y: 0.029000001, z: 0.016}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.029000001, z: 0}
   m_TimeToStationary: 0.5
