@@ -1187,14 +1187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 0}
-  damage: 2.5
+  damage: 1
   health: 12.5
-  speed: 5
-  moneyValue: 10
+  speed: 4
+  moneyValue: 20
   attackRate: 1
   targetTagName: home
   target: {fileID: 0}
   hitPrefab: {fileID: 150010, guid: 0f70a837b9c3ea14d9b68c2c772531b7, type: 2}
+  bloodPrefab: {fileID: 123304, guid: 78a177739f4d8414e9993bf35bc695ff, type: 2}
   isAttacking: 0
   targetLocked: 0
 --- !u!135 &13573096
