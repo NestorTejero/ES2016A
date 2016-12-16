@@ -10,6 +10,10 @@ public class HomeBehavior : MonoBehaviour {
     public float health = 100f;
     public int initCredit = 300;        // Initial ammount of credit
 
+    // Damage thresholds
+    private int threshold = 0;          // current threshold
+    public Mesh[] thresholdMeshes;            // threshold meshes          
+
     // Collision management.
     void OnTriggerEnter(Collider other)
     {
@@ -30,27 +34,45 @@ public class HomeBehavior : MonoBehaviour {
 
         if (health == 0)
         {
-
-            LogicConnector.setHealth(0);
-
-            LogicConnector.setRound(score.getRound());
-            LogicConnector.setEnemies(score.getEnemies());
-            LogicConnector.setTowersBuilt(score.getTowersBuilt());
-            LogicConnector.setTowersSold(score.getTowersSold());
-            LogicConnector.setGoldEarned(score.getGoldEarned());
-            LogicConnector.setTotalTime(score.getTime());
-            LogicConnector.setScore(score.getScore());
-            LogicConnector.setWin(false);
-
-            LogicConnector.GameOver();
             SelfDestroy();
+        }
+        else
+        {
+            // Change mesh if threshold has been reached:
+            if (ThesholdIsReached() && thresholdMeshes.Length != 0)
+            {      
+                gameObject.GetComponent<MeshFilter>().mesh = thresholdMeshes[threshold]; // swap mesh
+                threshold = (int)Mathf.Min(threshold + 1, thresholdMeshes.Length - 1);   // update threshold
+            }
         }
     }
 
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
     {
+        Destroy(gameObject);    
+        GameOver();
+    }
 
-        Destroy(gameObject);
+    private bool ThesholdIsReached()
+    {
+        int n = thresholdMeshes.Length;     // number of reachable thresholds
+        return health <= (maxHealth * (n - threshold) / (n + 1));
+    }
+
+    private void GameOver()
+    {
+        LogicConnector.setHealth(0);
+
+        LogicConnector.setRound(score.getRound());
+        LogicConnector.setEnemies(score.getEnemies());
+        LogicConnector.setTowersBuilt(score.getTowersBuilt());
+        LogicConnector.setTowersSold(score.getTowersSold());
+        LogicConnector.setGoldEarned(score.getGoldEarned());
+        LogicConnector.setTotalTime(score.getTime());
+        LogicConnector.setScore(score.getScore());
+        LogicConnector.setWin(false);
+
+        LogicConnector.GameOver();
     }
 }
