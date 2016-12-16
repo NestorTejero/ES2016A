@@ -42,7 +42,7 @@ public class HomeBehavior : MonoBehaviour {
             if (ThesholdIsReached() && thresholdMeshes.Length != 0)
             {      
                 gameObject.GetComponent<MeshFilter>().mesh = thresholdMeshes[threshold]; // swap mesh
-                threshold = (int)Mathf.Min(threshold + 1, thresholdMeshes.Length - 1);   // update threshold
+                threshold = (int)Mathf.Min(threshold + 1, thresholdMeshes.Length);   // update threshold
             }
         }
     }
