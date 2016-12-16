@@ -25,6 +25,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private GameObject primaryTarget;       // priority target
 
     public GameObject hitPrefab;            // holds impact particle effect
+    public GameObject bloodPrefab;          // holds blood stain
 
     // FLAGS
     public bool isAttacking = false;        // attacking mode flag
@@ -122,12 +123,17 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public void TakeDamage(GameObject projectile)
     {
+        Vector3 projectilePosition = projectile.transform.position;
+
         // Instantiate hit object at the position of the impact. 
         // Blood splatters in the same way and direction as the projectile.
         GameObject hit = Instantiate(hitPrefab,
-                projectile.transform.position, Quaternion.LookRotation(projectile.transform.forward)
+                projectilePosition, Quaternion.LookRotation(projectile.transform.forward)
         ) as GameObject;
         Destroy(hit, 1f);   // destroy hit object after 1 second 
+
+        // Instantiate blood stain
+        BloodStain(projectilePosition);
 
         TakeDamage(projectile.GetComponent<ProjectileBehaviour>().damage);
     }
@@ -255,6 +261,16 @@ public class EnemyBehaviour : MonoBehaviour {
         targetLocked = false;       // reset target locked flag
         SetTarget(targetTagName);               // set primary target as target
         InvokeRepeating("isBlocked", 2, 2);     // restart blockade checkout
+    }
+
+    private void BloodStain(Vector3 projectilePosition)
+    { 
+        Vector3 position = new Vector3(projectilePosition.x * Random.Range(0.99f, 1.01f), 
+            0.02f, projectilePosition.z * Random.Range(0.99f, 1.01f));
+
+        GameObject bloodStain = Instantiate(bloodPrefab, position, Quaternion.identity
+        ) as GameObject;
+        Destroy(bloodStain, 2f);
     }
 
 }
