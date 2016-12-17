@@ -111,6 +111,7 @@ public class TowerSelection : MonoBehaviour
         // If we have a selected tower, display the buttons and give the functionality
         if (showSelected)
         {
+            LogicConnector.setTowerSelected(true);
             // Set tower variables: behavior, name, level, upgrade cost etc.
             setTowerVariables();
 
@@ -128,6 +129,8 @@ public class TowerSelection : MonoBehaviour
                 sellTower();
             }
         }
+        else
+            LogicConnector.setTowerSelected(false);
     }
 
     // Set tower variables: name, level, towerNode, upgrade cost and upgrade button text
@@ -146,8 +149,19 @@ public class TowerSelection : MonoBehaviour
             // Set variables
             towerName = tower.name;
             towerLevel = towerBehavior.level;
+
+            if (towerName == "torre-piedra")
+                LogicConnector.setTowerName("Torre de piedra");
+            else if (towerName == "torre-tanque")
+                LogicConnector.setTowerName("Torre Tanque");
+            else if (towerName == "torre-avion")
+                LogicConnector.setTowerName("Torre Avion");
+
             try {
                 towerNode = root.SelectNodes("(Towers/Tower[@name='" + towerName + "']/Level)");
+                LogicConnector.setTowerDamage(Double.Parse(towerNode[towerLevel-1]["damage"].InnerText));
+                LogicConnector.setTowerRange(Double.Parse(towerNode[towerLevel-1]["range"].InnerText));
+                LogicConnector.setTowerFirerate(Double.Parse(towerNode[towerLevel-1]["firerate"].InnerText));
             }
             catch
             {
@@ -162,6 +176,11 @@ public class TowerSelection : MonoBehaviour
                 // To acces to the level 2 tower stats we use index 1, instead of using a 2 that is the level 2 id, so be careful!
                 upgradeCost = Int32.Parse(towerNode[towerLevel]["cost"].InnerText);
 
+                LogicConnector.setTowerCostUpgrade(upgradeCost);
+                LogicConnector.setTowerDamageUpgrade(Double.Parse(towerNode[towerLevel]["damage"].InnerText));
+                LogicConnector.setTowerRangeUpgrade(Double.Parse(towerNode[towerLevel]["range"].InnerText));
+                LogicConnector.setTowerFirerateUpgrade(Double.Parse(towerNode[towerLevel]["firerate"].InnerText));
+
                 // Text with the upgrade cost
                 upgradeText = "UPGRADE " + upgradeCost.ToString();
             }
@@ -169,6 +188,7 @@ public class TowerSelection : MonoBehaviour
             {
                 // Text showing there are no more possible upgrades
                 upgradeText = "NO UPGRADES";
+                LogicConnector.setTowerCostUpgrade(0);
             }
         }
     }
@@ -182,7 +202,8 @@ public class TowerSelection : MonoBehaviour
             Destroy(tower);
 
             // Increment towers sold (for the final score)
-            score.incTowersSold(); 
+            score.incTowersSold();
+            this.showSelected = false;
         }
     }
 
