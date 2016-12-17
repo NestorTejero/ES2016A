@@ -12,7 +12,7 @@ GameObject:
   - 65: {fileID: 6590774}
   - 23: {fileID: 2313532}
   m_Layer: 0
-  m_Name: Muro
+  m_Name: torre-muro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
