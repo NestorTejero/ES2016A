@@ -289,8 +289,6 @@ public class EnemyBehaviour : MonoBehaviour {
         bloodStain.transform.localScale = new Vector3(scale, 1, scale);
         bloodStain.transform.position = new Vector3(bloodStain.transform.position.x, 0.02f, 
             bloodStain.transform.position.z);
-
-        Destroy(bloodStain, prevalence);
     }
 
 }
