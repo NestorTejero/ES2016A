@@ -12763,7 +12763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 0}
   isPlaced: 0
-  type_tower: 0
+  type_tower: 2
   scale: {x: 10, y: 10, z: 10}
 --- !u!114 &1512485316
 MonoBehaviour:
@@ -14686,6 +14686,21 @@ MonoBehaviour:
     towerDamageUpgrade: 0
     towerRangeUpgrade: 0
     towerFirerateUpgrade: 0
+    towerSelected: 0
+    upgradeSelected: 0
+    sellSelected: 0
+    rectUpgrade:
+      serializedVersion: 2
+      x: 718.66315
+      y: 401.11667
+      width: 85.81053
+      height: 29.35
+    rectSell:
+      serializedVersion: 2
+      x: 825.92633
+      y: 401.11667
+      width: 64.357895
+      height: 29.35
     testMode: 0
     testHealth: 3
     testCredit: 500
@@ -14709,6 +14724,21 @@ MonoBehaviour:
     testTowerDamageUpgrade: 20
     testTowerRangeUpgrade: 150
     testTowerFirerateUpgrade: 0.5
+    testTowerSelected: 0
+    testUpgradeSelected: 0
+    testSellSelected: 0
+    testRectUpgrade:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    testRectSell:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
   ContenedorSuperior:
     Dimensions:
       rect:
@@ -15607,6 +15637,20 @@ MonoBehaviour:
         y: 375
         width: 0
         height: 0
+    upgrade_button:
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 410
+        width: 80
+        height: 30
+    sell_button:
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 410
+        width: 60
+        height: 30
     TextTitle: 
     TextDamage: 'Damage:'
     TextRange: 'Range:'

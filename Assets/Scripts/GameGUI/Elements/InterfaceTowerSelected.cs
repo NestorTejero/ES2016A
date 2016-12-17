@@ -28,8 +28,8 @@ public class InterfaceTowerSelected {
     public ScaledRect PositionResultFirerateUpgrade = new ScaledRect();
     public ScaledRect PositionNextUpgrade = new ScaledRect();
     public ScaledRect PositionResultNextUpgrade = new ScaledRect();
-    public ScaledRect PositionUpgradeButton = new ScaledRect();
-    public ScaledRect PositionSellButton = new ScaledRect();
+    public ScaledRect upgrade_button;
+    public ScaledRect sell_button;
 
     public String TextTitle;
     public String TextDamage;
@@ -53,13 +53,14 @@ public class InterfaceTowerSelected {
 
     public float Value = 0.0f;
 
-	public InterfaceTowerSelected() {
+    
+
+    public InterfaceTowerSelected() {
 	}
 
 	public void Draw () {
 
-        if (this.Background != null)
-            GUI.DrawTexture(this.Position.getRect(), this.Background);
+        GUI.DrawTexture(this.Position.getRect(), this.Background);
 
         GUIStyle LabelStyle = new GUIStyle();
         GUIStyle LabelStyleStats = new GUIStyle();
@@ -143,6 +144,13 @@ public class InterfaceTowerSelected {
         }
 
         GUI.Label(this.PositionResultNextUpgrade.getRect(), this.ResultNextUpgrade, LabelStyleUpgrade);
+
+        GUI.Button(this.upgrade_button.getRect(), "UPGRADE");
+        GUI.Button(this.sell_button.getRect(), "SELL");
+
+        LogicConnector.setRectUpgrade(upgrade_button.getRect());
+        LogicConnector.setRectSell(sell_button.getRect());
+
     }
 }
 

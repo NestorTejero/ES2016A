@@ -64,6 +64,10 @@ public class LogicConnector {
     [SerializeField] private double towerRangeUpgrade;
     [SerializeField] private double towerFirerateUpgrade;
     [SerializeField] private bool towerSelected;
+    [SerializeField] private bool upgradeSelected;
+    [SerializeField] private bool sellSelected;
+    [SerializeField] private Rect rectUpgrade;
+    [SerializeField] private Rect rectSell;
 
     [Header("Test values")]
 	[SerializeField] private Boolean testMode = false;
@@ -90,6 +94,10 @@ public class LogicConnector {
     [SerializeField] private double testTowerRangeUpgrade = 150.0;
     [SerializeField] private double testTowerFirerateUpgrade = 0.5;
     [SerializeField] private bool testTowerSelected = false;
+    [SerializeField] private bool testUpgradeSelected = false;
+    [SerializeField] private bool testSellSelected = false;
+    [SerializeField] private Rect testRectUpgrade = new Rect();
+    [SerializeField] private Rect testRectSell = new Rect();
 
     private UserInterface UserInterface;
 	protected static LogicConnector _instance = null;
@@ -502,6 +510,54 @@ public class LogicConnector {
     {
         LogicConnector instance = LogicConnector.getInstance();
         instance.towerSelected = towerSelected;
+    }
+
+    public static bool getUpgradeSelected()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testUpgradeSelected : instance.upgradeSelected;
+    }
+
+    public static void setUpgradeSelected(bool upgradeSelected)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.upgradeSelected = upgradeSelected;
+    }
+
+    public static bool getSellSelected()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testSellSelected : instance.sellSelected;
+    }
+
+    public static void setSellSelected(bool sellSelected)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.sellSelected = sellSelected;
+    }
+
+    public static Rect getRectUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testRectUpgrade : instance.rectUpgrade;
+    }
+
+    public static void setRectUpgrade(Rect rectUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.rectUpgrade = rectUpgrade;
+    }
+
+    public static Rect getRectSell()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testRectSell : instance.rectSell;
+    }
+
+    public static void setRectSell(Rect rectSell)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.rectSell = rectSell;
     }
 
 }
