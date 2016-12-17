@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 6ef528cb352cca447b35dbcc5635f833
+timeCreated: 1481982300
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AnteBrazo_izq
+    100002: anular_izq
+    100004: Area
+    100006: Bone.006
+    100008: Bone.008
+    100010: Bone.010
+    100012: Bone.012
+    100014: Bone.013
+    100016: Bone.014
+    100018: Bone.015
+    100020: Bone.016
+    100022: Bone.018
+    100024: Brazo_izq
+    100026: Cabeza
+    100028: Camera
+    100030: corazon_izq
+    100032: Espalda
+    100034: Espalda.001
+    100036: Espalda.002
+    100038: Espalda.003
+    100040: Espalda.004
+    100042: Espalda.005
+    100044: Espalda.006
+    100046: Espalda.007
+    100048: Espalda.008
+    100050: Espalda.009
+    100052: Espalda.010
+    100054: Espalda.011
+    100056: Espalda.012
+    100058: Espalda.013
+    100060: Espalda.014
+    100062: Espalda.015
+    100064: Espalda.016
+    100066: Espalda.017
+    100068: Espalda.018
+    100070: Espalda.019
+    100072: Espalda.020
+    100074: Espalda.021
+    100076: Espalda.022
+    100078: Espalda.023
+    100080: Hombro_izq
+    100082: indice_izq
+    100084: menique_izq
+    100086: pulgar_izq
+    100088: tower-colon
+    100090: //RootNode
+    100092: tower-colonArmature
+    100094: Bone.013_end
+    100096: Bone.014_end
+    100098: Bone.015_end
+    100100: Bone.016_end
+    100102: Bone.018_end
+    100104: Cabeza_end
+    100106: Espalda.003_end
+    100108: Espalda.006_end
+    100110: Espalda.015_end
+    100112: Espalda.020_end
+    100114: Espalda.021_end
+    100116: Espalda.022_end
+    100118: Espalda.023_end
+    400000: AnteBrazo_izq
+    400002: anular_izq
+    400004: Area
+    400006: Bone.006
+    400008: Bone.008
+    400010: Bone.010
+    400012: Bone.012
+    400014: Bone.013
+    400016: Bone.014
+    400018: Bone.015
+    400020: Bone.016
+    400022: Bone.018
+    400024: Brazo_izq
+    400026: Cabeza
+    400028: Camera
+    400030: corazon_izq
+    400032: Espalda
+    400034: Espalda.001
+    400036: Espalda.002
+    400038: Espalda.003
+    400040: Espalda.004
+    400042: Espalda.005
+    400044: Espalda.006
+    400046: Espalda.007
+    400048: Espalda.008
+    400050: Espalda.009
+    400052: Espalda.010
+    400054: Espalda.011
+    400056: Espalda.012
+    400058: Espalda.013
+    400060: Espalda.014
+    400062: Espalda.015
+    400064: Espalda.016
+    400066: Espalda.017
+    400068: Espalda.018
+    400070: Espalda.019
+    400072: Espalda.020
+    400074: Espalda.021
+    400076: Espalda.022
+    400078: Espalda.023
+    400080: Hombro_izq
+    400082: indice_izq
+    400084: menique_izq
+    400086: pulgar_izq
+    400088: tower-colon
+    400090: //RootNode
+    400092: tower-colonArmature
+    400094: Bone.013_end
+    400096: Bone.014_end
+    400098: Bone.015_end
+    400100: Bone.016_end
+    400102: Bone.018_end
+    400104: Cabeza_end
+    400106: Espalda.003_end
+    400108: Espalda.006_end
+    400110: Espalda.015_end
+    400112: Espalda.020_end
+    400114: Espalda.021_end
+    400116: Espalda.022_end
+    400118: Espalda.023_end
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: tower-colon
+    9500000: //RootNode
+    13700000: tower-colon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
