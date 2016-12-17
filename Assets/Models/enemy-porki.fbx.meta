@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b5419d984dd9b2b45b6274c28b91ba2c
-timeCreated: 1479924674
+timeCreated: 1481962840
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -111,6 +111,7 @@ ModelImporter:
     11100000: //RootNode
     13700000: enemy-cavernicola
     13700002: enemy-porki
+    13700004: enemy-porkiThrone
   materials:
     importMaterials: 1
     materialName: 0
