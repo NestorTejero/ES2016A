@@ -12732,7 +12732,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 148658, guid: dbfb552a0aff22c418d7e4dba110c3fd, type: 2}
       propertyPath: m_Name
-      value: tower-colon1
+      value: ColonStatueHome
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbfb552a0aff22c418d7e4dba110c3fd, type: 2}
