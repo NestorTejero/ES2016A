@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     // Private STATS: By reducing the ammount of public stats we limint the cost of balancing the game.
     private float rotSpeed = 2.5f;          // rotation speed
+    private float maxHealth;
     private NavMeshAgent agent;
     private Animator anim;
     private float time = 0;
@@ -25,6 +26,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private GameObject primaryTarget;       // priority target
 
     public GameObject hitPrefab;            // holds impact particle effect
+    public GameObject bloodPrefab;          // holds blood stain
 
     // FLAGS
     public bool isAttacking = false;        // attacking mode flag
@@ -74,6 +76,7 @@ public class EnemyBehaviour : MonoBehaviour {
         anim = GetComponent<Animator> ();
 
         score = GameObject.Find("GameScripts").GetComponent<Score>();
+        maxHealth = health;
 
         // Configure navigation agent
         agent = GetComponent<NavMeshAgent>();
@@ -122,19 +125,25 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public void TakeDamage(GameObject projectile)
     {
+        Vector3 projectilePosition = projectile.transform.position;
+
         // Instantiate hit object at the position of the impact. 
         // Blood splatters in the same way and direction as the projectile.
         GameObject hit = Instantiate(hitPrefab,
-                projectile.transform.position, Quaternion.LookRotation(projectile.transform.forward)
+                projectilePosition, Quaternion.LookRotation(projectile.transform.forward)
         ) as GameObject;
         Destroy(hit, 1f);   // destroy hit object after 1 second 
 
-        TakeDamage(projectile.GetComponent<ProjectileBehaviour>().damage);
+        float dmg = projectile.GetComponent<ProjectileBehaviour>().damage;
+
+        BloodStain(projectilePosition, 0.01f, dmg/5, 2f);
+        TakeDamage(dmg);
     }
 
     // Can be modified to add cool effects when the entity is destroyed.
     protected virtual void SelfDestroy()
     {
+        BloodStain(transform.position, 0, maxHealth/10, 4);
         Destroy(gameObject);
     }
 
@@ -255,6 +264,31 @@ public class EnemyBehaviour : MonoBehaviour {
         targetLocked = false;       // reset target locked flag
         SetTarget(targetTagName);               // set primary target as target
         InvokeRepeating("isBlocked", 2, 2);     // restart blockade checkout
+    }
+
+    /* Instantiates a blood prefab:
+     *      position     -> position of the stain before being scattered
+     *      scatter      -> 0 for no scatter, values over 0.2 might cause heavy scattering
+     *      scale factor -> high values make big stains. Recomended range: [1, 4]
+     *      prevalence   -> prevalence of the stain in seconds
+     * */
+    private void BloodStain(Vector3 position, float scatter, float scaleFactor, float prevalence)
+    {
+        Vector3 scatteredPos;   // final stain position
+
+        if (scatter == 0)       // ignore scattering if scatter is set as zero
+            scatteredPos = position;
+        else                    // use random scattering
+            scatteredPos =  new Vector3(position.x * Random.Range(1 - scatter, 1 + scatter),
+            0.02f, position.z * Random.Range(1 - scatter, 1 + scatter));
+
+        float scale = 0.25f * scaleFactor;      // regulates stain size
+
+        GameObject bloodStain = Instantiate(bloodPrefab, position, Quaternion.identity
+        ) as GameObject;
+        bloodStain.transform.localScale = new Vector3(scale, 1, scale);
+        bloodStain.transform.position = new Vector3(bloodStain.transform.position.x, 0.02f, 
+            bloodStain.transform.position.z);
     }
 
 }
