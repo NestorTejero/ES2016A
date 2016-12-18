@@ -129,13 +129,15 @@ public class TowerSelection : MonoBehaviour
             towerName = tower.name;
             towerLevel = towerBehavior.level;
 
-            if (towerName == "torre-piedra")
-                LogicConnector.setTowerName("Stone Tower");
-            else if (towerName == "torre-tanque")
-                LogicConnector.setTowerName("Dinotank");
-            else if (towerName == "torre-avion")
-                LogicConnector.setTowerName("Triumphal Plane");
-
+			if (towerName == "torre-piedra")
+				LogicConnector.setTowerName ("Stone Tower");
+			else if (towerName == "torre-tanque")
+				LogicConnector.setTowerName ("Dinotank");
+			else if (towerName == "torre-avion")
+				LogicConnector.setTowerName ("Triumphal Plane");
+			else if (towerName == "torre-muro")
+				LogicConnector.setTowerName ("Great wall");
+			
             try {
                 towerNode = root.SelectNodes("(Towers/Tower[@name='" + towerName + "']/Level)");
                 LogicConnector.setTowerDamage(Double.Parse(towerNode[towerLevel-1]["damage"].InnerText));
@@ -149,19 +151,24 @@ public class TowerSelection : MonoBehaviour
             }
 
             // Store the upgradeCost if there are possible upgrades and modify upgrade button text
-            if (towerNode != null && canUpgrade())
-            {
-                // towerLevel index works as a list 0,1,2... and not as the xml is done with id 1,2,3...
-                // To acces to the level 2 tower stats we use index 1, instead of using a 2 that is the level 2 id, so be careful!
-                upgradeCost = Int32.Parse(towerNode[towerLevel]["cost"].InnerText);
+			if (towerNode != null && canUpgrade ()) {
+				// towerLevel index works as a list 0,1,2... and not as the xml is done with id 1,2,3...
+				// To acces to the level 2 tower stats we use index 1, instead of using a 2 that is the level 2 id, so be careful!
+				upgradeCost = Int32.Parse (towerNode [towerLevel] ["cost"].InnerText);
 
-                LogicConnector.setTowerCostUpgrade(upgradeCost);
-                LogicConnector.setTowerDamageUpgrade(Double.Parse(towerNode[towerLevel]["damage"].InnerText));
-                LogicConnector.setTowerRangeUpgrade(Double.Parse(towerNode[towerLevel]["range"].InnerText));
-                LogicConnector.setTowerFirerateUpgrade(Double.Parse(towerNode[towerLevel]["firerate"].InnerText));
+				LogicConnector.setTowerCostUpgrade (upgradeCost);
+				LogicConnector.setTowerDamageUpgrade (Double.Parse (towerNode [towerLevel] ["damage"].InnerText));
+				LogicConnector.setTowerRangeUpgrade (Double.Parse (towerNode [towerLevel] ["range"].InnerText));
+				LogicConnector.setTowerFirerateUpgrade (Double.Parse (towerNode [towerLevel] ["firerate"].InnerText));
 
 
-            }
+			} else if (towerNode != null && towerName == "torre-muro") {
+				// Tower is a WALL
+				LogicConnector.setTowerCostUpgrade (0);
+				LogicConnector.setTowerDamageUpgrade (0);
+				LogicConnector.setTowerRangeUpgrade (0);
+				LogicConnector.setTowerFirerateUpgrade (0);
+			}
             else
             {
 
