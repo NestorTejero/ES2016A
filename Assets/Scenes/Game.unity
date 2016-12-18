@@ -14713,15 +14713,15 @@ MonoBehaviour:
     State: 0
     SubState: 1
     TowerObjects:
+    - {fileID: 114160, guid: 9181ef81c0ed73042a4556fbfa46ff49, type: 2}
     - {fileID: 108318, guid: 4aa32ee2037a9f34595da5a44b06d920, type: 2}
     - {fileID: 117610, guid: 248f018e6d4c7b5418a3120b010b01de, type: 2}
     - {fileID: 106906, guid: 4f681e75cc6012e42bec259614fdcbd4, type: 2}
-    - {fileID: 114160, guid: 9181ef81c0ed73042a4556fbfa46ff49, type: 2}
     Difficult: 0
     Health: 3
     Credit: 2000
     GameTime: 30
-    TowerCost: 64000000f4010000e803000019000000
+    TowerCost: 1900000064000000f4010000e8030000
     enemiesLeft: 7
     totalEnemies: 15
     round: 0
@@ -14968,11 +14968,19 @@ MonoBehaviour:
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
       BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
+      Image: {fileID: 2800000, guid: c6258e6c5857ff74b90481a8dc21c40d, type: 3}
+      ImageLocked: {fileID: 2800000, guid: 17fd8e61ad5d088458a8b2f61adc26d4, type: 3}
+      Locked: 0
+      ShowCost: 1
+      type: 0
+    - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
+      BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
+      BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
       Image: {fileID: 2800000, guid: fd1624772cd80814585bc6ee5bc1efe3, type: 3}
       ImageLocked: {fileID: 2800000, guid: be0d6f861fd3b0a4eb606d8dfc500f61, type: 3}
       Locked: 0
       ShowCost: 1
-      type: 0
+      type: 1
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
       BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
@@ -14980,20 +14988,12 @@ MonoBehaviour:
       ImageLocked: {fileID: 2800000, guid: 15f77cab5c18aac47b81bfdd23884d8e, type: 3}
       Locked: 0
       ShowCost: 1
-      type: 1
+      type: 2
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
       BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
       Image: {fileID: 2800000, guid: 059b3a157de94ff47b155d21f72c2804, type: 3}
       ImageLocked: {fileID: 2800000, guid: eacf756bcd7ec6446b6f9f534fe78fd9, type: 3}
-      Locked: 0
-      ShowCost: 1
-      type: 2
-    - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
-      BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
-      BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
-      Image: {fileID: 2800000, guid: c6258e6c5857ff74b90481a8dc21c40d, type: 3}
-      ImageLocked: {fileID: 2800000, guid: 17fd8e61ad5d088458a8b2f61adc26d4, type: 3}
       Locked: 0
       ShowCost: 1
       type: 3
