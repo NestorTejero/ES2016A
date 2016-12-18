@@ -59,10 +59,12 @@ public class LogicConnector {
     [SerializeField] private double towerDamage;
     [SerializeField] private double towerRange;
     [SerializeField] private double towerFirerate;
+    [SerializeField] private double towerHealth;
     [SerializeField] private int towerCostUpgrade;
     [SerializeField] private double towerDamageUpgrade;
     [SerializeField] private double towerRangeUpgrade;
     [SerializeField] private double towerFirerateUpgrade;
+    [SerializeField] private double towerHealthUpgrade;
     [SerializeField] private bool towerSelected;
     [SerializeField] private bool upgradeSelected;
     [SerializeField] private bool sellSelected;
@@ -89,10 +91,12 @@ public class LogicConnector {
     [SerializeField] private double testTowerDamage = 10.0;
     [SerializeField] private double testTowerRange = 100.0;
     [SerializeField] private double testTowerFirerate = 1.0;
+    [SerializeField] private double testTowerHealth = 1.0;
     [SerializeField] private int testTowerCostUpgrade = 500;
     [SerializeField] private double testTowerDamageUpgrade = 20.0;
     [SerializeField] private double testTowerRangeUpgrade = 150.0;
     [SerializeField] private double testTowerFirerateUpgrade = 0.5;
+    [SerializeField] private double testTowerHealthUpgrade = 1.5;
     [SerializeField] private bool testTowerSelected = false;
     [SerializeField] private bool testUpgradeSelected = false;
     [SerializeField] private bool testSellSelected = false;
@@ -452,6 +456,18 @@ public class LogicConnector {
         instance.towerFirerate = towerFirerate;
     }
 
+    public static double getTowerHealth()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerDamageUpgrade : instance.towerHealth;
+    }
+
+    public static void setTowerHealth(double towerHealth)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerHealth = towerHealth;
+    }
+
     public static int getTowerCostUpgrade()
     {
         LogicConnector instance = LogicConnector.getInstance();
@@ -498,6 +514,18 @@ public class LogicConnector {
     {
         LogicConnector instance = LogicConnector.getInstance();
         instance.towerFirerateUpgrade = towerFirerateUpgrade;
+    }
+
+    public static double getTowerHealtheUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerDamageUpgrade : instance.towerDamageUpgrade;
+    }
+
+    public static void setTowerHealthUpgrade(double towerHealthUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerHealthUpgrade = towerHealthUpgrade;
     }
 
     public static bool getTowerSelected()
