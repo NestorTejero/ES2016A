@@ -393,11 +393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b16a3f6d2303c4a9400f49d6eaa15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 250
+  moveSpeed: 50
   scrollSpeed: 250
   minimumBoundary: {x: 10, y: 20, z: -10}
   maximumBoundary: {x: 190, y: 80, z: 120}
   targetTag: home
+  zoomEnabled: 1
 --- !u!81 &136881509
 AudioListener:
   m_ObjectHideFlags: 0
