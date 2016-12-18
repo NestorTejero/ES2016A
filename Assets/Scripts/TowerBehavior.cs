@@ -40,6 +40,8 @@ public class TowerBehavior : MonoBehaviour
 	// Use this for initialization
 	public void StartTower(){
 		isPlaced = true;
+        if (isWall)
+            return;
 
 		// Delete markers once placed
 		GameObject rangeEnabledMarker = transform.parent.Find("range-enabled").gameObject;
