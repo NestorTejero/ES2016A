@@ -143,7 +143,7 @@ public class TowerSelection : MonoBehaviour
                 LogicConnector.setTowerDamage(Double.Parse(towerNode[towerLevel-1]["damage"].InnerText));
                 LogicConnector.setTowerRange(Double.Parse(towerNode[towerLevel-1]["range"].InnerText));
                 LogicConnector.setTowerFirerate(Double.Parse(towerNode[towerLevel-1]["firerate"].InnerText));
-                LogicConnector.setTowerHealth(Double.Parse(towerNode[towerLevel - 1]["health"].InnerText));
+                LogicConnector.setTowerHealth(Double.Parse(towerNode[towerLevel-1]["health"].InnerText));
             }
             catch
             {
@@ -169,7 +169,7 @@ public class TowerSelection : MonoBehaviour
 				LogicConnector.setTowerDamageUpgrade (0);
 				LogicConnector.setTowerRangeUpgrade (0);
 				LogicConnector.setTowerFirerateUpgrade (0);
-                LogicConnector.setTowerHealthUpgrade(0);
+                LogicConnector.setTowerHealthUpgrade(5);
             }
             else
             {

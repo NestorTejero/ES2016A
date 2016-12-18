@@ -459,7 +459,7 @@ public class LogicConnector {
     public static double getTowerHealth()
     {
         LogicConnector instance = LogicConnector.getInstance();
-        return (instance.testMode) ? instance.testTowerDamageUpgrade : instance.towerHealth;
+        return (instance.testMode) ? instance.testTowerHealth : instance.towerHealth;
     }
 
     public static void setTowerHealth(double towerHealth)
@@ -516,10 +516,10 @@ public class LogicConnector {
         instance.towerFirerateUpgrade = towerFirerateUpgrade;
     }
 
-    public static double getTowerHealtheUpgrade()
+    public static double getTowerHealthUpgrade()
     {
         LogicConnector instance = LogicConnector.getInstance();
-        return (instance.testMode) ? instance.testTowerDamageUpgrade : instance.towerDamageUpgrade;
+        return (instance.testMode) ? instance.testTowerHealthUpgrade : instance.towerHealthUpgrade;
     }
 
     public static void setTowerHealthUpgrade(double towerHealthUpgrade)

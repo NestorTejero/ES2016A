@@ -20,28 +20,35 @@ public class InterfaceTowerSelected {
     public ScaledRect PositionDamage = new ScaledRect();
     public ScaledRect PositionRange = new ScaledRect();
     public ScaledRect PositionFirerate = new ScaledRect();
+    public ScaledRect PositionHealth = new ScaledRect();
     public ScaledRect PositionResultDamage = new ScaledRect();
     public ScaledRect PositionResultRange = new ScaledRect();
     public ScaledRect PositionResultFirerate = new ScaledRect();
+    public ScaledRect PositionResultHealth = new ScaledRect();
     public ScaledRect PositionResultDamageUpgrade = new ScaledRect();
     public ScaledRect PositionResultRangeUpgrade = new ScaledRect();
     public ScaledRect PositionResultFirerateUpgrade = new ScaledRect();
+    public ScaledRect PositionResultHealthUpgrade = new ScaledRect();
     public ScaledRect PositionNextUpgrade = new ScaledRect();
     public ScaledRect PositionResultNextUpgrade = new ScaledRect();
     public ScaledRect upgrade_button;
     public ScaledRect sell_button;
 
+    // Information shown by the interface:
     public String TextTitle;
     public String TextDamage;
     public String TextRange;
     public String TextFirerate;
+    public String TextHealth;
     public String TextNextUpgrade;
     public String ResultDamage;
     public String ResultRange;
     public String ResultFirerate;
+    public String ResultHealth;
     public String ResultDamageUpgrade;
     public String ResultRangeUpgrade;
     public String ResultFirerateUpgrade;
+    public String ResultHealthUpgrade;
     public String ResultNextUpgrade;
     public Texture Background;
     public int TextWidth;
@@ -52,8 +59,6 @@ public class InterfaceTowerSelected {
     public TextAnchor AlignmentStats = TextAnchor.MiddleLeft;
 
     public float Value = 0.0f;
-
-    
 
     public InterfaceTowerSelected() {
 	}
@@ -76,21 +81,27 @@ public class InterfaceTowerSelected {
         LabelStyleUpgrade.alignment = this.AlignmentStats;
         TextTitle = LogicConnector.getTowerName();
 
+        // Assign stat values
         ResultDamage = LogicConnector.getTowerDamage().ToString();
         ResultRange = LogicConnector.getTowerRange().ToString();
         ResultFirerate = LogicConnector.getTowerFirerate().ToString();
+        ResultHealth = LogicConnector.getTowerHealth().ToString();
 
-        GUI.Label(this.PositionTitle.getRect(), this.TextTitle, LabelStyle);
-        GUI.Label(this.PositionDamage.getRect(), this.TextDamage, LabelStyleStats);
-        GUI.Label(this.PositionRange.getRect(), this.TextRange, LabelStyleStats);
-        GUI.Label(this.PositionFirerate.getRect(), this.TextFirerate, LabelStyleStats);
-        GUI.Label(this.PositionResultDamage.getRect(), this.ResultDamage, LabelStyleStats);
-        GUI.Label(this.PositionResultRange.getRect(), this.ResultRange, LabelStyleStats);
-        GUI.Label(this.PositionResultFirerate.getRect(), this.ResultFirerate, LabelStyleStats);
-        GUI.Label(this.PositionNextUpgrade.getRect(), this.TextNextUpgrade, LabelStyleUpgrade);
+        // LABELS
+        GUI.Label(this.PositionTitle.getRect(), this.TextTitle, LabelStyle);            // Damage              
+        GUI.Label(this.PositionDamage.getRect(), this.TextDamage, LabelStyleStats);     // Range
+        GUI.Label(this.PositionRange.getRect(), this.TextRange, LabelStyleStats);       // Firerate
+        GUI.Label(this.PositionFirerate.getRect(), this.TextFirerate, LabelStyleStats); // Health
+        GUI.Label(this.PositionHealth.getRect(), this.TextHealth, LabelStyleStats);     // Upgrade
 
+        // STAT VALUES
+        GUI.Label(this.PositionResultDamage.getRect(), this.ResultDamage, LabelStyleStats);     // Damage
+        GUI.Label(this.PositionResultRange.getRect(), this.ResultRange, LabelStyleStats);       // Range
+        GUI.Label(this.PositionResultFirerate.getRect(), this.ResultFirerate, LabelStyleStats); // Firerate
+        GUI.Label(this.PositionResultHealth.getRect(), this.ResultHealth, LabelStyleStats);     // Health
+        GUI.Label(this.PositionNextUpgrade.getRect(), this.TextNextUpgrade, LabelStyleUpgrade); // Upgrade
 
-
+        // DAMAGE UPGRADE
         if (LogicConnector.getTowerDamageUpgrade() > LogicConnector.getTowerDamage())
         {
             ResultDamageUpgrade = "(+" + (LogicConnector.getTowerDamageUpgrade() - LogicConnector.getTowerDamage()).ToString() + ")";
@@ -100,10 +111,10 @@ public class InterfaceTowerSelected {
         {
             ResultDamageUpgrade = "(-)";
             LabelStyleUpgrade.normal.textColor = new Color(0.4f, 0.4f, 0.4f);
-        }
-
+        }   
         GUI.Label(this.PositionResultDamageUpgrade.getRect(), this.ResultDamageUpgrade, LabelStyleUpgrade);
 
+        // RANGE UPGRADE
         if (LogicConnector.getTowerRangeUpgrade() > LogicConnector.getTowerRange())
         {
             ResultRangeUpgrade = "(+" + (LogicConnector.getTowerRangeUpgrade() - LogicConnector.getTowerRange()).ToString() + ")";
@@ -114,9 +125,9 @@ public class InterfaceTowerSelected {
             ResultRangeUpgrade = "(-)";
             LabelStyleUpgrade.normal.textColor = new Color(0.4f, 0.4f, 0.4f);
         }
-
         GUI.Label(this.PositionResultRangeUpgrade.getRect(), this.ResultRangeUpgrade, LabelStyleUpgrade);
 
+        // FIRERATE UPGRADE
         if (LogicConnector.getTowerFirerate() > LogicConnector.getTowerFirerateUpgrade())
         {
             ResultFirerateUpgrade = "(-" + (LogicConnector.getTowerFirerate() - LogicConnector.getTowerFirerateUpgrade()).ToString() + ")";
@@ -126,12 +137,23 @@ public class InterfaceTowerSelected {
         {
             ResultFirerateUpgrade = "(-)";
             LabelStyleUpgrade.normal.textColor = new Color(0.4f, 0.4f, 0.4f);
-        } 
-        
+        }
         GUI.Label(this.PositionResultFirerateUpgrade.getRect(), this.ResultFirerateUpgrade, LabelStyleUpgrade);
 
+        // HEALTH UPGRADE
+        if (LogicConnector.getTowerHealthUpgrade() > LogicConnector.getTowerHealth())
+        {
+            ResultHealthUpgrade = "(+" + (LogicConnector.getTowerHealthUpgrade() - LogicConnector.getTowerHealth()).ToString() + ")";
+            LabelStyleUpgrade.normal.textColor = new Color(0f, 0.4f, 0f);
+        }
+        else
+        {
+            ResultHealthUpgrade = "(-)";
+            LabelStyleUpgrade.normal.textColor = new Color(0.4f, 0.4f, 0.4f);
+        }
+        GUI.Label(this.PositionResultHealthUpgrade.getRect(), this.ResultHealthUpgrade, LabelStyleUpgrade);
 
-
+        // UPGRADE COST
         if (LogicConnector.getTowerCostUpgrade() > 0)
         {
             ResultNextUpgrade = "- "+LogicConnector.getTowerCostUpgrade().ToString();
@@ -142,9 +164,9 @@ public class InterfaceTowerSelected {
             ResultNextUpgrade = " - ";
             LabelStyleUpgrade.normal.textColor = new Color(0.4f, 0.4f, 0.4f);
         }
-
         GUI.Label(this.PositionResultNextUpgrade.getRect(), this.ResultNextUpgrade, LabelStyleUpgrade);
 
+        // BUTTONS
         GUI.Button(this.upgrade_button.getRect(), "UPGRADE");
         GUI.Button(this.sell_button.getRect(), "SELL");
 

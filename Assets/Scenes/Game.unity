@@ -15614,7 +15614,7 @@ MonoBehaviour:
         x: 650
         y: 150
         width: 200
-        height: 300
+        height: 340
     PositionTitle:
       rect:
         serializedVersion: 2
@@ -15643,6 +15643,13 @@ MonoBehaviour:
         y: 330
         width: 0
         height: 0
+    PositionHealth:
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 370
+        width: 0
+        height: 0
     PositionResultDamage:
       rect:
         serializedVersion: 2
@@ -15662,6 +15669,13 @@ MonoBehaviour:
         serializedVersion: 2
         x: 760
         y: 330
+        width: 0
+        height: 0
+    PositionResultHealth:
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 370
         width: 0
         height: 0
     PositionResultDamageUpgrade:
@@ -15685,45 +15699,55 @@ MonoBehaviour:
         y: 330
         width: 0
         height: 0
+    PositionResultHealthUpgrade:
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 370
+        width: 0
+        height: 0
     PositionNextUpgrade:
       rect:
         serializedVersion: 2
         x: 665
-        y: 375
+        y: 415
         width: 0
         height: 0
     PositionResultNextUpgrade:
       rect:
         serializedVersion: 2
         x: 775
-        y: 375
+        y: 415
         width: 0
         height: 0
     upgrade_button:
       rect:
         serializedVersion: 2
         x: 670
-        y: 410
+        y: 450
         width: 80
         height: 30
     sell_button:
       rect:
         serializedVersion: 2
         x: 770
-        y: 410
+        y: 450
         width: 60
         height: 30
     TextTitle: 
     TextDamage: 'Damage:'
     TextRange: 'Range:'
     TextFirerate: 'Fire rate:'
+    TextHealth: 'Health:'
     TextNextUpgrade: 'Next upgrade:'
     ResultDamage: 0
     ResultRange: 0
     ResultFirerate: 0
+    ResultHealth: 0
     ResultDamageUpgrade: (-)
     ResultRangeUpgrade: (-)
     ResultFirerateUpgrade: (-)
+    ResultHealthUpgrade: (-)
     ResultNextUpgrade: 500
     Background: {fileID: 2800000, guid: e2e66ccad01c8b641af0e5129ba9a14a, type: 3}
     TextWidth: 20
