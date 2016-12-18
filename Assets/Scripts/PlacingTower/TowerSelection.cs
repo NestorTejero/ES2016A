@@ -17,8 +17,6 @@ public class TowerSelection : MonoBehaviour
     private string towerName;
     private int towerLevel;
     private int upgradeCost;
-    private string upgradeText;
-    private bool showSelected = false;  // Variable to check if a tower is selected (used on the OnGUI method to show/hide the buttons)
     private Color32 colorInicial;       // Renderer color of the selected tower
 
     // XML read variables
@@ -26,17 +24,12 @@ public class TowerSelection : MonoBehaviour
     private XmlNodeList towerList;
     private XmlNodeList towerNode;
 
-    // Buttons
-    private Rect upgrade_button;
-    private Rect sell_button;
-
-
     // Use this for initialization
     void Start()
     {
         // Define buttons size and position
-        upgrade_button = new Rect(Screen.width / 10, Screen.height / 10, 120, 30);
-        sell_button = new Rect(Screen.width / 10, Screen.height / 10 + 50, 120, 30);
+
+        
 
         // Read xml document and get towers stats
         TextAsset textAsset = (TextAsset)Resources.Load("Xml/towers");
@@ -54,87 +47,76 @@ public class TowerSelection : MonoBehaviour
         // Check click
         if (Input.GetMouseButtonDown(0) && LogicConnector.isInGame())
         {
-            // conversion from GUI to Screen position
-            Vector3 v3Pos = Input.mousePosition;
-            v3Pos.y = Screen.height - v3Pos.y;
 
             // Check if mouse pressed over sell/upgrade buttons
-            if (upgrade_button.Contains(v3Pos) || sell_button.Contains(v3Pos))
+            RaycastHit hit = new RaycastHit();
+            // Ray that goes from the screen (camera) to the mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                // NOTHING: 
-                // Just wait for the OnGUI method to do its functionalities
-            }
-            else
-            {
-                RaycastHit hit = new RaycastHit();
-                // Ray that goes from the screen (camera) to the mouse position
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+
+                Vector3 v3Pos = Input.mousePosition;
+                v3Pos.y = Screen.height - v3Pos.y;
+                Rect rectUpgrade = LogicConnector.getRectUpgrade();
+                Rect rectSell = LogicConnector.getRectSell();
+
+                if (v3Pos.x >= rectUpgrade.x && v3Pos.x <= rectUpgrade.x + rectUpgrade.width && v3Pos.y >= rectUpgrade.y && v3Pos.y <= rectUpgrade.y + rectUpgrade.height && LogicConnector.getTowerSelected())
                 {
-                    // If we already have a tower selected, reset the color and unselect it
+
+                    LogicConnector.setUpgradeSelected(true);
+                    upgradeTower();
+                    setTowerVariables();
+
+                }
+                else if (hit.transform.gameObject.tag == "tower")
+                {
                     if (tower != null)
+                        tower.GetComponent<Renderer>().material.color = colorInicial;
+
+                    // get the new selection
+                    tower = hit.transform.gameObject;
+                    // store the initial color
+                    colorInicial = tower.GetComponent<Renderer>().material.color;
+                    // set blue color for a selected tower
+                    tower.GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 125);
+
+                    // means OnGUI method will draw the buttons and evaluate the click on them
+                    LogicConnector.setTowerSelected(true);
+                    setTowerVariables();
+                }
+                // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
+                
+                else if (v3Pos.x >= rectSell.x && v3Pos.x <= rectSell.x+ rectSell.width && v3Pos.y >= rectSell.y && v3Pos.y <= rectSell.y+ rectSell.height && LogicConnector.getTowerSelected())
+                {
+                    LogicConnector.setSellSelected(true);
+                    sellTower();
+                    setTowerVariables();
+
+
+                }
+
+                // If we already have a tower selected, reset the color and unselect it
+                else
+                {
+                    if (LogicConnector.getTowerSelected())
                     {
-                        // set back the initial renderer color of the tower
+                        // means OnGUI method will do nothing 
                         tower.GetComponent<Renderer>().material.color = colorInicial;
                         // unselect the tower
                         tower = null;
+                        LogicConnector.setTowerSelected(false);
                     }
 
-                    // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
-                    if (hit.transform.gameObject.tag == "tower")
-                    {
-                        // get the new selection
-                        tower = hit.transform.gameObject;
-                        // store the initial color
-                        colorInicial = tower.GetComponent<Renderer>().material.color;
-                        // set blue color for a selected tower
-                        tower.GetComponent<Renderer>().material.color = new Color32(0, 0, 255, 125);
+                }              
 
-                        // means OnGUI method will draw the buttons and evaluate the click on them
-                        this.showSelected = true;
-                    }
-                    // If not, clear the buttons from OnGUI
-                    else
-                    {
-                        // means OnGUI method will do nothing 
-                        this.showSelected = false;
-                    }
-                }
             }
-        }   
-    }
-
-    // NOT YET (Open the tower combat stats and)
-    // display 2 buttons for selling and upgrading the tower 
-    void OnGUI()
-    {
-        // If we have a selected tower, display the buttons and give the functionality
-        if (showSelected)
-        {
-            // Set tower variables: behavior, name, level, upgrade cost etc.
-            setTowerVariables();
-
-            // Upgrade button
-            if (GUI.Button(upgrade_button, upgradeText ))
-            {
-                // UPGRADE functionality
-                upgradeTower();
-            }
-
-            // Sell button
-            if (GUI.Button(sell_button, "SELL"))
-            {
-                // SELL functionality
-                sellTower();
-            }
-        }
+        }     
+           
     }
 
     // Set tower variables: name, level, towerNode, upgrade cost and upgrade button text
     public void setTowerVariables()
     {
-        // Reset upgrade button text
-        upgradeText = "ERROR";
 
         // Try to obtain behavior from tower (behavior script has the level!)
         towerBehavior = tower.GetComponent<TowerBehavior>();
@@ -146,8 +128,19 @@ public class TowerSelection : MonoBehaviour
             // Set variables
             towerName = tower.name;
             towerLevel = towerBehavior.level;
+
+            if (towerName == "torre-piedra")
+                LogicConnector.setTowerName("Stone Tower");
+            else if (towerName == "torre-tanque")
+                LogicConnector.setTowerName("Dinotank");
+            else if (towerName == "torre-avion")
+                LogicConnector.setTowerName("Triumphal Plane");
+
             try {
                 towerNode = root.SelectNodes("(Towers/Tower[@name='" + towerName + "']/Level)");
+                LogicConnector.setTowerDamage(Double.Parse(towerNode[towerLevel-1]["damage"].InnerText));
+                LogicConnector.setTowerRange(Double.Parse(towerNode[towerLevel-1]["range"].InnerText));
+                LogicConnector.setTowerFirerate(Double.Parse(towerNode[towerLevel-1]["firerate"].InnerText));
             }
             catch
             {
@@ -162,13 +155,17 @@ public class TowerSelection : MonoBehaviour
                 // To acces to the level 2 tower stats we use index 1, instead of using a 2 that is the level 2 id, so be careful!
                 upgradeCost = Int32.Parse(towerNode[towerLevel]["cost"].InnerText);
 
-                // Text with the upgrade cost
-                upgradeText = "UPGRADE " + upgradeCost.ToString();
+                LogicConnector.setTowerCostUpgrade(upgradeCost);
+                LogicConnector.setTowerDamageUpgrade(Double.Parse(towerNode[towerLevel]["damage"].InnerText));
+                LogicConnector.setTowerRangeUpgrade(Double.Parse(towerNode[towerLevel]["range"].InnerText));
+                LogicConnector.setTowerFirerateUpgrade(Double.Parse(towerNode[towerLevel]["firerate"].InnerText));
+
+
             }
             else
             {
-                // Text showing there are no more possible upgrades
-                upgradeText = "NO UPGRADES";
+
+                LogicConnector.setTowerCostUpgrade(0);
             }
         }
     }
@@ -182,7 +179,9 @@ public class TowerSelection : MonoBehaviour
             Destroy(tower);
 
             // Increment towers sold (for the final score)
-            score.incTowersSold(); 
+            score.incTowersSold();
+            LogicConnector.setTowerSelected(false);
+            LogicConnector.setSellSelected(false);
         }
     }
 
@@ -218,6 +217,7 @@ public class TowerSelection : MonoBehaviour
                 Debug.Log("ERROR no money for upgrade");
             }
         }
+        LogicConnector.setUpgradeSelected(false);
     }
 
     // Return whether the selected tower can be upgraded
