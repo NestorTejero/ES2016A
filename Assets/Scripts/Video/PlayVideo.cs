@@ -22,7 +22,7 @@ public class PlayVideo : MonoBehaviour {
 	void Update () {
 		if (!movie.isPlaying) {
 
-			SceneManager.LoadScene("Pantalla");
+			SceneManager.LoadScene("Game");
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space) && movie.isPlaying) {
