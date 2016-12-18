@@ -12797,7 +12797,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &1512485315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12813,6 +12813,7 @@ MonoBehaviour:
   isPlaced: 0
   type_tower: 2
   scale: {x: 10, y: 10, z: 10}
+  scrollSpeed: 250
 --- !u!114 &1512485316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14731,10 +14732,12 @@ MonoBehaviour:
     towerDamage: 0
     towerRange: 0
     towerFirerate: 0
+    towerHealth: 0
     towerCostUpgrade: 0
     towerDamageUpgrade: 0
     towerRangeUpgrade: 0
     towerFirerateUpgrade: 0
+    towerHealthUpgrade: 0
     towerSelected: 0
     upgradeSelected: 0
     sellSelected: 0
@@ -14769,10 +14772,12 @@ MonoBehaviour:
     testTowerDamage: 10
     testTowerRange: 100
     testTowerFirerate: 1
+    testTowerHealth: 1
     testTowerCostUpgrade: 500
     testTowerDamageUpgrade: 20
     testTowerRangeUpgrade: 150
     testTowerFirerateUpgrade: 0.5
+    testTowerHealthUpgrade: 1.5
     testTowerSelected: 0
     testUpgradeSelected: 0
     testSellSelected: 0
@@ -14922,9 +14927,9 @@ MonoBehaviour:
     Dimensions:
       rect:
         serializedVersion: 2
-        x: 343
+        x: 290
         y: 500
-        width: 250
+        width: 380
         height: 91.2
     Background: {fileID: 2800000, guid: 89ec20c1ea7d90a458005f2bd31103b8, type: 3}
   InterfazAvatar:
@@ -14983,8 +14988,8 @@ MonoBehaviour:
     - Background: {fileID: 2800000, guid: b0342afe0db6c074e8a9acf822aedb65, type: 3}
       BackgroundHover: {fileID: 2800000, guid: 2c245754eb88fe845a062c826eab4a37, type: 3}
       BackgroundClick: {fileID: 2800000, guid: 3f3febefb47faa64e8de1dd1b115bd40, type: 3}
-      Image: {fileID: 2800000, guid: 059b3a157de94ff47b155d21f72c2804, type: 3}
-      ImageLocked: {fileID: 2800000, guid: eacf756bcd7ec6446b6f9f534fe78fd9, type: 3}
+      Image: {fileID: 2800000, guid: c6258e6c5857ff74b90481a8dc21c40d, type: 3}
+      ImageLocked: {fileID: 2800000, guid: 17fd8e61ad5d088458a8b2f61adc26d4, type: 3}
       Locked: 0
       ShowCost: 1
       type: 3
@@ -15739,7 +15744,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!82 &1753859878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15751,7 +15756,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfd47a377468c7f41a07a50d605f5436, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2096774
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 1
@@ -16184,7 +16189,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1879301803
 GameObject:
   m_ObjectHideFlags: 0
