@@ -12810,7 +12810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 0}
   isPlaced: 0
-  type_tower: 0
+  type_tower: 2
   scale: {x: 10, y: 10, z: 10}
 --- !u!114 &1512485316
 MonoBehaviour:
@@ -14725,6 +14725,29 @@ MonoBehaviour:
     totalTime: 0
     score: 0
     win: 0
+    towerName: 
+    towerDamage: 0
+    towerRange: 0
+    towerFirerate: 0
+    towerCostUpgrade: 0
+    towerDamageUpgrade: 0
+    towerRangeUpgrade: 0
+    towerFirerateUpgrade: 0
+    towerSelected: 0
+    upgradeSelected: 0
+    sellSelected: 0
+    rectUpgrade:
+      serializedVersion: 2
+      x: 718.66315
+      y: 401.11667
+      width: 85.81053
+      height: 29.35
+    rectSell:
+      serializedVersion: 2
+      x: 825.92633
+      y: 401.11667
+      width: 64.357895
+      height: 29.35
     testMode: 0
     testHealth: 3
     testCredit: 500
@@ -14740,6 +14763,29 @@ MonoBehaviour:
     testTotalTime: 234.2343
     testScore: 400
     testWin: 1
+    testTowerName: torre-piedra
+    testTowerDamage: 10
+    testTowerRange: 100
+    testTowerFirerate: 1
+    testTowerCostUpgrade: 500
+    testTowerDamageUpgrade: 20
+    testTowerRangeUpgrade: 150
+    testTowerFirerateUpgrade: 0.5
+    testTowerSelected: 0
+    testUpgradeSelected: 0
+    testSellSelected: 0
+    testRectUpgrade:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    testRectSell:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
   ContenedorSuperior:
     Dimensions:
       rect:
@@ -15546,6 +15592,131 @@ MonoBehaviour:
         Text: Volumen juego
         Alignment: 3
       Value: 0.8910238
+  InterfazTorreSeleccionada:
+    Position:
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 150
+        width: 200
+        height: 300
+    PositionTitle:
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 200
+        width: 0
+        height: 0
+    PositionDamage:
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 250
+        width: 0
+        height: 0
+    PositionRange:
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 290
+        width: 0
+        height: 0
+    PositionFirerate:
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 330
+        width: 0
+        height: 0
+    PositionResultDamage:
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 250
+        width: 0
+        height: 0
+    PositionResultRange:
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 290
+        width: 0
+        height: 0
+    PositionResultFirerate:
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 330
+        width: 0
+        height: 0
+    PositionResultDamageUpgrade:
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 250
+        width: 0
+        height: 0
+    PositionResultRangeUpgrade:
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 290
+        width: 0
+        height: 0
+    PositionResultFirerateUpgrade:
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 330
+        width: 0
+        height: 0
+    PositionNextUpgrade:
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 375
+        width: 0
+        height: 0
+    PositionResultNextUpgrade:
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 375
+        width: 0
+        height: 0
+    upgrade_button:
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 410
+        width: 80
+        height: 30
+    sell_button:
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 410
+        width: 60
+        height: 30
+    TextTitle: 
+    TextDamage: 'Damage:'
+    TextRange: 'Range:'
+    TextFirerate: 'Fire rate:'
+    TextNextUpgrade: 'Next upgrade:'
+    ResultDamage: 0
+    ResultRange: 0
+    ResultFirerate: 0
+    ResultDamageUpgrade: (-)
+    ResultRangeUpgrade: (-)
+    ResultFirerateUpgrade: (-)
+    ResultNextUpgrade: 500
+    Background: {fileID: 2800000, guid: e2e66ccad01c8b641af0e5129ba9a14a, type: 3}
+    TextWidth: 20
+    FontSize: 24
+    TextColor: {r: 0, g: 0, b: 0, a: 1}
+    Alignment: 4
+    AlignmentStats: 3
+    Value: 0
 --- !u!4 &1753859877
 Transform:
   m_ObjectHideFlags: 0

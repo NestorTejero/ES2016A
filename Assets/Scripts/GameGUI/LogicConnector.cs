@@ -55,6 +55,19 @@ public class LogicConnector {
     [SerializeField] private double totalTime;
     [SerializeField] private int score;
     [SerializeField] private bool win;
+    [SerializeField] private string towerName;
+    [SerializeField] private double towerDamage;
+    [SerializeField] private double towerRange;
+    [SerializeField] private double towerFirerate;
+    [SerializeField] private int towerCostUpgrade;
+    [SerializeField] private double towerDamageUpgrade;
+    [SerializeField] private double towerRangeUpgrade;
+    [SerializeField] private double towerFirerateUpgrade;
+    [SerializeField] private bool towerSelected;
+    [SerializeField] private bool upgradeSelected;
+    [SerializeField] private bool sellSelected;
+    [SerializeField] private Rect rectUpgrade;
+    [SerializeField] private Rect rectSell;
 
     [Header("Test values")]
 	[SerializeField] private Boolean testMode = false;
@@ -72,6 +85,19 @@ public class LogicConnector {
     [SerializeField] private double testTotalTime = 234.2343;
     [SerializeField] private int testScore = 400;
     [SerializeField] private bool testWin = true;
+    [SerializeField] private string testTowerName = "torre-piedra";
+    [SerializeField] private double testTowerDamage = 10.0;
+    [SerializeField] private double testTowerRange = 100.0;
+    [SerializeField] private double testTowerFirerate = 1.0;
+    [SerializeField] private int testTowerCostUpgrade = 500;
+    [SerializeField] private double testTowerDamageUpgrade = 20.0;
+    [SerializeField] private double testTowerRangeUpgrade = 150.0;
+    [SerializeField] private double testTowerFirerateUpgrade = 0.5;
+    [SerializeField] private bool testTowerSelected = false;
+    [SerializeField] private bool testUpgradeSelected = false;
+    [SerializeField] private bool testSellSelected = false;
+    [SerializeField] private Rect testRectUpgrade = new Rect();
+    [SerializeField] private Rect testRectSell = new Rect();
 
     private UserInterface UserInterface;
 	protected static LogicConnector _instance = null;
@@ -376,6 +402,164 @@ public class LogicConnector {
         LogicConnector instance = LogicConnector.getInstance();
         instance.win = win;
     }
+
+
+    public static string getTowerName()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerName : instance.towerName;
+    }
+
+    public static void setTowerName(string towerName)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerName = towerName;
+    }
+
+    public static double getTowerDamage()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerDamage : instance.towerDamage;
+    }
+
+    public static void setTowerDamage(double towerDamage)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerDamage = towerDamage;
+    }
+
+    public static double getTowerRange()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerRange : instance.towerRange;
+    }
+
+    public static void setTowerRange(double towerRange)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerRange = towerRange;
+    }
+
+    public static double getTowerFirerate()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerFirerate : instance.towerFirerate;
+    }
+
+    public static void setTowerFirerate(double towerFirerate)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerFirerate = towerFirerate;
+    }
+
+    public static int getTowerCostUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerCostUpgrade : instance.towerCostUpgrade;
+    }
+
+    public static void setTowerCostUpgrade(int towerCostUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerCostUpgrade = towerCostUpgrade;
+    }
+
+    public static double getTowerDamageUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerDamageUpgrade : instance.towerDamageUpgrade;
+    }
+
+    public static void setTowerDamageUpgrade(double towerDamageUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerDamageUpgrade = towerDamageUpgrade;
+    }
+
+    public static double getTowerRangeUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerRangeUpgrade : instance.towerRangeUpgrade;
+    }
+
+    public static void setTowerRangeUpgrade(double towerRangeUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerRangeUpgrade = towerRangeUpgrade;
+    }
+
+    public static double getTowerFirerateUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerFirerateUpgrade : instance.towerFirerateUpgrade;
+    }
+
+    public static void setTowerFirerateUpgrade(double towerFirerateUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerFirerateUpgrade = towerFirerateUpgrade;
+    }
+
+    public static bool getTowerSelected()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testTowerSelected : instance.towerSelected;
+    }
+
+    public static void setTowerSelected(bool towerSelected)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.towerSelected = towerSelected;
+    }
+
+    public static bool getUpgradeSelected()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testUpgradeSelected : instance.upgradeSelected;
+    }
+
+    public static void setUpgradeSelected(bool upgradeSelected)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.upgradeSelected = upgradeSelected;
+    }
+
+    public static bool getSellSelected()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testSellSelected : instance.sellSelected;
+    }
+
+    public static void setSellSelected(bool sellSelected)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.sellSelected = sellSelected;
+    }
+
+    public static Rect getRectUpgrade()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testRectUpgrade : instance.rectUpgrade;
+    }
+
+    public static void setRectUpgrade(Rect rectUpgrade)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.rectUpgrade = rectUpgrade;
+    }
+
+    public static Rect getRectSell()
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        return (instance.testMode) ? instance.testRectSell : instance.rectSell;
+    }
+
+    public static void setRectSell(Rect rectSell)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.rectSell = rectSell;
+    }
+
 }
 
 

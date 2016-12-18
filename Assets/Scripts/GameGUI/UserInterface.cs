@@ -41,8 +41,11 @@ public class UserInterface : MonoBehaviour {
 	[Header("HUD Settings")]
 	public InterfaceSettings InterfazSettings = new InterfaceSettings();
 
-	// Private attributes.
-	private AudioSource AudioSource;
+    [Header("HUD Torre")]
+    public InterfaceTowerSelected InterfazTorreSeleccionada = new InterfaceTowerSelected();
+
+    // Private attributes.
+    private AudioSource AudioSource;
 
 	UserInterface() {
 		ScaledRect.WindowSize = this.WindowSize;
@@ -67,7 +70,11 @@ public class UserInterface : MonoBehaviour {
 		InterfazTiempo.Draw ();
 		interfaceEnemies.Draw ();
 
-		if (BotonPausa.Draw ()) {
+        if (LogicConnector.getTowerSelected())
+            InterfazTorreSeleccionada.Draw();
+
+
+        if (BotonPausa.Draw ()) {
 			LogicConnector.Pause ();
 		}
 
