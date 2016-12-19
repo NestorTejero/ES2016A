@@ -228,7 +228,7 @@ GameObject:
   - 114: {fileID: 140136499}
   - 114: {fileID: 140136498}
   m_Layer: 5
-  m_Name: NoSprite
+  m_Name: OnSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,7 +249,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.39764085, y: 0.40112993}
   m_AnchorMax: {x: 0.5968803, y: 0.6041299}
-  m_AnchoredPosition: {x: 30, y: -27}
+  m_AnchoredPosition: {x: 57, y: 8}
   m_SizeDelta: {x: 28.211334, y: -21.333023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140136498
@@ -278,9 +278,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 7acec6c073bb29a418b3827226226e7c,
+    m_HighlightedSprite: {fileID: 21300000, guid: 3465f241b3d13bb4e827dc9d3568ed22,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: e4580f2869b64d44293756b0efea6c04, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: c01a651947af5ae4688c2a6cf72de3a3, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -324,7 +324,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: efcb7299557112c41b7f8dd603e7899c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3465f241b3d13bb4e827dc9d3568ed22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1758,7 +1758,7 @@ Transform:
   m_GameObject: {fileID: 904058545}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -622, y: -333, z: 187}
-  m_LocalScale: {x: 1368.0397, y: 540.89325, z: 1}
+  m_LocalScale: {x: 2462.5667, y: 1471.6821, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1915077759}
@@ -1789,7 +1789,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 1768155421}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
@@ -2413,7 +2413,7 @@ GameObject:
   - 114: {fileID: 988773730}
   - 114: {fileID: 988773729}
   m_Layer: 5
-  m_Name: YesSprite
+  m_Name: OffSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2434,7 +2434,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.4065986, y: 0.38548043}
   m_AnchorMax: {x: 0.60400003, y: 0.6041299}
-  m_AnchoredPosition: {x: 44, y: 17}
+  m_AnchoredPosition: {x: 56, y: -36}
   m_SizeDelta: {x: 28.788696, y: -26.81031}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988773729
@@ -2463,9 +2463,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 53d82b41e3d26cd4b9db69c8aff0217c,
+    m_HighlightedSprite: {fileID: 21300000, guid: 99f535a0da3b15e498d8a71a72066ae2,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 703501a20e81270489c2d0d202c4fa78, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 309da2dc85beb064f9d0b6b0027173e6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2509,7 +2509,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c3b21432119887a40bbdf54bc1dd25cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99f535a0da3b15e498d8a71a72066ae2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2985,7 +2985,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dd4a18a173abfc4439b2d4311776950d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 247797b7d8fa6484b8f271050ebf7780, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3025,9 +3025,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: dd4a18a173abfc4439b2d4311776950d,
+    m_HighlightedSprite: {fileID: 21300000, guid: 247797b7d8fa6484b8f271050ebf7780,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 3eef2a336fbd2e2499f34605aaf771a7, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 3404307fe27c2d841be41f9acc202c12, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3403,6 +3403,37 @@ MonoBehaviour:
     TowerCost: 64000000f4010000e8030000
     enemiesLeft: 0
     totalEnemies: 0
+    round: 0
+    enemies: 0
+    towersBuilt: 0
+    towersSold: 0
+    goldEarned: 0
+    totalTime: 0
+    score: 0
+    win: 0
+    towerName: 
+    towerDamage: 0
+    towerRange: 0
+    towerFirerate: 0
+    towerCostUpgrade: 0
+    towerDamageUpgrade: 0
+    towerRangeUpgrade: 0
+    towerFirerateUpgrade: 0
+    towerSelected: 0
+    upgradeSelected: 0
+    sellSelected: 0
+    rectUpgrade:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    rectSell:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
     testMode: 0
     testHealth: 3
     testCredit: 500
@@ -3410,6 +3441,37 @@ MonoBehaviour:
     testTime: 60
     testEnemiesLeft: 7
     testTotalEnemies: 15
+    testRound: 1
+    testEnemies: 10
+    testTowersBuilt: 5
+    testTowersSold: 2
+    testGoldEarned: 549
+    testTotalTime: 234.2343
+    testScore: 400
+    testWin: 1
+    testTowerName: torre-piedra
+    testTowerDamage: 10
+    testTowerRange: 100
+    testTowerFirerate: 1
+    testTowerCostUpgrade: 500
+    testTowerDamageUpgrade: 20
+    testTowerRangeUpgrade: 150
+    testTowerFirerateUpgrade: 0.5
+    testTowerSelected: 0
+    testUpgradeSelected: 0
+    testSellSelected: 0
+    testRectUpgrade:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    testRectSell:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
 --- !u!82 &1552371191
 AudioSource:
   m_ObjectHideFlags: 0
