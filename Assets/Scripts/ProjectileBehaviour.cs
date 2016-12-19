@@ -47,7 +47,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (ReachExceeded())
+        if (ReachExceeded() || transform.position.y < 0)
         {
             SelfDestroy();
         }
@@ -108,8 +108,13 @@ public class ProjectileBehaviour : MonoBehaviour {
              *      t = speed / x
              *      v_y = g * (d / v) / 2 - y_0 * (v / d)
              * */
-            float distance = Mathf.Min(reach, (targetPosition - transform.position).magnitude);
-            upSpeed = 0.5f * gravity * (distance / speed) - transform.position.y * (speed / distance);
+            
+            Vector3 currentPosition = transform.position;
+            currentPosition.y = 0;  // ignore vertical components
+            targetPosition.y = 0;
+
+            float distance = (targetPosition - currentPosition).magnitude;
+            upSpeed = Mathf.Abs(0.5f * gravity * (distance / speed) - transform.position.y * (speed / distance)) + 0.004f;
         }
             
     }
