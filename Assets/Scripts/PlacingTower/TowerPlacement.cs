@@ -56,8 +56,8 @@ public class TowerPlacement : MonoBehaviour
             {
                 //Adaptacion de la pantalla al HUD inferior
                 numHeightinf = (Screen.height - 330) / 6f;
-                numWidth1 = (Screen.width - 400) / 1.61f;
-                numWidth2 = (Screen.width - 400) / 3.14f;
+                numWidth1 = (Screen.width - 289) / 1.3891f;
+                numWidth2 = (Screen.width - 289) / 3.5697f;
 
                 //Adaptacion de la pantalla al HUD superior
                 numHeightsup = (Screen.height - 539) / 1.049f;
@@ -68,7 +68,8 @@ public class TowerPlacement : MonoBehaviour
                 newTower.transform.position = new Vector3(point.x, newTower.position.y, point.z);
                 // Cancell the tower placement by using right click and the Tower is not placed if clicking over the HUD
                 if (Input.GetMouseButtonDown(1) || (Input.GetMouseButtonDown(0) && Input.mousePosition.y < (54 + numHeightinf)
-                    && Input.mousePosition.x < (249 + numWidth1) && Input.mousePosition.x > (127 + numWidth2)) || (Input.GetMouseButtonDown(0) && Input.mousePosition.y > (502 + numHeightsup)))
+                      && Input.mousePosition.x < (206 + numWidth1) && Input.mousePosition.x > (82 + numWidth2)) ||
+                      (Input.GetMouseButtonDown(0) && Input.mousePosition.y > (502 + numHeightsup)))
                 {
                     Destroy(tow);
                 }
