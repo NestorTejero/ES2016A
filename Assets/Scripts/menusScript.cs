@@ -126,21 +126,21 @@ public class menusScript : MonoBehaviour {
     {
         var instance =LogicConnector.getInstance();
         instance.Difficult = LogicConnector.Difficulty.Easy;
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("StartVideo");
     }
 
     public void SetLevelMedium()
     {
         var instance = LogicConnector.getInstance();
         instance.Difficult = LogicConnector.Difficulty.Medium;
-        SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("StartVideo");
     }
 
     public void SetLevelHard()
     {
         var instance = LogicConnector.getInstance();
         instance.Difficult = LogicConnector.Difficulty.Hard;
-        SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("StartVideo");
     }
 
     public void MuteSound()

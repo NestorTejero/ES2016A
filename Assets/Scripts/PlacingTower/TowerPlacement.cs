@@ -18,6 +18,7 @@ public class TowerPlacement : MonoBehaviour
     public int type_tower; // 0 -> dinosaur / 1 -> tank / 2 -> tower
 
     public Vector3 scale = new Vector3(10,10,10);
+    public float scrollSpeed = 250f;       // tower placement rotation
 
 
     // Use this for initialization
@@ -33,8 +34,18 @@ public class TowerPlacement : MonoBehaviour
         // Updating the tower position (and placing it on click)
         if (newTower != null && !isPlaced)
         {
+            // Check for mouse wheel. Rotate new tower if scroll
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (scroll != 0)
+            {
+                // Inversed Y axis
+                newTower.transform.Rotate(new Vector3(0, -scroll * scrollSpeed * 10 * Time.deltaTime, 0));             
+            }
+
             // Disable TowerSelection script cause we do not want to select towers while placing one
             GameObject.Find("GameScripts").GetComponent<TowerSelection>().enabled = false;
+            // Disable Camera zoom, freeing scroll input
+            GameObject.Find("Camera").GetComponent<CameraMovement>().zoomEnabled = false;
 
             RaycastHit hit = new RaycastHit();
             // Ray that goes from the screen (camera) to the mouse position
@@ -96,6 +107,8 @@ public class TowerPlacement : MonoBehaviour
 
             // Re enable TowerSelection script
             GameObject.Find("GameScripts").GetComponent<TowerSelection>().enabled = true;
+            // Re enable Camera zoomt
+            GameObject.Find("Camera").GetComponent<CameraMovement>().zoomEnabled = true;
         }
     }
 
