@@ -13,9 +13,9 @@ public class ProjectileBehaviour : MonoBehaviour {
     public float reach = 0.0f;			// Projectile is destroyed after exceeding its reach. Using reach=0 disables such feature.
 
 	public float gravity = 0.0f;
-	public float upAccel = 0.0f;
+	public float upSpeed = 0.0f;
 
-	private Vector3 prevPos; // Used to rotate with pitch
+    private Vector3 prevPos; // Used to rotate with pitch
 
     // Collision management.
     void OnTriggerEnter(Collider other)
@@ -65,26 +65,52 @@ public class ProjectileBehaviour : MonoBehaviour {
     // Manages projecile's movement through the world.
     private void TransformProjectile()
     {
-        /*
-         * The projectile describes a linear trajectory towards its target. On subsequent sprints, it could be
-         * interesting to implement some parabolic movement.
-         */
         transform.position += transform.forward * speed * Time.deltaTime;
-
-		// subtract gravity from upAccel, for parabolic projectiles
-		upAccel -= gravity * Time.deltaTime;
-		transform.position += transform.up * upAccel * Time.deltaTime;
+		transform.position += transform.up * upSpeed * Time.deltaTime;
 
 		// Calculate delta position for pitch rotation
 		Vector3 deltaPos = transform.position - prevPos;
 		Vector3 lookAtPos = transform.position + deltaPos;
 
-		transform.LookAt (lookAtPos);
+        // Update vertical speed
+        upSpeed -= gravity * Time.deltaTime;
+
+        transform.LookAt (lookAtPos);
     }
 
     // Manages the destruction of the projectile. Can be overriten to add cool effects.
     protected virtual void SelfDestroy()
     {
         Destroy(gameObject);
+    }
+
+    // Compute the needed vertical speed for the projectile to reach its target.
+    public void setUpSpeed(Vector3 targetPosition)
+    {
+        if (gravity == 0)   // linear movement when there is no gravity
+            upSpeed = 0;
+        else
+        {
+            /* Relevant parabolic movement equations (2D):
+             *      y = y_0 + v_y * t - (g * t**2) / 2
+             *      x = x_0 + v_x * t
+             *      
+             * where:
+             *      x - x_0 = distance to be traversed
+             *      y - y_0 = height from ground to muzzle
+             *      v_x = horizontal component of velocity
+             *      v_y = vertical component of velocity
+             *      g = gravity
+             *      
+             * Simplifications: v_x = speed
+             *      
+             *      y = 0
+             *      t = speed / x
+             *      v_y = g * (d / v) / 2 - y_0 * (v / d)
+             * */
+            float distance = Mathf.Min(reach, (targetPosition - transform.position).magnitude);
+            upSpeed = 0.5f * gravity * (distance / speed) - transform.position.y * (speed / distance);
+        }
+            
     }
 }

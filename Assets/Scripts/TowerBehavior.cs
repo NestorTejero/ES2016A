@@ -174,6 +174,7 @@ public class TowerBehavior : MonoBehaviour
 			// Set tags
 			pb.parentTagName = gameObject.tag;
 			pb.targetTag = target.tag;
+            pb.setUpSpeed(target.transform.position);
         }
     }
 
