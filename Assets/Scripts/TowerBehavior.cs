@@ -135,7 +135,12 @@ public class TowerBehavior : MonoBehaviour
 
 		// Return found target, or null if none in range
 		if (foundTarget != null) {
-			targetSpeed = foundTarget.GetComponent<NavMeshAgent> ().speed;
+            NavMeshAgent agent = foundTarget.GetComponent<NavMeshAgent>(); // target's navigation agent
+            // Check if target is static
+            if (agent.velocity.x == 0 && agent.velocity.z == 0)
+                targetSpeed = 0;            // this assignation avoids computing square rooted vector magnitudes
+            else
+                targetSpeed = agent.speed;  // use speed stat normally if target is not static
 			return foundTarget;
 		}
 		return null;
