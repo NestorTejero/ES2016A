@@ -374,8 +374,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.83661, y: 0, z: 36.706966}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 195, y: 0, z: 52}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 421234}
@@ -725,7 +725,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193098}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.0253513, z: 1}
@@ -775,6 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b33cac4cae0dd4d85e846c76605610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 0}
   damage: 2.5
   health: 10
   speed: 5
@@ -782,6 +783,8 @@ MonoBehaviour:
   attackRate: 1
   targetTagName: home
   target: {fileID: 0}
+  hitPrefab: {fileID: 150010, guid: 0f70a837b9c3ea14d9b68c2c772531b7, type: 2}
+  bloodPrefab: {fileID: 123304, guid: 78a177739f4d8414e9993bf35bc695ff, type: 2}
   isAttacking: 0
   targetLocked: 0
 --- !u!137 &13792544

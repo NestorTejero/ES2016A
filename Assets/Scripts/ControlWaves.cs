@@ -15,13 +15,17 @@ public class ControlWaves : MonoBehaviour
     private XmlNode root;
     private XmlNodeList roundList,enemyList;
     private int totalRounds, currentRound, totalEnemies, currentEnemy;
+    private String difficulty;
 
 
     void Start()
     {
 
+        // GET DIFFICULTY FROM LOGICCONNECTOR
+        difficulty = LogicConnector.GetDifficulty(); // easy, medium or hard
+
         // Read xml document and get rounds info
-        TextAsset textAsset = (TextAsset)Resources.Load("Xml/rounds");
+        TextAsset textAsset = (TextAsset)Resources.Load("Xml/rounds_"+difficulty);
         XmlDocument newXml = new XmlDocument();
         newXml.LoadXml(textAsset.text);
 
@@ -36,7 +40,7 @@ public class ControlWaves : MonoBehaviour
 
     }
 
-    void NextRound()
+    public void NextRound()
     {
 
         // Initialize round stats
@@ -115,23 +119,16 @@ public class ControlWaves : MonoBehaviour
                 {
                     score.setRound(currentRound);
 
-                    /*
-                    // DEBUG SCORE
-                    Debug.Log(score.getRound());
-                    Debug.Log(score.getEnemies());
-                    Debug.Log(score.getTowersBuilt());
-                    Debug.Log(score.getTowersSold());
-                    Debug.Log(score.getGoldEarned());
-                    Debug.Log(score.getTime());
-                    Debug.Log(score.getScore());
-                    */
+                    LogicConnector.setRound(score.getRound());
+                    LogicConnector.setEnemies(score.getEnemies());
+                    LogicConnector.setTowersBuilt(score.getTowersBuilt());
+                    LogicConnector.setTowersSold(score.getTowersSold());
+                    LogicConnector.setGoldEarned(score.getGoldEarned());
+                    LogicConnector.setTotalTime(score.getTime());
+                    LogicConnector.setScore(score.getScore());
+                    LogicConnector.setWin(true);
 
-                    // Send info score to LogicConnector (Team C)
-
-                    // Call Win method (Team C)
-                    Debug.Log("YOU WIN!"); 
-
-
+                    LogicConnector.GameOver();
 
                 }
                     

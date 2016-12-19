@@ -78,9 +78,9 @@ public class finalOne : MonoBehaviour {
 				circle1.gameObject.SetActive (false);
 				circle2.gameObject.SetActive (false);
 				circle3.gameObject.SetActive (false);
-				loadingDoneIcon.gameObject.SetActive (true);
-				loadingDoneIcon2.gameObject.SetActive (true);
-				loadingDoneIcon3.gameObject.SetActive (true);
+				//loadingDoneIcon.gameObject.SetActive (true);
+				//loadingDoneIcon2.gameObject.SetActive (true);
+				//loadingDoneIcon3.gameObject.SetActive (true);
 				complete = true;
 				FadeOut ();
 			}

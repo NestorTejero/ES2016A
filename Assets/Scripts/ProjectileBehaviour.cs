@@ -32,7 +32,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 			// Check for enemy script, if so, cast damage
 			EnemyBehaviour enemyB = other.gameObject.GetComponent<EnemyBehaviour>();
 			if(enemyB != null)
-				enemyB.TakeDamage(this.damage);
+				enemyB.TakeDamage(gameObject);
             SelfDestroy();
         }
     }

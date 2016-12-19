@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 250f;      // movement through keyboard arrows
+    public float moveSpeed = 50f;       // movement through keyboard arrows
     public float scrollSpeed = 250f;    // movement through mouse wheel
 
     // Camera boundaries. User cannot place camera outside the space defined by this coordinates
@@ -13,6 +13,7 @@ public class CameraMovement : MonoBehaviour
     // X,Z boundaries should be related to the size of the terrain. Altitude optimal boundary (Y) has to be tested.
 
     public string targetTag = "home";
+    public bool zoomEnabled = true;   // zoom (scroll) enabled
 
     void Start()
     {
@@ -41,8 +42,10 @@ public class CameraMovement : MonoBehaviour
         {
             MoveCamera(new Vector3(0, 0, moveSpeed * Time.deltaTime));
         }
+        if (!zoomEnabled)    // end if zoom is not enabled
+            return;
 
-        // Check for mouse wheel
+        // Zoom: check for mouse wheel 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
