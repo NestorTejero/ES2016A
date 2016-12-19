@@ -81,8 +81,8 @@ MonoBehaviour:
   targetTag: 
   parentTagName: 
   reach: 0
-  gravity: 18
-  upAccel: 4
+  gravity: 5
+  upSpeed: 0
 --- !u!135 &13532580
 SphereCollider:
   m_ObjectHideFlags: 1
