@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b934bd0a3bfff4544b78d36e7323efbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movie: {fileID: 15200000, guid: 67ef4f3f767704b4eb74fbc6f96cf674, type: 3}
+  movie: {fileID: 15200000, guid: 39901fee456aeac438fc3bae9dce7d53, type: 3}
 --- !u!82 &1508777412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
