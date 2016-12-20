@@ -191,9 +191,9 @@ GameObject:
   - 4: {fileID: 472448}
   - 95: {fileID: 9504232}
   - 54: {fileID: 5420548}
-  - 136: {fileID: 13617902}
   - 195: {fileID: 19556274}
   - 114: {fileID: 11411242}
+  - 135: {fileID: 13517392}
   m_Layer: 0
   m_Name: enemy-porky
   m_TagString: enemy
@@ -1134,8 +1134,8 @@ MonoBehaviour:
   bloodPrefab: {fileID: 123304, guid: 78a177739f4d8414e9993bf35bc695ff, type: 2}
   isAttacking: 0
   targetLocked: 0
---- !u!136 &13617902
-CapsuleCollider:
+--- !u!135 &13517392
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1143,9 +1143,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.8
-  m_Height: 7
-  m_Direction: 1
+  serializedVersion: 2
+  m_Radius: 3
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!137 &13708236
 SkinnedMeshRenderer:
@@ -1251,7 +1250,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139438}
   m_Enabled: 1
-  m_Radius: 2.8
+  m_Radius: 3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
