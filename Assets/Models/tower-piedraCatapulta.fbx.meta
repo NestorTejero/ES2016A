@@ -12,6 +12,8 @@ ModelImporter:
     100008: Lamp.002
     100010: Plano
     100012: //RootNode
+    100014: tower-piedra-catapulta
+    100016: tower-piedra-catapulta.001
     400000: Camera
     400002: Esfera
     400004: Lamp
@@ -19,15 +21,26 @@ ModelImporter:
     400008: Lamp.002
     400010: Plano
     400012: //RootNode
+    400014: tower-piedra-catapulta
+    400016: tower-piedra-catapulta.001
     2300000: Esfera
     2300002: Plano
     2300004: //RootNode
+    2300006: tower-piedra-catapulta
+    2300008: tower-piedra-catapulta.001
     3300000: Esfera
     3300002: Plano
     3300004: //RootNode
+    3300006: tower-piedra-catapulta
+    3300008: tower-piedra-catapulta.001
     4300000: Plano
     4300002: Esfera
     4300004: tower-piedra-catapulta
+    4300006: tower-piedra-catapulta.001
+    7400000: tower-piedra-catapulta.001|tower-piedraAtacar
+    7400002: tower-piedra-catapulta.001|tower-piedraIdle
+    9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -42,13 +55,81 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: tower-piedra-catapulta.001|tower-piedraAtacar
+      takeName: tower-piedra-catapulta.001|tower-piedraAtacar
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: tower-piedra-catapulta
+        weight: 1
+      - path: tower-piedra-catapulta.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: tower-piedra-catapulta.001|tower-piedraIdle
+      takeName: tower-piedra-catapulta.001|tower-piedraAtacar
+      firstFrame: 0
+      lastFrame: 0.10000001
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: tower-piedra-catapulta
+        weight: 1
+      - path: tower-piedra-catapulta.001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -86,7 +167,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

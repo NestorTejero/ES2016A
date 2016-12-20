@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Xml;
 
 public class TowerBehavior : MonoBehaviour
 {
@@ -37,7 +38,16 @@ public class TowerBehavior : MonoBehaviour
     // Upgrades
     public GameObject upgradedTower;  // upgrade
 
+	// Optiona fire animation
+	private Animator animator;
+
 	public void Start(){
+		animator = gameObject.GetComponent<Animator> ();
+
+		// Only for level 1, initialize stats
+		if(level == 1)
+			InitTowerStats ();
+
         if (type == "")
         {
             try
@@ -115,6 +125,34 @@ public class TowerBehavior : MonoBehaviour
 		return;
     }
 
+	private static XmlNode xmlRoot = null;
+
+	/** Initialize the stats for the level 1 tower. Tanto costaba hacerlo aqui todo? */
+	private void InitTowerStats(){
+
+		// Read xml document and get towers stats
+		if(xmlRoot == null){
+			TextAsset textAsset = (TextAsset)Resources.Load("Xml/towers");
+			XmlDocument newXml = new XmlDocument();
+			newXml.LoadXml(textAsset.text);
+			xmlRoot = newXml.DocumentElement;
+		}
+
+		// Read the part we need
+		XmlNodeList towerNode;
+		try {
+			towerNode = xmlRoot.SelectNodes("(Towers/Tower[@name='" + type + "']/Level)");
+			damage = float.Parse(towerNode[level-1]["damage"].InnerText);
+			range = float.Parse(towerNode[level-1]["range"].InnerText);
+			fireRate = float.Parse(towerNode[level-1]["firerate"].InnerText);
+			health = float.Parse(towerNode[level-1]["health"].InnerText);
+
+		}catch{
+			Debug.Log ("Error loading level 1 stats for "+ type);
+		}
+			
+	}
+
 	// Determine if target is in range
 	private bool IsTooFar(GameObject obj){
 		float dist2 = (transform.position - obj.transform.position).sqrMagnitude;
@@ -173,6 +211,9 @@ public class TowerBehavior : MonoBehaviour
         if (target != null)
         {
             //Vector3 aim = TakeAim();
+
+			if (animator)
+				animator.SetTrigger ("shoot");
 
 			// Instantiate new Projectile Prefab, set it's position
 			// to the muzzle of the turret and looking forward
