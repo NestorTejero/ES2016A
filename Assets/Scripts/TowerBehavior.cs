@@ -39,7 +39,17 @@ public class TowerBehavior : MonoBehaviour
 
 	public void Start(){
         if (type == "")
-            type = transform.parent.name;
+        {
+            try
+            {
+                type = transform.parent.name;
+            }
+            catch
+            {
+                type = transform.name;
+            }
+        }
+
 	}
 
 	// Use this for initialization

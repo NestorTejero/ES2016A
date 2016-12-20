@@ -166,7 +166,7 @@ public class TowerSelection : MonoBehaviour
                 LogicConnector.setTowerHealthUpgrade(Double.Parse(towerNode[towerLevel]["health"].InnerText));
 
             } else if (towerNode != null && towerName == "torre-muro") {
-				// Tower is a WALL
+                // Tower is a WALL
 				LogicConnector.setTowerCostUpgrade (0);
 				LogicConnector.setTowerDamageUpgrade (0);
 				LogicConnector.setTowerRangeUpgrade (0);
@@ -176,6 +176,10 @@ public class TowerSelection : MonoBehaviour
             else
             {
                 LogicConnector.setTowerCostUpgrade(0);
+                LogicConnector.setTowerDamageUpgrade(Double.Parse(towerNode[towerLevel - 1]["damage"].InnerText));
+                LogicConnector.setTowerRangeUpgrade(Double.Parse(towerNode[towerLevel - 1]["range"].InnerText));
+                LogicConnector.setTowerFirerateUpgrade(Double.Parse(towerNode[towerLevel - 1]["firerate"].InnerText));
+                LogicConnector.setTowerHealthUpgrade(Double.Parse(towerNode[towerLevel - 1]["health"].InnerText));
             }
         }
     }
