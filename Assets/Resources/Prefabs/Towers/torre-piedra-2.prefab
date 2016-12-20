@@ -352,7 +352,7 @@ MonoBehaviour:
   health: 1
   cost: 100
   damage: 5
-  fireRate: 1.6
+  fireRate: 0.4
   turnSpeed: 2
   canRotate: 1
   canRotatePitch: 0

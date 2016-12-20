@@ -17,27 +17,27 @@
 			<Level id="1">
 				<range>32.0</range>
 				<health>1.0</health>
-				<cost>100</cost>
-				<damage>5.0</damage>
-				<firerate>1.0</firerate>
-				<turnspeed>2.0</turnspeed>
+				<cost>75</cost>
+				<damage>10.0</damage>
+				<firerate>1.8</firerate>
+				<turnspeed>1.5</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="2">
 				<range>32.0</range>
 				<health>1.5</health>
-				<cost>50</cost>
-				<damage>7.5</damage>
-				<firerate>1.0</firerate>
+				<cost>100</cost>
+				<damage>15</damage>
+				<firerate>1.6</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="3">
 				<range>32.0</range>
 				<health>3.0</health>
-				<cost>150</cost>
-				<damage>12.0</damage>
-				<firerate>1.0</firerate>
+				<cost>200</cost>
+				<damage>20</damage>
+				<firerate>1.4</firerate>
 				<turnspeed>4.0</turnspeed>
 				<projectilespeed>20.0</projectilespeed>
 			</Level>
