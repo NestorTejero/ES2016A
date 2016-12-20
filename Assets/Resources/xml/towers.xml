@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TowerCollection>
 	<Towers>
-	
+
+    <Tower name="torre-muro">
+      <Level id="1">
+        <range>0.0</range>
+        <health>5.0</health>
+        <cost>25</cost>
+        <damage>0.0</damage>
+        <firerate>0.0</firerate>
+        <turnspeed>0.0</turnspeed>
+        <projectilespeed>0.0</projectilespeed>
+      </Level>
+    </Tower>
 		<Tower name="torre-piedra">
 			<Level id="1">
 				<range>32.0</range>
