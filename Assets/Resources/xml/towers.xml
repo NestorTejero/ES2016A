@@ -2,23 +2,23 @@
 <TowerCollection>
 	<Towers>
 
-    <Tower name="torre-muro">
-      <Level id="1">
-        <range>0.0</range>
-        <health>5.0</health>
-        <cost>25</cost>
-        <damage>0.0</damage>
-        <firerate>0.0</firerate>
-        <turnspeed>0.0</turnspeed>
-        <projectilespeed>0.0</projectilespeed>
-      </Level>
-    </Tower>
+		<Tower name="torre-muro">
+			<Level id="1">
+				<range>0.0</range>
+				<health>1.0</health>
+				<cost>25</cost>
+				<damage>0.0</damage>
+				<firerate>0.0</firerate>
+				<turnspeed>0.0</turnspeed>
+				<projectilespeed>0.0</projectilespeed>
+			</Level>
+		</Tower>
 		<Tower name="torre-piedra">
 			<Level id="1">
 				<range>32.0</range>
 				<health>1.0</health>
 				<cost>100</cost>
-				<damage>5.0</damage>
+				<damage>7.5</damage>
 				<firerate>1.0</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
@@ -27,8 +27,8 @@
 				<range>32.0</range>
 				<health>1.5</health>
 				<cost>50</cost>
-				<damage>7.5</damage>
-				<firerate>1.0</firerate>
+				<damage>10</damage>
+				<firerate>0.9</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
@@ -36,10 +36,10 @@
 				<range>32.0</range>
 				<health>3.0</health>
 				<cost>150</cost>
-				<damage>12.0</damage>
-				<firerate>1.0</firerate>
+				<damage>15.0</damage>
+				<firerate>0.8</firerate>
 				<turnspeed>4.0</turnspeed>
-				<projectilespeed>20.0</projectilespeed>
+				<projectilespeed>15.0</projectilespeed>
 			</Level>
 		</Tower>
 
@@ -48,7 +48,7 @@
 				<range>32.0</range>
 				<health>3.0</health>
 				<cost>500</cost>
-				<damage>8.0</damage>
+				<damage>15.0</damage>
 				<firerate>2.0</firerate>
 				<turnspeed>1.0</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
@@ -57,7 +57,7 @@
 				<range>36.0</range>
 				<health>4.0</health>
 				<cost>250</cost>
-				<damage>12.0</damage>
+				<damage>20.0</damage>
 				<firerate>1.5</firerate>
 				<turnspeed>1.0</turnspeed>
 				<projectilespeed>40.0</projectilespeed>
@@ -66,7 +66,7 @@
 				<range>42.0</range>
 				<health>8.0</health>
 				<cost>750</cost>
-				<damage>18.0</damage>
+				<damage>30.0</damage>
 				<firerate>1.0</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>42.0</projectilespeed>
@@ -84,17 +84,17 @@
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>32.0</range>
+				<range>30.0</range>
 				<health>4.0</health>
 				<cost>500</cost>
 				<damage>5.0</damage>
-				<firerate>0.25</firerate>
+				<firerate>0.3</firerate>
 				<turnspeed>3.0</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="3">
 				<range>32.0</range>
-				<health>4.0</health>
+				<health>6.0</health>
 				<cost>1500</cost>
 				<damage>10.0</damage>
 				<firerate>0.25</firerate>
