@@ -132,7 +132,7 @@ public class TowerSelection : MonoBehaviour
             towerLevel = towerBehavior.level;
 
 			if (towerName == "torre-piedra")
-				LogicConnector.setTowerName ("Stone Tower");
+				LogicConnector.setTowerName ("Catapult Tower");
 			else if (towerName == "torre-tanque")
 				LogicConnector.setTowerName ("Dinotank");
 			else if (towerName == "torre-avion")
