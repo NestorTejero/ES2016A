@@ -101,12 +101,13 @@ public class finalOne : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 
 		// Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
-		AsyncOperation async = SceneManager.LoadSceneAsync(2);
+		//AsyncOperation async = 
+		SceneManager.LoadScene("menuScene");
 
 		// While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
-		while (!async.isDone) {
+		/*while (!async.isDone) {
 			yield return null;
-		}
+		}*/
 
 	}
 

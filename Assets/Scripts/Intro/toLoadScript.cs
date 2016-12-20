@@ -53,12 +53,13 @@ public class toLoadScript : MonoBehaviour {
 
 
 		// Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
-		AsyncOperation async = SceneManager.LoadSceneAsync(1);
+		//AsyncOperation async = 
+		SceneManager.LoadScene("Pantalla");
 
 		// While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
-		while (!async.isDone) {
+		/* (!async.isDone) {
 			yield return null;
-		}
+		}*/
 
 	}
 

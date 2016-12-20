@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TowerBehavior : MonoBehaviour
 {
+    public string type = "";     // tower type, regardless level;
 
     // Stats
     public int level = 1;
@@ -33,8 +34,22 @@ public class TowerBehavior : MonoBehaviour
     // Projectile
 	public GameObject projectilePrefab;
 
+    // Upgrades
+    public GameObject upgradedTower;  // upgrade
+
 	public void Start(){
-		//StartTower ();
+        if (type == "")
+        {
+            try
+            {
+                type = transform.parent.name;
+            }
+            catch
+            {
+                type = transform.name;
+            }
+        }
+
 	}
 
 	// Use this for initialization
@@ -135,7 +150,12 @@ public class TowerBehavior : MonoBehaviour
 
 		// Return found target, or null if none in range
 		if (foundTarget != null) {
-			targetSpeed = foundTarget.GetComponent<NavMeshAgent> ().speed;
+            NavMeshAgent agent = foundTarget.GetComponent<NavMeshAgent>(); // target's navigation agent
+            // Check if target is static
+            if (agent.velocity.x == 0 && agent.velocity.z == 0)
+                targetSpeed = 0;            // this assignation avoids computing square rooted vector magnitudes
+            else
+                targetSpeed = agent.speed;  // use speed stat normally if target is not static
 			return foundTarget;
 		}
 		return null;
@@ -169,10 +189,78 @@ public class TowerBehavior : MonoBehaviour
 			// Set tags
 			pb.parentTagName = gameObject.tag;
 			pb.targetTag = target.tag;
+            pb.setUpSpeed(target.transform.position);
         }
     }
 
-    // Computes and returns an interception position taking into account target position and projectile speed.
+    // Take damage.
+    public void takeDamage(float damage)
+    {
+        health = Mathf.Max(0, health - damage);
+        if (health == 0)
+            SelfDestroy();     
+    }
+
+    // Upgrade using stats given by the tower interface
+    public void Upgrade(float health, float range, float damage, float fireRate,
+        float turnSpeed, float projSpeed, int costIncrease)
+    {
+        if (upgradedTower == null) // abort if upgrade not defined
+            return;
+
+        isPlaced = false;                          // disable current tower
+        GameObject tower = InstantiateUpgrade();   // instantiate new tower
+
+        // Set stats
+        tower.GetComponentInChildren<TowerBehavior>().health = health;
+        tower.GetComponentInChildren<TowerBehavior>().range = range;
+        tower.GetComponentInChildren<TowerBehavior>().damage = damage;
+        tower.GetComponentInChildren<TowerBehavior>().fireRate = fireRate;
+        tower.GetComponentInChildren<TowerBehavior>().turnSpeed = turnSpeed;
+        tower.GetComponentInChildren<TowerBehavior>().projectileSpeed = projSpeed;
+        tower.GetComponentInChildren<TowerBehavior>().isPlaced = true; // enable current tower
+
+        SelfDestroy(); // destroy old tower
+    }
+
+    // Upgrade using the stats in the upgraded tower object
+    public void Upgrade()
+    {
+        if (upgradedTower == null) // abort if upgrade not defined
+            return;
+
+        isPlaced = false;                                              // disable old tower
+        GameObject tower = InstantiateUpgrade();                       // instantiate new tower
+        tower.GetComponentInChildren<TowerBehavior>().isPlaced = true; // enable current tower
+
+        SelfDestroy(); // destroy old tower
+    }
+
+    // Instantiate upgraded tower object
+    private GameObject InstantiateUpgrade()
+    {
+        // Instantiate new tower
+        GameObject tower = Instantiate(upgradedTower,
+            new Vector3(transform.position.x, 0, transform.position.z), transform.rotation
+        ) as GameObject;
+        // Set type and level
+        tower.GetComponentInChildren<TowerBehavior>().type = type;
+        tower.GetComponentInChildren<TowerBehavior>().level = level + 1;
+
+        return tower;
+    }
+
+    // Can be modified to add cool effects when the entity is destroyed.
+    protected virtual void SelfDestroy()
+    {
+        // Delete parent object if it exists
+        if (transform.parent == null)
+            Destroy(gameObject);
+        else
+            Destroy(transform.parent.gameObject);
+    }
+
+    // DEPRECATED: Computes and returns an interception position taking into account target position and projectile speed.
     private Vector3 TakeAim()
     {
         /*
@@ -210,71 +298,6 @@ public class TowerBehavior : MonoBehaviour
             return intercept_1;
         else
             return intercept_2;
-    }
-
-    // TODO: implement dispersion
-    private Vector3 Disperse(Vector3 aiming)
-    {
-        return aiming;
-    }
-
-    // Take damage.
-    public void takeDamage(float damage)
-    {
-        health = Mathf.Max(0, health - damage);
-        if (health == 0)
-            SelfDestroy();     
-    }
-
-    // Can be modified to add cool effects when the entity is destroyed.
-	protected virtual void SelfDestroy()
-	{
-		// Delete parent object if it exists
-		if (transform.parent == null)
-			Destroy(gameObject);
-		else
-			Destroy(transform.parent.gameObject);
-	}
-
-
-    // SETTERS for upgrading towers
-    public void setLevel(int l)
-    {
-        this.level = l;
-    }
-    public void setRange(float r)
-    {
-        this.range = r;
-    }
-
-    public void setHealth(float h)
-    {
-        this.health = h;
-    }
-
-    public void addCost(int c)
-    {
-        this.cost += c;
-    }
-
-    public void setDamage(float d)
-    {
-        this.damage = d;
-    }
-
-    public void setFireRate(float fr)
-    {
-        this.fireRate = fr;
-    }
-
-    public void setTurnSpeed(float ts)
-    {
-        this.turnSpeed = ts;
-    }
-
-    public void setProjectileSpeed(float ps)
-    {
-        this.projectileSpeed = ps;
     }
 
 }

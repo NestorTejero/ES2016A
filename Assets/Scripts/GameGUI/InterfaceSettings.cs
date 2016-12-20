@@ -23,9 +23,9 @@ public class InterfaceSettings {
 
 	[Header("Controles")]
 	public MenuButton BotonVolver = new MenuButton();
-	public MenuButton BotonSilenciarGeneral = new MenuButton();
+	/*public MenuButton BotonSilenciarGeneral = new MenuButton();
 	public MenuButton BotonSilenciarMenu = new MenuButton();
-	public MenuButton BotonSilenciarJuego = new MenuButton ();
+	public MenuButton BotonSilenciarJuego = new MenuButton ();*/
 
 	[Header("Slider preferencias")]
 	public InterfaceSlider VolumenGeneral = new InterfaceSlider ();
@@ -45,7 +45,7 @@ public class InterfaceSettings {
 				LogicConnector.Pause ();
 			}
 
-			if (this.BotonSilenciarGeneral.Draw ()) {
+		/*	if (this.BotonSilenciarGeneral.Draw ()) {
 				PlayerPrefs.SetFloat ("VolumenGeneral", 0);
 				LogicConnector.triggerVolumeUpdate ();
 			}
@@ -58,7 +58,7 @@ public class InterfaceSettings {
 			if (this.BotonSilenciarJuego.Draw ()) {
 				PlayerPrefs.SetFloat ("VolumenJuego", 0);
 				LogicConnector.triggerVolumeUpdate ();
-			}
+			}*/
 
 			float PreviousVolumenGeneral = PlayerPrefs.GetFloat ("VolumenGeneral");
 			this.VolumenGeneral.Value = PreviousVolumenGeneral;

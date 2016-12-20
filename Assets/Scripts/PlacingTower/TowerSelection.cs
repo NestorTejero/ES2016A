@@ -44,6 +44,10 @@ public class TowerSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Cancel selection if tower has been destroyed
+        if (LogicConnector.getTowerSelected() && tower == null)
+            LogicConnector.setTowerSelected(false);    
+
         // Check click
         if (Input.GetMouseButtonDown(0) && LogicConnector.isInGame())
         {
@@ -60,6 +64,7 @@ public class TowerSelection : MonoBehaviour
                 Rect rectUpgrade = LogicConnector.getRectUpgrade();
                 Rect rectSell = LogicConnector.getRectSell();
 
+                // Upgrade currently selected tower (if not null)
                 if (v3Pos.x >= rectUpgrade.x && v3Pos.x <= rectUpgrade.x + rectUpgrade.width && v3Pos.y >= rectUpgrade.y && v3Pos.y <= rectUpgrade.y + rectUpgrade.height && LogicConnector.getTowerSelected())
                 {
 
@@ -68,6 +73,15 @@ public class TowerSelection : MonoBehaviour
                     setTowerVariables();
 
                 }
+                // Sell currently selected tower (if not null)
+                else if (v3Pos.x >= rectSell.x && v3Pos.x <= rectSell.x + rectSell.width && v3Pos.y >= rectSell.y && v3Pos.y <= rectSell.y + rectSell.height && LogicConnector.getTowerSelected())
+                {
+                    LogicConnector.setSellSelected(true);
+                    sellTower();
+                    setTowerVariables();
+
+                }
+                // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
                 else if (hit.transform.gameObject.tag == "tower")
                 {
                     if (tower != null)
@@ -83,18 +97,7 @@ public class TowerSelection : MonoBehaviour
                     // means OnGUI method will draw the buttons and evaluate the click on them
                     LogicConnector.setTowerSelected(true);
                     setTowerVariables();
-                }
-                // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
-                
-                else if (v3Pos.x >= rectSell.x && v3Pos.x <= rectSell.x+ rectSell.width && v3Pos.y >= rectSell.y && v3Pos.y <= rectSell.y+ rectSell.height && LogicConnector.getTowerSelected())
-                {
-                    LogicConnector.setSellSelected(true);
-                    sellTower();
-                    setTowerVariables();
-
-
-                }
-
+                } 
                 // If we already have a tower selected, reset the color and unselect it
                 else
                 {
@@ -106,7 +109,6 @@ public class TowerSelection : MonoBehaviour
                         tower = null;
                         LogicConnector.setTowerSelected(false);
                     }
-
                 }              
 
             }
@@ -126,11 +128,11 @@ public class TowerSelection : MonoBehaviour
         if (towerBehavior != null)
         {
             // Set variables
-            towerName = tower.name;
+            towerName = towerBehavior.type;
             towerLevel = towerBehavior.level;
 
 			if (towerName == "torre-piedra")
-				LogicConnector.setTowerName ("Stone Tower");
+				LogicConnector.setTowerName ("Catapult Tower");
 			else if (towerName == "torre-tanque")
 				LogicConnector.setTowerName ("Dinotank");
 			else if (towerName == "torre-avion")
@@ -164,7 +166,7 @@ public class TowerSelection : MonoBehaviour
                 LogicConnector.setTowerHealthUpgrade(Double.Parse(towerNode[towerLevel]["health"].InnerText));
 
             } else if (towerNode != null && towerName == "torre-muro") {
-				// Tower is a WALL
+                // Tower is a WALL
 				LogicConnector.setTowerCostUpgrade (0);
 				LogicConnector.setTowerDamageUpgrade (0);
 				LogicConnector.setTowerRangeUpgrade (0);
@@ -173,8 +175,11 @@ public class TowerSelection : MonoBehaviour
             }
             else
             {
-
                 LogicConnector.setTowerCostUpgrade(0);
+                LogicConnector.setTowerDamageUpgrade(Double.Parse(towerNode[towerLevel - 1]["damage"].InnerText));
+                LogicConnector.setTowerRangeUpgrade(Double.Parse(towerNode[towerLevel - 1]["range"].InnerText));
+                LogicConnector.setTowerFirerateUpgrade(Double.Parse(towerNode[towerLevel - 1]["firerate"].InnerText));
+                LogicConnector.setTowerHealthUpgrade(Double.Parse(towerNode[towerLevel - 1]["health"].InnerText));
             }
         }
     }
@@ -208,18 +213,19 @@ public class TowerSelection : MonoBehaviour
                 LogicConnector.decreaseCredit(upgradeCost);
 
                 // Update stats
-                towerBehavior.setRange(float.Parse(towerNode[towerLevel]["range"].InnerText));
-                towerBehavior.setHealth(float.Parse(towerNode[towerLevel]["health"].InnerText));
-                towerBehavior.setDamage(float.Parse(towerNode[towerLevel]["damage"].InnerText));
-                towerBehavior.setFireRate(float.Parse(towerNode[towerLevel]["firerate"].InnerText));
-                towerBehavior.setTurnSpeed(float.Parse(towerNode[towerLevel]["turnspeed"].InnerText));
-                towerBehavior.setProjectileSpeed(float.Parse(towerNode[towerLevel]["projectilespeed"].InnerText));
-                // add total cost, for selling purposes (returning a proportion of the total cost: initial + upgrades)
-                towerBehavior.addCost(Int32.Parse(towerNode[towerLevel]["cost"].InnerText));
+                float health = float.Parse(towerNode[towerLevel]["health"].InnerText);
+                float range = float.Parse(towerNode[towerLevel]["range"].InnerText);
 
-                // Update tower level
-                towerLevel += 1;
-                towerBehavior.setLevel(towerLevel);
+                float damage = float.Parse(towerNode[towerLevel]["damage"].InnerText);
+                float fireRate = float.Parse(towerNode[towerLevel]["firerate"].InnerText);
+                float turnSpeed = float.Parse(towerNode[towerLevel]["turnspeed"].InnerText);
+                float projSpeed = float.Parse(towerNode[towerLevel]["projectilespeed"].InnerText);
+
+                // total cost, for selling purposes (returning a proportion of the total cost: initial + upgrades)
+                int costIncrease = Int32.Parse(towerNode[towerLevel]["cost"].InnerText);
+
+                towerBehavior.Upgrade(health, range, damage, fireRate, turnSpeed, projSpeed, costIncrease); // Upgrade tower level
+
             }
             else
             {

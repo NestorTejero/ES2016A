@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 139608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.44, y: 0.0005, z: 0.44}
+  m_LocalScale: {x: 0.55, y: 0.0005, z: 0.55}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 440666}
@@ -363,19 +363,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
   level: 1
   range: 32
   minRange: 14
   health: 1
   cost: 100
   damage: 5
-  fireRate: 1
+  fireRate: 0.8
   turnSpeed: 2
   canRotate: 1
   canRotatePitch: 0
   projectileSpeed: 15
   isPlaced: 0
+  isWall: 0
   projectilePrefab: {fileID: 193404, guid: 99333f48ea6cc6046a2944b274e50666, type: 2}
+  upgradedTower: {fileID: 138756, guid: 1c11fbccafc0e5a48adbb3db9a01d2af, type: 2}
 --- !u!135 &13574110
 SphereCollider:
   m_ObjectHideFlags: 1

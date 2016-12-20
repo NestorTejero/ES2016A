@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9f77a8b3290faca4a8ff2cdc60fe4299
-timeCreated: 1480096127
+timeCreated: 1482189529
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -21,6 +21,15 @@ ModelImporter:
     100026: Cube.001
     100028: Lamp
     100030: //RootNode
+    100032: Lamp.001
+    100034: Lamp.002
+    100036: Lamp.003
+    100038: Lamp.004
+    100040: Lamp.005
+    100042: Lamp.006
+    100044: Lamp.007
+    100046: Lamp.008
+    100048: Lamp.009
     400000: Armature
     400002: Bone
     400004: Bone.001
@@ -37,12 +46,24 @@ ModelImporter:
     400026: Cube.001
     400028: Lamp
     400030: //RootNode
+    400032: Lamp.001
+    400034: Lamp.002
+    400036: Lamp.003
+    400038: Lamp.004
+    400040: Lamp.005
+    400042: Lamp.006
+    400044: Lamp.007
+    400046: Lamp.008
+    400048: Lamp.009
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Cube.001
+    4300002: tower-tanque-trex
     7400000: Armature|Action
     9500000: //RootNode
     13700000: Cube.001
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:

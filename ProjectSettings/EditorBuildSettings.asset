@@ -8,6 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start2.unity
   - enabled: 1
+    path: Assets/Scenes/StartVideo.unity
+  - enabled: 1
     path: Assets/Scenes/Pantalla.unity
   - enabled: 1
     path: Assets/Scenes/menuScene.unity
