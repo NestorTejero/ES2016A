@@ -25,6 +25,7 @@ public class TowerBehavior : MonoBehaviour
 	private float searchTimeout = 1f;	// Time in seconds in between searching for enemies
 
 	public bool isPlaced = false;		// Toggle this in editor to test turrets without playing
+    public bool isWall = false;         // Wall flag. Object will not shoot if enabled.
 
     private GameObject target = null;
 	private float targetSpeed = 0;
@@ -39,6 +40,8 @@ public class TowerBehavior : MonoBehaviour
 	// Use this for initialization
 	public void StartTower(){
 		isPlaced = true;
+        if (isWall)
+            return;
 
 		// Delete markers once placed
 		GameObject rangeEnabledMarker = transform.parent.Find("range-enabled").gameObject;
@@ -50,8 +53,8 @@ public class TowerBehavior : MonoBehaviour
 	}
 
 	public void Update(){
-		// If the tower has not been placed, do nothing
-		if (!isPlaced)
+		// If the tower has not been placed, or is a wall, do nothing
+		if (!isPlaced || isWall)
 			return;
 
 		// Recheck if our target has gone out of range
@@ -132,7 +135,12 @@ public class TowerBehavior : MonoBehaviour
 
 		// Return found target, or null if none in range
 		if (foundTarget != null) {
-			targetSpeed = foundTarget.GetComponent<NavMeshAgent> ().speed;
+            NavMeshAgent agent = foundTarget.GetComponent<NavMeshAgent>(); // target's navigation agent
+            // Check if target is static
+            if (agent.velocity.x == 0 && agent.velocity.z == 0)
+                targetSpeed = 0;            // this assignation avoids computing square rooted vector magnitudes
+            else
+                targetSpeed = agent.speed;  // use speed stat normally if target is not static
 			return foundTarget;
 		}
 		return null;
@@ -166,6 +174,7 @@ public class TowerBehavior : MonoBehaviour
 			// Set tags
 			pb.parentTagName = gameObject.tag;
 			pb.targetTag = target.tag;
+            pb.setUpSpeed(target.transform.position);
         }
     }
 
