@@ -13,6 +13,7 @@ GameObject:
   - 208: {fileID: 20888410}
   - 65: {fileID: 6549618}
   - 54: {fileID: 5453396}
+  - 64: {fileID: 6452992}
   m_Layer: 0
   m_Name: torre-avion
   m_TagString: tower
@@ -339,6 +340,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6452992
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: c48cd48f12cf0c74e86e47d45fbcbb5d, type: 3}
 --- !u!65 &6549618
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -347,7 +360,7 @@ BoxCollider:
   m_GameObject: {fileID: 106906}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.09756167, z: 0.08}
   m_Center: {x: 0.000011940483, y: 0.026219176, z: 3.1044087e-12}
