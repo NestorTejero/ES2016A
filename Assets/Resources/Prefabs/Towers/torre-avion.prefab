@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
   level: 1
   range: 28
   minRange: 14
@@ -376,6 +377,7 @@ MonoBehaviour:
   isPlaced: 0
   isWall: 0
   projectilePrefab: {fileID: 107780, guid: 2e2fb162c7998834b8f557f11232dc33, type: 2}
+  upgradedTower: {fileID: 156014, guid: 1c820d521dcdf5440821df3cf92ed3e1, type: 2}
 --- !u!136 &13663390
 CapsuleCollider:
   m_ObjectHideFlags: 1

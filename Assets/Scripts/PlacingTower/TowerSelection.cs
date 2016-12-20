@@ -44,6 +44,10 @@ public class TowerSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Cancel selection if tower has been destroyed
+        if (LogicConnector.getTowerSelected() && tower == null)
+            LogicConnector.setTowerSelected(false);    
+
         // Check click
         if (Input.GetMouseButtonDown(0) && LogicConnector.isInGame())
         {
@@ -105,7 +109,6 @@ public class TowerSelection : MonoBehaviour
                         tower = null;
                         LogicConnector.setTowerSelected(false);
                     }
-
                 }              
 
             }
@@ -125,7 +128,7 @@ public class TowerSelection : MonoBehaviour
         if (towerBehavior != null)
         {
             // Set variables
-            towerName = tower.name;
+            towerName = towerBehavior.type;
             towerLevel = towerBehavior.level;
 
 			if (towerName == "torre-piedra")
@@ -172,7 +175,6 @@ public class TowerSelection : MonoBehaviour
             }
             else
             {
-
                 LogicConnector.setTowerCostUpgrade(0);
             }
         }
@@ -207,18 +209,19 @@ public class TowerSelection : MonoBehaviour
                 LogicConnector.decreaseCredit(upgradeCost);
 
                 // Update stats
-                towerBehavior.setRange(float.Parse(towerNode[towerLevel]["range"].InnerText));
-                towerBehavior.setHealth(float.Parse(towerNode[towerLevel]["health"].InnerText));
-                towerBehavior.setDamage(float.Parse(towerNode[towerLevel]["damage"].InnerText));
-                towerBehavior.setFireRate(float.Parse(towerNode[towerLevel]["firerate"].InnerText));
-                towerBehavior.setTurnSpeed(float.Parse(towerNode[towerLevel]["turnspeed"].InnerText));
-                towerBehavior.setProjectileSpeed(float.Parse(towerNode[towerLevel]["projectilespeed"].InnerText));
-                // add total cost, for selling purposes (returning a proportion of the total cost: initial + upgrades)
-                towerBehavior.addCost(Int32.Parse(towerNode[towerLevel]["cost"].InnerText));
+                float health = float.Parse(towerNode[towerLevel]["health"].InnerText);
+                float range = float.Parse(towerNode[towerLevel]["range"].InnerText);
 
-                // Update tower level
-                towerLevel += 1;
-                towerBehavior.setLevel(towerLevel);
+                float damage = float.Parse(towerNode[towerLevel]["damage"].InnerText);
+                float fireRate = float.Parse(towerNode[towerLevel]["firerate"].InnerText);
+                float turnSpeed = float.Parse(towerNode[towerLevel]["turnspeed"].InnerText);
+                float projSpeed = float.Parse(towerNode[towerLevel]["projectilespeed"].InnerText);
+
+                // total cost, for selling purposes (returning a proportion of the total cost: initial + upgrades)
+                int costIncrease = Int32.Parse(towerNode[towerLevel]["cost"].InnerText);
+
+                towerBehavior.Upgrade(health, range, damage, fireRate, turnSpeed, projSpeed, costIncrease); // Upgrade tower level
+
             }
             else
             {
