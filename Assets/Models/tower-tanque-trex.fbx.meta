@@ -55,12 +55,15 @@ ModelImporter:
     400044: Lamp.007
     400046: Lamp.008
     400048: Lamp.009
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Cube.001
+    4300002: tower-tanque-trex
     7400000: Armature|Action
     9500000: //RootNode
     13700000: Cube.001
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
