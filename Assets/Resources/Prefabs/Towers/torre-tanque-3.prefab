@@ -234,7 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  type: 
+  level: 3
   range: 34
   minRange: 14
   health: 3
@@ -246,7 +247,9 @@ MonoBehaviour:
   canRotatePitch: 0
   projectileSpeed: 30
   isPlaced: 0
+  isWall: 0
   projectilePrefab: {fileID: 171256, guid: 1fa0324e93111104fb606c3dd1fe82bc, type: 2}
+  upgradedTower: {fileID: 0}
 --- !u!135 &13510998
 SphereCollider:
   m_ObjectHideFlags: 1
