@@ -184,7 +184,8 @@
 				<money>10</money>
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
-				<Enemy>
+			</Enemy>
+			<Enemy>
 				<name>enemy-neanderthal</name>
 				<damage>1.0</damage>
 				<health>14.5</health>
@@ -192,7 +193,6 @@
 				<money>10</money>
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
-			</Enemy>
 			</Enemy>
 		</Round>
 		
@@ -248,7 +248,7 @@
 			<Enemy>
 				<name>enemy-gordo</name>
 				<damage>1.0</damage>
-				<health>35</health>
+				<health>20</health>
 				<speed>3.0</speed>
 				<money>10</money>
 				<amount>5</amount>
@@ -257,7 +257,7 @@
 			<Enemy>
 				<name>enemy-porky</name>
 				<damage>1.0</damage>
-				<health>10</health>
+				<health>35</health>
 				<speed>2.0</speed>
 				<money>10</money>
 				<amount>5</amount>
