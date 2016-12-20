@@ -60,6 +60,7 @@ public class TowerSelection : MonoBehaviour
                 Rect rectUpgrade = LogicConnector.getRectUpgrade();
                 Rect rectSell = LogicConnector.getRectSell();
 
+                // Upgrade currently selected tower (if not null)
                 if (v3Pos.x >= rectUpgrade.x && v3Pos.x <= rectUpgrade.x + rectUpgrade.width && v3Pos.y >= rectUpgrade.y && v3Pos.y <= rectUpgrade.y + rectUpgrade.height && LogicConnector.getTowerSelected())
                 {
 
@@ -68,6 +69,15 @@ public class TowerSelection : MonoBehaviour
                     setTowerVariables();
 
                 }
+                // Sell currently selected tower (if not null)
+                else if (v3Pos.x >= rectSell.x && v3Pos.x <= rectSell.x + rectSell.width && v3Pos.y >= rectSell.y && v3Pos.y <= rectSell.y + rectSell.height && LogicConnector.getTowerSelected())
+                {
+                    LogicConnector.setSellSelected(true);
+                    sellTower();
+                    setTowerVariables();
+
+                }
+                // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
                 else if (hit.transform.gameObject.tag == "tower")
                 {
                     if (tower != null)
@@ -83,18 +93,7 @@ public class TowerSelection : MonoBehaviour
                     // means OnGUI method will draw the buttons and evaluate the click on them
                     LogicConnector.setTowerSelected(true);
                     setTowerVariables();
-                }
-                // Check if we clicked a tower: select a new one and draw the buttons from OnGUI
-                
-                else if (v3Pos.x >= rectSell.x && v3Pos.x <= rectSell.x+ rectSell.width && v3Pos.y >= rectSell.y && v3Pos.y <= rectSell.y+ rectSell.height && LogicConnector.getTowerSelected())
-                {
-                    LogicConnector.setSellSelected(true);
-                    sellTower();
-                    setTowerVariables();
-
-
-                }
-
+                } 
                 // If we already have a tower selected, reset the color and unselect it
                 else
                 {
