@@ -1,39 +1,15 @@
 fileFormatVersion: 2
-guid: be59974cd3f5c1b41b25dd5cf985d5aa
-timeCreated: 1481577287
+guid: c48cd48f12cf0c74e86e47d45fbcbb5d
+timeCreated: 1482206519
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Camera
-    100002: Camera.001
-    100004: Cube
-    100006: Lamp
-    100008: Lamp.001
-    100010: Lamp.002
-    100012: Plane
-    100014: //RootNode
-    400000: Camera
-    400002: Camera.001
-    400004: Cube
-    400006: Lamp
-    400008: Lamp.001
-    400010: Lamp.002
-    400012: Plane
-    400014: //RootNode
-    2300000: Cube
-    2300002: Plane
-    2300004: //RootNode
-    3300000: Cube
-    3300002: Plane
-    3300004: //RootNode
-    4300000: Plane
-    4300002: Cube
-    4300004: tower-avion
-    4300006: tower-avion-dino
-    7400000: Cube|Disparo
-    7400002: Cube|projectile_missile|projectile_missile|Fly|projectile_missile|Fl
-    9500000: //RootNode
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: tower-avion-base
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,7 +50,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 30
     normalImportMode: 1
     tangentImportMode: 3
   importAnimation: 1
@@ -92,7 +68,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
