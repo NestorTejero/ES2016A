@@ -349,7 +349,7 @@ MeshCollider:
   m_GameObject: {fileID: 108318}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300002, guid: 009491b8c417eba479219c1c9fe7e2b1, type: 3}
@@ -361,7 +361,7 @@ BoxCollider:
   m_GameObject: {fileID: 108318}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.032914363, y: 0.05747428, z: 0.032913536}
   m_Center: {x: 0.000012519769, y: 0.028653124, z: -0.00000082235783}
