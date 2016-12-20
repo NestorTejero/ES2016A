@@ -135,7 +135,10 @@ public class ControlWaves : MonoBehaviour
                 else
                 {
                     if (LogicConnector.isInBattling())
+                    {
+                        LogicConnector.increaseCredit(currentRound * 100);
                         LogicConnector.Break();
+                    }                      
                     LogicConnector.decreaseTime(Time.deltaTime);
                 }
                 
