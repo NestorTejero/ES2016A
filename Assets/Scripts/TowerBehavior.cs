@@ -37,7 +37,12 @@ public class TowerBehavior : MonoBehaviour
     // Upgrades
     public GameObject upgradedTower;  // upgrade
 
+	// Optiona fire animation
+	private Animator animator;
+
 	public void Start(){
+		animator = gameObject.GetComponent<Animator> ();
+
         if (type == "")
         {
             try
@@ -173,6 +178,9 @@ public class TowerBehavior : MonoBehaviour
         if (target != null)
         {
             //Vector3 aim = TakeAim();
+
+			if (animator)
+				animator.SetTrigger ("shoot");
 
 			// Instantiate new Projectile Prefab, set it's position
 			// to the muzzle of the turret and looking forward
