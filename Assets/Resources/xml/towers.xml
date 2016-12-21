@@ -18,7 +18,7 @@
 				<range>29</range>
 				<health>1.0</health>
 				<cost>100</cost>
-				<damage>6.5</damage>
+				<damage>7.5</damage>
 				<firerate>1.8</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
