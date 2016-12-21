@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: 588b417139e27454680aad7a1c5ddba1
+timeCreated: 1481377903
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: antebrazo-der
+    100002: antebrazo-izq
+    100004: Armature neanderthal
+    100006: brazo-der
+    100008: brazo-izq
+    100010: cabrza
+    100012: cadera-der
+    100014: cadera-izq
+    100016: cervicales
+    100018: Columna
+    100020: cuello
+    100022: enemy-neanderthal
+    100024: //RootNode
+    100026: gemelo-der
+    100028: gemelo-izq
+    100030: hombro-der
+    100032: hombro-izq
+    100034: pie-der
+    100036: pie-izq
+    100038: pierna-der
+    100040: pierna-izq
+    400000: antebrazo-der
+    400002: antebrazo-izq
+    400004: Armature neanderthal
+    400006: brazo-der
+    400008: brazo-izq
+    400010: cabrza
+    400012: cadera-der
+    400014: cadera-izq
+    400016: cervicales
+    400018: Columna
+    400020: cuello
+    400022: //RootNode
+    400024: enemy-neanderthal
+    400026: gemelo-der
+    400028: gemelo-izq
+    400030: hombro-der
+    400032: hombro-izq
+    400034: pie-der
+    400036: pie-izq
+    400038: pierna-der
+    400040: pierna-izq
+    4300000: enemy-neanderthal
+    7400000: Armature neanderthal|enemy-neanderthal-atacar
+    7400002: Armature neanderthal|enemy-neanderthal-caminar
+    9500000: //RootNode
+    13700000: enemy-neanderthal
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

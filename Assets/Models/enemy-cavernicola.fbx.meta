@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: cf021cc9ca086014cbd5b25cc602ec66
+timeCreated: 1476982841
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: Point
+    100006: Point.001
+    100008: Point.002
+    100010: Point.003
+    100012: Sphere
+    100014: Bone
+    100016: Bone.001
+    100018: Bone.002
+    100020: Bone.003
+    100022: Bone.004
+    100024: Bone.004_end
+    100026: Bone.006
+    100028: Bone.007
+    100030: Bone.008
+    100032: Bone.009
+    100034: Bone.009_end
+    100036: Bone.010
+    100038: Bone.011
+    100040: Bone.012
+    100042: Bone.013
+    100044: Bone.014
+    100046: Bone.014_end
+    100048: Bone.015
+    100050: Bone.016
+    100052: Bone.016_end
+    100054: Bone_end
+    100056: cavernicolabasico
+    100058: cavernicolabasicoArmature
+    100060: enemy-cavernicola
+    100062: enemy-cavernicolaArmature
+    400000: Camera
+    400002: //RootNode
+    400004: Point
+    400006: Point.001
+    400008: Point.002
+    400010: Point.003
+    400012: Sphere
+    400014: Bone
+    400016: Bone.001
+    400018: Bone.002
+    400020: Bone.003
+    400022: Bone.004
+    400024: Bone.004_end
+    400026: Bone.006
+    400028: Bone.007
+    400030: Bone.008
+    400032: Bone.009
+    400034: Bone.009_end
+    400036: Bone.010
+    400038: Bone.011
+    400040: Bone.012
+    400042: Bone.013
+    400044: Bone.014
+    400046: Bone.014_end
+    400048: Bone.015
+    400050: Bone.016
+    400052: Bone.016_end
+    400054: Bone_end
+    400056: cavernicolabasico
+    400058: cavernicolabasicoArmature
+    400060: enemy-cavernicola
+    400062: enemy-cavernicolaArmature
+    2300000: Sphere
+    2300002: cavernicolabasico
+    2300004: enemy-cavernicola
+    3300000: Sphere
+    3300002: cavernicolabasico
+    3300004: enemy-cavernicola
+    4300000: Sphere
+    4300002: cavernicolabasico
+    4300004: enemy-cavernicola
+    7400000: enemy-cavernicolaArmature|Action
+    7400002: enemy-cavernicolaArmature|Andar
+    7400004: enemy-cavernicolaArmature|ATACAR
+    7400006: enemy-cavernicolaArmature|attack
+    7400008: enemy-cavernicolaArmature|caminar
+    7400010: enemy-cavernicolaArmature|wait
+    7400012: enemy-cavernicolaArmature|walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: enemy-cavernicola
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: enemy-cavernicolaArmature|Andar
+      takeName: enemy-cavernicolaArmature|Andar
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: enemy-cavernicola
+        weight: 1
+      - path: enemy-cavernicolaArmature
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone/Bone_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.014_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015/Bone.016
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: enemy-cavernicolaArmature|attack
+      takeName: enemy-cavernicolaArmature|attack
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: enemy-cavernicola
+        weight: 1
+      - path: enemy-cavernicolaArmature
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone/Bone_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.014_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015/Bone.016
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: enemy-cavernicolaArmature|wait
+      takeName: enemy-cavernicolaArmature|wait
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: enemy-cavernicola
+        weight: 1
+      - path: enemy-cavernicolaArmature
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone/Bone_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.006/Bone.007/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.013/Bone.014/Bone.014_end
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015/Bone.016
+        weight: 1
+      - path: enemy-cavernicolaArmature/Bone.010/Bone.011/Bone.012/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

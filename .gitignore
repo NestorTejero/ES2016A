@@ -28,3 +28,19 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#Blender generated files
+*.blend1
+*.blend1.meta
+*.blend.meta
+
+============
+OS generated
+============
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
