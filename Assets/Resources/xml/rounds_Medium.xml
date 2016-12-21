@@ -434,13 +434,22 @@
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
 			</Enemy>
+      <Enemy>
+        <name>enemy-kid</name>
+        <damage>4.0</damage>
+        <health>150</health>
+        <speed>6.5</speed>
+        <money>150</money>
+        <amount>1</amount>
+        <spawnTime>4.0</spawnTime>
+      </Enemy>
 		</Round>
 		
 
 		
 		<Round id="10">
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-kid</name>
 				<damage>5.0</damage>
 				<health>5000</health>
 				<speed>1.0</speed>

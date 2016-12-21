@@ -440,7 +440,7 @@
 		
 		<Round id="10">
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-kid</name>
 				<damage>5.0</damage>
 				<health>3000</health>
 				<speed>1.0</speed>

@@ -338,6 +338,15 @@
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
 			</Enemy>
+      <Enemy>
+        <name>enemy-kid</name>
+        <damage>5.0</damage>
+        <health>300</health>
+        <speed>7.5</speed>
+        <money>50</money>
+        <amount>1</amount>
+        <spawnTime>4.0</spawnTime>
+      </Enemy>
 		</Round>
 		
 		<Round id="8">
@@ -386,6 +395,15 @@
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
 			</Enemy>
+      <Enemy>
+        <name>enemy-kid</name>
+        <damage>5.0</damage>
+        <health>300</health>
+        <speed>7.5</speed>
+        <money>50</money>
+        <amount>1</amount>
+        <spawnTime>4.0</spawnTime>
+      </Enemy>
 		</Round>
 		
 		<Round id="9">
@@ -434,13 +452,22 @@
 				<amount>5</amount>
 				<spawnTime>4.0</spawnTime>
 			</Enemy>
+      <Enemy>
+        <name>enemy-kid</name>
+        <damage>5.0</damage>
+        <health>300</health>
+        <speed>7.5</speed>
+        <money>50</money>
+        <amount>1</amount>
+        <spawnTime>4.0</spawnTime>
+      </Enemy>
 		</Round>
 		
 
 		
 		<Round id="10">
 			<Enemy>
-				<name>enemy-gordo</name>
+				<name>enemy-kid</name>
 				<damage>5.0</damage>
 				<health>7500</health>
 				<speed>1.0</speed>

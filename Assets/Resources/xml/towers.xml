@@ -49,8 +49,8 @@
 				<health>3.0</health>
 				<cost>500</cost>
 				<damage>15.0</damage>
-				<firerate>2.0</firerate>
-				<turnspeed>1.0</turnspeed>
+				<firerate>3.0</firerate>
+				<turnspeed>0.5</turnspeed>
 				<projectilespeed>30.0</projectilespeed>
 			</Level>
 			<Level id="2">
@@ -58,7 +58,7 @@
 				<health>4.0</health>
 				<cost>250</cost>
 				<damage>20.0</damage>
-				<firerate>1.5</firerate>
+				<firerate>2.0</firerate>
 				<turnspeed>1.0</turnspeed>
 				<projectilespeed>40.0</projectilespeed>
 			</Level>
@@ -67,7 +67,7 @@
 				<health>8.0</health>
 				<cost>750</cost>
 				<damage>30.0</damage>
-				<firerate>1.0</firerate>
+				<firerate>2.0</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>42.0</projectilespeed>
 			</Level>
