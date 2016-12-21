@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 446584}
   - 33: {fileID: 3328608}
-  - 65: {fileID: 6590774}
   - 23: {fileID: 2313532}
   - 114: {fileID: 11430290}
+  - 65: {fileID: 6590774}
   - 54: {fileID: 5486458}
-  - 208: {fileID: 20816660}
+  - 208: {fileID: 20829720}
   m_Layer: 0
   m_Name: torre-muro
   m_TagString: tower
@@ -27,9 +27,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.35107, y: 1.2, z: 92.42937}
-  m_LocalScale: {x: 15, y: 2, z: 1}
+  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 110.103035, y: 0, z: 81.1783}
+  m_LocalScale: {x: 80, y: 100, z: 100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,14 +44,14 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e9291fbef64abf14a89577ad8a60636b, type: 2}
+  - {fileID: 2100000, guid: 32373b5451e74b54a8e211c5fae6ef29, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_MinimumChartSize: 4
@@ -66,7 +66,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114160}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300002, guid: 30df361050238524cae6d4bd244eff38, type: 3}
 --- !u!54 &5486458
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -92,8 +92,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.18793549, y: 0.044144478, z: 0.016120179}
+  m_Center: {x: 0.0012534332, y: 0.017072238, z: 0.00015296861}
 --- !u!114 &11430290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65e878c6240024a9a12685f1bb98de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: torre-muro
   level: 1
   range: 0
   minRange: 0
@@ -119,7 +120,8 @@ MonoBehaviour:
   isPlaced: 1
   isWall: 1
   projectilePrefab: {fileID: 0}
---- !u!208 &20816660
+  upgradedTower: {fileID: 0}
+--- !u!208 &20829720
 NavMeshObstacle:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,11 +130,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.094000004, y: 0.019000001, z: 0.006}
   m_MoveThreshold: 0.1
-  m_Carve: 1
+  m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.001, y: 0.019000001, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1001 &100100000
 Prefab:
