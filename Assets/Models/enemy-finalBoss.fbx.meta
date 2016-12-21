@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 8899fc45dd85a3e4eba11e1edd34786c
+timeCreated: 1482199455
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: aleta_del_der
+    100002: aleta_del_der.001
+    100004: aleta_del_der.001_end
+    100006: aleta_del_izq
+    100008: aleta_del_izq.001
+    100010: aleta_del_izq.001_end
+    100012: antebrazo_der_viejo
+    100014: antebrazo_izq_viejo
+    100016: Bone.005
+    100018: Bone.006
+    100020: Bone.006_end
+    100022: Bone.008
+    100024: Bone.009
+    100026: Bone.009_end
+    100028: brazo_der_viejo
+    100030: brazo_izq_viejo
+    100032: cabeza_tort
+    100034: cabeza_tort_end
+    100036: cabeza_viejo
+    100038: cabeza_viejo_end
+    100040: Camera
+    100042: caparazon
+    100044: columna_tort
+    100046: columna_tort.002
+    100048: columna_tort.003
+    100050: columna_tort.004
+    100052: columna_tort.004_end
+    100054: columna_tort.007
+    100056: columna_tort.008
+    100058: columna_tort.008_end
+    100060: columna_viejo
+    100062: //RootNode
+    100064: enemy-finalBoss_armature
+    100066: enemy-finalBoss_caveman
+    100068: hombro_der_viejo
+    100070: hombro_iz_viejo
+    100072: Lamp
+    100074: Lamp.001
+    100076: Lamp.002
+    100078: mano_der_viejo
+    100080: mano_der_viejo_end
+    100082: mano_izq_viejo
+    100084: mano_izq_viejo_end
+    100086: muslo_der_viejo
+    100088: muslo_izq_viejo
+    100090: pata_del_der
+    100092: pata_del_izq
+    100094: pata_tras_der
+    100096: pelvis_viejo
+    400000: aleta_del_der
+    400002: aleta_del_der.001
+    400004: aleta_del_der.001_end
+    400006: aleta_del_izq
+    400008: aleta_del_izq.001
+    400010: aleta_del_izq.001_end
+    400012: antebrazo_der_viejo
+    400014: antebrazo_izq_viejo
+    400016: Bone.005
+    400018: Bone.006
+    400020: Bone.006_end
+    400022: Bone.008
+    400024: Bone.009
+    400026: Bone.009_end
+    400028: brazo_der_viejo
+    400030: brazo_izq_viejo
+    400032: cabeza_tort
+    400034: cabeza_tort_end
+    400036: cabeza_viejo
+    400038: cabeza_viejo_end
+    400040: Camera
+    400042: caparazon
+    400044: columna_tort
+    400046: columna_tort.002
+    400048: columna_tort.003
+    400050: columna_tort.004
+    400052: columna_tort.004_end
+    400054: columna_tort.007
+    400056: columna_tort.008
+    400058: columna_tort.008_end
+    400060: columna_viejo
+    400062: //RootNode
+    400064: enemy-finalBoss_armature
+    400066: enemy-finalBoss_caveman
+    400068: hombro_der_viejo
+    400070: hombro_iz_viejo
+    400072: Lamp
+    400074: Lamp.001
+    400076: Lamp.002
+    400078: mano_der_viejo
+    400080: mano_der_viejo_end
+    400082: mano_izq_viejo
+    400084: mano_izq_viejo_end
+    400086: muslo_der_viejo
+    400088: muslo_izq_viejo
+    400090: pata_del_der
+    400092: pata_del_izq
+    400094: pata_tras_der
+    400096: pelvis_viejo
+    4300000: enemy-finalBoss_caveman
+    7400000: enemy-finalBoss_armature|Atack
+    7400002: enemy-finalBoss_armature|Walk
+    9500000: //RootNode
+    13700000: enemy-finalBoss_caveman
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

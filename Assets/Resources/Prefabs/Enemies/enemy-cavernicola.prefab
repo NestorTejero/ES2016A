@@ -344,7 +344,7 @@ GameObject:
   - 114: {fileID: 11469328}
   - 195: {fileID: 19593574}
   - 54: {fileID: 5472776}
-  - 65: {fileID: 6542310}
+  - 136: {fileID: 13648680}
   m_Layer: 0
   m_Name: enemy-cavernicola
   m_TagString: enemy
@@ -718,18 +718,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6542310
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.0253513, z: 1}
-  m_Center: {x: 0, y: 1.047813, z: 0}
 --- !u!95 &9558238
 Animator:
   serializedVersion: 3
@@ -787,6 +775,19 @@ MonoBehaviour:
   bloodPrefab: {fileID: 123304, guid: 78a177739f4d8414e9993bf35bc695ff, type: 2}
   isAttacking: 0
   targetLocked: 0
+--- !u!136 &13648680
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &13792544
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

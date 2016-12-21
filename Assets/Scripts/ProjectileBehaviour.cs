@@ -68,14 +68,15 @@ public class ProjectileBehaviour : MonoBehaviour {
         transform.position += transform.forward * speed * Time.deltaTime;
 		transform.position += transform.up * upSpeed * Time.deltaTime;
 
-		// Calculate delta position for pitch rotation
-		Vector3 deltaPos = transform.position - prevPos;
-		Vector3 lookAtPos = transform.position + deltaPos;
+
 
         // Update vertical speed
         upSpeed -= gravity * Time.deltaTime;
 
-        transform.LookAt (lookAtPos);
+		// Calculate delta position for pitch rotation
+		// Vector3 deltaPos = transform.position - prevPos;
+		// Vector3 lookAtPos = transform.position + deltaPos;
+        // transform.LookAt (lookAtPos);
     }
 
     // Manages the destruction of the projectile. Can be overriten to add cool effects.

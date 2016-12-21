@@ -305,6 +305,13 @@ public class LogicConnector {
         instance.difficulty = instance.Difficult.ToString();
     }
 
+    public static void SetDifficulty(Difficulty difficult)
+    {
+        LogicConnector instance = LogicConnector.getInstance();
+        instance.Difficult = difficult;
+        instance.difficulty = instance.Difficult.ToString();
+    }
+
     public static string GetDifficulty()
     {
         LogicConnector instance = LogicConnector.getInstance();
