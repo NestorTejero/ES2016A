@@ -15,29 +15,29 @@
 		</Tower>
 		<Tower name="torre-piedra">
 			<Level id="1">
-				<range>32.0</range>
+				<range>29</range>
 				<health>1.0</health>
 				<cost>100</cost>
 				<damage>7.5</damage>
-				<firerate>1.0</firerate>
+				<firerate>1.6</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="2">
-				<range>32.0</range>
+				<range>31.0</range>
 				<health>1.5</health>
 				<cost>50</cost>
-				<damage>10</damage>
-				<firerate>0.9</firerate>
+				<damage>12</damage>
+				<firerate>1.2</firerate>
 				<turnspeed>2.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>
 			<Level id="3">
-				<range>32.0</range>
+				<range>31.0</range>
 				<health>3.0</health>
 				<cost>150</cost>
 				<damage>15.0</damage>
-				<firerate>0.8</firerate>
+				<firerate>1.2</firerate>
 				<turnspeed>4.0</turnspeed>
 				<projectilespeed>15.0</projectilespeed>
 			</Level>

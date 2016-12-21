@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108318}
   m_LocalRotation: {x: 0, y: -0.38268346, z: 0, w: 0.9238795}
-  m_LocalPosition: {x: 154.80742, y: 0, z: 77.45027}
+  m_LocalPosition: {x: 50, y: 0, z: 100}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
   m_Children:
@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 139608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.0005, z: 0.55}
+  m_LocalScale: {x: 0.58, y: 0.0005, z: 0.58}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 440666}
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: torre-piedra
   level: 1
-  range: 32
+  range: 30
   minRange: 14
   health: 1
   cost: 100

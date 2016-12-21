@@ -219,13 +219,13 @@ public class TowerBehavior : MonoBehaviour
 			// to the muzzle of the turret and looking forward
 			GameObject proj = Instantiate(projectilePrefab,
 				transform.Find("muzzle").transform.position,
-				Quaternion.LookRotation(transform.forward)
+				Quaternion.LookRotation(transform.forward, transform.up)
 			) as GameObject;
 
 			// Edit Projectile parametres after instance
 			ProjectileBehaviour pb = proj.GetComponent<ProjectileBehaviour>();
 			pb.damage = damage;   // tower damage transferred to the projectile
-			pb.reach = 2 * range;     // projectile reach set as twice the tower's range
+			pb.reach = 3 * range;     // when the projectile despawns
 			pb.speed = projectileSpeed;
 			// Set tags
 			pb.parentTagName = gameObject.tag;
