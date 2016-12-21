@@ -13,6 +13,7 @@ GameObject:
   - 208: {fileID: 20865796}
   - 65: {fileID: 6522164}
   - 54: {fileID: 5448386}
+  - 64: {fileID: 6411742}
   m_Layer: 0
   m_Name: torre-piedra
   m_TagString: tower
@@ -156,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108318}
   m_LocalRotation: {x: 0, y: -0.38268346, z: 0, w: 0.9238795}
-  m_LocalPosition: {x: 154.80742, y: 0, z: 77.45027}
+  m_LocalPosition: {x: 50, y: 0, z: 100}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
   m_Children:
@@ -215,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 139608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.0005, z: 0.55}
+  m_LocalScale: {x: 0.58, y: 0.0005, z: 0.58}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 440666}
@@ -433,6 +434,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6411742
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300002, guid: 009491b8c417eba479219c1c9fe7e2b1, type: 3}
 --- !u!65 &6522164
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -441,7 +454,7 @@ BoxCollider:
   m_GameObject: {fileID: 108318}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.032914363, y: 0.05747428, z: 0.032913536}
   m_Center: {x: 0.000012519769, y: 0.028653124, z: -0.00000082235783}
@@ -475,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: torre-piedra
   level: 1
-  range: 32
+  range: 30
   minRange: 14
   health: 1
   cost: 100
