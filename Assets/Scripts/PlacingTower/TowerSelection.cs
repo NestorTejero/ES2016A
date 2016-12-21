@@ -29,7 +29,6 @@ public class TowerSelection : MonoBehaviour
     {
         // Define buttons size and position
 
-        
 
         // Read xml document and get towers stats
         TextAsset textAsset = (TextAsset)Resources.Load("Xml/towers");
@@ -138,7 +137,7 @@ public class TowerSelection : MonoBehaviour
 			else if (towerName == "torre-avion")
 				LogicConnector.setTowerName ("Triumphal Plane");
 			else if (towerName == "torre-muro")
-				LogicConnector.setTowerName ("Great wall");
+				LogicConnector.setTowerName ("Great Wall");
 			
             try {
                 towerNode = root.SelectNodes("(Towers/Tower[@name='" + towerName + "']/Level)");
