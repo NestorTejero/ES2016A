@@ -436,8 +436,8 @@
 			</Enemy>
       <Enemy>
         <name>enemy-kid</name>
-        <damage>4.0</damage>
-        <health>150</health>
+        <damage>3.0</damage>
+        <health>75</health>
         <speed>6.5</speed>
         <money>150</money>
         <amount>1</amount>
