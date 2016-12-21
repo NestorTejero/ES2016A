@@ -13,6 +13,7 @@ GameObject:
   - 208: {fileID: 20839414}
   - 65: {fileID: 6539390}
   - 54: {fileID: 5481426}
+  - 64: {fileID: 6434182}
   m_Layer: 0
   m_Name: torre-piedra-2
   m_TagString: tower
@@ -305,7 +306,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6426236
+--- !u!64 &6434182
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
