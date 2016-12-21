@@ -20,6 +20,7 @@ public class UserInterface : MonoBehaviour {
 	public AudioClip GameMusic;
 	public AudioClip MenuMusic;
 	public LogicConnector GameLogicConnector = LogicConnector.getInstance();
+	public InterfaceStory InterfazHistoria = new InterfaceStory();
 
 	[Header("HUD Superior")]
 	public InterfaceContainer ContenedorSuperior = new InterfaceContainer();
@@ -69,6 +70,7 @@ public class UserInterface : MonoBehaviour {
 		InterfazTorres.draw ();
 		InterfazTiempo.Draw ();
 		interfaceEnemies.Draw ();
+		InterfazHistoria.Draw ();
 
         if (LogicConnector.getTowerSelected())
             InterfazTorreSeleccionada.Draw();
