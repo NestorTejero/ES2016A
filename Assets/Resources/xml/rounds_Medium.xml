@@ -449,7 +449,7 @@
 		
 		<Round id="10">
 			<Enemy>
-				<name>enemy-kid</name>
+				<name>enemy-finalBoss</name>
 				<damage>5.0</damage>
 				<health>5000</health>
 				<speed>1.0</speed>
