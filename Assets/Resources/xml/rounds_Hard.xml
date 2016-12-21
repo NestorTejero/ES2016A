@@ -340,8 +340,8 @@
 			</Enemy>
       <Enemy>
         <name>enemy-kid</name>
-        <damage>5.0</damage>
-        <health>300</health>
+        <damage>2.5</damage>
+        <health>75</health>
         <speed>7.5</speed>
         <money>50</money>
         <amount>1</amount>
@@ -397,8 +397,8 @@
 			</Enemy>
       <Enemy>
         <name>enemy-kid</name>
-        <damage>5.0</damage>
-        <health>300</health>
+        <damage>3.0</damage>
+        <health>75</health>
         <speed>7.5</speed>
         <money>50</money>
         <amount>1</amount>
@@ -454,8 +454,8 @@
 			</Enemy>
       <Enemy>
         <name>enemy-kid</name>
-        <damage>5.0</damage>
-        <health>300</health>
+        <damage>3.0</damage>
+        <health>100</health>
         <speed>7.5</speed>
         <money>50</money>
         <amount>1</amount>
