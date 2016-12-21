@@ -924,7 +924,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 30
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2975,7 +2975,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4695,7 +4695,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7080,7 +7080,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 40
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9329,7 +9329,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11396,7 +11396,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 150
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -13464,7 +13464,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 750
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
